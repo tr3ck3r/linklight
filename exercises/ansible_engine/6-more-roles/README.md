@@ -41,40 +41,78 @@ Revise the roles: statements to include and run our common rhel role first based
   name: This is my updated role-based playbook
   become: yes
 
+  pre_tasks:
+    - name: Log what we are doing to {{ messages }}
+      shell: /bin/logger 'running {{ role_friendly_text }}'
+
   roles:
     - { role: common/rhel, when: ansible_os_family == 'RedHat' }
     - apache-simple
+
+  post_tasks:
+    - name: Log what we have done to {{ messages }}
+      shell: /bin/logger 'finished running {{ role_friendly_text }}'
+
 ```
 
 ### Step 2:
 
 Add some default variables to your role in `roles/common/rhel/defaults/main.yml`.
+Let's as a default domain name that we'll assign to each host and the location of the Linux messages files.
 
 ```yml
 ---
 # defaults file for common/rhel
-apache_test_message: This is a test message
+messages: /var/log/messages
+domainname: ansibleworkshop.local
 ```
 
 ### Step 3:
 
-Add some role-specific variables to your role in `roles/apache-simple/vars/main.yml`.
+Add some role-specific variables to your role in `roles/common/rhel/vars/main.yml`.
+This is the text we'll split out to /var/log/messages in the pre- and post-tasks in site.yml
 
 ```yml
 ---
 # vars file for common/rhel
-httpd_packages:
-  - httpd
-  - mod_wsgi
+role_friendly_text: "COMMON RHEL TASKS like setting hostname, adding users"
 ```
 
-### Step 6:
+### Step 4:
 
-Add tasks to your role in `roles/apache-simple/tasks/main.yml`.
+Add an motd file in `roles/common/rhel/files/motd`.
 
 ```yml
-{% raw %}
-{% endraw %}    
+
+*** CONFIGURED WITH AWESOME ANSIBLE!!! ***
+
+```
+
+### Step 5:
+
+Add tasks to your role in `roles/common/rhel/tasks/main.yml`.
+
+```yml
+---
+# tasks file for common
+
+- name: Configure hostname
+  hostname:
+    name: "{{ inventory_hostname }}.{{ domainname }}"
+
+- name: add user accounts
+  user: name={{ item.name }} state=present groups={{ item.groups }}
+  with_items:
+    - {name: 'fred', groups: 'users' }
+    - {name: 'wilma', groups: 'wheel' }
+
+- name: Update MOTD
+  copy:
+    src: files/motd
+    dest: /etc/motd
+    owner: root
+    group: root
+    mode: 0444
 ```
 
 ## Section 3: Running your new role-based playbook
@@ -88,6 +126,20 @@ Re-run the playbook.
 
 ```bash
 ansible-playbook -i ~/lightbulb/lessons/lab_inventory/student##-instances.txt site.yml
+```
+
+### Step 2:
+
+Let's check it's all worked. We'll SSH into node1 and check the changes
+
+```bash
+grep node1 /home/student1/lightbulb/lessons/lab_inventory/student1-instances.txt
+ssh 3.121.162.169
+note: MOTD will be displayed
+hostname
+sudo grep "COMMON RHEL TASKS" /var/log/messages
+grep -E 'fred|wilma' /etc/passwd
+logout
 ```
 
 ## Section 4: Review
