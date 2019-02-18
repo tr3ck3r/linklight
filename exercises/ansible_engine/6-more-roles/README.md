@@ -2,7 +2,7 @@
 
 For this exercise, you are going to add a further 'common' role to your existing work under exercise 5.
 
-That's use Ansible Galaxy again to create a role structure. 
+Let's use Ansible Galaxy again to create a role structure. 
 
 ## Section 1: Using Ansible Galaxy to initialize a new role
 
@@ -11,7 +11,7 @@ Ansible Galaxy is a free site for finding, downloading, and sharing roles.  It's
 
 ### Step 1:
 
-Navigate to your `apache-basic-playbook` roles project.
+Navigate to your `apache-basic-playbook` roles directory.
 
 ```bash
 cd ~/apache-basic-playbook/roles
@@ -33,7 +33,9 @@ We've created a 'common/rhel' directory so we can always come back and add anoth
 
 ### Step 1:
 
-Revise the roles: statements to include and run our common rhel role first based on a conditional - a discovered fact ansible_os_family 
+Revise the roles: statements to include and run our common rhel role first based on a conditional - a discovered fact ansible_os_family.
+
+Let's welcome to the party the pre- and post-tasks which might be useful for things we always want to do regardless of what else we run. Here we'll just use logger to announce the start and end of the run.
 
 ```yml
 ---
@@ -70,7 +72,7 @@ domainname: ansibleworkshop.local
 ### Step 3:
 
 Add some role-specific variables to your role in `roles/common/rhel/vars/main.yml`.
-This is the text we'll split out to /var/log/messages in the pre- and post-tasks in site.yml
+This is the text we'll spit out to /var/log/messages in the pre- and post-tasks in site.yml
 
 ```yml
 ---
