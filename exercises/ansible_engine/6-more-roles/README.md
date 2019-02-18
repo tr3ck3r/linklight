@@ -145,7 +145,7 @@ sudo grep "COMMON RHEL TASKS" /var/log/messages
 
 grep -E 'fred|wilma' /etc/passwd
 
-grep wilma /etc/group
+grep wheel /etc/group
 
 logout
 ```
