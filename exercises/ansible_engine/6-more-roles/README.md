@@ -60,7 +60,7 @@ Let's welcome to the party the pre- and post-tasks which might be useful for thi
 ### Step 2:
 
 Add some default variables to your role in `roles/common/rhel/defaults/main.yml`.
-Let's as a default domain name that we'll assign to each host and the location of the Linux messages files.
+Let's add a default domain name that we'll assign to each host and the location of the Linux messages file.
 
 ```yml
 ---
@@ -96,7 +96,7 @@ Add tasks to your role in `roles/common/rhel/tasks/main.yml`.
 
 ```yml
 ---
-# tasks file for common
+# tasks file for common/rhel
 
 - name: Configure hostname
   hostname:
@@ -136,11 +136,17 @@ Let's check it's all worked. We'll SSH into node1 and check the changes
 
 ```bash
 grep node1 /home/student1/lightbulb/lessons/lab_inventory/student1-instances.txt
-ssh 3.121.162.169
+ssh 3.121.162.169 [use student password]
 note: MOTD will be displayed
+
 hostname
+
 sudo grep "COMMON RHEL TASKS" /var/log/messages
+
 grep -E 'fred|wilma' /etc/passwd
+
+grep wilma /etc/group
+
 logout
 ```
 
