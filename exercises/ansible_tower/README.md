@@ -17,7 +17,7 @@ Want the Presentation Deck?  Its right here:
 
 
  - SUPPLEMENTARY CONTENT:
- - [Exercise 3a - Creating and Running a Job Template](3a-schedule)
+ - [Exercise 3a - Creating a Job Schedule](3a-schedule)
  - [Exercise 4 - ASA](4-security)
  - [Exercise 5 - Workflows](5-workflow/)
 
