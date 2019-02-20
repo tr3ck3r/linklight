@@ -57,9 +57,8 @@ Click on ADD ![Add button](at_add.png), and then select Job Template
 ### Step 3:
 Complete the form using the following values
 
-NAME | Supplementary Workshop
+NAME | Create SNOW Record
 -----|---------------------------------
-NAME|Create SNOW Record
 DESCRIPTION|Creates a record in ServiceNow
 JOB TYPE|Run
 INVENTORY|Ansible Workshop Inventory
@@ -130,9 +129,8 @@ Click on ADD ![Add button](at_add.png), and then select Job Template
 ### Step 3:
 Complete the form using the following values
 
-NAME | Supplementary Workshop
+NAME | Update SNOW Record
 -----|---------------------------------
-NAME|Update SNOW Record
 DESCRIPTION|Updates a record in ServiceNow
 JOB TYPE|Run
 INVENTORY|Ansible Workshop Inventory
@@ -142,9 +140,11 @@ MACHINE CREDENTIAL|Ansible Workshop Credential
 LIMIT|web
 
 Now add the following into EXTRA VARIABLES:
+```bash
 snow_username: <instructor to provide>
 snow_password: <instructor to provide> 
 snow_instance: <instructor to provide>
+```
 
 ### Step 4:
 Click SAVE Save button 
@@ -161,6 +161,55 @@ This is the exciting bit. Contain yourself for now :)
 
 Select TEMPLATES 
 
+### Step 2:
+
+Click on ADD ![Add button](at_add.png), and then select Workflow Template
+
+### Step 3:
+Complete the form using the following values
+
+NAME | Web Server Request Workflow
+-----|---------------------------------
+DESCRIPTION|Example Workflow
+ORGANIZATION|Default
+INVENTORY|Ansible Workshop Inventory
+
+### Step 4:
+Click the SAVE button 
+
+### Step 5:
+
+Click on the WORKFLOW VISUALIZER button. You'll be taken into the Workflow editor screen.
+
+Click on the Green START box.
+
+A dashed box will appear.
+
+Click on the Create SNOW record template and ensure RUN is set to ALWAYS.
+
+Press the SELECT button.
+
+Now click on the Create SNOW record box and press the green plus button.
+
+For the next dashed box, select the Apache Basic template. Ensure RUN is set to On Success.
+
+Press the SELECT button.
+
+Now click on the Apache Basic box and press the green plus button.
+
+For the next dashed box, select the Update SNOW record template. Ensure RUN is set to On Success.
+
+Press the SELECT button.
+
+### Step 6:
+Click the SAVE button 
+
+### Step 7:
+Click the SAVE button back on the TEMPLATES page.
+
+## Run the Workflow Template
+
+Click on the rocketship icon ![Launch button](at_launch_icon.png) for the *Web Server Request Workflow*
 
 ---
 
