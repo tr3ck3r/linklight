@@ -14,7 +14,7 @@ $ sudo pip install pysnow
 
 ## Creating Another Project
 
-This has the source for our new playbooks. [They could be maintained and controlled by another party, or yourself in the real world.]
+This has the source for our new playbooks in a separate SCM repo. 
 
 ### Step 1:
 
@@ -28,8 +28,8 @@ Click on ADD ![Add button](at_add.png)
 
 Complete the form using the following values
 
-NAME | Supplementary Workshop
------|---------------------------------
+NAME|Supplementary Workshop
+----|---------------------------------
 DESCRIPTION|Additional Workshop Playbooks
 ORGANISATION|Default
 INVENTORY|Ansible Workshop Inventory
@@ -42,7 +42,7 @@ ISCM UPDATE OPTIONS|- [x] Clean, Delete on Update, Update Revision on Launch
 Click SAVE ![Save button](at_save.png)
 
 
-## Creating The ServiceNow Record
+## Creating The ServiceNow Record Job Template
 
 We need to create a couple more Job Templates for creating and updating ServiceNow records.
 
@@ -69,9 +69,11 @@ MACHINE CREDENTIAL|Ansible Workshop Credential
 LIMIT|web
 
 Now add the following into EXTRA VARIABLES:
+```bash
 snow_username: <instructor to provide>
 snow_password: <instructor to provide> 
 snow_instance: <instructor to provide>
+```
 
 ### Step 4:
 Click SAVE Save button 
@@ -114,7 +116,7 @@ Go to the ServiceNow Developer Instance, login and check the Incidents. You shou
 https://<dev_instance>.service-now.com
 ```
 
-## Creating the ServiceNow Update Record Template
+## Creating the ServiceNow Update Job Template
 
 Now, let's create the SNOW record update template.
 
