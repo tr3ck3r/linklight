@@ -14,6 +14,8 @@ $ sudo pip install pysnow
 
 ## Creating Another Project
 
+This has the source for our new playbooks. [They could be maintained and controlled by another party, or yourself in the real world.]
+
 ### Step 1:
 
 Select PROJECTS
@@ -39,13 +41,20 @@ ISCM UPDATE OPTIONS|- [x] Clean, Delete on Update, Update Revision on Launch
 
 Click SAVE ![Save button](at_save.png)
 
+
+## Creating The ServiceNow Record
+
+We need to create a couple more Job Templates for creating and updating ServiceNow records.
+
+### Step 1:
+
 Select TEMPLATES
 
-### Step 5:
+### Step 2:
 
 Click on ADD ![Add button](at_add.png), and then select Job Template
 
-### Step 6:
+### Step 3:
 Complete the form using the following values
 
 NAME | Supplementary Workshop
@@ -64,12 +73,12 @@ snow_username: <instructor to provide>
 snow_password: <instructor to provide> 
 snow_instance: <instructor to provide>
 
-Step 4:
+### Step 4:
 Click SAVE Save button 
 
-## Running [to test] The Job Template
+## Running The Job Template
 
-Now that you've sucessfully creating your Job Template, you are ready to launch it.
+Now that you've sucessfully created your Job Template, you are ready to launch it.
 Once you do, you will be redirected to a job screen which is refreshing in realtime
 showing you the status of the job.
 
@@ -105,16 +114,18 @@ Go to the ServiceNow Developer Instance, login and check the Incidents. You shou
 https://<dev_instance>.service-now.com
 ```
 
+## Creating the ServiceNow Update Record Template
 
 Now, let's create the SNOW record update template.
 
+### Step 1:
 Select TEMPLATES
 
-### Step 1:
+### Step 2:
 
 Click on ADD ![Add button](at_add.png), and then select Job Template
 
-### Step 2:
+### Step 3:
 Complete the form using the following values
 
 NAME | Supplementary Workshop
@@ -133,25 +144,20 @@ snow_username: <instructor to provide>
 snow_password: <instructor to provide> 
 snow_instance: <instructor to provide>
 
-Step 3:
+### Step 4:
 Click SAVE Save button 
 
-## Don't Run The Job Template!
-
-If you try to run the template, the job will fail as it's expecting a ServiceNow Record ID which won't be there. When we create the workflow, it'll be passed along from the Create SNOW record job. 
+NB. I know you want to, but if you try to run the Update SNOW Record Job Template, the job will fail as it's expecting a ServiceNow Record ID which won't be there. When we create the workflow, it'll be passed along from the Create SNOW record job. 
 
 
 ## Create the Workflow Template
 
 Now we've done the ground work and have the playbooks in place, we can connect the sequence up and produce an end-to-end workflow.
+This is the exciting bit. Contain yourself for now :)
 
 ### Step 1:
 
 Select TEMPLATES 
-
-
-## End Result
-We've create a Workflow Template using several Job Templates to make an end-to-end workflow involving integration with ServiceNow.
 
 
 ---
