@@ -10,9 +10,17 @@ Want the Presentation Deck?  Its right here:
 
 ## Ansible Engine Exercises
 
+ - CORE CONTENT:
  - [Exercise 1 - Installing Ansible Tower](1-install)
  - [Exercise 2 - Configuring Ansible Tower](2-config)
  - [Exercise 3 - Creating and Running a Job Template](3-create)
+
+
+ - SUPPLEMENTARY CONTENT:
+ - [Exercise 3a - Creating and Running a Job Template](3a-schedule)
+ - [Exercise 4 - ASA](4-security)
+ - [Exercise 5 - Workflows](5-workflow/)
+
 <!--- - [Exercise 4 - Using Ansible to Implement Security](4-security) --->
 
 ## Survey
