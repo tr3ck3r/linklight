@@ -1,0 +1,159 @@
+# Exercise 5 - Creating and Running a Workflow Template
+
+Workflows allow you to configure a sequence of disparate job templates (or workflow templates) that may or may not share inventory, playbooks, or permissions. We'll build up a sequence here interacting with ServiceNow and the existing playbooks we've already developed.
+
+## Pre-requisites
+
+Your instructor will have a developer instance up and running for you to use - ask for details.
+
+You need to install the pysnow library on your ansible control node as it's a dependency for the snow_record module
+
+```bash
+$ sudo pip install pysnow
+```
+
+## Creating Another Project
+
+### Step 1:
+
+Select PROJECTS
+
+### Step 2:
+
+Click on ADD ![Add button](at_add.png)
+
+### Step 3:
+
+Complete the form using the following values
+
+NAME | Supplementary Workshop
+-----|---------------------------------
+DESCRIPTION|Additional Workshop Playbooks
+ORGANISATION|Default
+INVENTORY|Ansible Workshop Inventory
+SCM Type|Git
+SCM URL| https://github.com/ffirg/ansible
+ISCM UPDATE OPTIONS|- [x] Clean, Delete on Update, Update Revision on Launch
+
+### Step 4:
+
+Click SAVE ![Save button](at_save.png)
+
+Select TEMPLATES
+
+### Step 5:
+
+Click on ADD ![Add button](at_add.png), and then select Job Template
+
+### Step 6:
+Complete the form using the following values
+
+NAME | Supplementary Workshop
+-----|---------------------------------
+NAME|Create SNOW Record
+DESCRIPTION|Creates a record in ServiceNow
+JOB TYPE|Run
+INVENTORY|Ansible Workshop Inventory
+PROJECT|Supplementary Workshop
+PLAYBOOK|tower/snow-create-record.yml
+MACHINE CREDENTIAL|Ansible Workshop Credential
+LIMIT|web
+
+Now add the following into EXTRA VARIABLES:
+snow_username: <instructor to provide>
+snow_password: <instructor to provide> 
+snow_instance: <instructor to provide>
+
+Step 4:
+Click SAVE Save button 
+
+## Running [to test] The Job Template
+
+Now that you've sucessfully creating your Job Template, you are ready to launch it.
+Once you do, you will be redirected to a job screen which is refreshing in realtime
+showing you the status of the job.
+
+
+### Step 1:
+
+Select TEMPLATES
+
+---
+**NOTE**
+Alternatively, if you haven't navigated away from the job templates creation page, you can scroll down to see all existing job templates
+
+---
+
+### Step 2:
+
+Click on the rocketship icon ![Launch button](at_launch_icon.png) for the *Create SNOW record*
+
+### Step 3:
+
+Sit back, watch the magic happen!
+
+
+### Step 4 (optional):
+
+Try changing the Job Template VERBOSITY to 1 (Verbose) to see the effect on the debug statement in the playbook
+
+### Step 5 (optional):
+
+Go to the ServiceNow Developer Instance, login and check the Incidents. You should see the new ones created by the JT runs.
+
+```bash
+https://<dev_instance>.service-now.com
+```
+
+
+Now, let's create the SNOW record update template.
+
+Select TEMPLATES
+
+### Step 1:
+
+Click on ADD ![Add button](at_add.png), and then select Job Template
+
+### Step 2:
+Complete the form using the following values
+
+NAME | Supplementary Workshop
+-----|---------------------------------
+NAME|Update SNOW Record
+DESCRIPTION|Updates a record in ServiceNow
+JOB TYPE|Run
+INVENTORY|Ansible Workshop Inventory
+PROJECT|Supplementary Workshop
+PLAYBOOK|tower/snow-update-record.yml
+MACHINE CREDENTIAL|Ansible Workshop Credential
+LIMIT|web
+
+Now add the following into EXTRA VARIABLES:
+snow_username: <instructor to provide>
+snow_password: <instructor to provide> 
+snow_instance: <instructor to provide>
+
+Step 3:
+Click SAVE Save button 
+
+## Don't Run The Job Template!
+
+If you try to run the template, the job will fail as it's expecting a ServiceNow Record ID which won't be there. When we create the workflow, it'll be passed along from the Create SNOW record job. 
+
+
+## Create the Workflow Template
+
+Now we've done the ground work and have the playbooks in place, we can connect the sequence up and produce an end-to-end workflow.
+
+### Step 1:
+
+Select TEMPLATES 
+
+
+## End Result
+We've create a Workflow Template using several Job Templates to make an end-to-end workflow involving integration with ServiceNow.
+
+
+---
+
+[Click Here to return to the Ansible Lightbulb - Ansible Tower Workshop](../README.md)
