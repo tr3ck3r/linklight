@@ -132,7 +132,7 @@ ansible-playbook -i ~/lightbulb/lessons/lab_inventory/student##-instances.txt si
 
 ### Step 2:
 
-Let's check it's all worked. We'll SSH into node1 and check the changes
+Let's check it's all worked. We'll SSH into node1 and check the changes.
 
 ```bash
 grep node1 /home/student1/lightbulb/lessons/lab_inventory/student1-instances.txt
