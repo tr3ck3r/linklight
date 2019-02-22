@@ -15,6 +15,7 @@ Want the Presentation Deck?  Its right here:
  - [Exercise 3 - Using Variables, Loops, and Handlers](3-variables)
  - [Exercise 4 - Running the apache-basic-playbook](4-runplaybook)
  - [Exercise 5 - Roles: Making your playbooks reusable](5-role)
+ - [Exercise 6 - Roles: More Roles!](6-more-roles)
 
 ## Additional information
  - [Ansible Getting Started](http://docs.ansible.com/ansible/latest/intro_getting_started.html)
