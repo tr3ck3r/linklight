@@ -1,0 +1,29 @@
+- name: CREATE STUDENT WEBPAGE
+  template:
+    src: ./templates/index.html.j2
+    dest: /tmp/uk-ansible-workshop.html
+
+- name: CREATE S3 BUCKET
+  s3_bucket:
+    name: uk-ansible-workshop
+    state: present
+    region: "{{ec2_region}}"
+    force: yes
+
+- name: ENABLE WEB HOSTING
+  s3_website:
+   name: uk-ansible-workshop
+   state: present
+   region: "{{ec2_region}}"
+   suffix: uk-ansible-workshop.html
+  register: s3_site
+
+- name: PUT STUDENT WEBPAGE
+  s3_sync:
+    bucket: uk-ansible-workshop
+    region: "{{ec2_region}}"
+    file_root: /tmp
+    mime_map:
+      .html: text/html
+    permission: public-read
+    include: uk-ansible-workshop.html

@@ -1,0 +1,8 @@
+---
+
+- name: Set up labs page for modified UK workshop
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  roles:
+    - uk_workshop_labs
