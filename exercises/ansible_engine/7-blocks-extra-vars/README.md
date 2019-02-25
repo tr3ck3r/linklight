@@ -96,7 +96,7 @@ This follows the same structure, and we assign it the 'delete' tag
 
 ## Section 4: Oh Wait A Minute!
 
-If we were to run this playbook, by default, Ansible will run *all* tags. We don't want in this case. We want a sanity check as a safety net and a valid tag so we can run the right section only.
+If we were to run this playbook, by default, Ansible will run *all* tags. We don't want this. We need a sanity check as a safety net and a valid tag so we can run the right section only.
 
 So add a line tags: never under the become: line for this. Also modify the name: line to reflect that we need a tag passed.
 
@@ -153,6 +153,58 @@ node1                      : ok=2    changed=1    unreachable=0    failed=0
 node2                      : ok=2    changed=1    unreachable=0    failed=0
 node3                      : ok=2    changed=1    unreachable=0    failed=0
 ```
+
+## Summary: The Finished Playbook
+
+The final playbook should look like this:
+
+```yml
+---
+- name: Linux Account Admin (we do nothing without a valid tag)
+  hosts: web
+  # we don't need any host facts, so disable to make run faster
+  gather_facts: false
+  become: yes
+  tags: never
+
+  tasks:
+
+    - block:
+
+        - name: Disable Local Linux User Account
+          user:
+            name: '{{ account|lower }}'
+            password_lock: yes
+            shell: /bin/false
+            expires: 0
+
+      rescue:
+        - debug: msg='Oops! Something went wrong DISABLING the account - please investigate'
+
+      always:
+        - debug: msg='Tasks to disable Linux user account have been run'
+
+      tags:
+        - disable
+
+    - block:
+
+        - name: Delete Local Linux User Account
+          user:
+            name: '{{ account|lower }}'
+            state: absent
+            remove: yes
+
+      rescue:
+        - debug: msg='Oops! Something went wrong DELETING the account - please investigate'
+
+      always:
+        - debug: msg='Tasks to delete Linux user account have been run'
+
+      tags:
+        - delete
+```
+
 
 ---
 

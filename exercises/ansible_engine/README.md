@@ -16,6 +16,7 @@ Want the Presentation Deck?  Its right here:
  - [Exercise 4 - Running the apache-basic-playbook](4-runplaybook)
  - [Exercise 5 - Roles: Making your playbooks reusable](5-role)
  - [Exercise 6 - Roles: More Roles!](6-more-roles)
+ - [Exercise 7 - Advanced Features - blocks/tags/extra_vars](7-blocks-extra-vars)
 
 ## Additional information
  - [Ansible Getting Started](http://docs.ansible.com/ansible/latest/intro_getting_started.html)
