@@ -6,16 +6,19 @@ There are 2 versions, v2 being the current one.
 
 ## First API Call:
 
-![apiv2](tower-apiv2.png)
+To see the kind of things you can call, try:
+
+![apiv2](tower-api-v2.png)
 
 ## Calling the API to check status:
+
+Calling the API ping can be a useful 'health' check:
 
 ![ping](tower-api-v2-ping.png)
 
 
 ## End Result
-We've explored the Tower API.
-
+We've explored the Tower API briefly.
 
 
 ---
