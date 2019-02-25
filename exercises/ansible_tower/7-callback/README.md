@@ -37,10 +37,10 @@ OPTIONS|- [x] Enable Privilege Escalation
 
 We'll use the *curl* command to launch the job. It's a bit of a handful but let's break it down, so it's easier to understand:
 
--- user = who we authenticate as. In our case the admin account
--k = insecure HTTPS. So we don't check for valid certs
--s = silent mode. Cuts out some of the not so -useful curl output we don't want
--H = HTTP JSON MIME type headers. We need to POST in the extra_vars and job_tags so the job will run successfully
+-- user:    who we authenticate as. In our case the admin account
+-k:         insecure HTTPS. So we don't check for valid certs
+-s:         silent mode. Cuts out some of the not so -useful curl output we don't want
+-H:         HTTP JSON MIME type headers. We need to POST in the extra_vars and job_tags so the job will run successfully
 
 NB. You will need to check and change where necessary the PUBLIC_IP for your Tower instance and the Job Template number (mine here is 8)
 
@@ -52,6 +52,7 @@ $ curl --user 'admin':'ansible' -k -s -H 'Content-Type: application/json' -XPOST
 
 You should see output similar to this:
 
+```bash
 {
     "allow_simultaneous": false,
     "artifacts": {},
@@ -206,6 +207,7 @@ You should see output similar to this:
     "vault_credential": null,
     "verbosity": 0
 }
+```
 
 ## Checking The Job
 
