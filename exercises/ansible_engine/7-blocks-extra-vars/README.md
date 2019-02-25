@@ -96,7 +96,7 @@ This follows the same structure, and we assign it the 'delete' tag
 
 ## Section 4: Oh Wait A Minute!
 
-If we were to run this playbook, by default, Ansible will run *all* tags. We don't want in this case. We want a sanity check as a safety net and a valid tag so we can run the right section only.
+If we were to run this playbook, by default, Ansible will run *all* tags. We don't want this. We need a sanity check as a safety net and a valid tag so we can run the right section only.
 
 So add a line tags: never under the become: line for this. Also modify the name: line to reflect that we need a tag passed.
 
