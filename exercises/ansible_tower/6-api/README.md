@@ -2,6 +2,11 @@
 
 Ansible Tower has a RESTFUL API, which we'll explore a little here.
 
+There are 2 versions, v2 being the current one.
+
+## First API Call:
+
+![apiv2](tower-apiv2.png)
 
 ## Calling the API to check status:
 
@@ -9,7 +14,7 @@ Ansible Tower has a RESTFUL API, which we'll explore a little here.
 
 
 ## End Result
-At this point in the workshop, you've experienced the core functionality of Ansible Tower.  But wait... there's more! You've just begun to explore the possibilities of Ansible Core and Tower.  Take a look at the resources page in this guide to explore some more features.
+We've explored the Tower API.
 
 
 
