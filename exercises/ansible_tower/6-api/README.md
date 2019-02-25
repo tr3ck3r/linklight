@@ -6,13 +6,13 @@ There are 2 versions, v2 being the current one.
 
 ## First API Call:
 
-To see the kind of things you can call, try:
+To see the kind of things you can call, try hitting https://<public IP>/api/v2/
 
 ![apiv2](tower-api-v2.png)
 
 ## Calling the API to check status:
 
-Calling the API ping can be a useful 'health' check:
+Calling the API ping can be a useful 'health' check. https://<public IP>/api/v2/ping/
 
 ![ping](tower-api-v2-ping.png)
 
