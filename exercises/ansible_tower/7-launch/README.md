@@ -28,8 +28,8 @@ PLAYBOOK|tower/linux-accounts.yml
 MACHINE CREDENTIAL|Ansible Workshop Credential
 LIMIT|web
 OPTIONS|- [x] Enable Privilege Escalation
-
-![Job Template Form](at_jt_detail.png)
+PROMPT ON LAUNCH|- [x] Job Tags
+PROMPT ON LAUNCH|- [x] Extra Variables
 
 ## Job Launch Settings:
 
