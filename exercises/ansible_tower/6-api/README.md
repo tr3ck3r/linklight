@@ -5,7 +5,7 @@ Ansible Tower has a RESTFUL API, which we'll explore a little here.
 
 ## Calling the API to check status:
 
-(tower-api-v2-ping.png)
+![ping](tower-api-v2-ping.png)
 
 
 ## End Result
