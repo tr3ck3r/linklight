@@ -154,6 +154,58 @@ node2                      : ok=2    changed=1    unreachable=0    failed=0
 node3                      : ok=2    changed=1    unreachable=0    failed=0
 ```
 
+## Summary: The Finished Playbook
+
+The final playbook should look like this:
+
+```yml
+---
+- name: Linux Account Admin (we do nothing without a valid tag)
+  hosts: web
+  # we don't need any host facts, so disable to make run faster
+  gather_facts: false
+  become: yes
+  tags: never
+
+  tasks:
+
+    - block:
+
+        - name: Disable Local Linux User Account
+          user:
+            name: '{{ account|lower }}'
+            password_lock: yes
+            shell: /bin/false
+            expires: 0
+
+      rescue:
+        - debug: msg='Oops! Something went wrong DISABLING the account - please investigate'
+
+      always:
+        - debug: msg='Tasks to disable Linux user account have been run'
+
+      tags:
+        - disable
+
+    - block:
+
+        - name: Delete Local Linux User Account
+          user:
+            name: '{{ account|lower }}'
+            state: absent
+            remove: yes
+
+      rescue:
+        - debug: msg='Oops! Something went wrong DELETING the account - please investigate'
+
+      always:
+        - debug: msg='Tasks to delete Linux user account have been run'
+
+      tags:
+        - delete
+```
+
+
 ---
 
 [Click Here to return to the Ansible Linklight - Ansible Engine Workshop](../README.md)
