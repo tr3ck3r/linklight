@@ -20,6 +20,7 @@ Want the Presentation Deck?  Its right here:
  - [Exercise 3a - Creating a Job Schedule](3a-schedule)
  - [Exercise 4 - ASA](4-security)
  - [Exercise 5 - Workflows](5-workflow/)
+ - [Exercise 6 - Calling the API](6-api)
 
 <!--- - [Exercise 4 - Using Ansible to Implement Security](4-security) --->
 
