@@ -10,7 +10,7 @@ Want the Presentation Deck?  Its right here:
 
 ## Ansible Engine Exercises
 
- - CORE CONTENT:
+ CORE CONTENT:
  
  - [Exercise 1 - Running Ad-hoc commands](1-adhoc)
  - [Exercise 2 - Writing Your First playbook](2-playbook)
@@ -18,7 +18,7 @@ Want the Presentation Deck?  Its right here:
  - [Exercise 4 - Running the apache-basic-playbook](4-runplaybook)
  - [Exercise 5 - Roles: Making your playbooks reusable](5-role)
  
- - SUPPLEMENTARY CONTENT:
+ SUPPLEMENTARY CONTENT:
  
  - [Exercise 6 - Roles: More Roles!](6-more-roles)
  - [Exercise 7 - Advanced Features - blocks/tags/extra_vars](7-blocks-extra-vars)
