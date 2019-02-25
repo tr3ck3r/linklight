@@ -1,24 +1,19 @@
-# Exercise 6 - Tower API
+# Exercise 7 - Tower API Callbacks
 
-Ansible Tower has a RESTFUL API, which we'll explore a little here.
+We can call into Ansible Tower via the API to run a job template for us.
 
-There are 2 versions, v2 being the current one.
+We'll use the linux-account example we did earlier to demonstate this.
 
-## First API Call:
+## Adding The Job Template:
+Add linux-account.yml
 
-To see the kind of things you can call, try hitting https://public_IP/api/v2/
+## Enabling Callback:
 
-![apiv2](tower-api-v2.png)
-
-## Calling the API to check status:
-
-Calling the API ping can be a useful 'health' check. https://public_IP/api/v2/ping/
-
-![ping](tower-api-v2-ping.png)
-
+## Hitting The Callback:
+curl example
 
 ## End Result
-We've explored the Tower API briefly.
+We've explored the Tower API callback facility in order to run a job template.
 
 
 ---
