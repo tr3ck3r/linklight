@@ -216,7 +216,7 @@ You should see output similar to this:
 From the above output, I can see that "job": 6 so that's what I should look for in Tower under Jobs.
 
 ## End Result
-We've explored the Tower API callback facility in order to run a job template.
+We've explored the Tower API *Job Launch* facility in order to run a job template.
 
 
 ---
