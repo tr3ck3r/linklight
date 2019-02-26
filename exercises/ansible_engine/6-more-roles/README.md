@@ -122,15 +122,15 @@ Add tasks to your role in `roles/common/rhel/tasks/main.yml`.
 Now that you've successfully updated your role based playbook,
 let's run it and see how it works.
 
-### Step 1:
-
 Re-run the playbook.
 
 ```bash
 ansible-playbook -i ~/lightbulb/lessons/lab_inventory/student##-instances.txt site.yml
 ```
 
-### Step 2:
+## Section 4: Checking It Worked
+
+### Step 1:
 
 Let's check it's all worked. We'll SSH into node1 and check the changes.
 
@@ -150,7 +150,17 @@ grep wheel /etc/group
 logout
 ```
 
-## Section 4: Review
+### Step 2: Optional: why not check using ansible itself?
+
+Hint: Use ansible with the command module
+
+Perhaps something like:
+
+```bash
+$ ansible -i /home/student1/lightbulb/lessons/lab_inventory/student1-instances.txt node3 -m command -a "cat /etc/motd"
+```
+
+## Section 5: Review
 
 You should now have a completed playbook, `site.yml` with a couple of roles.
 
