@@ -1,8 +1,9 @@
-# Exercise 7 - Tower API Job Launch
+# Exercise 8 - Tower Provisioning Callbacks
 
-We can call into Ansible Tower via the API to run a job template for us.
+Provisioning callbacks allow a host to initiate a playbook run against itself. The Job Template launched only runs against the host requesting the provisioning and the host must already be known to Tower and exist in the inventory.
 
-We'll use the linux-accounts.yml example we did earlier to demonstate this.
+Callback provides the ability to automatically configure a system after it has been provisioned by another system (such as AWS auto-scaling, kickstart etc) or for launching a job programmatically without invoking the Tower API directly. 
+
 
 ## Adding The Job Template:
 
