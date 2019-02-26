@@ -28,11 +28,11 @@ PROMPT ON LAUNCH|- [] Job Tags
 PROMPT ON LAUNCH|- [] Extra Variables
 Allow Provisioning Callbacks|- [x] 
 
-This is enable the Callback URL.
+This is enable the Callback URL. 
 
-!provisioning screen[jt-hostconfig-key.png]
+![Provisioning screen](jt-hostconfig-key.png)
 
-Now click on the !magic-wand[magic-wand.png] symbol to create a unique host key which will form the other part of the URL
+Now click on the ![magic-wand](magic-wand.png) symbol to create a unique host key which will form the other part of the URL
 
 * Tip: If you click on the ? mark associated with the Host Config Key you can see the full URL *
 
