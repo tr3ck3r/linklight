@@ -83,9 +83,6 @@ WantedBy=multi-user.target
 
 ```bash
 # systemctl daemon-reload
-```
-
-```bash
 # systemctl enable ansible-callback
 Created symlink from /etc/systemd/system/multi-user.target.wants/ansible-callback.service to /etc/systemd/system/ansible-callback.service.
 ```
