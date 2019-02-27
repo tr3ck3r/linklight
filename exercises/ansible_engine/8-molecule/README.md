@@ -82,12 +82,13 @@ molecule, version 2.19.0
 
 ## Section 2: Creating a New Role Framework
 
-Let's use the simple Apache playbook we created earlier as a basis, and extend it into a molecule based role.
+Let's use the simple apache install playbook from earlier as a basis, and extend it into a molecule based role.
 
 ### Step 1 - Prep
 
 ```bash
-$ cd ~/apache_basic
+$ mkdir ~/apache_basic2
+$ cd ~/apache_basic2
 $ mkdir roles
 $ cd roles
 ```
@@ -326,7 +327,7 @@ Validation completed successfully.
 Let's not forget to actually write the role contents!
 
 ```bash
-vi ~/apache_basic/site.yml
+vi ~/apache_basic2/site.yml
 
 ---
 - name: Main Playbook (site.yml)
@@ -340,7 +341,7 @@ vi ~/apache_basic/site.yml
 Not strictly necessary here, but I'm using the include_tasks directive to show that as well.
 
 ```bash
-vi ~/apache_basic/roles/apache_install/tasks/main.yml
+vi ~/apache_basic2/roles/apache_install/tasks/main.yml
 
 ---
 # tasks file for apache_install
@@ -349,7 +350,7 @@ vi ~/apache_basic/roles/apache_install/tasks/main.yml
 ```
 
 ```bash
-vi ~/apache_basic/roles/apache_install/tasks/install_apache.yml
+vi ~/apache_basic2/roles/apache_install/tasks/install_apache.yml
 
 ---
 # tasks file for install_apache
@@ -367,7 +368,7 @@ vi ~/apache_basic/roles/apache_install/tasks/install_apache.yml
 Let's first test the playbook to prove we've written something useful and workable:
 
 ```bash
-ansible-playbook -i /home/student1/lightbulb/lessons/lab_inventory/student1-instances.txt ~/apache_basic/site.yml
+ansible-playbook -i /home/student1/lightbulb/lessons/lab_inventory/student1-instances.txt ~/apache_basic2/site.yml
 
 PLAY [Main Playbook (site.yml)] ***********************************************************************************************************************
 
@@ -377,7 +378,7 @@ ok: [node2]
 ok: [node3]
 
 TASK [apache_install : Include other playbooks] *******************************************************************************************************
-included: /home/student1/apache_basic/roles/apache_install/tasks/install_apache.yml for node1, node2, node3
+included: /home/student1/apache_basic2/roles/apache_install/tasks/install_apache.yml for node1, node2, node3
 
 TASK [apache_install : Install Apache] ****************************************************************************************************************
 ok: [node3]
@@ -397,9 +398,9 @@ Now let's do a full on test using molecule:
 
 ```bash
 
-$ cd /home/student1/apache_basic/roles/apache_install
+$ cd /home/student1/apache_basic2/roles/apache_install
 $ molecule test
---> Validating schema /home/student1/apache_basic/roles/apache_install/molecule/default/molecule.yml.
+--> Validating schema /home/student1/apache_basic2/roles/apache_install/molecule/default/molecule.yml.
 Validation completed successfully.
 --> Test matrix
 
@@ -414,11 +415,11 @@ Validation completed successfully.
 
 --> Scenario: 'default'
 --> Action: 'lint'
---> Executing Yamllint on files found in /home/student1/apache_basic/roles/apache_install/...
+--> Executing Yamllint on files found in /home/student1/apache_basic2/roles/apache_install/...
 Lint completed successfully.
---> Executing Flake8 on files found in /home/student1/apache_basic/roles/apache_install/molecule/default/tests/...
+--> Executing Flake8 on files found in /home/student1/apache_basic2/roles/apache_install/molecule/default/tests/...
 Lint completed successfully.
---> Executing Ansible Lint on /home/student1/apache_basic/roles/apache_install/molecule/default/playbook.yml...
+--> Executing Ansible Lint on /home/student1/apache_basic2/roles/apache_install/molecule/default/playbook.yml...
 Lint completed successfully.
 --> Scenario: 'default'
 --> Action: 'destroy'
@@ -442,7 +443,7 @@ Lint completed successfully.
 --> Scenario: 'default'
 --> Action: 'syntax'
 
-    playbook: /home/student1/apache_basic/roles/apache_install/molecule/default/playbook.yml
+    playbook: /home/student1/apache_basic2/roles/apache_install/molecule/default/playbook.yml
 
 --> Scenario: 'default'
 --> Action: 'create'
@@ -487,7 +488,7 @@ Lint completed successfully.
     ok: [instance]
 
     TASK [apache_install : Include other playbooks] ********************************
-    included: /home/student1/apache_basic/roles/apache_install/tasks/install_apache.yml for instance
+    included: /home/student1/apache_basic2/roles/apache_install/tasks/install_apache.yml for instance
 
     TASK [apache_install : Install Apache] *****************************************
     changed: [instance]
@@ -498,10 +499,10 @@ Lint completed successfully.
 
 --> Scenario: 'default'
 --> Action: 'verify'
---> Executing Testinfra tests found in /home/student1/apache_basic/roles/apache_install/molecule/default/tests/...
+--> Executing Testinfra tests found in /home/student1/apache_basic2/roles/apache_install/molecule/default/tests/...
     ============================= test session starts ==============================
     platform linux2 -- Python 2.7.5, pytest-4.3.0, py-1.8.0, pluggy-0.9.0
-    rootdir: /home/student1/apache_basic/roles/apache_install/molecule/default, inifile:
+    rootdir: /home/student1/apache_basic2/roles/apache_install/molecule/default, inifile:
     plugins: testinfra-1.16.0
 collected 1 item
 
