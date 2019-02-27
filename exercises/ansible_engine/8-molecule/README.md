@@ -98,21 +98,19 @@ $ molecule init role --role-name apache_install --driver-name docker
 Initialized role in /home/student1/apache_basic/roles/apache_install successfully.
 ```
 
-This creates a new role and tells molecule to use the docker driver for spinning up and testing infra.
-
 Let's have a look at what was created:
 
 ```bash
 $ tree
 .
-└── apache_install
-    ├── defaults                                <--- default values to variables for the role
+└── apache_install                            <--- role name as supplied
+    ├── defaults                              <--- default values to variables for the role
     │   └── main.yml
-    ├── handlers                                <--- specific handlers to notify based on actions
+    ├── handlers                              <--- specific handlers to notify based on actions
     │   └── main.yml
-    ├── meta
+    ├── meta                                  <---  info for the role if you are uploading this to Ansible-Galaxy
     │   └── main.yml
-    ├── molecule
+    ├── molecule                              <--- molecule specific information 
     │   └── default
     │       ├── Dockerfile.j2
     │       ├── INSTALL.rst
@@ -121,22 +119,17 @@ $ tree
     │       └── tests
     │           ├── test_default.py
     │           └── test_default.pyc
-    ├── README.md
-    ├── tasks
+    ├── README.md                             <--- information about the role
+    ├── tasks                                 <--- tasks for the role
     │   └── main.yml
-    └── vars
+    └── vars                                  <--- other variables for the role
         └── main.yml
 ```
 
-Most of these are standard and considered best practice:
+This command uses ansible-galaxy behind the scenes to generate a new Ansible role. It then injects a molecule directory in the role, and sets it up to run builds and test runs in a docker environment.
 
-defaults - default values to variables for the role
-handlers - specific handlers to notify based on actions in Ansible
-meta - Ansible-Galaxy info for the role if you are uploading this to Ansible-Galaxy
-molecule - molecule specific information (configuration, instance information, playbooks to run with molecule, etc)
-README.md - Information about the role.
-tasks - tasks for the role
-vars - other variables for the role
+The molecule/default directory is probably the most interesting.
+
 
 ## Summary: The Finished Playbook
 
