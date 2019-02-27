@@ -80,9 +80,9 @@ $ molecule --version
 molecule, version 2.19.0
 ```
 
-## Section 2: Creating a New Role
+## Section 2: Creating a New Role Framework
 
-Let's use the simple Apache playbook we created earlier and extend it into a molecule based role.
+Let's use the simple Apache playbook we created earlier as a basis, and extend it into a molecule based role.
 
 ### Step 1 - Prep
 
@@ -151,10 +151,16 @@ This directory contains a basic Testinfra test, which you can expand on if you w
 
 ### Step 1 - First Tests
 
-Straight out the box, we should be able to do a test run and see it working:
+Straight out the box, we should be able to do things.
 
+#### Destroy test infra
 ```bash
-$ molecule test
+$ molecule destroy
+```
+
+#### Create test infra
+```bash
+$ molecule create
 ```
 
 Hopefully that works, so you now have a test framework to work with.
@@ -268,7 +274,33 @@ verifier:
     name: flake8
 ```
 
-If you do another test run, you'll see your changes reflected:
+
+### Step 4 - Testing Your Roles
+
+testinfra is included as the default verifier step of molecule. Testinfra uses pytest and makes it easy to test the system after the role is run to ensure our created role has the results that we expected.
+
+We'll not be doing much with it here, but will perform a simple "is package httpd isntalled" test for validation
+
+Change the test_default.py file to reflect the following. Note: spacing must be consistent (this is Python after all). Don't mix tabs and spaces else molecule will throw errors later on!
+
+```bash
+$ cat molecule/default/tests/test_default.py
+import os
+
+import testinfra.utils.ansible_runner
+
+testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
+    os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
+
+
+def test_httpd_installed(host):
+    httpd = host.package('httpd')
+    assert httpd.is_installed
+```
+
+### Step 5 - Dummy Full Test
+
+Let's run molecule test to see the full cycle in action:
 
 ```bash
 $ molecule test
@@ -289,11 +321,12 @@ Validation completed successfully.
 [output truncated...]
 ```
 
-### Step 4 - Testing Your Roles
+## Section 4: Write The Role Tasks
 
-testinfra is included as the default verifier step of molecule. Testinfra uses pytest and makes it easy to test the system after the role is run to ensure our created role has the results that we expected.
 
-[ more blurb]
+## Section 5: Full Test Run
+
+
 
 ## Summary: The Finished Playbook
 
