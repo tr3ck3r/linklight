@@ -24,7 +24,7 @@ Let's create a playbook that uses all these features.
 Use vi to create the playbook file linux-accounts.yml:
 
 ```bash
-$ vi liunx-accounts.yml
+$ vi linux-accounts.yml
 ```
 
 We need privilege escalation to do things as root with user accounts, but don't need any facts so we'll disable collecting these to speed things up a little.
