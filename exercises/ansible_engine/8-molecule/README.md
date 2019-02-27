@@ -230,7 +230,64 @@ Skipping, prepare playbook not configured.
 
 ### Step 3 - Configuring Molecule
 
+You can see from above that a few things have been skipped. You can tune a lot of the molecule config and what you want it to do by changing the molecule.yml file.
 
+Let's define the test sequence we want. We'll add the test_sequence block under the default scenario.
+
+Change molecule.yml to reflect this:
+
+```bash
+$ cat molecule/default/molecule.yml
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: instance
+    image: centos:7
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: default
+  test_sequence:
+    - lint
+    - destroy
+    - syntax
+    - create
+    - converge
+    - verify
+    - destroy
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
+```
+
+If you do another test run, you'll see your changes reflected:
+
+```bash
+$ molecule test
+--> Validating schema /home/student1/apache_basic/roles/apache_install/molecule/default/molecule.yml.
+Validation completed successfully.
+--> Test matrix
+
+└── default
+    ├── lint
+    ├── destroy
+    ├── syntax
+    ├── create
+    ├── converge
+    ├── verify
+    └── destroy
+
+--> Scenario: 'default'
+[output truncated...]
+```
 
 ### Step 4 - Testing Your Roles
 
