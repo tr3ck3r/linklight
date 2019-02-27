@@ -128,8 +128,22 @@ $ tree
 
 This command uses ansible-galaxy behind the scenes to generate a new Ansible role. It then injects a molecule directory in the role, and sets it up to run builds and test runs in a docker environment.
 
-The molecule/default directory is probably the most interesting.
+The molecule/default directory is probably the most interesting:
 
+#### Dockerfile.j2: 
+This is the Dockerfile used to build the Docker container used as a test environment for your role. You can customize it to your heart's content, and you can even use your own Docker image instead of building the container from scratch every time—I'll cover how to do that later though. The key is this makes sure important dependencies like Python, sudo, and Bash are available inside the build/test environment.
+
+#### INSTALL.rst: 
+Contains instructions for installing required dependencies for running molecule tests.
+
+#### molecule.yml: 
+Tells molecule everything it needs to know about your testing: what OS to use, how to lint your role, how to test your role, etc. We'll cover a little more on this later.
+
+#### playbook.yml:
+This is the playbook Molecule uses to test your role. For simpler roles, you can usually leave it as-is (it will just run your role and nothing else). But for more complex roles, you might need to do some additional setup, or run other roles prior to running your role.
+
+#### tests/:
+This directory contains a basic Testinfra test, which you can expand on if you want to run additional verification of your build environment state after Ansible's done its thing
 
 ## Summary: The Finished Playbook
 
