@@ -14,9 +14,11 @@ SSH into your node
 ### Step 1 - Docker
 
 We need to install and run the docker service. This will fire up our containers for testing images/roles.
+We'll set SELinux to permissive so that we can interact with docker as a normal non-root user.
 
 ```bash
 $ sudo yum -y install gcc docker
+$ sudo setenforce 0
 $ sudo systemctl enable docker && sudo systemctl start docker
 $ sudo systemctl status docker
 ```
@@ -143,69 +145,105 @@ Tells molecule everything it needs to know about your testing: what OS to use, h
 This is the playbook Molecule uses to test your role. For simpler roles, you can usually leave it as-is (it will just run your role and nothing else). But for more complex roles, you might need to do some additional setup, or run other roles prior to running your role.
 
 #### tests/:
-This directory contains a basic Testinfra test, which you can expand on if you want to run additional verification of your build environment state after Ansible's done its thing
+This directory contains a basic Testinfra test, which you can expand on if you want to run additional verification of your build environment state after Ansible's done its thing.
 
-
-## Section 3: Testing
+## Section 3: Testing
 
 ### Step 1 - First Tests
 
 Straight out the box, we should be able to do a test run and see it working:
 
 ```bash
-$ sudo molecule test
+$ molecule test
 ```
+
+Hopefully that works, so you now have a test framework to work with.
+
+### Step 2 - Further Testing
+
+A typical dev cycle is : write some plays/roles -> molecule converge -> rinse and repeat...
+Once you're happy you can commit your code to SCM.
+
+```bash
+$ molecule converge
+--> Validating schema /home/student1/apache_basic/roles/apache_install/molecule/default/molecule.yml.
+Validation completed successfully.
+--> Test matrix
+
+└── default
+    ├── dependency
+    ├── create
+    ├── prepare
+    └── converge
+
+--> Scenario: 'default'
+--> Action: 'dependency'
+Skipping, missing the requirements file.
+--> Scenario: 'default'
+--> Action: 'create'
+
+    PLAY [Create] ******************************************************************
+
+    TASK [Log into a Docker registry] **********************************************
+    skipping: [localhost] => (item=None)
+
+    TASK [Create Dockerfiles from image names] *************************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+
+    TASK [Discover local Docker images] ********************************************
+    ok: [localhost] => (item=None)
+    ok: [localhost]
+
+    TASK [Build an Ansible compatible image] ***************************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+
+    TASK [Create docker network(s)] ************************************************
+
+    TASK [Create molecule instance(s)] *********************************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+
+    TASK [Wait for instance(s) creation to complete] *******************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+
+    PLAY RECAP *********************************************************************
+    localhost                  : ok=5    changed=4    unreachable=0    failed=0
+
+
+--> Scenario: 'default'
+--> Action: 'prepare'
+Skipping, prepare playbook not configured.
+--> Scenario: 'default'
+--> Action: 'converge'
+
+    PLAY [Converge] ****************************************************************
+
+    TASK [Gathering Facts] *********************************************************
+    ok: [instance]
+
+    PLAY RECAP *********************************************************************
+    instance                   : ok=1    changed=0    unreachable=0    failed=0
+```
+
+### Step 3 - Configuring Molecule
+
+
+
+### Step 4 - Testing Your Roles
+
+testinfra is included as the default verifier step of molecule. Testinfra uses pytest and makes it easy to test the system after the role is run to ensure our created role has the results that we expected.
+
+[ more blurb]
 
 ## Summary: The Finished Playbook
 
-The final playbook should look like this:
+You've explored the basics around using molecule for tesing Ansible.
 
-```yml
----
-- name: Linux Account Admin (we do nothing without a valid tag)
-  hosts: web
-  # we don't need any host facts, so disable to make run faster
-  gather_facts: false
-  become: yes
-  tags: never
-
-  tasks:
-
-    - block:
-
-        - name: Disable Local Linux User Account
-          user:
-            name: '{{ account|lower }}'
-            password_lock: yes
-            shell: /bin/false
-            expires: 0
-
-      rescue:
-        - debug: msg='Oops! Something went wrong DISABLING the account - please investigate'
-
-      always:
-        - debug: msg='Tasks to disable Linux user account have been run'
-
-      tags:
-        - disable
-
-    - block:
-
-        - name: Delete Local Linux User Account
-          user:
-            name: '{{ account|lower }}'
-            state: absent
-            remove: yes
-
-      rescue:
-        - debug: msg='Oops! Something went wrong DELETING the account - please investigate'
-
-      always:
-        - debug: msg='Tasks to delete Linux user account have been run'
-
-      tags:
-        - delete
-```
+Much of this content was based around Jeff Geerling's most excellent blog:
+https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule
 
 
 ---
