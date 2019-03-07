@@ -20,7 +20,7 @@ Want the Presentation Deck?  Its right here:
  SUPPLEMENTARY CONTENT:
  
  - [Exercise 3a - Creating a Job Schedule](3a-schedule)
- - [Exercise 5 - Run adhoc jobs](4-adhoc)
+ - [Exercise 4 - Run adhoc jobs](4-adhoc)
  - [Exercise 5 - ASA](5-security)
  - [Exercise 6 - Workflows](6-workflow/)
  - [Exercise 7 - Calling the API](7-api)
