@@ -1,6 +1,6 @@
-# Exercise 4 - Running adhoc jobs
+# Exercise 4 - Running Ad-hoc jobs
 
-In this exercise, we are going to run adhoc jobs from Ansible Tower.
+In this exercise, we are going to run Ad-hoc jobs from Ansible Tower. Ad-hoc jobs allow us to quickly and easily run commands against managed servers without having to write a playbook.
 
 
 ### Step 1:
@@ -34,7 +34,7 @@ ENABLE PRIVILEGE ESCALATION| [x]
 
 ### Summary
 
-We can run adhoc jobs from Ansible Tower while still maintaining all of the same controls and auditing that we have with playbook runs.
+We can run Ad-hoc jobs from Ansible Tower while still maintaining all of the same controls and auditing that we have with playbook runs.
 
 ---
 
