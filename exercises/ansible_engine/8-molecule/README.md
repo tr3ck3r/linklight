@@ -16,11 +16,17 @@ SSH into your node
 We need to install and run the docker service. This will fire up our containers for testing images/roles.
 We'll set SELinux to permissive so that we can interact with docker as a normal non-root user.
 
+The docker package is in the extras repo so let's ensure that is enabled.
+
 ```bash
-$ sudo yum -y install gcc docker
-$ sudo setenforce 0
-$ sudo systemctl enable docker && sudo systemctl start docker
-$ sudo systemctl status docker
+sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+```
+
+```bash
+sudo yum -y install gcc docker python-devel
+sudo setenforce 0
+sudo systemctl enable docker && sudo systemctl start docker
+sudo systemctl status docker
 ```
 
 ### Step 2 - Molecule
@@ -28,8 +34,8 @@ $ sudo systemctl status docker
 We use pip to install molecule, but it needs a couple of extras to install/run properly:
 
 ```bash
-$ sudo yum -y install gcc python-configparser
-$ sudo pip install molecule
+sudo yum -y install gcc python-configparser
+sudo pip install molecule
 ```
 
 ```bash
