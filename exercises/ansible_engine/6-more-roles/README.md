@@ -35,7 +35,7 @@ We've created a 'common/rhel' directory so we can always come back and add anoth
 
 Revise the roles: statements to include and run our common rhel role first based on a conditional - a discovered fact ansible_os_family.
 
-Let's welcome to the party the pre- and post-tasks which might be useful for things we always want to do regardless of what else we run. Here we'll just use logger to announce the start and end of the run.
+Let's welcome to the party the pre- and post-tasks which might be useful for things we always want to do regardless of what else we run. Here we'll just use logger to announce the start and end of the run. Edit your `site.yml` as follows.
 
 ```yml
 {% raw %}
