@@ -21,10 +21,15 @@ The docker package is in the extras repo so let's ensure that is enabled.
 ```bash
 sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
 ```
+To run docker commands as a non-priviledged user we need to create a docker group and add our user to it. Replace x with your student id.
+
+```bash
+sudo groupadd docker
+sudo usermod -a -G docker studentx
+```
 
 ```bash
 sudo yum -y install gcc docker python-devel
-sudo setenforce 0
 sudo systemctl enable docker && sudo systemctl start docker
 sudo systemctl status docker
 ```
@@ -34,8 +39,8 @@ sudo systemctl status docker
 We use pip to install molecule, but it needs a couple of extras to install/run properly:
 
 ```bash
-sudo yum -y install gcc python-configparser
-sudo pip install molecule
+sudo pip install molecule docker
+sudo yum -y install python-configparser
 ```
 
 ```bash
@@ -93,16 +98,14 @@ Let's use the simple apache install playbook from earlier as a basis, and extend
 ### Step 1 - Prep
 
 ```bash
-$ mkdir ~/apache_basic2
-$ cd ~/apache_basic2
-$ mkdir roles
-$ cd roles
+mkdir -p ~/apache_basic2/roles
+cd ~/apache_basic2/roles
 ```
 
 ### Step 2 - Initalise New Role
 
 ```bash
-$ molecule init role --role-name apache_install --driver-name docker
+molecule init role --role-name apache_install --driver-name docker
 --> Initializing new role apache_install...
 Initialized role in /home/student1/apache_basic/roles/apache_install successfully.
 ```
@@ -162,12 +165,12 @@ Straight out the box, we should be able to do things.
 
 #### Destroy test infra
 ```bash
-$ molecule destroy
+molecule destroy
 ```
 
 #### Create test infra
 ```bash
-$ molecule create
+molecule create
 ```
 
 Hopefully that works, so you now have a test framework to work with.
@@ -178,7 +181,7 @@ A typical dev cycle is : write some plays/roles -> molecule converge -> rinse an
 Once you're happy you can commit your code to SCM.
 
 ```bash
-$ molecule converge
+molecule converge
 --> Validating schema /home/student1/apache_basic/roles/apache_install/molecule/default/molecule.yml.
 Validation completed successfully.
 --> Test matrix
@@ -250,7 +253,7 @@ Let's define the test sequence we want. We'll add the test_sequence block under 
 Change molecule.yml to reflect this:
 
 ```bash
-$ cat molecule/default/molecule.yml
+cat molecule/default/molecule.yml
 ---
 dependency:
   name: galaxy
@@ -291,7 +294,7 @@ We'll not be doing much with it here, but will perform a simple "is package http
 Change the test_default.py file to reflect the following. Note: spacing must be consistent (this is Python after all). Don't mix tabs and spaces else molecule will throw errors later on!
 
 ```bash
-$ cat molecule/default/tests/test_default.py
+cat molecule/default/tests/test_default.py
 import os
 
 import testinfra.utils.ansible_runner
@@ -310,7 +313,7 @@ def test_httpd_installed(host):
 Let's run molecule test to see the full cycle in action:
 
 ```bash
-$ molecule test
+molecule test
 --> Validating schema /home/student1/apache_basic/roles/apache_install/molecule/default/molecule.yml.
 Validation completed successfully.
 --> Test matrix
@@ -404,8 +407,8 @@ Now let's do a full on test using molecule:
 
 ```bash
 
-$ cd /home/student1/apache_basic2/roles/apache_install
-$ molecule test
+cd /home/student1/apache_basic2/roles/apache_install
+molecule test
 --> Validating schema /home/student1/apache_basic2/roles/apache_install/molecule/default/molecule.yml.
 Validation completed successfully.
 --> Test matrix
