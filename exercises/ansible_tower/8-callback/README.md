@@ -53,7 +53,7 @@ Login to node3 (check the inventory file for details remember)
 We need to be root
 
 ```bash
-$ sudo -i
+sudo -i
 ```
 
 ### Step 2: Create the ansible-callback systemd service
@@ -82,8 +82,8 @@ WantedBy=multi-user.target
 ### Step 3: Enable the systemd service
 
 ```bash
-# systemctl daemon-reload
-# systemctl enable ansible-callback
+systemctl daemon-reload
+systemctl enable ansible-callback
 Created symlink from /etc/systemd/system/multi-user.target.wants/ansible-callback.service to /etc/systemd/system/ansible-callback.service.
 ```
 
@@ -92,7 +92,7 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/ansible-callbac
 Reboot the node:
 
 ```bash
-# shutdown -r now
+shutdown -r now
 ```
 
 Wait for it to come back up and login again.
@@ -102,7 +102,7 @@ Wait for it to come back up and login again.
 Check that the service was invoked using
 
 ```bash
-$ sudo journalctl -b -u ansible-callback
+sudo journalctl -b -u ansible-callback
 -- Logs begin at Tue 2019-02-26 10:17:18 UTC, end at Tue 2019-02-26 10:21:02 UTC. --
 Feb 26 10:17:24 node3 systemd[1]: Starting Provisioning callback to Ansible Tower...
 Feb 26 10:17:25 node3 systemctl[932]: Removed symlink /etc/systemd/system/multi-user.target.wants/ansible-callback.service.
