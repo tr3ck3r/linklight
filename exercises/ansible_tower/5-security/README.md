@@ -1,4 +1,4 @@
-# Exercise 4 - Using Ansible to Implement Security
+# Exercise 5 - Using Ansible to Implement Security
 
 In this exercise, we are going to use Ansible Tower to run DISA STIG and NIST 800-53 evaluations of our environment.  Note that the NIST 800-53 role also includes the execution of DISA STIG evaluation against targeted hosts.
 

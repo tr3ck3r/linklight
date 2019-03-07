@@ -20,11 +20,12 @@ Want the Presentation Deck?  Its right here:
  SUPPLEMENTARY CONTENT:
  
  - [Exercise 3a - Creating a Job Schedule](3a-schedule)
- - [Exercise 4 - ASA](4-security)
- - [Exercise 5 - Workflows](5-workflow/)
- - [Exercise 6 - Calling the API](6-api)
- - [Exercise 7 - API Job Launch](7-launch)
- - [Exercise 8 - Provisioning Callbacks](8-callback)
+ - [Exercise 5 - Run adhoc jobs](4-adhoc)
+ - [Exercise 5 - ASA](5-security)
+ - [Exercise 6 - Workflows](6-workflow/)
+ - [Exercise 7 - Calling the API](7-api)
+ - [Exercise 8 - API Job Launch](8-launch)
+ - [Exercise 9 - Provisioning Callbacks](9-callback)
 
 <!--- - [Exercise 4 - Using Ansible to Implement Security](4-security) --->
 

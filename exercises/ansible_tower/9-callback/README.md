@@ -1,4 +1,4 @@
-# Exercise 8 - Tower Provisioning Callbacks
+# Exercise 9 - Tower Provisioning Callbacks
 
 Provisioning callbacks allow a host to initiate a playbook run against itself. The Job Template launched only runs against the host requesting the provisioning and the host must already be known to Tower and exist in the inventory.
 

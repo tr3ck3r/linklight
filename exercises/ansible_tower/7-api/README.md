@@ -1,4 +1,4 @@
-# Exercise 6 - Tower API
+# Exercise 7 - Tower API
 
 Ansible Tower has a RESTFUL API, which we'll explore a little here.
 
