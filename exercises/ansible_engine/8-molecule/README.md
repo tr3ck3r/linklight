@@ -13,10 +13,7 @@ SSH into your node
 
 ### Step 1 - Docker
 
-We need to install and run the docker service. This will fire up our containers for testing images/roles.
-We'll set SELinux to permissive so that we can interact with docker as a normal non-root user.
-
-The docker package is in the extras repo so let's ensure that is enabled.
+We need to install and run the docker service. This will fire up our containers for testing images/roles. The docker package is in the extras repo so let's ensure that is enabled.
 
 ```bash
 sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
@@ -27,6 +24,7 @@ To run docker commands as a non-priviledged user we need to create a docker grou
 sudo groupadd docker
 sudo usermod -a -G docker studentx
 ```
+Now we can install docker and other dependencies for molecule.
 
 ```bash
 sudo yum -y install gcc docker python-devel
