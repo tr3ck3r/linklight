@@ -38,6 +38,7 @@ Revise the roles: statements to include and run our common rhel role first based
 Let's welcome to the party the pre- and post-tasks which might be useful for things we always want to do regardless of what else we run. Here we'll just use logger to announce the start and end of the run.
 
 ```yml
+{% raw %}
 ---
 - hosts: web
   name: This is my updated role-based playbook
@@ -54,7 +55,7 @@ Let's welcome to the party the pre- and post-tasks which might be useful for thi
   post_tasks:
     - name: Log what we have done to {{ messages }}
       shell: /bin/logger 'finished running {{ role_friendly_text }}'
-
+{% endraw %}
 ```
 
 ### Step 2:
@@ -95,6 +96,7 @@ Add an motd file in `roles/common/rhel/files/motd`.
 Add tasks to your role in `roles/common/rhel/tasks/main.yml`.
 
 ```yml
+{% raw %}
 ---
 # tasks file for common/rhel
 
@@ -115,6 +117,7 @@ Add tasks to your role in `roles/common/rhel/tasks/main.yml`.
     owner: root
     group: root
     mode: 0444
+{% endraw %}
 ```
 
 ## Section 3: Running your new role-based playbook
