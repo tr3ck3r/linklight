@@ -47,6 +47,7 @@ If an error occurs, the rescue section will fire, and the always section will al
 We'll assign this block the 'disable' tag.
 
 ```yml
+{% raw %}
   tasks:
 
     - block:
@@ -66,6 +67,7 @@ We'll assign this block the 'disable' tag.
 
       tags:
         - disable
+{% endraw %}
 ```
 
 ## Section 3: Adding A Second Block
@@ -75,6 +77,7 @@ This follows the same structure, and we assign it the 'delete' tag
 
 
 ```yml
+{% raw %}
     - block:
 
         - name: Delete Local Linux User Account
@@ -91,7 +94,7 @@ This follows the same structure, and we assign it the 'delete' tag
 
       tags:
         - delete
-
+{% endraw %}
 ```
 
 ## Section 4: Oh Wait A Minute!
@@ -159,6 +162,7 @@ node3                      : ok=2    changed=1    unreachable=0    failed=0
 The final playbook should look like this:
 
 ```yml
+{% raw %}
 ---
 - name: Linux Account Admin (we do nothing without a valid tag)
   hosts: web
@@ -203,6 +207,7 @@ The final playbook should look like this:
 
       tags:
         - delete
+{% endraw %}
 ```
 
 
