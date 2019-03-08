@@ -23,7 +23,7 @@ NAME |Linux Account Admin Template
 DESCRIPTION|Template for the Linux user account admin tasks
 JOB TYPE|Run
 INVENTORY|Ansible Workshop Inventory
-PROJECT|Supplementary Project
+PROJECT|Supplementary Workshop
 PLAYBOOK|tower/linux-accounts.yml
 MACHINE CREDENTIAL|Ansible Workshop Credential
 LIMIT|web
