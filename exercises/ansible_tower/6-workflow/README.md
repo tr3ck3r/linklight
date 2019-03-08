@@ -32,7 +32,6 @@ NAME|Supplementary Workshop
 ----|---------------------------------
 DESCRIPTION|Additional Workshop Playbooks
 ORGANISATION|Default
-INVENTORY|Ansible Workshop Inventory
 SCM Type|Git
 SCM URL| https://github.com/ffirg/ansible
 ISCM UPDATE OPTIONS|- [x] Clean, Delete on Update, Update Revision on Launch
@@ -65,7 +64,6 @@ INVENTORY|Ansible Workshop Inventory
 PROJECT|Supplementary Workshop
 PLAYBOOK|tower/snow-create-record.yml
 MACHINE CREDENTIAL|Ansible Workshop Credential
-LIMIT|web
 
 Now add the following into EXTRA VARIABLES:
 ```bash
