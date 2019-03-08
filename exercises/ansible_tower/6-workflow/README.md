@@ -135,7 +135,6 @@ INVENTORY|Ansible Workshop Inventory
 PROJECT|Supplementary Workshop
 PLAYBOOK|tower/snow-update-record.yml
 MACHINE CREDENTIAL|Ansible Workshop Credential
-LIMIT|web
 
 Now add the following into EXTRA VARIABLES:
 ```bash
