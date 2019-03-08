@@ -26,7 +26,7 @@ INVENTORY|Ansible Workshop Inventory
 PROJECT|Supplementary Workshop
 PLAYBOOK|tower/linux-accounts.yml
 MACHINE CREDENTIAL|Ansible Workshop Credential
-LIMIT|web
+JOB SLICING|3
 OPTIONS|- [x] Enable Privilege Escalation
 PROMPT ON LAUNCH|- [x] Job Tags
 PROMPT ON LAUNCH|- [x] Extra Variables
