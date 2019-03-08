@@ -48,17 +48,13 @@ There are many [types of credentials](http://docs.ansible.com/ansible-tower/late
 
 ### Step 1:
 
-Select the gear icon ![Gear button](at_gear.png)
+Select CREDENTIALS
 
 ### Step 2:
 
-Select CREDENTIALS
-
-### Step 3:
-
 Click on ADD ![Add button](at_add.png)
 
-### Step 4:
+### Step 3:
 
 Complete the credential form using the following entries:
 
@@ -74,7 +70,7 @@ PRIVILEGE ESCALATION|Sudo (This is the default)
 
 ![Adding a Credential](at_cred_detail.png)
 
-### Step 5:
+### Step 4:
 
 Select SAVE ![Save button](at_save.png)
 
