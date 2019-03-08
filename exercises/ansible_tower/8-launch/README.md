@@ -1,4 +1,4 @@
-# Exercise 8 - Tower API Job Launch
+# Exercise 8 - Tower API Job Launch (incl. Job Slicing)
 
 We can call into Ansible Tower via the API to run a job template for us.
 
