@@ -1,4 +1,4 @@
-# Exercise 8 - Tower API Job Launch
+# Exercise 8 - Tower API Job Launch (incl. Job Slicing)
 
 We can call into Ansible Tower via the API to run a job template for us.
 
@@ -23,10 +23,10 @@ NAME |Linux Account Admin Template
 DESCRIPTION|Template for the Linux user account admin tasks
 JOB TYPE|Run
 INVENTORY|Ansible Workshop Inventory
-PROJECT|Supplementary Project
+PROJECT|Supplementary Workshop
 PLAYBOOK|tower/linux-accounts.yml
 MACHINE CREDENTIAL|Ansible Workshop Credential
-LIMIT|web
+JOB SLICING|3
 OPTIONS|- [x] Enable Privilege Escalation
 PROMPT ON LAUNCH|- [x] Job Tags
 PROMPT ON LAUNCH|- [x] Extra Variables
