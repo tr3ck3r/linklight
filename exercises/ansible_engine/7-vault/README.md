@@ -65,6 +65,7 @@ A couple of things to note here. First we are including a variables file using v
 
 - name: Testing ansible-vault
   hosts: web
+  become: yes
   vars_files:
     - ~/vault/vault.yml
   tasks:
@@ -96,7 +97,9 @@ Vault password:
 
 Let's see if we managed to create our file.
 
+```bash
 ansible web -a "cat /root/super_secret.txt" -o
+```
 
 ---
 
