@@ -1,4 +1,4 @@
-# Exercise 8 - Using Blocks with Tags and Passing Extra Vars
+# Exercise 9 - Using Blocks with Tags and Passing Extra Vars
 
 Now we've got a good handle on the basics, let's use some of the more advanced features.
 

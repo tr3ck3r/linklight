@@ -21,9 +21,10 @@ Want the Presentation Deck?  Its right here:
  SUPPLEMENTARY CONTENT:
  
  - [Exercise 6 - Roles: More Roles!](6-more-roles)
- - [Exercise 7 - Ansible Vault](7-vault)
- - [Exercise 8 - Advanced Features - blocks/tags/extra_vars](8-blocks-extra-vars)
- - [Exercise 9 - Using Molecule For Role Testing](9-molecule)
+ - [Exercise 7 - Playbook validation](7-syntax)
+ - [Exercise 8 - Ansible Vault](8-vault)
+ - [Exercise 9 - Advanced Features - blocks/tags/extra_vars](9-blocks-extra-vars)
+ - [Exercise 10 - Using Molecule For Role Testing](10-molecule)
 
 ## Additional information
  - [Ansible Getting Started](http://docs.ansible.com/ansible/latest/intro_getting_started.html)
