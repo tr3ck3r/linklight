@@ -98,7 +98,7 @@ Vault password:
 Let's see if we managed to create our file.
 
 ```bash
-ansible web -a "cat /root/super_secret.txt" -o
+ansible web -a "cat /root/super_secret.txt" -o -b
 ```
 
 ---
