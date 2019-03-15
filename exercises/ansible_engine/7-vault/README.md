@@ -1,4 +1,4 @@
-# Exercise 1 - Working with Ansible Vault
+# Exercise 7 - Working with Ansible Vault
 
 In our previous exercises we have stored variables in plaintext. These variables did not contain sensitive information so that was fine. But what if we want to store things like passwords? We can use Ansible Vault for this use case.
 
@@ -7,7 +7,7 @@ Ansible Vault is a feature of ansible that allows you to keep sensitive data suc
 Let's create a vault file. Let's go back to our playbook directory.
 
 
-## Step 1.1 - Create vault file
+## Step 1 - Create vault file
 
 Let's create a directory for our vault exercise.
 
