@@ -12,7 +12,7 @@ mkdir ~/validate
 cd ~/validate
 ```
 
-Copy and paste the following contents into bad_play.yml
+Copy and paste the following contents into `bad_play.yml`
 
 ```yml
 {% raw %}
