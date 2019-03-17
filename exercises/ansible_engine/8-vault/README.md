@@ -52,7 +52,7 @@ secret_password: secret123
 
 ## Step 2 - Create a playbook that will use vault
 
-Now let's use ansible-vault in a playbook. Create the following playbook. Create a file called secret_play.yml with the below contents.
+Now let's use ansible-vault in a playbook. Create the following playbook. Create a file called `secret_play.yml` with the below contents.
 
 ---
 **NOTE**
