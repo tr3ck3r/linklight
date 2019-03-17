@@ -1,8 +1,6 @@
 # Exercise 9 - Using blocks and rescue
 
-There may be scenarios where you want to automatically roll back changes in the event of a failure during a play. Using blocks can help us here.
-
-[Blocks](https://docs.ansible.com/ansible/latest/user_guide/playbooks_blocks.html#blocks
+There may be scenarios where you want to perform error handling if there are problems during a playbook run. Blocks can help us with this common scenario. More details on blocks can be found [here](https://docs.ansible.com/ansible/latest/user_guide/playbooks_blocks.html).
 
 ## Step 1: Let's add a block
 
@@ -94,7 +92,7 @@ Our playbook has failed now. We tried to smoke test our website on port 80 but o
 
 ## Step 3: rescue to the rescue
 
-Let's update our `roles/apache-basic/tasks/main.yml` file and add a rescue section at the end. Here we are going to copy our original httpd.conf file back in place if we encounter any errors, force any handlers to run and then smoke test our website again.
+Let's update our `roles/apache-basic/tasks/main.yml` file and add a rescue section at the end. The rescue section of the block will run if any errors are encountered. Here we are going to copy our original httpd.conf file back in place if we encounter any errors, force any handlers to run and then smoke test our website again.
 
 ```yml
 {% raw %}
@@ -183,6 +181,9 @@ Now let's run our playbook one more time.
 ```bash
 ansible-playbook -i ~/lightbulb/lessons/lab_inventory/student##-instances.txt site.yml
 ```
+
+Once a failure is detected with our website, we now run our rescue block which re-instates our known working apache configuration and our webservers are left in a working state.
+
 ---
 
 [Click Here to return to the Ansible Linklight - Ansible Engine Workshop](../README.md)
