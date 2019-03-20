@@ -50,7 +50,7 @@ There are a few things worth noting here. First we are using the `serial` option
 - name: perform rolling maintenance of web servers
   hosts: web
   become: yes
-serial: 1
+  serial: 1
 {% endraw %}
 ```
 
@@ -65,7 +65,7 @@ Also note how we use `delegate_to` in this playbook. This allows us to delagate 
       host: "{{ ansible_host }}"
       backend: http
     delegate_to: "{{ groups.loadbalancer | first }}"
-when: kernel_patch is changed
+    when: kernel_patch is changed
 {% endraw %}
 ```
 
