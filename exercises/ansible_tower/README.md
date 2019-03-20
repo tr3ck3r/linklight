@@ -25,7 +25,7 @@ Want the Presentation Deck?  Its right here:
  - [Exercise 6 - Rolling  Updates](6-rolling-update)
  - [Exercise 7 - Calling the API](7-api)
  - [Exercise 8 - API Job Launch](8-launch)
- - [Exercise 9 - Provisioning Callbacks](9-callback)
+ - [Exercise 9 - Role Based Access Control](9-rbac)
  - [Exercise 10 - ServiceNow Workflow](10-snow)
 
 <!--- - [Exercise 4 - Using Ansible to Implement Security](4-security) --->
