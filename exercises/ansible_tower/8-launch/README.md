@@ -25,13 +25,13 @@ NB. You will need to check and change where necessary the PUBLIC_IP for your Tow
 Lastly, we use a little bit of python magic to prettify the output, making it more readable.
 
 **NOTE**
-Make sure you update the password below from PASSWORD to your Tower admin password. You also need to update your job template ID. In the below example we are using job template ID 8 - https://18.195.148.103/api/v2/job_templates/`8`/launch/
+Make sure you update the password below from PASSWORD to your Tower admin password. You also need to update the IP address in the URL to be the public IP address of your Tower server. Finally, you also need to update your job template ID. In the below example we are using job template ID 8 - https://X.X.X.X/api/v2/job_templates/`8`/launch/
 
 ---
 
 
 ```bash
-curl --user 'admin':'PASSWORD' -k -s -H 'Content-Type: application/json' -d '{"extra_vars":"{\"apache_test_message\":\"Job launch from API\"}"}' -k -s  -XPOST https://18.195.148.103/api/v2/job_templates/8/launch/ | python -m json.tool
+curl --user 'admin':'PASSWORD' -k -s -H 'Content-Type: application/json' -d '{"extra_vars":"{\"apache_test_message\":\"Job launch from API\"}"}' -k -s  -XPOST https://X.X.X.X/api/v2/job_templates/8/launch/ | python -m json.tool
 ```
 
 You should see some output from the job launch including the ID of this particular job run.
