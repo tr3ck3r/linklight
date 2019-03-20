@@ -10,7 +10,7 @@ We need to amend our inventory so that node1 is part of a loadbalancer group.
 cd 
 git clone https://github.com/pharriso/ansible_workshop.git
 cd ~/ansible_workshop/build-new-inventory
-ansible-playbook -i ~/lightbulb/lessons/lab_inventory/student1-instances.txt generate_inventory.yml
+ansible-playbook -i ~/lightbulb/lessons/lab_inventory/student##-instances.txt generate_inventory.yml
 ```
 Take a look at our new inventory file. node1 should now be in the loadbalancer group.
 
@@ -20,8 +20,10 @@ cat /tmp/inventory
 Let's import the new inventory.
 
 ```bash
-sudo tower-manage inventory_import --source=/tmp/inventory --inventory-name="Ansible Workshop Inventory"
-```bash
+sudo tower-manage inventory_import --source=/tmp/inventory --inventory-name="Ansible Workshop Inventory" --overwrite --overwrite-vars
+```
+
+Log into the Towerr UI, go to `Inventories`, `Ansible Workshop Inventory` and then press the `hosts` button. Check that node1 is now in the loadbalancer group only and not in the web group anymore.
 
 ### Step 2: Create a new project
 
