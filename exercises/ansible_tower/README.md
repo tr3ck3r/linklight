@@ -22,10 +22,11 @@ Want the Presentation Deck?  Its right here:
  - [Exercise 3a - Creating a Job Schedule](3a-schedule)
  - [Exercise 4 - Run adhoc jobs](4-adhoc)
  - [Exercise 5 - Workflows](5-workflow)
- - [Exercise 6 - Workflows](6-workflow/)
+ - [Exercise 6 - Rolling  Updates](6-rolling-update)
  - [Exercise 7 - Calling the API](7-api)
  - [Exercise 8 - API Job Launch](8-launch)
  - [Exercise 9 - Provisioning Callbacks](9-callback)
+ - [Exercise 10 - ServiceNow Workflow](10-snow)
 
 <!--- - [Exercise 4 - Using Ansible to Implement Security](4-security) --->
 

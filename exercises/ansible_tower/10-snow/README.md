@@ -1,4 +1,4 @@
-# Exercise 6 - Creating and Running a Workflow Template
+# Exercise 10 - Service Now Workflow
 
 Workflows allow you to configure a sequence of disparate job templates (or workflow templates) that may or may not share inventory, playbooks, or permissions. We'll build up a sequence here interacting with ServiceNow and the existing playbooks we've already developed.
 
