@@ -37,7 +37,7 @@ sudo systemctl status docker
 We use pip to install molecule, but it needs a couple of extras to install/run properly:
 
 ```bash
-sudo pip install molecule docker
+sudo pip install molecule docker backports.functools_lru_cache
 sudo yum -y install python-configparser
 ```
 
