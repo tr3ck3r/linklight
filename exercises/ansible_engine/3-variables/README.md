@@ -108,7 +108,7 @@ curl -O http://ansible-workshop.redhatgov.io/workshop-files/index.html.j2
 ```
 
 ### Step 2:
-Add some file tasks and a service task to your playbook.
+Return to `~/apache-basic-playbook/site.yml` and add some file tasks and a service task to your playbook.
 
 ```yml
 - name: create site-enabled directory
