@@ -79,7 +79,7 @@ You shouldn't see any changes being made. Our smoke test should confirm that our
 We are now going to update the port that our webserver is listening on. This is going to simulate a configuration error being made.
 
 ```bash
-cd ~/apache-basic-playbook
+cd ~/apache-simple-playbook
 sed -i.bak 's/^Listen 80/Listen 81/' roles/apache-simple/templates/httpd.conf.j
 ```
 Now let's re-run our playbook.
