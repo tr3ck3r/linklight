@@ -7,7 +7,7 @@ There may be scenarios where you want to perform error handling if there are pro
 Blocks allow us to logically group our tasks. We will also use blocks to perform error handling later in this exercise. Let's update our `apache-simple` role.
 
 ```bash
-cd ~/apache-simple-playbook
+cd ~/apache-basic-playbook
 ```
 
 Let's move our role to use blocks first. We will also update our role to perform a smoke test by checking if we get a valid response code from our webservers.
@@ -79,7 +79,7 @@ You shouldn't see any changes being made. Our smoke test should confirm that our
 We are now going to update the port that our webserver is listening on. This is going to simulate a configuration error being made.
 
 ```bash
-cd ~/apache-simple-playbook
+cd ~/apache-basic-playbook
 sed -i.bak 's/^Listen 80/Listen 81/' roles/apache-simple/templates/httpd.conf.j2
 ```
 Now let's re-run our playbook.
