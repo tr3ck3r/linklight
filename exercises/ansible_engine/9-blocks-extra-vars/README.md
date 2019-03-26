@@ -12,7 +12,7 @@ cd ~/apache-basic-playbook
 
 Let's move our role to use blocks first. We will also update our role to perform a smoke test by checking if we get a valid response code from our webservers.
 
-Using vi edit the `roles/apache-basic/tasks/main.yml`. Delete the existing contents of the file and update it as follows.
+Using vi edit the `roles/apache-simple/tasks/main.yml`. Delete the existing contents of the file and update it as follows.
 
 ```yml
 {% raw %}
