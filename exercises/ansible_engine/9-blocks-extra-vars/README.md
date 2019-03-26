@@ -80,7 +80,7 @@ We are now going to update the port that our webserver is listening on. This is 
 
 ```bash
 cd ~/apache-simple-playbook
-sed -i.bak 's/^Listen 80/Listen 81/' roles/apache-simple/templates/httpd.conf.j
+sed -i.bak 's/^Listen 80/Listen 81/' roles/apache-simple/templates/httpd.conf.j2
 ```
 Now let's re-run our playbook.
 
