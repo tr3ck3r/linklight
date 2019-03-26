@@ -4,10 +4,10 @@ There may be scenarios where you want to perform error handling if there are pro
 
 ## Step 1: Let's add a block
 
-Blocks allow us to logically group our tasks. We will also use blocks to perform error handling later in this exercise. Let's update our `apache-basic` role.
+Blocks allow us to logically group our tasks. We will also use blocks to perform error handling later in this exercise. Let's update our `apache-simple` role.
 
 ```bash
-cd ~/apache-basic-playbook
+cd ~/apache-simple-playbook
 ```
 
 Let's move our role to use blocks first. We will also update our role to perform a smoke test by checking if we get a valid response code from our webservers.
@@ -92,7 +92,7 @@ Our playbook has failed now. We tried to smoke test our website on port 80 but o
 
 ## Step 3: rescue to the rescue
 
-Let's update our `roles/apache-basic/tasks/main.yml` file and add a rescue section at the end. The rescue section of the block will run if any errors are encountered. Here we are going to copy our original httpd.conf file back in place if we encounter any errors, force any handlers to run and then smoke test our website again.
+Let's update our `roles/apache-simple/tasks/main.yml` file and add a rescue section at the end. The rescue section of the block will run if any errors are encountered. Here we are going to copy our original httpd.conf file back in place if we encounter any errors, force any handlers to run and then smoke test our website again.
 
 ```yml
 {% raw %}
