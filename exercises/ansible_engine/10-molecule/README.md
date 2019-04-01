@@ -41,6 +41,8 @@ We use pip to install molecule, but it needs a couple of extras to install/run p
 ```bash
 sudo pip install molecule docker backports.functools_lru_cache
 sudo yum -y install python-configparser
+sudo pip uninstall backports.functools_lru_cache
+sudo pip install backports.functools_lru_cache
 ```
 
 ```bash
