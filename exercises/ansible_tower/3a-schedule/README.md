@@ -26,8 +26,8 @@ Click the ADD button ![Add button](at_add.png)
 Add these details under CREATE SCHEDULE
 
 NAME |Regular Apache Run
-START DATE|<Select todays date>
-START TIME|<Select a time a couple of minutes from now>
+START DATE|Select todays date
+START TIME|Select a time a couple of minutes from now
 LOCAL TIME ZONE|Europe/London
 REPEAT FREQUENCY|None (run once)
 
