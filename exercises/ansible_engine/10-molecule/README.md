@@ -167,6 +167,7 @@ Straight out the box, we should be able to do things.
 
 #### Destroy test infra
 ```bash
+cd apache_install
 molecule destroy
 ```
 
