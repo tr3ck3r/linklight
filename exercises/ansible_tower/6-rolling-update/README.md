@@ -18,7 +18,7 @@ DESCRIPTION|Template for the rolling-update play
 JOB TYPE|Run
 INVENTORY|Ansible Workshop Inventory
 PROJECT|Additional Exercises Project
-PLAYBOOK|rolling-uodate/site.yml
+PLAYBOOK|rolling-update/site.yml
 MACHINE CREDENTIAL|Ansible Workshop Credential
 LIMIT|
 OPTIONS|- [x] Enable Privilege Escalation
