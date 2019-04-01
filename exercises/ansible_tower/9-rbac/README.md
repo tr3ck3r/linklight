@@ -7,7 +7,6 @@ Tower has built-in Role Based Access Control (RBAC). Tower administrators can de
 In the Tower UI, click on `Users` and then click the green `+` button to create a new user. Let's create a user for our student account. Replace `##` with your student number. Fill in the form with the following information.
 
 FIRST NAME |student##
------|-------------------------
 ORGANIZATION|Default
 EMAIL|student##@localhost
 USERNAME|student##

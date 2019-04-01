@@ -29,7 +29,6 @@ Click on ADD ![Add button](at_add.png)
 Complete the form using the following values
 
 NAME|Supplementary Workshop
-----|---------------------------------
 DESCRIPTION|Additional Workshop Playbooks
 ORGANISATION|Default
 SCM Type|Git
@@ -57,7 +56,6 @@ Click on ADD ![Add button](at_add.png), and then select Job Template
 Complete the form using the following values
 
 NAME | Create SNOW Record
------|---------------------------------
 DESCRIPTION|Creates a record in ServiceNow
 JOB TYPE|Run
 INVENTORY|Ansible Workshop Inventory
@@ -128,7 +126,6 @@ Click on ADD ![Add button](at_add.png), and then select Job Template
 Complete the form using the following values
 
 NAME | Update SNOW Record
------|---------------------------------
 DESCRIPTION|Updates a record in ServiceNow
 JOB TYPE|Run
 INVENTORY|Ansible Workshop Inventory
@@ -166,7 +163,6 @@ Click on ADD ![Add button](at_add.png), and then select Workflow Template
 Complete the form using the following values
 
 NAME | Web Server Request Workflow
------|---------------------------------
 DESCRIPTION|Example Workflow
 ORGANIZATION|Default
 INVENTORY|Ansible Workshop Inventory

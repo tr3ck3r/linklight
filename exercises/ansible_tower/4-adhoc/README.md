@@ -12,7 +12,6 @@ In Tower, click on Inventories and then click on your "Ansible Workshop Inventor
 The "run command" button is now enabled. Click the "run command" button. Let's run "df -h" on our web servers.
 
 MODULE | command
------|--------------------------------------
 ARGUMENTS|df -h
 LIMIT|web
 MACHINE CREDENTIAL|Ansible Workshop Credential
@@ -26,7 +25,6 @@ Navigate to our web group again. In Tower, click on Inventories and then click o
 Click the "run command" button and enter the following values and then "Launch" the job.
 
 MODULE | service
------|--------------------------------------
 ARGUMENTS|name=httpd state=restarted
 LIMIT|web
 MACHINE CREDENTIAL|Ansible Workshop Credential

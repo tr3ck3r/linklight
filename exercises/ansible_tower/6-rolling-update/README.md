@@ -14,7 +14,6 @@ In the previous exercise we configured a basic load balanced web service. We may
 We need to create a template for our Rolling Update play. Navigate to `Templates` and click the `+` button to add a new `job template`. Complete the form using the following entries.
 
 NAME |Web Application Rolling Update
------|-------------------------
 DESCRIPTION|Template for the rolling-update play
 JOB TYPE|Run
 INVENTORY|Ansible Workshop Inventory

@@ -18,7 +18,6 @@ Click on ADD ![Add button](at_add.png), and select JOB TEMPLATE
 Complete the form using the following values
 
 NAME |Apache Basic Job Template
------|-------------------------
 DESCRIPTION|Template for the apache-basic-playbook
 JOB TYPE|Run
 INVENTORY|Ansible Workshop Inventory
@@ -39,7 +38,6 @@ Click SAVE ![Save button](at_save.png) and then select ADD SURVEY ![Add](at_adds
 Complete the survey form with following values
 
 PROMPT|Please enter a test message for your new website
-------|------------------------------------------------
 DESCRIPTION|Website test message prompt
 ANSWER VARIABLE NAME|apache_test_message
 ANSWER TYPE|Text

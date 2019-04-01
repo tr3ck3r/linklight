@@ -24,7 +24,6 @@ Remove the prompt on launch options previously set.
 Add Allow Provisioning Callbacks
 
 NAME |Linux Account Admin Template
-#-----|-------------------------
 PROMPT ON LAUNCH|- [] Job Tags
 PROMPT ON LAUNCH|- [] Extra Variables
 Allow Provisioning Callbacks|- [x] 

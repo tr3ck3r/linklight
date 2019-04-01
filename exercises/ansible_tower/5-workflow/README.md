@@ -30,7 +30,6 @@ Log into the Towerr UI, go to `Inventories`, `Ansible Workshop Inventory` and th
 We need to add a couple of additional playbooks. These are in a different git repository so we need to add a new project. In the Ansible Tower UI, go to `Projects` and then click the `+` button to add a new project. Complete the form using the following entries.
 
 NAME |Additional Exercises Project
------|------------------------
 DESCRIPTION|Additional Exercises playbooks
 ORGANIZATION|Default
 SCM TYPE|Git
@@ -43,7 +42,6 @@ SCM UPDATE OPTIONS| [x] Clean <br />  [x] Delete on Update<br />  [x] Update on 
 First let's create a template to configure our loadbalancer. Navigate to `Templates` and click the `+` button to add a new `job template`. Complete the form using the following entries.
 
 NAME |Loadbalancer Basic Job Template
------|-------------------------
 DESCRIPTION|Template for the loadbalancer-example play
 JOB TYPE|Run
 INVENTORY|Ansible Workshop Inventory
@@ -56,7 +54,6 @@ OPTIONS|- [x] Enable Privilege Escalation
 Add another job template for our loadbalancer checks. Complete the form using the following entries.
 
 NAME |Loadbalancer Check job Template
------|-------------------------
 DESCRIPTION|Template for the loadbalancer-check play
 JOB TYPE|Run
 INVENTORY|Ansible Workshop Inventory
@@ -71,7 +68,6 @@ OPTIONS|- [x] Enable Privilege Escalation
 Now let's join our three seperate playbooks into a single automation workflow. Navigate to `Templates` and click the `+` button to add a new `workflow template`.
 
 NAME |Web Application Workflow
------|-------------------------
 DESCRIPTION|Workflow to deploy loadbalancer and web servers
 ORGANIZATION|Default
 INVENTORY|Ansible Workshop Inventory

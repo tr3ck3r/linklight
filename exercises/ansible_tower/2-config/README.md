@@ -59,7 +59,6 @@ Click on ADD ![Add button](at_add.png)
 Complete the credential form using the following entries:
 
 NAME |Ansible Workshop Credential
------|---------------------------
 DESCRIPTION|Credentials for Ansible Workshop
 ORGANIZATION|Default
 TYPE|Machine
@@ -91,7 +90,6 @@ Select ADD ![Add button](at_add.png)
 Complete the form using the following entries
 
 NAME |Ansible Workshop Project
------|------------------------
 DESCRIPTION|workshop playbooks
 ORGANIZATION|Default
 SCM TYPE|Git
@@ -128,7 +126,6 @@ Select ADD ![Add button](at_add.png)
 Complete the form using the following entries
 
 NAME |Ansible Workshop Inventory
------|--------------------------
 DESCRIPTION|Ansible Inventory
 ORGANIZATION|Default
 
