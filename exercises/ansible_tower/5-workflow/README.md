@@ -23,7 +23,7 @@ Let's import the new inventory.
 sudo tower-manage inventory_import --source=/tmp/inventory --inventory-name="Ansible Workshop Inventory" --overwrite --overwrite-vars
 ```
 
-Log into the Towerr UI, go to `Inventories`, `Ansible Workshop Inventory` and then press the `hosts` button. Check that node1 is now in the loadbalancer group only and not in the web group anymore.
+Log into the Towerr UI, go to `Inventories`, `Ansible Workshop Inventory` and then press the `hosts` button. Check that node1 is now in the loadbalancer group only and not in the web group anymore. If node1 is not removed from the web group, either re-run the previous command or remove it manually fron the web group in the tower inventory.
 
 ### Step 2: Create a new project
 
