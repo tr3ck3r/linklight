@@ -264,6 +264,10 @@ ServiceNow Instance | dev68240
 
 Click the SAVE button
 
+### Step 3: Modify the Job Templates
+
+Add the SNOW Credential to the Job Templates and remove the EXTRA VARS information and re-run to test.
+
 ---
 
 [Click Here to return to the Ansible Lightbulb - Ansible Tower Workshop](../README.md)
