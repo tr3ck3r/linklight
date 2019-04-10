@@ -240,12 +240,14 @@ required:
 ```
 
 Injector Configuration (YAML)
-```
+```yml
+{% raw %}
 ---
 extra_vars:
   snow_instance: '{{ snow_instance }}'
   snow_password: '{{ snow_password }}'
   snow_username: '{{ snow_username }}'
+{% endraw %}
 ```
 
 Click the SAVE button 
