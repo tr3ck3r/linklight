@@ -224,7 +224,7 @@ Input configuration (YAML)
 ---
 fields:
   - type: string
-    id: snow_user
+    id: snow_username
     label: Username
   - secret: true
     type: string
@@ -234,7 +234,7 @@ fields:
     id: snow_instance
     label: ServiceNow Instance
 required:
-  - snow_user
+  - snow_username
   - snow_password
   - snow_instance
 ```
@@ -245,7 +245,7 @@ Injector Configuration (YAML)
 extra_vars:
   snow_instance: '{{ snow_instance }}'
   snow_password: '{{ snow_password }}'
-  snow_user: '{{ snow_user }}'
+  snow_username: '{{ snow_username }}'
 ```
 
 Click the SAVE button 
