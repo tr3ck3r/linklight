@@ -260,7 +260,7 @@ Name | SNOW
 Credential Type | ServiceNow
 Username | studentNN
 Password | redhat
-ServiceNow Instance = dev68240
+ServiceNow Instance | dev68240
 
 Click the SAVE button
 
