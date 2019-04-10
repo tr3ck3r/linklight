@@ -248,8 +248,21 @@ extra_vars:
   snow_user: '{{ snow_user }}'
 ```
 
+Click the SAVE button 
+
 ### Step 2: Create a ServiceNow Credential
 
+Select Credentials, and click on ADD ![Add button](at_add.png)
+
+Complete the form using the following values
+
+Name | SNOW
+Credential Type | ServiceNow
+Username | studentNN
+Password | redhat
+ServiceNow Instance = dev68240
+
+Click the SAVE button
 
 ---
 
