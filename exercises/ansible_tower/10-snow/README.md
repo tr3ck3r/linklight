@@ -220,6 +220,7 @@ NAME | ServiceNow
 
 Input configuration (YAML)
 
+```
 ---
 fields:
   - type: string
@@ -236,15 +237,16 @@ required:
   - snow_user
   - snow_password
   - snow_instance
+```
 
 Injector Configuration (YAML)
-
+```
 ---
 extra_vars:
   snow_instance: '{{ snow_instance }}'
   snow_password: '{{ snow_password }}'
   snow_user: '{{ snow_user }}'
-
+```
 
 ### Step 2: Create a ServiceNow Credential
 
