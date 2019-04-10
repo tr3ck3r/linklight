@@ -160,7 +160,7 @@ Hint: Use ansible with the command module
 Perhaps something like:
 
 ```bash
-$ ansible -i /home/student1/lightbulb/lessons/lab_inventory/student1-instances.txt node3 -m command -a "cat /etc/motd"
+ansible -i /home/student1/lightbulb/lessons/lab_inventory/student1-instances.txt node3 -m command -a "cat /etc/motd"
 ```
 
 ## Section 5: Review
