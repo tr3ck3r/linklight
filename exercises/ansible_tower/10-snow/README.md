@@ -204,6 +204,51 @@ Click the SAVE button back on the TEMPLATES page.
 
 Click on the rocketship icon ![Launch button](at_launch_icon.png) for the *Web Server Request Workflow*
 
+## Optional: 
+
+The above example showed you how to use extra_vars to inject information into a playbook. This included usernames and passwords, which we may not want to expose normally. 
+
+We can create our own custom credentials and encrypt them in Tower to solve this.
+
+### Step 1: Create a Custom Credential Type
+
+Select Credential Types, and click on ADD ![Add button](at_add.png)
+
+Complete the form using the following values
+
+NAME | ServiceNow
+
+Input configuration (YAML)
+
+---
+fields:
+  - type: string
+    id: snow_user
+    label: Username
+  - secret: true
+    type: string
+    id: snow_password
+    label: Password
+  - type: string
+    id: snow_instance
+    label: ServiceNow Instance
+required:
+  - snow_user
+  - snow_password
+  - snow_instance
+
+Injector Configuration (YAML)
+
+---
+extra_vars:
+  snow_instance: '{{ snow_instance }}'
+  snow_password: '{{ snow_password }}'
+  snow_user: '{{ snow_user }}'
+
+
+### Step 2: Create a ServiceNow Credential
+
+
 ---
 
 [Click Here to return to the Ansible Lightbulb - Ansible Tower Workshop](../README.md)
