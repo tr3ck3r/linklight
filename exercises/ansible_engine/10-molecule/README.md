@@ -334,6 +334,37 @@ Validation completed successfully.
 [output truncated...]
 ```
 
+This should FAIL when doing the testinfra as we haven't written the playbook yet for our automation steps.
+You should see something like:
+
+```
+--> Scenario: 'default'
+--> Action: 'verify'
+--> Executing Testinfra tests found in /home/student1/apache_basic2/roles/apache_install/molecule/default/tests/...
+    ============================= test session starts ==============================
+    platform linux2 -- Python 2.7.5, pytest-4.4.0, py-1.8.0, pluggy-0.9.0
+    rootdir: /home/student1/apache_basic2/roles/apache_install/molecule/default
+    plugins: testinfra-1.19.0
+collected 1 item
+
+    tests/test_default.py F                                                  [100%]
+
+    =================================== FAILURES ===================================
+    ___________________ test_httpd_installed[ansible://instance] ___________________
+
+    host = <testinfra.host.Host object at 0x7f2ca393cf10>
+
+        def test_httpd_installed(host):
+            httpd = host.package('httpd')
+    >       assert httpd.is_installed
+    E       assert False
+    E        +  where False = <package httpd>.is_installed
+
+    tests/test_default.py:11: AssertionError
+    =========================== 1 failed in 6.25 seconds ===========================
+An error occurred during the test sequence action: 'verify'. Cleaning up.
+```
+
 ## Section 4: Write The Role Tasks
 
 Let's not forget to actually write the role contents!
