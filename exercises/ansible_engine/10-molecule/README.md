@@ -365,9 +365,11 @@ collected 1 item
 An error occurred during the test sequence action: 'verify'. Cleaning up.
 ```
 
+This is fine as just proves that your testinfra code is working as expected.
+
 ## Section 4: Write The Role Tasks
 
-Let's not forget to actually write the role contents!
+So your testinfra will work, let's write the role contents!
 
 ```bash
 vi ~/apache_basic2/site.yml
