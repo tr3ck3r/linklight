@@ -287,6 +287,85 @@ verifier:
     name: flake8
 ```
 
+Now do a test run. You should see some lint errors, something like this:
+
+```bash
+molecule test
+--> Validating schema /home/student1/apache_basic2/roles/apache_install/molecule/default/molecule.yml.
+Validation completed successfully.
+--> Test matrix
+
+└── default
+    ├── lint
+    ├── destroy
+    ├── syntax
+    ├── create
+    ├── converge
+    ├── verify
+    └── destroy
+
+--> Scenario: 'default'
+--> Action: 'lint'
+--> Executing Yamllint on files found in /home/student1/apache_basic2/roles/apache_install/...
+Lint completed successfully.
+--> Executing Flake8 on files found in /home/student1/apache_basic2/roles/apache_install/molecule/default/tests/...
+Lint completed successfully.
+--> Executing Ansible Lint on /home/student1/apache_basic2/roles/apache_install/molecule/default/playbook.yml...
+    [701] Role info should contain platforms
+    /home/student1/apache_basic2/roles/apache_install/meta/main.yml:2
+    {'meta/main.yml': {'__file__': u'/home/student1/apache_basic2/roles/apache_install/meta/main.yml', u'dependencies': [], u'galaxy_info': {u'description': u'your description', u'license': u'license (GPLv2, CC-BY, etc)', u'author': u'your name', u'company': u'your company (optional)', u'galaxy_tags': [], '__line__': 3, '__file__': u'/home/student1/apache_basic2/roles/apache_install/meta/main.yml', u'min_ansible_version': 1.2}, '__line__': 2}}
+
+    [703] Should change default metadata: author
+    /home/student1/apache_basic2/roles/apache_install/meta/main.yml:2
+    {'meta/main.yml': {'__file__': u'/home/student1/apache_basic2/roles/apache_install/meta/main.yml', u'dependencies': [], u'galaxy_info': {u'description': u'your description', u'license': u'license (GPLv2, CC-BY, etc)', u'author': u'your name', u'company': u'your company (optional)', u'galaxy_tags': [], '__line__': 3, '__file__': u'/home/student1/apache_basic2/roles/apache_install/meta/main.yml', u'min_ansible_version': 1.2}, '__line__': 2}}
+
+    [703] Should change default metadata: description
+    /home/student1/apache_basic2/roles/apache_install/meta/main.yml:2
+    {'meta/main.yml': {'__file__': u'/home/student1/apache_basic2/roles/apache_install/meta/main.yml', u'dependencies': [], u'galaxy_info': {u'description': u'your description', u'license': u'license (GPLv2, CC-BY, etc)', u'author': u'your name', u'company': u'your company (optional)', u'galaxy_tags': [], '__line__': 3, '__file__': u'/home/student1/apache_basic2/roles/apache_install/meta/main.yml', u'min_ansible_version': 1.2}, '__line__': 2}}
+
+    [703] Should change default metadata: company
+    /home/student1/apache_basic2/roles/apache_install/meta/main.yml:2
+    {'meta/main.yml': {'__file__': u'/home/student1/apache_basic2/roles/apache_install/meta/main.yml', u'dependencies': [], u'galaxy_info': {u'description': u'your description', u'license': u'license (GPLv2, CC-BY, etc)', u'author': u'your name', u'company': u'your company (optional)', u'galaxy_tags': [], '__line__': 3, '__file__': u'/home/student1/apache_basic2/roles/apache_install/meta/main.yml', u'min_ansible_version': 1.2}, '__line__': 2}}
+
+    [703] Should change default metadata: license
+    /home/student1/apache_basic2/roles/apache_install/meta/main.yml:2
+    {'meta/main.yml': {'__file__': u'/home/student1/apache_basic2/roles/apache_install/meta/main.yml', u'dependencies': [], u'galaxy_info': {u'description': u'your description', u'license': u'license (GPLv2, CC-BY, etc)', u'author': u'your name', u'company': u'your company (optional)', u'galaxy_tags': [], '__line__': 3, '__file__': u'/home/student1/apache_basic2/roles/apache_install/meta/main.yml', u'min_ansible_version': 1.2}, '__line__': 2}}
+
+An error occurred during the test sequence action: 'lint'. Cleaning up.
+--> Scenario: 'default'
+--> Action: 'destroy'
+
+    PLAY [Destroy] *****************************************************************
+
+    TASK [Destroy molecule instance(s)] ********************************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+
+    TASK [Wait for instance(s) deletion to complete] *******************************
+    ok: [localhost] => (item=None)
+    ok: [localhost]
+
+    TASK [Delete docker network(s)] ************************************************
+
+    PLAY RECAP *********************************************************************
+    localhost                  : ok=2    changed=1    unreachable=0    failed=0
+```
+
+These relate to missing meta data that is expected. 
+
+You can fix this by either removing the meta file:
+
+```bash
+mv meta/main.yml meta/main.old
+```
+
+Or, fixing the errors suggested in the meta/main.yml file. (This is left up to you :)
+
+Run this to re-run your changes:
+
+```bash
+molecule lint
+```
 
 ### Step 4 - Testing Your Roles
 
