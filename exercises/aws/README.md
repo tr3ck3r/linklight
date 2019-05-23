@@ -4,16 +4,13 @@
 
  ENGINE CONTENT:
  
- - [Exercise 1 - Setup Your Environment](1-setup)
- - [Exercise 2 - Writing Your First playbook](2-playbook)
- - [Exercise 5 - Roles: Making your playbooks reusable](5-role)
+ - [Exercise 1 - Setup Your Environment](ansible_engine/1-setup)
+ - [Exercise 2 - Writing Your First playbook](ansible_engine/2-playbook)
+
  
  TOWER CONTENT:
  
- - [Exercise 6 - Roles: More Roles!](6-more-roles)
- - [Exercise 7 - Playbook validation](7-syntax)
- - [Exercise 8 - Ansible Vault](8-vault)
- - [Exercise 9 - Blocks and rescue](9-blocks-extra-vars)
- - [Exercise 10 - Using Molecule For Role Testing](10-molecule)
+ - [Exercise 6 - Roles: More Roles!](ansible_tower/something)
+
 
 
