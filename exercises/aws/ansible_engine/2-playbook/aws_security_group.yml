@@ -1,0 +1,52 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:
+    security_group: "{{student}}_sg"
+    region: eu-west-1
+    teardown: false
+  vars_files:
+    - ../aws_keys.yml
+
+  tasks:
+    - name: Create a security group
+      ec2_group:
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        security_token: "{{ security_token }}"
+        region: "{{ region }}"
+        name: "{{ security_group }}"
+        description: The webservers security group
+        rules:
+          - proto: tcp
+            from_port: 22
+            to_port: 22
+            cidr_ip: 0.0.0.0/0
+          - proto: tcp
+            from_port: 80
+            to_port: 80
+            cidr_ip: 0.0.0.0/0
+          - proto: tcp
+            from_port: 443
+            to_port: 443
+            cidr_ip: 0.0.0.0/0
+        rules_egress:
+          - proto: all
+            cidr_ip: 0.0.0.0/0
+      when: not teardown
+
+
+    - name: Delete a security group
+      ec2_group:
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        security_token: "{{ security_token }}"
+        region: "{{ region }}"
+        name: "{{ security_group }}"
+        state: absent
+      when: teardown
+
+
+
+
