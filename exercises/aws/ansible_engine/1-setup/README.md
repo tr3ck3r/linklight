@@ -2,21 +2,58 @@
 
 Before we can start to automate using AWS, there are a number of things we need to setup first.
 
-## Step 1.1 - AWS Credentials
+## Step 1.1 - Login To Your Control Node
 
-In order to access the necessary EC2 services within AWS, we need to setup privileges.
-To do this, we'll store them in an encrypted ansible-vault file so they are secure.
+We need somewhere to run Ansible Engine from initially, as a kind of control point.
+
+We have prepared a RHEL server for you to use, so go ahead and log in now.
+
+```bash
+ssh studentN@public_IP_address
+```
+
+## Step 1.2 - Clone The Repo
+
+```bash
+git clone https://github.com/pharriso/linklight.git
+```
+
+## Step 1.2 - AWS SDK
+We need to install a few Python features so we can use AWS, as the Ansible modules use these.
+
+```bash
+pip install boto boto3 --user
+```
+
+## Step 1.3 - AWS Credentials
+
+In order to access the necessary EC2 services within AWS, we need to have certain privileges.
+
+An IAM user with a role to perform the necessary actions has already been created.
+
+We'll be using time-based STS tokens as well for the duration of the workshop.
+
+We'll store the details in an encrypted ansible-vault file so they are secure.
+
 Please ask your instructor to provide the necessary details to go into the vault file.
 
 ```bash
+cd linklight/exercises/aws/ansible_engine
 ansible-vault create aws_keys.yml
 ```
 
-Add the credentials supplied by your instructor.
+Add the credentials supplied by your instructor and save the file.
 
-## Step 1.2 - Test Access - how?
+You'll be asked for a new vault password:
 
-Can we use a dynamic inventory pull for this?
+```bash
+New Vault password:
+Confirm New Vault password:
+```
+
+This will be used throughout the following exercises, so make it memorable!
+
+This completes this exercise.
 
 ---
 
