@@ -161,6 +161,10 @@ localhost                  : ok=1    changed=0    unreachable=0    failed=0
 
 ```
 
+(Run it again if you like to check out that idempotence again :)
+
+That completes this exercise.
+
 ---
 
 [Click Here to return to the Ansible Linklight - Ansible Engine Workshop](../README.md)
