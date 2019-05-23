@@ -3,14 +3,10 @@
   connection: local
   gather_facts: False
   vars:
-    instance_type: t2.micro
     security_group: "{{student}}_sg"
-    image: ami-db710fa3
-    keypair: laptop
     region: eu-west-1
-    count: 1
   vars_files:
-    - aws_keys.yml
+    - ../aws_keys.yml
 
   tasks:
     - name: Create a security group
