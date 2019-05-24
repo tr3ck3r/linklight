@@ -1,0 +1,170 @@
+# Exercise 2 - First Playbook
+
+So we should be good to go now, with the correct config and credentials.
+
+So let's start automating to test it out!
+
+## Step 2.1 - Creating A Security Group
+
+One of the first things we need to do in EC2, before we can do things like create instances, is to create an AWS Security Group. This is used to provide or deny access to other services.
+
+We'll create a bare minimum playbook to spin up a new Security Group which will also serve to test out our credentials :)
+
+```bash
+cd ~/linklight/exercises/aws/ansible_engine/2-playbook
+vi aws_security_group.yml
+```
+
+Add the following lines, remember Ansible uses YAML to enforce indentation, so watch your spaces and tabs!
+
+```bash
+---
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:
+    security_group: "{{student}}_sg"
+    region: eu-west-2
+    teardown: false
+  vars_files:
+    - ../aws_keys.yml
+```
+
+This is just setting up a few initial parameters and variables we'll be using.
+
+Now add a task, which will use the ec2_group Ansible module to perform the action.
+
+```bash
+  tasks:
+    - name: Create a security group
+      ec2_group:
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        security_token: "{{ security_token }}"
+        region: "{{ region }}"
+        name: "{{ security_group }}"
+        description: The {{student}} security group
+        rules:
+          - proto: tcp
+            from_port: 22
+            to_port: 22
+            cidr_ip: 0.0.0.0/0
+          - proto: tcp
+            from_port: 80
+            to_port: 80
+            cidr_ip: 0.0.0.0/0
+          - proto: tcp
+            from_port: 443
+            to_port: 443
+            cidr_ip: 0.0.0.0/0
+        rules_egress:
+          - proto: all
+            cidr_ip: 0.0.0.0/0
+      when: not teardown
+
+```
+
+## Step 2.2 - Run the Playbook
+
+We should have enough in our playbook now to create a Security Group in AWS, so let's test it out!
+
+```bash
+$ ansible-playbook aws_security_group.yml
+ERROR! Attempting to decrypt but no vault secrets found
+```
+
+Oh wait, what went wrong?! Well Ansible knows we've used an encrypted Vault file but doesn't have anyway to decrypt it.
+
+So we need a way to supply the password, which we can do by passing the --ask-vault-pass argument:
+
+```bash
+$ ansible-playbook aws_security_group.yml --ask-vault-pass
+Vault password:
+```
+
+If you've got the password right, in a very short while Ansible should have created a Security Group for you.
+
+The output should resemble this:
+
+```bash
+PLAY [localhost] *************************************************************************************************************
+
+TASK [Create a security group] ***********************************************************************************************
+skipping: [localhost]
+
+TASK [Delete a security group] ***********************************************************************************************
+ok: [localhost]
+
+PLAY RECAP *******************************************************************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=0
+
+[student1@ansible 2-playbook]$ vi README.md
+[student1@ansible 2-playbook]$ ansible-playbook aws_security_group.yml --ask-vault-pass
+Vault password:
+
+PLAY [localhost] *************************************************************************************************************
+
+TASK [Create a security group] ***********************************************************************************************
+changed: [localhost]
+
+TASK [Delete a security group] ***********************************************************************************************
+skipping: [localhost]
+
+PLAY RECAP *******************************************************************************************************************
+localhost                  : ok=1    changed=1    unreachable=0    failed=0
+```
+
+Now run the playbook again, and notice how the output/results are different. Ask the instructor about idempotence!
+
+## Step 2.3 - Adding a Delete Task
+
+This is a great start, but we can easily extend the same playbook so we can use it to delete the Security Group as well.
+We initially set a variable 'teardown' to false, so by default, we create the group. 
+
+Add the following lines to the bottom of your playbook:
+
+```bash
+    - name: Delete a security group
+      ec2_group:
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        security_token: "{{ security_token }}"
+        region: "{{ region }}"
+        name: "{{ security_group }}"
+        state: absent
+      when: teardown
+```
+
+This will fire when teardown is set to 'true'. But we don't want to be editing the playbook each time we want to delete the group, so how can we do this on the fly?
+
+Well we can set teardown to true, by passing it in as 'extra vars' via the command line.
+
+Now try this:
+
+```bash
+ansible-playbook aws_security_group.yml --ask-vault-pass --extra-vars "teardown=true"
+```
+
+The output should resemble this:
+
+```bash
+PLAY [localhost] *************************************************************************************************************
+
+TASK [Create a security group] ***********************************************************************************************
+skipping: [localhost]
+
+TASK [Delete a security group] ***********************************************************************************************
+ok: [localhost]
+
+PLAY RECAP *******************************************************************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=0
+
+```
+
+(Run it again if you like to check out that idempotence again :)
+
+That completes this exercise.
+
+---
+
+[Click Here to return to the Ansible Linklight - Ansible Engine Workshop](../../README.md)
