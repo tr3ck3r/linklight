@@ -163,6 +163,13 @@ localhost                  : ok=1    changed=0    unreachable=0    failed=0
 
 (Run it again if you like to check out that idempotence again :)
 
+## Step 3 - Final Solution (optional)
+
+If you hit issues and want to see it working, then run this:
+```bash
+ansible-playbook aws_security_group_solution.yml --ask-vault-pass
+```
+
 That completes this exercise.
 
 ---
