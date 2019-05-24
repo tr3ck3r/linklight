@@ -43,7 +43,7 @@ Now add a task, which will use the ec2_group Ansible module to perform the actio
         security_token: "{{ security_token }}"
         region: "{{ region }}"
         name: "{{ security_group }}"
-        description: The webservers security group
+        description: The {{student}} security group
         rules:
           - proto: tcp
             from_port: 22
