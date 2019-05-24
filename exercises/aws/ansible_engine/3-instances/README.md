@@ -146,6 +146,7 @@ We use the set_fact module to save the AMI ID to a variable 'ami_id' so we can r
 ```
 
 Now for the real work! Creating the instance(s)
+
 We use a combination of variables and tags so each students resources can be easily identified.
 
 ```bash
@@ -178,7 +179,7 @@ We use a combination of variables and tags so each students resources can be eas
 
 If you hit issues and want to see it working, then run this:
 ```bash
-ansible-playbook aws_security_ec2_instances_solution.yml --ask-vault-pass
+ansible-playbook aws_ec2_instances_solution.yml --ask-vault-pass
 ```
 
 That completes this exercise.
