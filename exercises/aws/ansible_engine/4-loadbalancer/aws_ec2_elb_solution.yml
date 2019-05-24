@@ -1,0 +1,50 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  ignore_errors: true
+  vars:
+    region: "eu-west-2"
+    elb_name: "{{student}}-elb"
+  vars_files:
+    - ../aws_keys.yml
+
+  tasks:
+
+    - name: create load balancer
+      ec2_elb_lb:
+        aws_access_key: "{{aws_access_key}}"
+        aws_secret_key: "{{aws_secret_key}}"
+        security_token: "{{security_token}}"
+        region: "{{region}}"
+        zones:
+          - "{{region}}a"
+        name: "{{elb_name}}"
+        state: present
+        listeners:
+          - protocol: http
+            load_balancer_port: 80
+            instance_port: 80
+            proxy_protocol: True
+
+    - name: gather ec2 instances
+      ec2_instance_facts:
+        aws_access_key: "{{aws_access_key}}"
+        aws_secret_key: "{{aws_secret_key}}"
+        security_token: "{{security_token}}"
+        region: "{{region}}"
+        filters: 
+          instance-state-name: "running"
+          "tag:student": "{{student}}"
+      register: instances
+
+    - name: add instances to elb
+      elb_instance:
+        aws_access_key: "{{aws_access_key}}"
+        aws_secret_key: "{{aws_secret_key}}"
+        security_token: "{{security_token}}"
+        region: "{{region}}"
+        instance_id: "{{item.instance_id}}"
+        ec2_elbs: "{{elb_name}}"
+        state: present
+      with_items: "{{instances.instances}}"
