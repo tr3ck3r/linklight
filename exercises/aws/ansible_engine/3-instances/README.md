@@ -53,13 +53,13 @@ Add the following lines, remember Ansible uses YAML to enforce indentation, so w
         os: linux
         remote_port: 22 
         keypair: laptop
-        instance_count: 1
+        instance_count: 2
 
-      ec2_instance:
+			ec2_instance:
         aws_access_key: "{{ aws_access_key }}"
         aws_secret_key: "{{ aws_secret_key }}"
         security_token: "{{ security_token }}"
-        name: "{{student}}-ansible-{{os}}"
+        name: "{{student}}-ansible-{{os}}-{{item}}"
         security_group: "{{security_group}}"
         network:
           assign_public_ip: true
@@ -67,8 +67,8 @@ Add the following lines, remember Ansible uses YAML to enforce indentation, so w
         region: "{{region}}"
         tags:
           student: "{{student}}"
-      register: ec2_instance
-
+      with_sequence: count="{{instance_count}}"
+      register: ec2_instances
 ```
 
 ## Step 2.2 - Run the Playbook
@@ -158,7 +158,7 @@ We use a combination of variables and tags so each students resources can be eas
         os: linux
         remote_port: 22
         keypair: laptop
-        instance_count: 1
+        instance_count: 2
 
       ec2_instance:
         aws_access_key: "{{ aws_access_key }}"
