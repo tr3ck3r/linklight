@@ -24,7 +24,7 @@ Add the following lines, remember Ansible uses YAML to enforce indentation, so w
   gather_facts: False
   vars:
     security_group: "{{student}}_sg"
-    region: eu-west-1
+    region: eu-west-2
     teardown: false
   vars_files:
     - ../aws_keys.yml

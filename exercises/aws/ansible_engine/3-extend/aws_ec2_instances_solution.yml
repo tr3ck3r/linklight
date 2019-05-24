@@ -1,0 +1,35 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: False
+
+  vars:
+    student: "student1"
+  vars_files:
+    - ../aws_keys.yml
+
+  tasks:
+
+    - name: Launch WINDOWS instance(s)
+
+      vars:
+        security_group: "{{student}}_sg"
+        region: eu-west-2
+        ami_id: ami-0e60ba06451c1b981
+        ec2_instance_name: ansible-windows
+        os: windows
+        remote_port: 3389
+        keypair: laptop
+        instance_count: 1
+
+      ec2_instance:
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        security_token: "{{ security_token }}"
+        name: "{{student}}-ansible-{{os}}"
+        security_group: "{{security_group}}"
+        network:
+          assign_public_ip: true
+        image_id: "{{ami_id}}"
+        region: "{{region}}"
+      register: ec2_instance
