@@ -55,7 +55,7 @@ Add the following lines, remember Ansible uses YAML to enforce indentation, so w
         keypair: laptop
         instance_count: 2
 
-			ec2_instance:
+      ec2_instance:
         aws_access_key: "{{ aws_access_key }}"
         aws_secret_key: "{{ aws_secret_key }}"
         security_token: "{{ security_token }}"
@@ -160,11 +160,12 @@ We use a combination of variables and tags so each students resources can be eas
         keypair: laptop
         instance_count: 2
 
+
       ec2_instance:
         aws_access_key: "{{ aws_access_key }}"
         aws_secret_key: "{{ aws_secret_key }}"
         security_token: "{{ security_token }}"
-        name: "{{student}}-ansible-{{os}}"
+        name: "{{student}}-ansible-{{os}}-{{item}}"
         security_group: "{{security_group}}"
         network:
           assign_public_ip: true
@@ -172,7 +173,8 @@ We use a combination of variables and tags so each students resources can be eas
         region: "{{region}}"
         tags:
           student: "{{student}}"
-      register: ec2_instance
+      with_sequence: count="{{instance_count}}"
+      register: ec2_instances
 ```
 
 ## Step 3 - Final Solution (optional)
