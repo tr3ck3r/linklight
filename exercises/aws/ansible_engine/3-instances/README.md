@@ -147,7 +147,8 @@ We use the set_fact module to save the AMI ID to a variable 'ami_id' so we can r
 
 Now for the real work! Creating the instance(s)
 
-We use a combination of variables and tags so each students resources can be easily identified.
+We use a combination of variables and tags so each students resources can be easily identified and the ec2_instance module does the work for us. Using the with_sequence plugin allows us to create '$instance_count' instances, where each instance is represented by 'item' in the loop.
+
 
 ```bash
     - name: Launch LINUX instance(s)
