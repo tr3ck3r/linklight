@@ -2,7 +2,7 @@
 
 ## Step 4.1 - Creating an Elastic Load Balancer (ELB)
 
-We're all to stick a load balancer in front of our newly created instances.
+We're going to stick a load balancer in front of our newly created instances.
 
 
 ```bash
