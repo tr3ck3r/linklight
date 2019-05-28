@@ -90,21 +90,6 @@ The output should resemble this:
 PLAY [localhost] *************************************************************************************************************
 
 TASK [Create a security group] ***********************************************************************************************
-skipping: [localhost]
-
-TASK [Delete a security group] ***********************************************************************************************
-ok: [localhost]
-
-PLAY RECAP *******************************************************************************************************************
-localhost                  : ok=1    changed=0    unreachable=0    failed=0
-
-[student1@ansible 2-playbook]$ vi README.md
-[student1@ansible 2-playbook]$ ansible-playbook aws_security_group.yml --ask-vault-pass
-Vault password:
-
-PLAY [localhost] *************************************************************************************************************
-
-TASK [Create a security group] ***********************************************************************************************
 changed: [localhost]
 
 TASK [Delete a security group] ***********************************************************************************************
