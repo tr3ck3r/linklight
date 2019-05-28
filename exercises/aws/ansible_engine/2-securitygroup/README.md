@@ -152,6 +152,8 @@ If you hit issues and want to see it working, then run this:
 ansible-playbook aws_security_group_solution.yml --ask-vault-pass
 ```
 
+NOTE: Please ensure you have your studentN security group created, as it'll be used throughout the remaining exercises.
+
 That completes this exercise.
 
 ---
