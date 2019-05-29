@@ -90,25 +90,7 @@ The output should resemble this:
 PLAY [localhost] *************************************************************************************************************
 
 TASK [Create a security group] ***********************************************************************************************
-skipping: [localhost]
-
-TASK [Delete a security group] ***********************************************************************************************
-ok: [localhost]
-
-PLAY RECAP *******************************************************************************************************************
-localhost                  : ok=1    changed=0    unreachable=0    failed=0
-
-[student1@ansible 2-playbook]$ vi README.md
-[student1@ansible 2-playbook]$ ansible-playbook aws_security_group.yml --ask-vault-pass
-Vault password:
-
-PLAY [localhost] *************************************************************************************************************
-
-TASK [Create a security group] ***********************************************************************************************
 changed: [localhost]
-
-TASK [Delete a security group] ***********************************************************************************************
-skipping: [localhost]
 
 PLAY RECAP *******************************************************************************************************************
 localhost                  : ok=1    changed=1    unreachable=0    failed=0
@@ -169,6 +151,8 @@ If you hit issues and want to see it working, then run this:
 ```bash
 ansible-playbook aws_security_group_solution.yml --ask-vault-pass
 ```
+
+NOTE: Please ensure you have your studentN security group created, as it'll be used throughout the remaining exercises.
 
 That completes this exercise.
 
