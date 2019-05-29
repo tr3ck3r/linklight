@@ -81,7 +81,16 @@ Then we double check that SSH is accessible and add the hosts into a temporary i
 
 Before we can successfully run this playbook, we'll need to have access to the private key for the 'laptop' key pair in AWS. 
 
-*** how to do this goes here... ***
+Please ask your instructor for the private SSH key, then run the following commands:
+
+```bash
+mv laptop.pem ~/.ssh
+ssh-add ~/.ssh/laptop.pem
+ssh-add -l
+2048 SHA256:f38EKSsiGJH07tjGIetQFSUCvv8I/zG+d6G6sl4kLp4 /home/student1/.ssh/laptop.pem (RSA)
+```
+
+Now go ahead and run the playbook:
 
 ```bash
 ansible-playbook aws_ec2_web_servers.yml --ask-vault-pass
