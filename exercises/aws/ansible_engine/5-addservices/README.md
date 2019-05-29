@@ -1,6 +1,6 @@
 # Exercise 5 - More Playbook Action
 
-## Step 5.1 - Adding Web Services To Our Instances
+## Step 1 - Adding Web Services To Our Instances
 
 Let's install HTTP web servers on our instances so that the ELB can load balance across them.
 
@@ -71,7 +71,7 @@ Add the following lines, remember Ansible uses YAML to enforce indentation, so w
         enabled: yes
 ```
 
-## Step 4.2 - Run the Playbook
+## Step 2 - Run the Playbook
 
 Just before running this playbook, let's check what it's doing. 
 
@@ -97,9 +97,9 @@ ansible-playbook aws_ec2_web_servers.yml --ask-vault-pass
 Vault password:
 ```
 
-## Step 4.3 - Extending the Playbook
+## Step 3 - Extending the Playbook
 
-Let's add to the playbook and create some custom web page content, by using a couple of discovered facts and a custome vars message. These will be displayed when you re-run and hit the ELB.
+Let's add to the playbook and create some custom web page content, by using a couple of discovered facts and a custom vars message. These will be displayed when you re-run and hit the ELB.
 
 We'll use a Jinja2 template file for this content and also a service 'handler' for restarting httpd.
 
