@@ -2,7 +2,7 @@
 
 Before we can start to automate using AWS, there are a number of things we need to setup first.
 
-## Step 1.1 - Login To Your Control Node
+## Step 1 - Login To Your Control Node
 
 We need somewhere to run Ansible Engine from initially, as a kind of control point.
 
@@ -12,20 +12,20 @@ We have prepared a RHEL server for you to use, so go ahead and log in now.
 ssh studentN@public_IP_address
 ```
 
-## Step 1.2 - Clone The Repo
+## Step 2 - Clone The Repo
 
 ```bash
 git clone https://github.com/pharriso/linklight.git
 ```
 
-## Step 1.2 - AWS SDK
+## Step 3 - AWS SDK
 We need to install a few Python features so we can use AWS, as the Ansible modules use these.
 
 ```bash
 pip install boto boto3 botocore --user
 ```
 
-## Step 1.3 - AWS Credentials
+## Step 4 - AWS Credentials
 
 In order to access the necessary EC2 services within AWS, we need to have certain privileges.
 
