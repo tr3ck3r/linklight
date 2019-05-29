@@ -40,19 +40,9 @@
   become_method: sudo
 
   vars:
-    web_message: "FOOBAR!"
+    web_message: "YOUR CUSTOM MESSAGE GOES HERE"
 
   tasks:
-
-    - name: add local user account
-      user: 
-        name: student1
-        uid: 1001
-        group: wheel
-        shell: /bin/bash
-        generate_ssh_key: yes
-        ssh_key_bits: 2048
-        ssh_key_file: .ssh/ida_rsa
 
     - name: install httpd 
       yum:
