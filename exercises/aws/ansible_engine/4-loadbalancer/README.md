@@ -1,6 +1,6 @@
 # Exercise 4 - More Playbook Action
 
-## Step 4.1 - Creating an Elastic Load Balancer (ELB)
+## Step 1 - Creating an Elastic Load Balancer (ELB)
 
 We're going to stick a load balancer in front of our newly created instances.
 
@@ -65,7 +65,7 @@ Add the following lines, remember Ansible uses YAML to enforce indentation, so w
       with_items: "{{instances.instances}}"
 ```
 
-## Step 4.2 - Run the Playbook
+## Step 2 - Run the Playbook
 
 Let's create the instances!
 
@@ -77,7 +77,7 @@ Vault password:
 NOTE: This is going to FAIL! This is by design, as we've yet to setup any web service on our instances which the ELB relates to.
 In order for the playbook to 'work', we use 'ignore_errors: true'. The default is false, which would make the playbook stop.
 
-## Step 4.3 - Playbook Explanation
+## Step 3 - Playbook Explanation
 
 Whilst you wait for the ELB to be created, let's re-examine the playbook and explain what it's doing.
 
