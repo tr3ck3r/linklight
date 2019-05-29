@@ -17,7 +17,6 @@ Add the following lines, remember Ansible uses YAML to enforce indentation, so w
 - hosts: localhost
   connection: local
   gather_facts: false
-  ignore_errors: true
   vars:
     region: "eu-west-2"
   vars_files:
@@ -31,90 +30,105 @@ Add the following lines, remember Ansible uses YAML to enforce indentation, so w
         aws_secret_key: "{{aws_secret_key}}"
         security_token: "{{security_token}}"
         region: "{{region}}"
-        filters: 
+        filters:
           instance-state-name: "running"
           "tag:student": "{{student}}"
       register: instances
 
-    - name: wait for SSH access
+    - name: ensure we have SSH access
       wait_for:
-			  host: "{{instances.instances[item].public_ip}}"
-				port: 22
-				timeout: 300
+        host: "{{item.public_ip_address}}"
+        port: 22
+        timeout: 300
       with_items: "{{instances.instances}}"
+
+    - name: add instance to temp inventory
+      add_host:
+        hostname: "{{item.public_ip_address}}"
+        groups: webservers
+        ansible_connection: ssh
+        ansible_user: ec2-user
+      with_items: "{{instances.instances}}"
+
+- hosts: webservers
+  become: yes
+  become_method: sudo
+
+  vars:
+    web_message: "YOUR CUSTOM MESSAGE GOES HERE"
+
+  tasks:
+
+    - name: install httpd
+      yum:
+        name: httpd
+        state: latest
+
+    - name: start and enable httpd service
+      service:
+        name: httpd
+        state: started
+        enabled: yes
 ```
 
 ## Step 4.2 - Run the Playbook
 
-Let's create the instances!
+Just before running this playbook, let's check what it's doing. 
+
+As before, we're checking for running instances with a certain tag (your student number).
+
+Then we double check that SSH is accessible and add the hosts into a temporary inventory group called 'webservers'. We setup a couple of connection parameters that we'll need to access the ec2 instances.
+
+Before we can successfully run this playbook, we'll need to have access to the private key for the 'laptop' key pair in AWS. 
+
+<how to do this goes here...>
 
 ```bash
-$ ansible-playbook aws_ec2_elb.yml --ask-vault-pass
+$ ansible-playbook aws_ec2_web_servers.yml --ask-vault-pass
 Vault password:
 ```
 
-NOTE: This is going to FAIL! This is by design, as we've yet to setup any web service on our instances which the ELB relates to.
-In order for the playbook to 'work', we use 'ignore_errors: true'. The default is false, which would make the playbook stop.
+## Step 4.3 - Extending the Playbook
 
-## Step 4.3 - Playbook Explanation
+Let's add to the playbook and create some custom web page content, by using a couple of discovered facts and a custome vars message. These will be displayed when you re-run and hit the ELB.
 
-Whilst you wait for the ELB to be created, let's re-examine the playbook and explain what it's doing.
-
-The first play uses the ec2_elb_lb module to create the ELB for us.
+We'll use a Jinja2 template file for this content and also a service 'handler' for restarting httpd.
 
 ```bash
-    - name: create load balancer
-      ec2_elb_lb:
-        aws_access_key: "{{aws_access_key}}"
-        aws_secret_key: "{{aws_secret_key}}"
-        security_token: "{{security_token}}"
-        region: "{{region}}"
-        zones:
-          - "{{region}}a"
-        name: "{{elb_name}}"
-        state: present
-        listeners:
-          - protocol: http
-            load_balancer_port: 80
-            instance_port: 80
-            proxy_protocol: True
+$ tree
+.
+├── aws_ec2_web_servers_solution.yml
+├── handlers
+│   └── main.yml
+├── README.md
+└── templates
+    └── index.html.j2
 ```
 
-Now we use the ec2_instance_facts module to find our instances based on filters for a running state and student number tag.
+The template file is stored in the templates directory. Take a look at the index.hmtl.j2 file:
 
 ```bash
-    - name: gather ec2 instances
-      ec2_instance_facts:
-        aws_access_key: "{{aws_access_key}}"
-        aws_secret_key: "{{aws_secret_key}}"
-        security_token: "{{security_token}}"
-        region: "{{region}}"
-        filters: 
-          instance-state-name: "running"
-          "tag:student": "{{student}}"
-      register: instances
+$ cat templates/index.html.j2
 ```
 
-We can then add those instances into the ELB. Neat eh?
+Near the bottom you'll notice:
 
 ```bash
-    - name: add instances to elb
-      elb_instance:
-        aws_access_key: "{{aws_access_key}}"
-        aws_secret_key: "{{aws_secret_key}}"
-        security_token: "{{security_token}}"
-        region: "{{region}}"
-        instance_id: "{{item.instance_id}}"
-        ec2_elbs: "{{elb_name}}"
-        state: present
-      with_items: "{{instances.instances}}"
+    <p>{{ inventory_hostname }}</p>
+    <p>{{ web_message }}</p>
+    <p>{{ ansible_os_family }}</p>
 ```
+
+inventory_hostname and ansible_os_family are facts that Ansible discovers (using gather_facts) and will get populated into the template when copied over.
+
+web_message is a local variable that we'll change in a minute.
+
 
 ## Step 4 - Final Solution (optional)
 
 If you hit issues and want to see it working, then run this:
 ```bash
-ansible-playbook aws_ec2_elb_solution.yml --ask-vault-pass
+ansible-playbook aws_ec2_web_servers_solution.yml --ask-vault-pass
 ```
 
 That completes this exercise.
