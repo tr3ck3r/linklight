@@ -4,7 +4,7 @@ So we should be good to go now, with the correct config and credentials.
 
 So let's start automating to test it out!
 
-## Step 2.1 - Creating A Security Group
+## Step 1 - Creating A Security Group
 
 One of the first things we need to do in EC2, before we can do things like create instances, is to create an AWS Security Group. This is used to provide or deny access to other services.
 
@@ -64,7 +64,7 @@ Now add a task, which will use the ec2_group Ansible module to perform the actio
 
 ```
 
-## Step 2.2 - Run the Playbook
+## Step 2 - Run the Playbook
 
 We should have enough in our playbook now to create a Security Group in AWS, so let's test it out!
 
@@ -98,7 +98,7 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0
 
 Now run the playbook again, and notice how the output/results are different. Ask the instructor about idempotence!
 
-## Step 2.3 - Adding a Delete Task
+## Step 3 - Adding a Delete Task
 
 This is a great start, but we can easily extend the same playbook so we can use it to delete the Security Group as well.
 We initially set a variable 'teardown' to false, so by default, we create the group. 
@@ -145,7 +145,7 @@ localhost                  : ok=1    changed=0    unreachable=0    failed=0
 
 (Run it again if you like to check out that idempotence again :)
 
-## Step 3 - Final Solution (optional)
+## Step 4 - Final Solution (optional)
 
 If you hit issues and want to see it working, then run this:
 ```bash
