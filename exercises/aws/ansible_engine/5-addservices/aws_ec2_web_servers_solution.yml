@@ -1,0 +1,52 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    region: "eu-west-2"
+  vars_files:
+    - ../aws_keys.yml
+
+  tasks:
+
+    - name: gather ec2 instances
+      ec2_instance_facts:
+        aws_access_key: "{{aws_access_key}}"
+        aws_secret_key: "{{aws_secret_key}}"
+        security_token: "{{security_token}}"
+        region: "{{region}}"
+        filters:
+          instance-state-name: "running"
+          "tag:student": "{{student}}"
+      register: instances
+
+    - name: ensure we have SSH access
+      wait_for:
+        host: "{{item.public_ip_address}}"
+        port: 22
+        timeout: 300
+      with_items: "{{instances.instances}}"
+
+    - name: add instance to temp inventory
+      add_host:
+        hostname: "{{item.public_ip_address}}"
+        groups: webservers
+        ansible_connection: ssh
+        ansible_user: ec2-user
+      with_items: "{{instances.instances}}"
+
+- hosts: webservers
+  become: yes
+  become_method: sudo
+
+  tasks:
+
+    - name: add local user account
+      user: 
+        name: student1
+        uid: 1001
+        group: wheel
+        shell: /bin/bash
+        generate_ssh_key: yes
+        ssh_key_bits: 2048
+        ssh_key_file: .ssh/ida_rsa
