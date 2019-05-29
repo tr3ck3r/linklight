@@ -142,7 +142,7 @@ Now go ahead and add this further content to the existing  playbook:
 vi aws_ec2_web_servers.yml
 ```
 
-Change the web_message strings in quotes to whatever you want displayed (keep it clean please!)
+Change the web_message string in quotes to whatever you want displayed (keep it clean please!)
 
 Now add this at the bottom:
 
@@ -170,11 +170,32 @@ Now add this at the bottom:
 
 We've added a nifty local firewalld check as well here just for good measure :)
 
-Run the playbook again and go check your ELB for the updates made.
+Run the playbook again:
 
 ```bash
 $ ansible-playbook aws_ec2_web_servers.yml --ask-vault-pass
 Vault password:
+```
+
+Then go hit your ELB load balancer to check the updates.
+
+If you can't remember the address of your ELB, run this:
+
+```bash
+ ansible-playbook $HOME/linklight/exercises/aws/ansible_engine/4-loadbalancer/aws_ec2_elb_facts.yml --ask-vault
+Vault password:
+
+PLAY [localhost] ********************************************************************************************************
+
+TASK [discover facts about my ELB] **************************************************************************************
+ok: [localhost]
+
+TASK [show me the DNS name of my ELB] ***********************************************************************************
+ok: [localhost] =>
+  msg: student1-elb-314359906.eu-west-2.elb.amazonaws.com
+
+PLAY RECAP **************************************************************************************************************
+localhost                  : ok=2    changed=0    unreachable=0    failed=0
 ```
 
 ## Step 4 - Final Solution (optional)
