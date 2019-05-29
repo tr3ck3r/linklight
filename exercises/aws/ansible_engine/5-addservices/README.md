@@ -123,12 +123,122 @@ inventory_hostname and ansible_os_family are facts that Ansible discovers (using
 
 web_message is a local variable that we'll change in a minute.
 
+The handlers/main.yml is our service handler for restarting httpd. This will fire when Ansible detects a change has occurred and the service needs restarting:
+
+```bash
+$ cat handlers/main.yml
+---
+
+- name: restart httpd
+  service:
+    name: httpd
+    state: restarted
+
+```
+
+Now go ahead and add this further content to the existing  playbook:
+
+``bash
+vi aws_ec2_web_servers.yml
+```
+
+Change the web_message strings in quotes to whatever you want displayed (keep it clean please!)
+
+Now add this at the bottom:
+
+```bash
+   - name: Check if firewalld is running
+      shell: systemctl is-active firewalld
+      register: firewall_status
+      ignore_errors: true
+
+    - name: Open firewall ports for httpd
+      firewalld:
+        port: 80/tcp
+        permanent: true
+        state: enabled
+        immediate: true
+      when: firewall_status.stdout == 'active'
+
+    - name: Configure Web Content
+      template:
+        dest: /var/www/html/index.html
+        src: index.html.j2
+      notify:
+        - restart httpd
+```
+
+We've added a nifty local firewalld check as well here just for good measure :)
+
+Run the playbook again and go check your ELB for the updates made.
+
+```bash
+$ ansible-playbook aws_ec2_web_servers.yml --ask-vault-pass
+Vault password:
+```
 
 ## Step 4 - Final Solution (optional)
 
 If you hit issues and want to see it working, then run this:
 ```bash
 ansible-playbook aws_ec2_web_servers_solution.yml --ask-vault-pass
+```
+
+You should see something similar to this (output truncated)
+
+```bash
+PLAY [webservers] *******************************************************************************************************
+
+TASK [Gathering Facts] **************************************************************************************************
+ok: [18.130.190.158]
+ok: [52.56.81.99]
+
+TASK [install httpd] ****************************************************************************************************
+ok: [52.56.81.99]
+ok: [18.130.190.158]
+
+TASK [start and enable httpd service] ***********************************************************************************
+ok: [18.130.190.158]
+ok: [52.56.81.99]
+
+TASK [Check if firewalld is running] ************************************************************************************
+fatal: [18.130.190.158]: FAILED! => changed=true
+  cmd: systemctl is-active firewalld
+  delta: '0:00:00.005732'
+  end: '2019-05-29 17:26:52.549549'
+  msg: non-zero return code
+  rc: 3
+  start: '2019-05-29 17:26:52.543817'
+  stderr: ''
+  stderr_lines: []
+  stdout: unknown
+  stdout_lines: <omitted>
+...ignoring
+fatal: [52.56.81.99]: FAILED! => changed=true
+  cmd: systemctl is-active firewalld
+  delta: '0:00:00.005596'
+  end: '2019-05-29 17:26:52.580800'
+  msg: non-zero return code
+  rc: 3
+  start: '2019-05-29 17:26:52.575204'
+  stderr: ''
+  stderr_lines: []
+  stdout: unknown
+  stdout_lines: <omitted>
+...ignoring
+
+TASK [Open firewall ports for httpd] ************************************************************************************
+skipping: [18.130.190.158]
+skipping: [52.56.81.99]
+
+TASK [Configure Web Content] ********************************************************************************************
+ok: [18.130.190.158]
+ok: [52.56.81.99]
+
+PLAY RECAP **************************************************************************************************************
+18.130.190.158             : ok=5    changed=1    unreachable=0    failed=0
+52.56.81.99                : ok=5    changed=1    unreachable=0    failed=0
+localhost                  : ok=3    changed=1    unreachable=0    failed=0
 ```
 
 That completes this exercise.
