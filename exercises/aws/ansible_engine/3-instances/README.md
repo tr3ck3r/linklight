@@ -1,6 +1,6 @@
 # Exercise 3 - More Playbook Action
 
-## Step 3.1 - Creating ec2 Instances
+## Step 1 - Creating ec2 Instances
 
 Let's create a number of ec2 virtual machine instances so we can use them as an application platform.
 
@@ -71,7 +71,7 @@ Add the following lines, remember Ansible uses YAML to enforce indentation, so w
       register: ec2_instances
 ```
 
-## Step 2.2 - Run the Playbook
+## Step 2 - Run the Playbook
 
 Let's create the instances!
 
@@ -103,7 +103,7 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=3    changed=1    unreachable=0    failed=0
 ```
 
-## Step 2.3 - Playbook Explanation
+## Step 3 - Playbook Explanation
 
 Whilst you wait for your instance(s) to be created, let's re-examine the playbook and explain what it's doing.
 
@@ -178,7 +178,7 @@ We use a combination of variables and tags so each students resources can be eas
       register: ec2_instances
 ```
 
-## Step 3 - Final Solution (optional)
+## Step 4 - Final Solution (optional)
 
 If you hit issues and want to see it working, then run this:
 ```bash
