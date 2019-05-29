@@ -39,6 +39,9 @@
   become: yes
   become_method: sudo
 
+  vars:
+    web_message: "FOOBAR!"
+
   tasks:
 
     - name: add local user account
