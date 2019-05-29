@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  ignore_errors: true
+  vars:
+    region: "eu-west-2"
+    elb_name: "{{student}}-elb"
+  vars_files:
+    - ../aws_keys.yml
+
+  tasks:
+
+    - name: discover facts about my ELB
+      ec2_elb_facts:
+        aws_access_key: "{{aws_access_key}}"
+        aws_secret_key: "{{aws_secret_key}}"
+        security_token: "{{security_token}}"
+        region: "{{region}}"
+        names: "{{elb_name}}"
+      register: elb_facts
+
+    - name: show me the DNS name of my ELB
+      debug: 
+        msg: "{{elb_facts.elbs[0].dns_name}}"

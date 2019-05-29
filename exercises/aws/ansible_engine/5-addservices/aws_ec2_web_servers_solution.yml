@@ -40,7 +40,7 @@
   become_method: sudo
 
   vars:
-    web_message: "YOUR CUSTOM MESSAGE GOES HERE"
+    web_message: "ROCK and ROLL BABY!!"
 
   tasks:
 
