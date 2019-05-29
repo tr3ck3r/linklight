@@ -50,3 +50,34 @@
         generate_ssh_key: yes
         ssh_key_bits: 2048
         ssh_key_file: .ssh/ida_rsa
+
+    - name: install httpd 
+      yum:
+        name: httpd
+        state: latest
+
+    - name: start and enable httpd service
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Check if firewalld is running
+      shell: systemctl is-active firewalld
+      register: firewall_status
+      ignore_errors: true
+
+    - name: Open firewall ports for httpd
+      firewalld:
+        port: 80/tcp
+        permanent: true
+        state: enabled
+        immediate: true
+      when: firewall_status.stdout == 'active'
+
+    - name: Configure Web Content
+      template: 
+        dest: /var/www/html/index.html 
+        src: index.html.j2
+      notify:
+        - restart httpd
