@@ -30,7 +30,7 @@ Add the following lines, remember Ansible uses YAML to enforce indentation, so w
         aws_secret_key: "{{ aws_secret_key }}"
         security_token: "{{ security_token }}"
         region: "{{region}}"
-        name: "RHEL-8*"
+        name: "RHEL-7.6_HVM_GA*"
         owner: 309956199498 
         sort: name
         sort_order: descending
@@ -109,7 +109,7 @@ Whilst you wait for your instance(s) to be created, let's re-examine the playboo
 
 The first module we use is ec2_ami_find, which allows us to find the right AMI for the region. AMIs can have different IDs, or not even exist in other regions, so this is a good way to ensure we get what we want!
 
-In this case, we're finding and selecting the latest RHEL8 image, provided by Red Hat (owner), and saving the output to a variable 'ami_find'
+In this case, we're finding and selecting the latest RHEL7.6 GA image, provided by Red Hat (owner), and saving the output to a variable 'ami_find'
 
 ```bash
  - name: Find latest RedHat Linux AMI to use
@@ -118,7 +118,7 @@ In this case, we're finding and selecting the latest RHEL8 image, provided by Re
         aws_secret_key: "{{ aws_secret_key }}"
         security_token: "{{ security_token }}"
         region: "{{region}}"
-        name: "RHEL-8*"
+        name: "RHEL-7.6_HVM_GA*"
         owner: 309956199498
         sort: name
         sort_order: descending
