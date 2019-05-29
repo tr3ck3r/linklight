@@ -15,7 +15,7 @@
         aws_secret_key: "{{ aws_secret_key }}"
         security_token: "{{ security_token }}"
         region: "{{region}}"
-        name: "RHEL-8*"
+        name: "RHEL-7.6_HVM_GA*"
         owner: 309956199498 
         sort: name
         sort_order: descending
@@ -41,11 +41,12 @@
         instance_count: 2
 
       ec2_instance:
-        aws_access_key: "{{ aws_access_key }}"
-        aws_secret_key: "{{ aws_secret_key }}"
-        security_token: "{{ security_token }}"
+        aws_access_key: "{{aws_access_key}}"
+        aws_secret_key: "{{aws_secret_key}}"
+        security_token: "{{security_token}}"
         name: "{{student}}-ansible-{{os}}-{{item}}"
         security_group: "{{security_group}}"
+        key_name: "{{keypair}}"
         network:
           assign_public_ip: true
         image_id: "{{ami_id}}"
