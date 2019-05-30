@@ -46,7 +46,7 @@ We can use the ansible-galaxy command to create the directory structure for us, 
 mkdir -p roles/ami/tasks group_vars
 ```
 
-The ami role is stored under the roles directory and inside that, there is a main.yml file within the tasks directory. This what Ansible will run when calling the ami role.
+The ami role is stored under the roles directory and inside that, there is a main.yml file within the tasks directory. This is what Ansible will run when calling the ami role.
 
 ```bash
 $ cat roles/ami/tasks/main.yml
@@ -100,7 +100,7 @@ keypair: laptop
 
 To save repeating these common variables we store them here.
 
-## Step 4 - Final Solution (optional)
+## Step 4 - Run the Playbook
 
 Now run this to see it in action:
 
