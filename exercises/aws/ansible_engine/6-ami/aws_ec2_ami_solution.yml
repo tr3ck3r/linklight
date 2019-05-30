@@ -1,0 +1,11 @@
+---
+
+- name: create a custom AMI using a role
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars_files:
+    - ../aws_keys.yml
+
+  roles:
+    - ami
