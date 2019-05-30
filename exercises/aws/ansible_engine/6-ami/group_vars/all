@@ -1,0 +1,3 @@
+region: eu-west-2
+security_group: "{{student}}_sg"
+keypair: laptop
