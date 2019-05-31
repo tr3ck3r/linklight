@@ -76,6 +76,18 @@ STS TOKEN | <ask your instructor for details>
 Select SAVE ![Save button](at_save.png)
 
 
+Repeat this step creating a MACHINE credential as follows:
+
+NAME |ec2-user
+DESCRIPTION|ec2 AWS local user account
+ORGANIZATION|Default
+TYPE|Machine
+USERNAME| ec2-user
+SSH PRIVATE KEY| <paste in laptop.pem private key contents>
+PRIVILEGE ESCALATION METHOD | sudo
+PRIVILEGE ESCALATION USERNAME | root
+
+
 ## Creating a Dynamic Inventory
 
 An inventory is a collection of hosts against which jobs may be launched. Inventories are divided into groups and these groups contain the actual hosts. Groups may be sourced manually, by entering host names into Tower, or from one of Ansible Tower’s supported cloud providers.
@@ -145,7 +157,85 @@ Click SAVE and re-run the inventory sync and go check your hosts etc again.
 
 A Project is a logical collection of Ansible playbooks, represented in Tower. You can manage playbooks and playbook directories by either placing them manually under the Project Base Path on your Tower server, or by placing your playbooks into a source code management (SCM) system supported by Tower, including Git, Subversion, and Mercurial.
 
+We're going to setup and use your own personal gitlab instance as our SCM and commit our engine examples into the repo for re-use in Tower.
+
 ### Step 1:
+
+On your control node:
+
+```bash
+cd linklight/exercises/aws/ansible_engine
+git init
+```
+
+This has created a new git repo. We now need to exclude a few files as we either don't need them or contain confidential information which shouldn't be in the public domain.
+
+```
+bash
+vi .gitignore
+```
+
+add
+
+```bash
+aws-keys.yml
+1-setup
+```
+
+In fact, now delete the vault file we used before:
+
+```bash
+rm ~/linklight/exercises/aws/ansible_engine/aws_keys.yml
+```
+
+We'll make a few tweaks to the original security group playbook, as there are things in there we no longed need or Tower functionality replaces.
+
+```bash
+vi 2-playbook/aws_security_group.yml
+```
+
+Remove the vars_files lines near the top:
+
+```bash
+  vars_files:
+    - ../aws_keys.yml
+```
+
+Also remove these lines, as Tower will use the AWS credentials in its place:
+
+```bash
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        security_token: "{{ security_token }}"
+```
+
+Finally add in your student number variable as this was stored in the vault file, which we've removed.
+
+Your vars section should now look like:
+
+```bash
+  vars:
+    student: student2
+    security_group: "{{student}}_sg"
+    region: eu-west-1
+    teardown: false
+```
+
+Let's make your first add and commit to the SCM base:
+
+```bash
+git add 2-playbook/aws_security_group.yml
+git commit -m "Initial commit" -a
+```
+
+We can now push this code to our SCM. Ask the instructor for PAT token details as you'll need them.
+
+```bash
+git remote add origin https://ffirg:<PAT Token>@gitlab.com/aws-workshop/student<number>.git
+git push origin master
+```
+
+We can now add this SCM to a Project in Tower.
 
 Click on PROJECTS
 
@@ -157,11 +247,11 @@ Select ADD ![Add button](at_add.png)
 
 Complete the form using the following entries
 
-NAME |Ansible Workshop Project
-DESCRIPTION|workshop playbooks
+NAME |Student Gitlab
+DESCRIPTION|AWS workshop gitlab SCM
 ORGANIZATION|Default
 SCM TYPE|Git
-SCM URL| https://github.com/ansible/lightbulb
+SCM URL| https://gitlab.com/aws-workshop/student<number>.git
 SCM BRANCH|
 SCM UPDATE OPTIONS| [x] Clean <br />  [x] Delete on Update<br />  [x] Update on Launch
 
@@ -171,6 +261,8 @@ SCM UPDATE OPTIONS| [x] Clean <br />  [x] Delete on Update<br />  [x] Update on 
 ### Step 4:
 
 Select SAVE ![Save button](at_save.png)
+
+Tower should kick off a Project Sync Job. A green circle against the Project will dictate that it's been successful.
 
 ---
 
