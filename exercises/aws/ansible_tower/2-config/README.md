@@ -129,6 +129,17 @@ Scroll down to the Ansible AWS Workshop Inventory, at the bottom of the screen a
 
 Notice the green flashing cloud symbol? Click on that and it'll take you to the JOBS dashboard where you'll see the job running and pulling in the dynamic inventory from AWS.
 
+Go to Inventories and check out your newly discovered hosts/groups.
+
+Optional: you can limit the inventory to just your hosts/info by using some additional filters
+
+Try editing your Dynamic Inventory Source and applying these:
+
+REGION | EU (London)
+INSTANCE FILTERS | tag:student=student<your number> (ie. student2 etc)
+
+Click SAVE and re-run the inventory sync and go check your hosts etc again.
+
 
 ## Creating a Project
 
