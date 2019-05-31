@@ -14,7 +14,7 @@
  
  TOWER CONTENT:
  
- - [Exercise 6 - Roles: More Roles!](ansible_tower/something)
+ - [Exercise 1 - Installing Tower](ansible_engine/1-install)
 
 
 
