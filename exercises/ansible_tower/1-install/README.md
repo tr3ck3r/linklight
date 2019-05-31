@@ -71,7 +71,7 @@ rabbitmq_username=tower
 rabbitmq_password='ansibleWS'
 rabbitmq_cookie=cookiemonster
 
-= Needs to be true for fqdns and ip addresses
+# Needs to be true for fqdns and ip addresses
 rabbitmq_use_long_name=false
 
 ```
