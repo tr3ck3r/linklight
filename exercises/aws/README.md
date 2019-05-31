@@ -14,7 +14,5 @@
  
  TOWER CONTENT:
  
- - [Exercise 1 - Installing Tower](ansible_engine/1-install)
-
-
+ - [Exercise 1 - Installing Tower](ansible_tower/1-install)
 
