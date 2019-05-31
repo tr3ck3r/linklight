@@ -266,4 +266,4 @@ Tower should kick off a Project Sync Job. A green circle against the Project wil
 
 ---
 
-[Click Here to return to the Ansible Lightbulb - Ansible Tower Workshop](../README.md)
+[Click Here to return to the Ansible AWS Workshop](../../README.md)

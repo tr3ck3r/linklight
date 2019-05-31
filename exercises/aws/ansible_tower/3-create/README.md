@@ -82,4 +82,4 @@ The security group will now be deleted!
 
 ---
 
-[Click Here to return to the Ansible Lightbulb - Ansible Tower Workshop](../README.md)
+[Click Here to return to the Ansible AWS Workshop](../../README.md)
