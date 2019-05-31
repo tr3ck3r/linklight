@@ -15,4 +15,8 @@
  TOWER CONTENT:
  
  - [Exercise 1 - Installing Tower](ansible_tower/1-install)
+ - [Exercise 2 - Configuring Tower](ansible_tower/2-config)
+ - [Exercise 3 - Tower Job Template](ansible_tower/3-create)
+ - [Exercise 4 - Adding More Templates](ansible_tower/4-more)
+ - [Exercise 5 - Tower Workflows](ansible_tower/5-workflow)
 
