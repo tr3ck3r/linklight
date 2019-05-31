@@ -70,6 +70,16 @@ To the right, you can view standard output; the same way you could if you were r
 ![Job Standard Output](at_job_stdout.png)
 
 
+[Optional]
+
+Remember that we coded this playbook so it could do a deletion as well?
+
+Change the Job Template and tick the PROMPT ON LAUNCH option and SAVE it again.
+
+Run it again, and add teardown: true under the '---' line in the prompt box.
+
+The security group will now be deleted!
+
 ---
 
 [Click Here to return to the Ansible Lightbulb - Ansible Tower Workshop](../README.md)
