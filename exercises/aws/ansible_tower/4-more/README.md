@@ -4,29 +4,42 @@ Let's revise, git commit and sync the rest of the playbooks we wrote so we can c
 
 ## Revise the Playbooks
 
-Makes the mods to the other playbooks as per exercise 2:
+Let re-factor the playbooks into roles so they can share a common base and reduce duplication.
 
 ```bash
-cd ~/linklight/exercises/aws/ansible_engine
+mkdir /home/student1/linklight/exercises/aws/ansible_engine/roles
+cd /home/student1/linklight/exercises/aws/ansible_engine/roles
+mkdir -p instances/tasks loadbalancer/tasks addservices/tasks
+cp -pr ../6-ami/roles/ami .
+cp -pr ../6-ami/group_vars .
 ```
 
-In turn, edit the following files, namely:
+Edit the following file:
 
 ```bash
-3-instances/aws_ec2_instances.yml
-4-loadbalancer/aws_ec2_elb.yml
-5-addservices/aws_ec2_web_servers.yml
-6-ami/aws_ec2_ami.yml
+vi groups_vars/all
 ```
 
-As a reminder, remove/modify the following:
-
-Remove the vars_files lines near the top:
+Add your student variable in so it looks like:
 
 ```bash
-  vars_files:
-    - ../aws_keys.yml
+student: student1
+region: eu-west-2
+security_group: "{{student}}_sg"
+keypair: laptop
 ```
+
+Now copy the original playbooks we created into the tasks folder for each role:
+
+```bash
+cp ../3-instances/aws_ec2_instances.yml instances/tasks/main.yml
+cp ../4-loadbalancer/aws_ec2_elb.yml loadbalancer/tasks/main.yml
+cp ../5-addservices/aws_ec2_web_servers.yml addservices/tasks/main.yml
+```
+
+Now remove/modify the redundant parts from each of the above, as follows...
+
+Remove the lines after the first '---' down to and including the first tasks:
 
 Also remove ALL occurences of these lines, as Tower will use the AWS credentials in its place:
 
@@ -36,30 +49,73 @@ Also remove ALL occurences of these lines, as Tower will use the AWS credentials
         security_token: "{{ security_token }}"
 ```
 
-Finally add in your student number variable as this was stored in the vault file, which we've removed.
+You also need for remove the initial indentation, which you can do in vi using 
+```bash
+:%s/    //g
+```
+(that's 4 spaces in the above command)
 
-Your vars section should now look like:
+We now need to create the playbooks that will call the roles just created.
 
 ```bash
-  vars:
-    student: student2
-    security_group: "{{student}}_sg"
-    region: eu-west-2
+cd ~/linklight/exercises/aws/ansible_engine
+```
+
+The first one is for our load balancer:
+
+```bash
+vi ec2_elb.yml
+```
+
+Add the following:
+
+```bash
+---
+
+- name: create our load balancer for our web servers
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  roles:
+    - loadbalancer
+```
+
+We can create one playbook for our instances creations and web server install/config if we like by calling 2 roles in the one playbook:
+
+```bash
+vi ec2_webservers.yml
+```
+
+Add the following:
+
+```bash
+---
+
+- name: create our ec2 instances
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  roles:
+    - instances
+    - addservices
 ```
 
 ## Git Commit 
 
 ```bash
-git add 3-instances/aws_ec2_instances.yml
-git add 4-loadbalancer/aws_ec2_elb.yml
-git add 5-addservices/aws_ec2_web_servers.yml
-git add 6-ami/aws_ec2_ami.yml
+cd ..
+git add roles ec2_elb.yml ec2_webservers.yml
 git commit -m "More playbooks" -a
 git push origin master
 ```
 
 ## Tower Project Sync
 
+Go to PROJECTS in Tower , and re-sync the Student Gitlab repo
+
+![Ansible Tower Project Sync](aws-tower-project-sync.png)
 
 ## Create Job Templates
 
