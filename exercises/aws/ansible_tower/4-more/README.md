@@ -197,6 +197,16 @@ Change the contents to this:
     - restart httpd
 ```
 
+We need a web_message variable set here:
+
+```bash
+vi addservices/vars/main.yml
+```
+
+```bash
+web_message: "YOUR CUSTOM MESSAGE GOES HERE"
+```
+
 We now need to create the playbooks that will call the roles just created.
 
 ```bash
