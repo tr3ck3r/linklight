@@ -4,23 +4,23 @@ Let's revise, git commit and sync the rest of the playbooks we wrote so we can c
 
 ## Revise the Playbooks
 
-Let re-factor the playbooks into roles so they can share a common base and reduce duplication.
+Let's re-factor the playbooks into roles so they can share a common base and reduce duplication.
 
 ```bash
-mkdir /home/student1/linklight/exercises/aws/ansible_engine/roles
-cd /home/student1/linklight/exercises/aws/ansible_engine/roles
+mkdir ~/linklight/exercises/aws/ansible_engine/roles
+cd ~/linklight/exercises/aws/ansible_engine/roles
 mkdir -p instances/tasks loadbalancer/tasks addservices/tasks addservices/templates addservices/vars addservices/handlers
 cp -pr ../6-ami/roles/ami .
 cp -pr ../6-ami/group_vars ..
 ```
 
-Edit the following file:
+Now we can edit the 'group_vars' file, placing commong re-usable variables in here.
 
 ```bash
-vi ../groups_vars/all
+vi ~/linklight/exercises/aws/ansible_engine/groups_vars/all
 ```
 
-Add your student variable in so it looks like:
+Modify it so it looks like this (remember to use YOUR student number!):
 
 ```bash
 student: student1
@@ -223,7 +223,7 @@ Add the following:
     - loadbalancer
 ```
 
-We can create one playbook for our instances creations and web server install/config if we like by calling 2 roles in the one playbook:
+We can create one playbook for our instances creations and web server install/config if we like by calling 2 roles in the one playbook, as the web config is dependent on the instance creation in this case:
 
 ```bash
 vi ec2_webservers.yml
@@ -253,8 +253,10 @@ Add the following:
 
 ## Git Commit 
 
+We can now commit our modified code base to our Gitlab SCM, by doing:
+
 ```bash
-cd ..
+cd ~/linklight/exercises/aws/ansible_engine
 git add roles ec2_elb.yml ec2_webservers.yml
 git commit -m "More playbooks" -a
 git push origin master
@@ -262,7 +264,7 @@ git push origin master
 
 ## Tower Project Sync
 
-Go to PROJECTS in Tower , and re-sync the Student Gitlab repo
+Go to PROJECTS in Tower , and re-sync the Student Gitlab repo. This will pull in the latest additions in Gitlab.
 
 ![Ansible Tower Project Sync](aws-tower-project-sync.png)
 
