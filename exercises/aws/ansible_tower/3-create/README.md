@@ -17,15 +17,17 @@ Click on ADD ![Add button](at_add.png), and select JOB TEMPLATE
 
 Complete the form using the following values
 
-NAME |Create Security Group
-DESCRIPTION|Template for creating/deleting an ec2 security group
-JOB TYPE|Run
-INVENTORY|Ansible AWS Workshop Inventory
-PROJECT|student gitlab
-PLAYBOOK|2-playbook/aws_security_group.yml
-CREDENTIAL|AWS ec2 workshop
+| FIELD | VALUE |
+| :--- | :--- |
+| NAME | Create Security Group |
+| DESCRIPTION | Template for creating/deleting an ec2 security group |
+| JOB TYPE | Run |
+| INVENTORY | Ansible AWS Workshop Inventory |
+| PROJECT | student gitlab |
+| PLAYBOOK | 2-securitygroup/aws_security_group.yml |
+| CREDENTIAL | AWS ec2 workshop (from Amazon Web Services Credential Type) |
 
-![Job Template Form](at_jt_detail.png)
+![Job Template Form](aws-tower-sg-jt.png)
 
 ### Step 4:
 
@@ -34,7 +36,7 @@ Click SAVE ![Save button](at_save.png)
 
 ## Running a Job Template
 
-Now that you've sucessfully creating your Job Template, you are ready to launch it.
+Now that you've sucessfully created your Job Template, you are ready to launch it.
 Once you do, you will be redirected to a job screen which is refreshing in realtime
 showing you the status of the job.
 
@@ -59,24 +61,24 @@ Sit back, watch the magic happen!
 
 One of the first things you will notice is the summary section.  This gives you details about your job such as who launched it, what playbook it's running, what the status is, i.e. pending, running, or complete.
 
-![Job Summary](at_job_status.png)
-
 Scrolling down, you will be able to see details on the play and each task in the playbook.
-
-![Play and Task Details](at_job_tasklist.png)
 
 To the right, you can view standard output; the same way you could if you were running Ansible Core from the command line.
 
-![Job Standard Output](at_job_stdout.png)
+![Job Template Output](aws-tower-sg-job-output.png)
 
 
 [Optional]
 
 Remember that we coded this playbook so it could do a deletion as well?
 
-Change the Job Template and tick the PROMPT ON LAUNCH option and SAVE it again.
+Change the Job Template and tick the PROMPT ON LAUNCH option to the right of EXTRA VARIABLES and SAVE it again.
 
-Run it again, and add teardown: true under the '---' line in the prompt box.
+Run it again, and add teardown: true under the '---' line in the prompt box:
+
+![Job Template Extra Vars](aws-tower-jt-extra-vars.png)
+
+Click Next, then Launch.
 
 The security group will now be deleted!
 
