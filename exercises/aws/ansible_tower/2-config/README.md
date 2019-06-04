@@ -113,11 +113,13 @@ Select ADD ![Add button](at_add.png) and select Inventory.
 
 Complete the form using the following entries
 
-NAME |Ansible AWS Workshop Inventory
-DESCRIPTION|Ansible AWS Workshop Inventory
-ORGANIZATION|Default
+| FIELD | VALUE |
+| :--- | :--- |
+| NAME | Ansible AWS Workshop Inventory |
+| DESCRIPTION | Ansible AWS Workshop Inventory |
+| ORGANIZATION | Default |
 
-![Create an Inventory](at_inv_create.png)
+![Create an Inventory](aws-tower-inv-create.png)
 
 ### Step 4:
 
@@ -131,14 +133,16 @@ Click on SOURCES and select ADD ![Add button](at_add.png).
 
 Complete the form using the following entries
 
-NAME |Ansible AWS Workshop Dynamic Inventory
-DESCRIPTION|Ansible AWS Workshop Dynamic Inventory
-SOURCE|Amazon EC2
-CREDENTIALS|AWS ec2 workshop
+| FIELD | VALUE |
+| :--- | :--- |
+| NAME | Ansible AWS Workshop Dynamic Inventory |
+| DESCRIPTION | Ansible AWS Workshop Dynamic Inventory |
+| SOURCE | Amazon EC2 |
+| CREDENTIALS| AWS ec2 workshop |
 
 ### Step 7:
 
-Select SAVE ![Save button](at_save.png)
+Select SAVE ![Save button](aws-tower-dyn-inv.png)
 
 ### Step 8:
 
@@ -152,8 +156,10 @@ Optional: you can limit the inventory to just your hosts/info by using some addi
 
 Try editing your Dynamic Inventory Source and applying these:
 
-REGION | EU (London)
-INSTANCE FILTERS | tag:student=student<your number> (ie. student2 etc)
+| FIELD | VALUE |
+| :--- | :--- |
+| REGION | EU (London) |
+| INSTANCE FILTERS | tag:student=student\<your number\> (ie. student2 etc) |
 
 Click SAVE and re-run the inventory sync and go check your hosts etc again.
 
