@@ -145,14 +145,14 @@ localhost                  : ok=1    changed=0    unreachable=0    failed=0
 
 (Run it again if you like to check out that idempotence again :)
 
+NOTE: Please ensure you have your studentN security group created, as it'll be used throughout the remaining exercises.
+
 ## Step 4 - Final Solution (optional)
 
 If you hit issues and want to see it working, then run this:
 ```bash
 ansible-playbook aws_security_group_solution.yml --ask-vault-pass
 ```
-
-NOTE: Please ensure you have your studentN security group created, as it'll be used throughout the remaining exercises.
 
 That completes this exercise.
 
