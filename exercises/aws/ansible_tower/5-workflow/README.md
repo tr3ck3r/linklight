@@ -6,6 +6,8 @@ We are going to use workflows in this exercise to tie all of our playbooks toget
 
 Let's join our seperate playbooks into a single automation workflow. Navigate to `Templates` and click the `+` button to add a new `workflow template`.
 
+| FIELD | VALUE |
+| :--- | :--- |
 | NAME | AWS Web Server Workflow |
 | DESCRIPTION | Workflow to deploy loadbalancer and web servers onto ec2 instances in AWS |
 | ORGANIZATION | Default |
