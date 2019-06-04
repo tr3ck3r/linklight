@@ -17,7 +17,7 @@ cp -pr ../6-ami/group_vars ..
 Now we can edit the 'group_vars' file, placing commong re-usable variables in here.
 
 ```bash
-vi /linklight/exercises/aws/ansible_engine/group_vars/all
+vi ~/linklight/exercises/aws/ansible_engine/group_vars/all
 ```
 
 Modify it so it looks like this (remember to use YOUR student number!):
