@@ -44,8 +44,7 @@ Your vars section should now look like:
   vars:
     student: student2
     security_group: "{{student}}_sg"
-    region: eu-west-1
-    teardown: false
+    region: eu-west-2
 ```
 
 ## Git Commit 
