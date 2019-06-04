@@ -86,7 +86,7 @@ sudo ./setup.sh
 
 ---
 **NOTE**
-Step 7 will take approx. 20-25 minutes to complete.  This may be a good time to take a break.
+Step 7 should take < 5 minutes to complete.  This may be a good time to take a break.
 
 ---
 
