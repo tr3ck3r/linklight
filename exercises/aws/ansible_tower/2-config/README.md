@@ -175,7 +175,7 @@ We're going to setup and use your own personal gitlab instance as our SCM and co
 On your control node:
 
 ```bash
-cd linklight/exercises/aws/ansible_engine
+cd ~/linklight/exercises/aws/ansible_engine
 git init
 ```
 
@@ -202,7 +202,7 @@ rm ~/linklight/exercises/aws/ansible_engine/aws_keys.yml
 We'll make a few tweaks to the original security group playbook, as there are things in there we no longed need or Tower functionality replaces.
 
 ```bash
-vi 2-playbook/aws_security_group.yml
+vi 2-securitygroup/aws_security_group.yml
 ```
 
 Remove the vars_files lines near the top:
@@ -212,7 +212,7 @@ Remove the vars_files lines near the top:
     - ../aws_keys.yml
 ```
 
-Also remove these lines, as Tower will use the AWS credentials in its place:
+Also remove ALL occurences of these lines, as Tower will use the AWS credentials in its place:
 
 ```bash
         aws_access_key: "{{ aws_access_key }}"
@@ -235,8 +235,18 @@ Your vars section should now look like:
 Let's make your first add and commit to the SCM base:
 
 ```bash
-git add 2-playbook/aws_security_group.yml
+git config --global user.email "doesntmatter@whocares.com"
+git config --global user.name "student1"
+git add 2-securitygroup/aws_security_group.yml
 git commit -m "Initial commit" -a
+```
+
+You should see something like:
+
+```bash
+[master (root-commit) 8ffc0c0] Initial commit
+ 1 file changed, 40 insertions(+)
+ create mode 100644 2-securitygroup/aws_security_group.yml
 ```
 
 We can now push this code to our SCM. Ask the instructor for PAT token details as you'll need them.
