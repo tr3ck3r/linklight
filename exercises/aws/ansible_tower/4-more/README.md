@@ -9,7 +9,7 @@ Let re-factor the playbooks into roles so they can share a common base and reduc
 ```bash
 mkdir /home/student1/linklight/exercises/aws/ansible_engine/roles
 cd /home/student1/linklight/exercises/aws/ansible_engine/roles
-mkdir -p instances/tasks loadbalancer/tasks addservices/tasks addservices/templates addservices/defaults
+mkdir -p instances/tasks loadbalancer/tasks addservices/tasks addservices/templates addservices/vars addservices/handlers
 cp -pr ../6-ami/roles/ami .
 cp -pr ../6-ami/group_vars ..
 ```
@@ -26,6 +26,7 @@ Add your student variable in so it looks like:
 student: student1
 region: eu-west-2
 security_group: "{{student}}_sg"
+elb_name: "{{student}}-elb"
 keypair: laptop
 ```
 
@@ -36,6 +37,7 @@ cp ../3-instances/aws_ec2_instances.yml instances/tasks/main.yml
 cp ../4-loadbalancer/aws_ec2_elb.yml loadbalancer/tasks/main.yml
 cp ../5-addservices/aws_ec2_web_servers.yml addservices/tasks/main.yml
 cp ../5-addservices/templates/index.html.j2 addservices/templates
+cp ../5-addservices/handlers/main.yml addservices/handlers
 ```
 
 Now remove/modify the redundant parts from each of the above, as follows...
@@ -121,7 +123,36 @@ vi loadbalancer/tasks/main.yml
 Change the contents to this:
 
 ```bash
+---
 
+- name: create load balancer
+  ec2_elb_lb:
+    region: "{{region}}"
+    zones:
+      - "{{region}}a"
+    name: "{{elb_name}}"
+    state: present
+    listeners:
+      - protocol: http
+        load_balancer_port: 80
+        instance_port: 80
+        proxy_protocol: True
+
+- name: gather ec2 instances
+  ec2_instance_facts:
+    region: "{{region}}"
+    filters:
+      instance-state-name: "running"
+      "tag:student": "{{student}}"
+  register: instances
+
+- name: add instances to elb
+  elb_instance:
+    region: "{{region}}"
+    instance_id: "{{item.instance_id}}"
+    ec2_elbs: "{{elb_name}}"
+    state: present
+  with_items: "{{instances.instances}}"
 ```
 
 ```bash
