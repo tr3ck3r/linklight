@@ -11,7 +11,7 @@ One of the first things we need to do in EC2, before we can do things like creat
 We'll create a bare minimum playbook to spin up a new Security Group which will also serve to test out our credentials :)
 
 ```bash
-cd ~/linklight/exercises/aws/ansible_engine/2-playbook
+cd ~/linklight/exercises/aws/ansible_engine/2-securitygroup
 vi aws_security_group.yml
 ```
 
