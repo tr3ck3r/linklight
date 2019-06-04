@@ -257,7 +257,7 @@ We can now commit our modified code base to our Gitlab SCM, by doing:
 
 ```bash
 cd ~/linklight/exercises/aws/ansible_engine
-git add roles ec2_elb.yml ec2_webservers.yml
+git add group_vars roles ec2_elb.yml ec2_webservers.yml
 git commit -m "More playbooks" -a
 git push origin master
 ```
