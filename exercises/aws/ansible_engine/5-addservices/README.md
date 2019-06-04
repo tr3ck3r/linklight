@@ -85,6 +85,7 @@ Please ask your instructor for the private SSH key, then run the following comma
 
 ```bash
 mv laptop.pem ~/.ssh
+chmod 400 ~/.ssh/laptop.pem
 ssh-add ~/.ssh/laptop.pem
 ssh-add -l
 2048 SHA256:f38EKSsiGJH07tjGIetQFSUCvv8I/zG+d6G6sl4kLp4 /home/student1/.ssh/laptop.pem (RSA)
