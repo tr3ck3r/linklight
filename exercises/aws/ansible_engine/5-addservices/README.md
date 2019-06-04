@@ -84,6 +84,7 @@ Before we can successfully run this playbook, we'll need to have access to the p
 Please ask your instructor for the private SSH key, then run the following commands:
 
 ```bash
+ssh-keygen (accept all defaults)
 mv laptop.pem ~/.ssh
 chmod 400 ~/.ssh/laptop.pem
 ssh-add ~/.ssh/laptop.pem
