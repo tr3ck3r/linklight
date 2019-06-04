@@ -270,6 +270,64 @@ Go to PROJECTS in Tower , and re-sync the Student Gitlab repo. This will pull in
 
 ## Create Job Templates
 
+## Creating a Job Template for Instance Creation and Web Services
+
+### Step 1:
+
+Select TEMPLATES
+
+### Step 2:
+
+Click on ADD ![Add button](at_add.png), and select JOB TEMPLATE
+
+### Step 3:
+
+Complete the form using the following values
+
+| FIELD | VALUE |
+| :--- | :--- |
+| NAME | Create Web Servers |
+| DESCRIPTION | Template for creating ec2 instances and web services |
+| JOB TYPE | Run |
+| INVENTORY | Ansible AWS Workshop Inventory |
+| PROJECT | Student Gitlab |
+| PLAYBOOK | ec2_webservers.yml |
+| CREDENTIAL | AWS ec2 workshop (from Amazon Web Services Credential Type) AND ec2-user (from Machine Type) |
+
+### Step 4:
+
+Click SAVE ![Save button](at_save.png)
+
+
+## Creating a Job Template for the Load Balancer
+
+### Step 1:
+
+Select TEMPLATES
+
+### Step 2:
+
+Click on ADD ![Add button](at_add.png), and select JOB TEMPLATE
+
+### Step 3:
+
+Complete the form using the following values
+
+| FIELD | VALUE |
+| :--- | :--- |
+| NAME | Create Load Balancer |
+| DESCRIPTION | Template for creating ec2 ELB |
+| JOB TYPE | Run |
+| INVENTORY | Ansible AWS Workshop Inventory |
+| PROJECT | Student Gitlab |
+| PLAYBOOK | ec2_elb.yml |
+| CREDENTIAL | AWS ec2 workshop (from Amazon Web Services Credential Type) |
+
+
+### Step 4:
+
+Click SAVE ![Save button](at_save.png)
+
 ---
 
 [Click Here to return to the Ansible AWS Workshop](../../README.md)
