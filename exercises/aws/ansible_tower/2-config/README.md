@@ -80,15 +80,18 @@ Select SAVE ![Save button](at_save.png)
 
 Repeat this step creating a MACHINE credential as follows:
 
-NAME |ec2-user
-DESCRIPTION|ec2 AWS local user account
-ORGANIZATION|Default
-TYPE|Machine
-USERNAME| ec2-user
-SSH PRIVATE KEY| <paste in laptop.pem private key contents>
-PRIVILEGE ESCALATION METHOD | sudo
-PRIVILEGE ESCALATION USERNAME | root
+| FIELD | VALUE |
+| :--- | :--- |
+| NAME | ec2-user |
+| DESCRIPTION| ec2 AWS local user account |
+| ORGANIZATION| Default |
+| CREDENTIAL TYPE| Machine |
+| USERNAME| ec2-user |
+| SSH PRIVATE KEY| \<ask your instructor for details\>
+| PRIVILEGE ESCALATION METHOD | sudo |
+| PRIVILEGE ESCALATION USERNAME | root |
 
+![Adding a Credential](aws-tower-add-ec2-user-creds.png)
 
 ## Creating a Dynamic Inventory
 
