@@ -181,8 +181,7 @@ git init
 
 This has created a new git repo. We now need to exclude a few files as we either don't need them or contain confidential information which shouldn't be in the public domain.
 
-```
-bash
+```bash
 vi .gitignore
 ```
 
@@ -275,7 +274,7 @@ Complete the form using the following entries
 | DESCRIPTION | AWS workshop gitlab SCM |
 | ORGANIZATION | Default |
 | SCM TYPE | Git |
-| SCM URL | https://gitlab.com/aws-workshop/student<number>.git |
+| SCM URL | https://gitlab.com/aws-workshop/student\<number\>.git |
 | SCM UPDATE OPTIONS | [x] Clean [x] Delete on Update [x] Update on Launch |
 
 
