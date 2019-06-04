@@ -61,6 +61,7 @@ Add the following lines, remember Ansible uses YAML to enforce indentation, so w
         security_token: "{{ security_token }}"
         name: "{{student}}-ansible-{{os}}-{{item}}"
         security_group: "{{security_group}}"
+        key_name: "{{keypair}}"
         network:
           assign_public_ip: true
         image_id: "{{ami_id}}"
