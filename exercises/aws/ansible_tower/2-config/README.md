@@ -228,7 +228,7 @@ Your vars section should now look like:
   vars:
     student: student2
     security_group: "{{student}}_sg"
-    region: eu-west-1
+    region: eu-west-2
     teardown: false
 ```
 
@@ -237,6 +237,7 @@ Let's make your first add and commit to the SCM base:
 ```bash
 git config --global user.email "doesntmatter@whocares.com"
 git config --global user.name "student1"
+git add .gitignore
 git add 2-securitygroup/aws_security_group.yml
 git commit -m "Initial commit" -a
 ```
