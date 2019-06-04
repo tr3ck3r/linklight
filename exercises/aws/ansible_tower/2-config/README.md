@@ -60,13 +60,15 @@ Click on ADD ![Add button](at_add.png)
 
 Complete the credential form using the following entries:
 
-NAME |AWS ec2 workshop
-DESCRIPTION|AWS ec2 workshop credentials
-ORGANIZATION|Default
-TYPE|Amazon Web Services
-ACCESS KEY| <ask your instructor for details>
-SECRET KEY| <ask your instructor for details>
-STS TOKEN | <ask your instructor for details>
+| FIELD | VALUE |
+| --- | --- |
+| NAME | AWS ec2 workshop |
+| DESCRIPTION | AWS ec2 workshop credentials |
+| ORGANIZATION | Default |
+| TYPE | Amazon Web Services |
+| ACCESS KEY | <ask your instructor for details> |
+| SECRET KEY | <ask your instructor for details> |
+| STS TOKEN | <ask your instructor for details> |
 
 
 ![Adding a Credential](aws-tower-add-aws-creds.png)
