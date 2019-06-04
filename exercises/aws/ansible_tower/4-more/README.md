@@ -33,11 +33,11 @@ keypair: laptop
 Now copy the original playbooks we created into the tasks folder for each role:
 
 ```bash
-cp ../3-instances/aws_ec2_instances.yml instances/tasks/main.yml
-cp ../4-loadbalancer/aws_ec2_elb.yml loadbalancer/tasks/main.yml
-cp ../5-addservices/aws_ec2_web_servers.yml addservices/tasks/main.yml
-cp ../5-addservices/templates/index.html.j2 addservices/templates
-cp ../5-addservices/handlers/main.yml addservices/handlers
+cp ~/linklight/exercises/aws/ansible_engine/3-instances/aws_ec2_instances.yml instances/tasks/main.yml
+cp ~/linklight/exercises/aws/ansible_engine/4-loadbalancer/aws_ec2_elb.yml loadbalancer/tasks/main.yml
+cp ~/linklight/exercises/aws/ansible_engine/5-addservices/aws_ec2_web_servers.yml addservices/tasks/main.yml
+cp ~/linklight/exercises/aws/ansible_engine/5-addservices/templates/index.html.j2 addservices/templates
+cp ~/linklight/exercises/aws/ansible_engine/5-addservices/handlers/main.yml addservices/handlers
 ```
 
 Now remove/modify the redundant parts from each of the above, as follows...
