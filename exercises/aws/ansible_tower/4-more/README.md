@@ -328,6 +328,11 @@ Complete the form using the following values
 
 Click SAVE ![Save button](at_save.png)
 
+
+## Run The Job Templates
+
+Feel free to test your work out by launching the Job Templates from within Tower!
+
 ---
 
 [Click Here to return to the Ansible AWS Workshop](../../README.md)
