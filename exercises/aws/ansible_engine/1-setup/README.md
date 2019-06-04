@@ -22,7 +22,7 @@ git clone https://github.com/pharriso/linklight.git
 We need to install a few Python features so we can use AWS, as the Ansible modules use these.
 
 ```bash
-pip install boto boto3 botocore --user
+sudo pip install boto boto3 botocore
 ```
 
 ## Step 4 - AWS Credentials
