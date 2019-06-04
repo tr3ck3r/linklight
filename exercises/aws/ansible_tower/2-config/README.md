@@ -268,16 +268,17 @@ Select ADD ![Add button](at_add.png)
 
 Complete the form using the following entries
 
-NAME |Student Gitlab
-DESCRIPTION|AWS workshop gitlab SCM
-ORGANIZATION|Default
-SCM TYPE|Git
-SCM URL| https://gitlab.com/aws-workshop/student<number>.git
-SCM BRANCH|
-SCM UPDATE OPTIONS| [x] Clean <br />  [x] Delete on Update<br />  [x] Update on Launch
+| FIELD | VALUE |
+| :--- | :--- |
+| NAME | Student Gitlab |
+| DESCRIPTION | AWS workshop gitlab SCM |
+| ORGANIZATION | Default |
+| SCM TYPE | Git |
+| SCM URL | https://gitlab.com/aws-workshop/student<number>.git |
+| SCM UPDATE OPTIONS | [x] Clean [x] Delete on Update [x] Update on Launch |
 
 
-![Defining a Project](at_project_detail.png)
+![Defining a Project](aws-tower-project-git.png)
 
 ### Step 4:
 
