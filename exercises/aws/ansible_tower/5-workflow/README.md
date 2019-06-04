@@ -35,4 +35,4 @@ It'll pop you into the job output screen so you can watch progress through the s
 
 ---
 
-[Click Here to return to the Ansible Lightbulb - Ansible Tower Workshop](../README.md)
+[Click Here to return to the Ansible Lightbulb - Ansible Tower Workshop](../../README.md)
