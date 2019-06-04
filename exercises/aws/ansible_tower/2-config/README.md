@@ -69,7 +69,7 @@ SECRET KEY| <ask your instructor for details>
 STS TOKEN | <ask your instructor for details>
 
 
-![Adding a Credential](at_cred_detail.png)
+![Adding a Credential](aws-tower-add-aws-creds.png)
 
 ### Step 4:
 
