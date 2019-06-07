@@ -50,7 +50,3 @@
         name: "{{ security_group }}"
         state: absent
       when: teardown
-
-
-
-
