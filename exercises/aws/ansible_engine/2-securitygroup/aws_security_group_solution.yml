@@ -3,7 +3,7 @@
   connection: local
   gather_facts: False
   vars:
-    security_group: "{{student}}_sg"
+    security_group: "{{ student }}_sg"
     region: eu-west-2
     teardown: false
   vars_files:
@@ -17,7 +17,7 @@
         security_token: "{{ security_token }}"
         region: "{{ region }}"
         name: "{{ security_group }}"
-        description: The {{student}} security group
+        description: The {{ student }} security group
         rules:
           - proto: tcp
             from_port: 22
