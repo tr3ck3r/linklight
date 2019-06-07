@@ -23,7 +23,7 @@ Add the following lines, remember Ansible uses YAML to enforce indentation, so w
   connection: local
   gather_facts: False
   vars:
-    security_group: "{{student}}_sg"
+    security_group: "{{ student }}_sg"
     region: eu-west-2
     teardown: false
   vars_files:
@@ -43,7 +43,7 @@ Now add a task, which will use the ec2_group Ansible module to perform the actio
         security_token: "{{ security_token }}"
         region: "{{ region }}"
         name: "{{ security_group }}"
-        description: The {{student}} security group
+        description: The {{ student }} security group
         rules:
           - proto: tcp
             from_port: 22
