@@ -82,6 +82,8 @@ Click Next, then Launch.
 
 The security group will now be deleted!
 
+NOTE: please ensure you have a security group created before you leave this exercise as it's needed for the rest of the exercises.
+
 ---
 
 [Click Here to return to the Ansible AWS Workshop](../../README.md)
