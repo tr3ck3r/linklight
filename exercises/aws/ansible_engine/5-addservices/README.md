@@ -163,7 +163,7 @@ Change the web_message string in quotes to whatever you want displayed (keep it 
 Now add this at the bottom:
 
 ```bash
-   - name: Check if firewalld is running
+    - name: Check if firewalld is running
       shell: systemctl is-active firewalld
       register: firewall_status
       ignore_errors: true
