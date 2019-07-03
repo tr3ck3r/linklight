@@ -244,8 +244,9 @@ git commit -m "Initial commit" -a
 You should see something like:
 
 ```bash
-[master (root-commit) 8ffc0c0] Initial commit
- 1 file changed, 40 insertions(+)
+[master (root-commit) 0a4984e] Initial commit
+ 2 files changed, 43 insertions(+)
+ create mode 100644 .gitignore
  create mode 100644 2-securitygroup/aws_security_group.yml
 ```
 
