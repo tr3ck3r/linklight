@@ -42,7 +42,7 @@ cd linklight/exercises/aws/ansible_engine
 ansible-vault create aws_keys.yml
 ```
 
-Add the credentials supplied by your instructor and save the file.
+Add the credentials supplied by your instructor and save the file. Remember to change the details to reflect YOUR student number!
 
 You'll be asked for a new vault password:
 
