@@ -332,7 +332,7 @@ Complete the form using the following values
 | PROJECT | Student Gitlab |
 | PLAYBOOK | ec2_elb.yml |
 | CREDENTIAL | AWS ec2 workshop (from Amazon Web Services Credential Type) |
-
+| VERBOSITY | 1 (VERBOSE) |
 
 ### Step 4:
 
