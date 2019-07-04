@@ -179,6 +179,7 @@ Now that the known good configuration is on the destination devices, add a new t
   tasks:
     - name: COPY RUNNING CONFIG TO ROUTER
       command: scp ./backup/{{inventory_hostname}}.config {{inventory_hostname}}:/{{inventory_hostname}}.config
+      delegate_to: localhost
 
     - name: CONFIG REPLACE
       ios_command:
