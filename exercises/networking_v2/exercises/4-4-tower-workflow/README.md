@@ -95,19 +95,17 @@ Hover over the **CONFIGURE USER** node and click the blue **chain** symbol.  Now
 
 ![restore node](images/configure-check-2.png)
 
-Click the green **SAVE** button
-
 ## Step 8
 
 Hover over the **CHECK USER** node and and click the gren **+** symbol. The **ADD A TEMPLATE** will appear again.
 
 Select the **RESTORE NETWORK CONFIG** job template. For the **Run** parameter select **On Failure** from the drop down menu and press the select button.
 
-![complete_workflow](images/complete_workflow.png)
+![complete_workflow](images/complete-workflow.png)
 
 Click the green **SAVE** button.
 
-## Step 7
+## Step 9
 
 Return to the **templates** menu and click the rocket ship to launch the **WORKSHOP WORKFLOW** workflow template.
 
@@ -115,11 +113,11 @@ Return to the **templates** menu and click the rocket ship to launch the **WORKS
 
 At any time during the workflow job you can select an individual job template by clicking on the node to see the status.
 
-## Step 8 
+## Step 10 
 
 The workflow should complete succesfully and the config restore job should not be called. This is because our check is looking for a user called "dodgy".
 
-## Step 9
+## Step 11
 
 Now we are going to trigger the config restore. Click on the **templates** link on the left menu. Then click the workflow visualizer next to our **WORKSHOP WORKFLOW**.
 
