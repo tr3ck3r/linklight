@@ -77,8 +77,15 @@ The Jobs link displays a list of jobs and their status–shown as completed succ
 The **BACKUP NETWORK CONFIG** job was the most recent (unless you have been launching more jobs).  Click on this job to return to the **Job Details View**.  Tower will save the history of every job launched and it is possible to see down to the task level of what happened on a particular job.
 
 
+## Step 5
 
-## Step 4
+As part of the backup playbook, we also generated a new job template in Tower to perform a restore. Tower can be fully automated using with Ansible modules, tower-cli or the API. 
+
+![jobs link](images/restore.png)
+
+This is just a demo job template but feel free to launch the job.
+
+## Step 5
 
 To understand where the Playbooks are that we imported via the Project, return to the command line of the control node.  Switch to the **awx** user.
 
