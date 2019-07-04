@@ -36,10 +36,11 @@ Click on the green `+` button to create a new job template (make sure to select 
 |  Project |  Workshop Project |
 |  Playbook |  network_backup.yml |
 |  Credential |  Workshop Credential |
+|  Extra Variables |  store_configs: host1 |
 
 Here is a screenshot of the job template parameters filled out.
 
-![backup job template](images/backup.png)
+![backup job template](images/backup-2.png)
 
 Scroll down and click the green `save` button.
 
