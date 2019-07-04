@@ -17,7 +17,7 @@ Demonstrate a manual setup for Red Hat Ansible Tower. Please return to master [R
 
 Make sure Tower is successfully installed by logging into it.  Open up your web browser and type in the Ansible control node's IP address e.g. https://X.X.X.X.  This is the same IP address has provided by the instructor.
 
-### Step 1:
+### Step 1a:
 
 To log in, use the username `admin` and and the password `ansible`.
 
@@ -27,19 +27,19 @@ As soon as you login, you will prompted to request a license or browse for an ex
 
 ![Uploading a License](images/at_lic_prompt.png)
 
-### Step 2:
+### Step 1b:
 
 In a separate browser tab, browse to [https://www.ansible.com/workshop-license](https://www.ansible.com/workshop-license) to request a workshop license.
 
-### Step 3:
+### Step 1c:
 
 Back in the Tower UI, choose BROWSE ![Browse button](images/at_browse.png) and upload your recently downloaded license file into Tower.
 
-### Step 4:
+### Step 1d:
 
 Select "_I agree to the End User License Agreement_"
 
-### Step 5:
+### Step 1e:
 
 Click on SUBMIT ![Submit button](images/at_submit.png)
 
@@ -71,15 +71,21 @@ Fill out the name and let the `ORGANIZATION` stay the default (which is Default)
 
 ![save button](images/save.png)
 
-Now under the Inventories there will be two inventories, the `Demo Inventory` and the `Workshop Inventory`. Under the `Workshop Inventory` click the **Hosts** button, it will be empty since we have not added any hosts there.
+Now let's import our hosts into the inventory. On your tower node run the following command:
 
-Next we need to add all of the routers to our inventory.  Click on the green `+` symbol "Create a new host".  Make sure the router information matches exactly the information stored in `~/networking-workshop/lab_inventory/hosts` for example rtr1 is a Cisco Cloud Services Router.  There is a `private_ip`, `ansible_host`, `ansible_network_os` and `ansible_user` value that needs to be added.  Check out the following screenshot for an example (the IP addresses will be different for every workbench).
-
-![add a host](images/addhost.png)
+```
+cd ~/networking-workshop
+sudo tower-manage inventory_import --source=lab_inventory/hosts --inventory-name="Workshop Inventory"
+```
 
 When all the hosts are added there should be four routers (rtr1 through rtr4) under the hosts button for the `Workshop Inventory` as well as the control node.
 
 ![Tower Inventory](images/workshop_inventory.png)
+
+We need to delete the private key variable from the inventory. Now click on Inventories and Workshop Inventories and delete the line - "ansible_ssh_private_key_file" from the VARIABLES input.
+
+![ssh_var](images/remove_ssh_var.png)
+
 
 
 ## Step 3: Setting up a Project
@@ -100,6 +106,8 @@ Click the `+` green button to create a new project.  Fill out the following fiel
 | Organization |  Default |
 | SCM TYPE |  Git |
 | SCM URL |  https://github.com/network-automation/tower_workshop |
+|SCM UPDATE OPTIONS| [x] Clean <br />  [x] Delete on Update<br />  [x] Update on Launch
+
 
 Click on the Green Save button to save the new project.
 
