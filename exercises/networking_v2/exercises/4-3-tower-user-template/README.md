@@ -19,7 +19,8 @@ This exercise will differ from the previous exercise by automating the creation 
 
 Make sure you are on the control node cli. Using your favorite text editor (`vim` and `nano` are available on the control host) create a new file called `userjob.yml`.
 
-```
+``` yaml
+{%raw%}
 ---
 - name: TOWER CONFIGURATION IN PLAYBOOK FORM
   hosts: ansible
@@ -41,6 +42,8 @@ Make sure you are on the control node cli. Using your favorite text editor (`vim
         tower_username: admin
         tower_password: ansible
         tower_host: https://localhost
+        validate_certs: false
+{%endraw%}
 ```
 
 ## Step 2:
