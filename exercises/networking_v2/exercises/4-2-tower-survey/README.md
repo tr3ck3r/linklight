@@ -27,7 +27,7 @@ Click on the green `+` button to create a new job template (make sure to select 
 |  Job Type |  Run |
 |  Inventory |  Workshop Inventory |
 |  Project |  Workshop Project |
-|  Playbook |  network_banner.yml |
+|  Playbook |  ios_banner.yml |
 |  Credential |  Workshop Credential |
 
 Scroll down and click the green `save` button.  
@@ -38,11 +38,10 @@ Scroll down and click the green `save` button.
 To understand the next step we need to take a step back.  When we loaded this [workshop project](https://github.com/network-automation/tower_workshop) into Tower we have access to a variety of playbooks including this `network_banner.yml` playbook.  This specific Playbook makes use of the [net_banner](https://docs.ansible.com/ansible/latest/modules/net_banner_module.html) agnostic network module which looks like the following:
 
 ```
-- name: LOAD BANNER ONTO NETWORK DEVICE
-  net_banner:
-    banner: login
-    text: |
-      "{{network_banner}}"
+  - name: ADD THE IOS BANNER
+    ios_banner:
+      text: "{{ network_banner }}"
+      banner: login
 ```
 
 We can set the variable `network_banner` anywhere and overload the default on the Playbook.  We will do this with an Ansible Tower **survey**.
