@@ -37,7 +37,7 @@
         ec2_instance_name: ansible-linux
         os: linux
         remote_port: 22 
-        keypair: laptop
+        keypair: aws-workshop
         instance_count: 2
 
       ec2_instance:
