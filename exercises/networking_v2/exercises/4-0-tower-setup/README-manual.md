@@ -105,7 +105,7 @@ Click the `+` green button to create a new project.  Fill out the following fiel
 | Name  | Workshop Project  |
 | Organization |  Default |
 | SCM TYPE |  Git |
-| SCM URL |  https://github.com/network-automation/tower_workshop |
+| SCM URL |  https://github.com/pharriso/tower_workshop |
 |SCM UPDATE OPTIONS| [x] Clean <br />  [x] Delete on Update<br />  [x] Update on Launch
 
 
