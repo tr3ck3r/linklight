@@ -82,7 +82,7 @@ As part of the backup playbook, we also generated a new job template in Tower to
 
 ![restore link](images/restore.png)
 
-This is just a demo job template but feel free to launch the job.
+Don't launch this template yet. We will use it later.
 
 ## Step 5
 
