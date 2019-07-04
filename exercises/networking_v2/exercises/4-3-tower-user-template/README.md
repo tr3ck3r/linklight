@@ -17,7 +17,14 @@ This exercise will differ from the previous exercise by automating the creation 
 
 ## Step 1:
 
-Make sure you are on the control node cli. Using your favorite text editor (`vim` and `nano` are available on the control host) create a new file called `userjob.yml`.
+Make sure you are on the control node cli. Make sure you are in the right directory.
+
+```
+[student1@ansible ~]$ cd networking-workshop/
+[student1@ansible networking-workshop]$
+```
+
+Using your favorite text editor (`vim` and `nano` are available on the control host) create a new file called `userjob.yml`.
 
 ``` yaml
 {%raw%}
@@ -48,7 +55,12 @@ Make sure you are on the control node cli. Using your favorite text editor (`vim
 
 ## Step 2:
 
-Copy this [user.json](user.json) file and make sure its in the same folder as your userjob.yml Ansible Playbook.
+Download the user.json file that will generate our survey in Tower. Make sure its in the same folder as your userjob.yml Ansible Playbook.
+
+```
+[student1@ansible ~]$ cd networking-workshop/
+[student1@ansible ~]$ curl -O https://pharriso.github.io/linklight/exercises/networking_v2/exercises/4-3-tower-user-template/user.json
+```
 
 ## Step 3:
 
