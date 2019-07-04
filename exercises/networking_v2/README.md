@@ -22,6 +22,11 @@ Want the Presentation Deck?  Its right here:
 - [Exercise 3.0 - An introduction to templating with Jinja2](./exercises/3-0-templates)
 - [Exercise 3.1 - Building dynamic documentation using the command parser](./exercises/3-1-parser/)
 
+## Ansible Tower Exercises
+
+- [Exercise 4.0 - Configure Ansible Tower](./exercises/4-0-tower-setup)
+
+
 ## Network Diagram
 ![Red Hat Ansible Automation](../../images/network_diagram.png)
 
