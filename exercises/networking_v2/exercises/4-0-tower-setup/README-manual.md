@@ -13,13 +13,35 @@ Demonstrate a manual setup for Red Hat Ansible Tower. Please return to master [R
 
 # Guide
 
-## Step 1: Tower Login
+## Tower Login
 
 Make sure Tower is successfully installed by logging into it.  Open up your web browser and type in the Ansible control node's IP address e.g. https://X.X.X.X.  This is the same IP address has provided by the instructor.
 
-Login information:
-- The username will be `admin`
-- password provided by instructor
+### Step 1:
+
+To log in, use the username `admin` and and the password `ansible`.
+
+![Ansible Tower Login Screen](images/ansible-lab-figure01-logon-screen.png)
+
+As soon as you login, you will prompted to request a license or browse for an existing license file
+
+![Uploading a License](images/at_lic_prompt.png)
+
+### Step 2:
+
+In a separate browser tab, browse to [https://www.ansible.com/workshop-license](https://www.ansible.com/workshop-license) to request a workshop license.
+
+### Step 3:
+
+Back in the Tower UI, choose BROWSE ![Browse button](images/at_browse.png) and upload your recently downloaded license file into Tower.
+
+### Step 4:
+
+Select "_I agree to the End User License Agreement_"
+
+### Step 5:
+
+Click on SUBMIT ![Submit button](images/at_submit.png)
 
 After logging in the Job Dashboard will be the default window as shown below.
 
