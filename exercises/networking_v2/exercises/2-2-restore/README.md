@@ -198,7 +198,7 @@ Let's run the updated playbook:
 
 ```
 
-[student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts restore_config.yml
+[student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts restore_config.yml -v
 
 PLAY [RESTORE CONFIGURATION] *********************************************************
 
@@ -209,10 +209,30 @@ changed: [rtr2]
 changed: [rtr4]
 
 TASK [CONFIG REPLACE] ****************************************************************
-ok: [rtr1]
-ok: [rtr2]
-ok: [rtr4]
-ok: [rtr3]
+ok: [rtr2] => changed=false 
+  stdout:
+  - |-
+    Total number of passes: 0
+    Rollback Done
+  stdout_lines: <omitted>
+ok: [rtr4] => changed=false 
+  stdout:
+  - |-
+    Total number of passes: 0
+    Rollback Done
+  stdout_lines: <omitted>
+ok: [rtr3] => changed=false 
+  stdout:
+  - |-
+    Total number of passes: 0
+    Rollback Done
+  stdout_lines: <omitted>
+ok: [rtr1] => changed=false 
+  stdout:
+  - |-
+    Total number of passes: 1
+    Rollback Done
+  stdout_lines: <omitted>
 
 PLAY RECAP ***************************************************************************
 rtr1                       : ok=2    changed=1    unreachable=0    failed=0   
