@@ -25,6 +25,7 @@ Want the Presentation Deck?  Its right here:
 ## Ansible Tower Exercises
 
 - [Exercise 4.0 - Configure Ansible Tower](./exercises/4-0-tower-setup)
+- [Exercise 4.1 - Create a Tower Job Template ](./exercises/4-1-tower-job-template)
 
 
 ## Network Diagram
