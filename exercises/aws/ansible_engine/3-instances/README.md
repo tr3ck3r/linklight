@@ -52,7 +52,7 @@ Add the following lines, remember Ansible uses YAML to enforce indentation, so w
         ec2_instance_name: ansible-linux
         os: linux
         remote_port: 22 
-        keypair: laptop
+        keypair: aws-workshop
         instance_count: 2
 
       ec2_instance:
@@ -159,7 +159,7 @@ We use a combination of variables and tags so each students resources can be eas
         ec2_instance_name: ansible-linux
         os: linux
         remote_port: 22
-        keypair: laptop
+        keypair: aws-workshop
         instance_count: 2
 
 
