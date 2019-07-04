@@ -22,10 +22,7 @@ sudo yum update ansible -y
 
 There are multiple ways we can quickly setup Red Hat Ansible Tower.  For this workshop we are giving you two options.  You can use Ansible Playbooks to help automate the setup, or you can manually use the web user interface (UI) to help better understand the Tower concepts.  Feel free to user either method.
 
- - [Automated Approach](README-automated.md)
  - [Manual Approach](README-manual.md)
-
-**WARNING** please make sure you set the Junos device to **netconf**  the instructor will walk you through it.
 
 ---
 [Click Here to return to the Ansible - Network Automation Workshop](../../README.md)

@@ -134,6 +134,7 @@ Click the green `+` button to create a new credential.
 | Parameter | Value |
 |---|---|
 | Name  | Workshop Credential  |
+| Username  | ec2-user  |
 | Organization |  Default |
 | Credential Type |  Machine |
 | SSH Private Key |  value from `~/.ssh/aws-private.pem` |
