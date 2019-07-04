@@ -79,22 +79,14 @@ As before, we're checking for running instances with a certain tag (your student
 
 Then we double check that SSH is accessible and add the hosts into a temporary inventory group called 'webservers'. We setup a couple of connection parameters that we'll need to access the ec2 instances.
 
-Before we can successfully run this playbook, we'll need to have access to the private key for the 'laptop' key pair in AWS. 
+Before we can successfully run this playbook, we'll need to use the correct private key pair in AWS associated with our instances. 
 
-For simplicity in setting up the SSH directory structure, simply run this:
-
-```bash
-ssh-keygen (accept all defaults)
-```
-
-Please ask your instructor for the private SSH key, then run the following commands:
+Run the following commands so your SSH client recognises the required private key:
 
 ```bash
-vi ~/.ssh/laptop.pem
-chmod 400 ~/.ssh/laptop.pem
-ssh-add ~/.ssh/laptop.pem
+ssh-add ~/.ssh/aws-workshop.pem
 ssh-add -l
-2048 SHA256:f38EKSsiGJH07tjGIetQFSUCvv8I/zG+d6G6sl4kLp4 /home/student1/.ssh/laptop.pem (RSA)
+2048 SHA256:V1bJqxGu1HVqmg/SUGRm20wb3rAdKZ/+zPfiyhtF3+M /home/student2/.ssh/aws-workshop.pem (RSA)
 ```
 
 Now go ahead and run the playbook:
