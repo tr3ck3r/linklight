@@ -115,7 +115,7 @@ At any time during the workflow job you can select an individual job template by
 
 ## Step 10 
 
-The workflow should complete succesfully and the config restore job should not be called. This is because our check is looking for a user called "dodgy".
+The workflow should complete succesfully and the config restore job should not be called. This is because our check is looking for a user called **dodgy**.
 
 ## Step 11
 
