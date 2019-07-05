@@ -90,7 +90,7 @@ Write the task to copy over the previously backed up configuration file to the r
   tasks:
     - name: COPY RUNNING CONFIG TO ROUTER
       net_put: 
-        src: /tmp/backup/latest/{{inventory_hostname}}
+        src: ./backup/{{inventory_hostname}}.config
         dest: flash:/{{inventory_hostname}}.config
       vars:
         ansible_command_timeout: 120
@@ -191,8 +191,10 @@ Now that the known good configuration is on the destination devices, add a new t
   tasks:
     - name: COPY RUNNING CONFIG TO ROUTER
       net_put: 
-        src: /tmp/backup/latest/{{inventory_hostname}}
+        src: ./backup/{{inventory_hostname}}.config
         dest: flash:/{{inventory_hostname}}.config
+      vars:
+        ansible_command_timeout: 120
 
     - name: CONFIG REPLACE
       ios_command:
