@@ -58,7 +58,7 @@ Click on the **Save** button
 
 ![workflow creation](images/workflow_create.gif)
 
-## Step 3
+## Step 4
 
 When you click the **SAVE** the **WORKFLOW VISUALIZER** should automatically open.  If not click on the blue **WORKFLOW VISUALIZER** button.  
 
@@ -72,7 +72,7 @@ The **BACKUP NETWORK CONFIG** job template is now a node.  Job or workflow templ
 
 ![configure backup node](images/configure-backup.png)
 
-## Step 4
+## Step 5
 
 Hover over the **BACKUP NETWORK CONFIG** node and click the green **+** symbol.  The **ADD A TEMPLATE** window will appear again.  This time select the **CONFIGURE BANNER** job template.  For the **Run** parameter select **On Success** from the drop down menu.
 
@@ -82,7 +82,7 @@ You will not be able to click **SELECT** until you pre-populate the prompt.  Jus
 
 A green line should exist between **BACKUP NETWORK CONFIG** and **CONFIGURE BANNER**
 
-## Step 5
+## Step 6
 
 Hover over the **BACKUP NETWORK CONFIG** node (not the **CONFIGURE BANNER** node) and click the green **+** symbol.  The **ADD A TEMPLATE** will appear again.
 
@@ -91,7 +91,7 @@ This time select the **CONFIGURE USER** job template.  For the **Run** parameter
 ![configure user node](images/configure-user.png)
 
 
-## Step 6
+## Step 7
 
 Hover over the **CONFIGURE BANNER** node and click the green **+** symbol.  The **ADD A TEMPLATE** will appear again.
 
@@ -99,13 +99,13 @@ Select the **CHECK USER** job template.  For the **Run** parameter select **On S
 
 ![configure restore node](images/configure-check-1.png)
 
-## Step 7
+## Step 8
 
 Hover over the **CONFIGURE USER** node and click the blue **chain** symbol.  Now click on the existing **CHECK USER**.  A **ADD LINK** window will appear.  For the **RUN** parameter choose **On Success**.
 
 ![restore node](images/configure-check-2.png)
 
-## Step 8
+## Step 9
 
 Hover over the **CHECK USER** node and and click the gren **+** symbol. The **ADD A TEMPLATE** will appear again.
 
@@ -115,7 +115,7 @@ Select the **RESTORE NETWORK CONFIG** job template. For the **Run** parameter se
 
 Click the green **SAVE** button.
 
-## Step 9
+## Step 10
 
 Return to the **templates** menu and click the rocket ship to launch the **WORKSHOP WORKFLOW** workflow template.
 
@@ -123,11 +123,11 @@ Return to the **templates** menu and click the rocket ship to launch the **WORKS
 
 At any time during the workflow job you can select an individual job template by clicking on the node to see the status.
 
-## Step 10 
+## Step 11 
 
 The workflow should complete succesfully and the config restore job should not be called. This is because our check is looking for a user called **dodgy**.
 
-## Step 11
+## Step 12
 
 Now we are going to trigger the config restore. Click on the **templates** link on the left menu. Then click the workflow visualizer next to our **WORKSHOP WORKFLOW**.
 
