@@ -58,7 +58,7 @@ Using your favorite text editor (`vim` and `nano` are available on the control h
 Download the user.json file that will generate our survey in Tower. Make sure its in the same folder as your userjob.yml Ansible Playbook.
 
 ```
-[student1@ansible ~]$ cd networking-workshop/
+[student1@ansible ~]$ cd ~/networking-workshop/
 [student1@ansible ~]$ curl -O https://pharriso.github.io/linklight/exercises/networking_v2/exercises/4-3-tower-user-template/user.json
 ```
 
