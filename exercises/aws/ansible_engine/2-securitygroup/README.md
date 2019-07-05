@@ -96,9 +96,38 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=1    unreachable=0    failed=0
 ```
 
-Now run the playbook again, and notice how the output/results are different. Ask the instructor about idempotence!
+## Step 3 - Run the playbook again
 
-## Step 3 - Adding a Delete Task
+Ansible is a desired start engine. So we can re-run the playbook and we shouldn't see any changes:
+
+```bash
+$ ansible-playbook aws_security_group.yml --ask-vault-pass
+Vault password:
+```
+
+Note the output this time.
+
+```bash
+Vault password: 
+
+PLAY [localhost] *****************************************************************************************************************************************************************************
+
+TASK [Create a security group] ***************************************************************************************************************************************************************
+ok: [localhost]
+
+PLAY RECAP ***********************************************************************************************************************************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=0   
+```
+
+We can also run playbooks with increased verbosity using -v. Let's try that.
+
+```bash
+$ ansible-playbook aws_security_group.yml --ask-vault-pass -v
+Vault password:
+```
+
+
+## Step 4 - Adding a Delete Task
 
 This is a great start, but we can easily extend the same playbook so we can use it to delete the Security Group as well.
 We initially set a variable 'teardown' to false, so by default, we create the group. 
@@ -143,7 +172,7 @@ localhost                  : ok=1    changed=0    unreachable=0    failed=0
 
 ```
 
-(Run it again if you like to check out that idempotence again :)
+Run it again if you'd like to check out that idempotence again :)
 
 NOTE: Please ensure you have your studentN security group created, as it'll be used throughout the remaining exercises.
 
@@ -154,7 +183,7 @@ $ ansible-playbook aws_security_group.yml --ask-vault-pass
 Vault password:
 ```
 
-## Step 4 - Final Solution (optional)
+## Step 5 - Final Solution (optional)
 
 If you hit issues and want to see it working, then run this:
 ```bash
