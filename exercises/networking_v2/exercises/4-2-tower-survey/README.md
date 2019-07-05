@@ -83,6 +83,21 @@ Click on the rocket ship to launch the job template.
 
 The job will immediately prompt the user to set the `network_banner` variable.  Type in the banner message you want for the routers.  Click next to see how the survey rendered the input as extra vars for the Playbook launch.  For this example I used the word ANSIBLE rendered into ASCII art.
 
+Either type in some text, or for something a little more funky:
+
+```bash
+sudo yum -y install figlet
+$ figlet ansible
+                 _ _     _
+  __ _ _ __  ___(_) |__ | | ___
+ / _` | '_ \/ __| | '_ \| |/ _ \
+| (_| | | | \__ \ | |_) | |  __/
+ \__,_|_| |_|___/_|_.__/|_|\___|
+
+```
+
+Cut and paste the ascii art output into the survey window :)
+
 ![survey screen](images/surveyscreen.png)
 
 Click the green **Launch** button to kick off the job.
@@ -109,8 +124,8 @@ The banner will appear on login.  Here is an example from the **ANSIBLE** shown 
 You have finished this exercise.  
 
 You have
- - created a job template for configuring a banner on multiple network operating systems (Arista EOS, Cisco IOS and Juniper Junos)
+ - created a job template for configuring a banner on the routers
  - Create a self service survey for the job template to fill out the network_banner variable
- - run the vendor agnostic job template on all four routers loading the banner on them
+ - run the job template on all four routers loading the banner on them
 
 [Click here to return to the lab guide](../../README.md)
