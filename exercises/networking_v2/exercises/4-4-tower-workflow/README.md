@@ -36,6 +36,16 @@ Scroll down and click the green `save` button.
 
 ## Step 2
 
+Tower protects the local filesytem using something called bubblewrap. This is to prevent people from writing malicious playbooks that compromise the Tower node itself. For this lab we will be backing up router configs into /tmp/backup on the Tower node and restoring from there. To allow us to retrieve the backed up configs we will need to allow access to /tmp/backup while running a job.
+
+In the Tower UI click on **Settings** in the left hand pane. Then click on **Jobs**. In the text box for **PATHS TO EXPOSE TO ISOLATED JOBS** enter **/tmp/backup**.
+
+![isolated_job](images/isolated_jobs.png)
+
+Then click **save**.
+
+## Step 3
+
 Click on the **templates** link on the left menu.  Then click on the green **+** button.  Select the **Workflow Template**.  Fill out the the form as follows:
 
 | Parameter | Value |
