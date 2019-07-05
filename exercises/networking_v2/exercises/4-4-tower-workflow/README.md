@@ -64,7 +64,7 @@ When you click the **SAVE** the **WORKFLOW VISUALIZER** should automatically ope
 
 By default only a green **START** button will appear.  Click on the **START** button.  
 
-The **ADD A TEMPLATE** window will appear on the right.  Select the **BACKUP NETWORK CONFIG** job template that was created earlier.  Use the drop down box to select run.  Click the green **SELECT** button.
+The **ADD A TEMPLATE** window will appear on the right.  Select the **BACKUP NETWORK CONFIG** job template that was created earlier.  Use the drop down box to select run ALWAYS.  Click the green **SELECT** button.
 
 ![add a template](images/add-a-template.png)
 
@@ -76,7 +76,7 @@ The **BACKUP NETWORK CONFIG** job template is now a node.  Job or workflow templ
 
 Hover over the **BACKUP NETWORK CONFIG** node and click the green **+** symbol.  The **ADD A TEMPLATE** window will appear again.  This time select the **CONFIGURE BANNER** job template.  For the **Run** parameter select **On Success** from the drop down menu.
 
-You will not be able to click **SELECT** until you pre-populate the prompt.  Just fill out the **PROMPT** with your desired banner.
+You will not be able to click **SELECT** until you pre-populate the prompt.  Just fill out the **PROMPT** with your desired banner. Click CONFIRM.
 
 ![banner node](images/configure-banner.png)
 
