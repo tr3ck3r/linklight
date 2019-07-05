@@ -86,7 +86,7 @@ The job will immediately prompt the user to set the `network_banner` variable.  
 Either type in some text, or for something a little more funky:
 
 ```bash
-sudo yum -y install figlet
+$ sudo yum -y install figlet
 $ figlet ansible
                  _ _     _
   __ _ _ __  ___(_) |__ | | ___
@@ -112,7 +112,8 @@ Let the job run to completion.  Let the instructor know if anything fails.
 Login to one of the routers and see the banner setup
 
 ```
-[student1@ansible]$ ssh rtr4
+$ ssh rtr4
+rtr4#exit
 ```
 
 The banner will appear on login.  Here is an example from the **ANSIBLE** shown above.
