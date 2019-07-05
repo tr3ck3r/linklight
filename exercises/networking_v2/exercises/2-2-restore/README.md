@@ -53,6 +53,14 @@ rtr1#
 ```
 #### Step 2
 
+We are going to use the net_put Ansible module to copy the config backup to the routers. This requires the scp python module. We need to install that first:
+
+```
+sudo pip install scp
+```
+
+#### Step 3
+
 Step 1 simulates our "Out of process/band" changes on the network. This change needs to be reverted. So let's write a new playbook to apply the backup we collected from our previous lab to achieve this.
 
 Create a file called `restore_config.yml` using your favorite text editor and add the following play definition:
@@ -67,7 +75,7 @@ Create a file called `restore_config.yml` using your favorite text editor and ad
 ```
 
 
-#### Step 3
+#### Step 4
 
 Write the task to copy over the previously backed up configuration file to the routers.
 
@@ -81,7 +89,11 @@ Write the task to copy over the previously backed up configuration file to the r
 
   tasks:
     - name: COPY RUNNING CONFIG TO ROUTER
-      command: scp ./backup/{{inventory_hostname}}.config  {{inventory_hostname}}:/{{inventory_hostname}}.config
+      net_put: 
+        src: /tmp/backup/latest/{{inventory_hostname}}
+        dest: flash:/{{inventory_hostname}}.config
+      vars:
+        ansible_command_timeout: 120
 
 {%endraw%}
 ```
@@ -89,7 +101,7 @@ Write the task to copy over the previously backed up configuration file to the r
 > Note the use of the **inventory_hostname** variable. For each device in the inventory file under the cisco group, this task will secure copy (scp) over the file that corresponds to the device name onto the bootflash: of the CSR devices.
 
 
-#### Step 4
+#### Step 5
 
 Go ahead and run the playbook.
 
@@ -117,7 +129,7 @@ rtr4                       : ok=1    changed=1    unreachable=0    failed=0
 ```
 
 
-#### Step 5
+#### Step 6
 
 Log into the routers to check that the file has been copied over
 
@@ -162,7 +174,7 @@ rtr1#
 
 
 
-#### Step 6
+#### Step 7
 
 Now that the known good configuration is on the destination devices, add a new task to the playbook to replace the running configuration with the one we copied over.
 
@@ -178,8 +190,9 @@ Now that the known good configuration is on the destination devices, add a new t
 
   tasks:
     - name: COPY RUNNING CONFIG TO ROUTER
-      command: scp ./backup/{{inventory_hostname}}.config {{inventory_hostname}}:/{{inventory_hostname}}.config
-      delegate_to: localhost
+      net_put: 
+        src: /tmp/backup/latest/{{inventory_hostname}}
+        dest: flash:/{{inventory_hostname}}.config
 
     - name: CONFIG REPLACE
       ios_command:
@@ -193,7 +206,7 @@ Now that the known good configuration is on the destination devices, add a new t
 > Note: Here we take advantage of Cisco's **archive** feature. The config replace will only update the differences to the router and not really a full config replace.
 
 
-#### Step 7
+#### Step 8
 
 Let's run the updated playbook:
 
@@ -247,7 +260,7 @@ rtr4                       : ok=2    changed=1    unreachable=0    failed=0
 ```
 
 
-#### Step 8
+#### Step 9
 
 
 
