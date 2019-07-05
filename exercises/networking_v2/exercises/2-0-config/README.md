@@ -66,7 +66,14 @@ rtr4                       : ok=1    changed=1    unreachable=0    failed=0
 
 ```
 
-Feel free to log in and check the configuration update.
+Feel free to log in and check the configuration update:
+
+```bash
+ssh rtr1
+rtr1#show snmp community
+rtr1#show run | section snmp
+rtr1# exit
+```
 
 
 #### Step 4
