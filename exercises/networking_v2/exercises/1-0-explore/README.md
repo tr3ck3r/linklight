@@ -1,6 +1,6 @@
 # Exercise 1.0 - Exploring the lab environment
 
-Before you get started, please join us on slack! [Click here to join the ansiblenetwork slack](https://join.slack.com/t/ansiblenetwork/shared_invite/enQtMzEyMTcxMTE5NjM3LWIyMmQ4YzNhYTA4MjA2OTRhZDQzMTZkNWZlN2E3NzhhMWQ5ZTdmNmViNjk2M2JkYzJjODhjMjVjMGUxZjc2MWE).  This will allow you to chat with other network automation engineers and get help after the workshops concludes.
+Let's familiarise ourselves with the environment and config.
 
 ## Step 1
 
@@ -9,9 +9,6 @@ Navigate to the `networking-workshop` directory.
 
 ```
 [student1@ansible ~]$ cd networking-workshop/
-[student1@ansible networking-workshop]$
-[student1@ansible networking-workshop]$
-
 ```
 
 ## Step 2
@@ -21,15 +18,12 @@ Run the `ansible` command with the `--version` command to look at what is config
 
 ```
 [student1@ansible networking-workshop]$ ansible --version
-ansible 2.6.2
+ansible 2.7.0
   config file = /home/student1/.ansible.cfg
   configured module search path = [u'/home/student1/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
   ansible python module location = /usr/lib/python2.7/site-packages/ansible
   executable location = /usr/bin/ansible
-  python version = 2.7.5 (default, May  3 2017, 07:55:04) [GCC 4.8.5 20150623 (Red Hat 4.8.5-14)]
-[student1@ansible networking-workshop]$
-
-
+  python version = 2.7.5 (default, Jun 11 2019, 12:19:05) [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
 ```
 
 > Note: The ansible version you see might differ from the above output
@@ -44,21 +38,20 @@ Use the `cat` command to view the contents of the `ansible.cfg` file.
 ```
 [student1@ansible networking-workshop]$ cat ~/.ansible.cfg
 [defaults]
+stdout_callback = yaml
 connection = smart
 timeout = 60
-inventory = /home/student1/networking-workshop/lab_inventory/hosts
+deprecation_warnings = False
 host_key_checking = False
-private_key_file = /home/student1/.ssh/aws-private.pem
-[student1@ansible networking-workshop]$
-
+retry_files_enabled = False
+inventory = /home/student1/networking-workshop/lab_inventory/hosts
+[persistent_connection]
+connect_timeout = 60
 ```
 
 Note the following parameters within the `ansible.cfg` file:
 
  - `inventory`: shows the location of the ansible inventory being used
- - `private_key_file`: this shows the location of the private key used to login to devices
-
-
 
 ## Step 4
 
@@ -71,27 +64,22 @@ In this lab you will work with a file based inventory written in the **ini** for
 
 [student1@ansible ~]$ cat ~/networking-workshop/lab_inventory/hosts
 [all:vars]
-ansible_port=22
-
+ansible_ssh_private_key_file=/home/student1/.ssh/aws-private.pem
 [routers:children]
 cisco
-juniper
 
 [cisco]
-rtr1 ansible_host=35.182.226.163 private_ip=172.16.173.57
-rtr2 ansible_host=35.183.197.179 private_ip=172.17.88.89
+rtr1 ansible_host=54.86.240.200 private_ip=172.16.53.225
+rtr2 ansible_host=35.172.211.215 private_ip=172.17.2.181
+rtr3 ansible_host=18.232.174.85 private_ip=172.16.237.202
+rtr4 ansible_host=174.129.69.1 private_ip=172.17.120.151
 
-[juniper]
-rtr3 ansible_host=35.183.209.131 private_ip=172.16.119.246
-rtr4 ansible_host=35.183.244.146 private_ip=172.17.211.127
 
 [cisco:vars]
 ansible_user=ec2-user
 ansible_network_os=ios
+ansible_connection=network_cli
 
-[juniper:vars]
-ansible_user=jnpr
-ansible_network_os=junos
 
 [dc1]
 rtr1
@@ -102,12 +90,10 @@ rtr2
 rtr4
 
 [hosts]
-host1 ansible_host=35.183.19.221 ansible_user=ec2-user private_ip=172.17.179.150
+host1 ansible_host=34.234.88.188 ansible_user=ec2-user private_ip=172.17.62.146
 
 [control]
-ansible ansible_host=35.183.137.160 ansible_user=ec2-user private_ip=172.16.45.102
-[student1@ansible ~]$
-
+ansible ansible_host=34.229.83.26 ansible_user=student1 private_ip=172.16.103.177
 ```
 
 ## Step 5
