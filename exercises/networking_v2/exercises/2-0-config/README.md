@@ -310,6 +310,51 @@ rtr4                       : ok=2    changed=1    unreachable=0    failed=0
 
 ```
 
+#### Step 11
+
+Run the playbook again and you'll see that nothing had to be changed.
+
+Now let's be a pesky engineer, who's logged on and changed config manually!
+
+```bash
+ssh rtr3
+rtr3#conf term
+rtr3(config)#ip ssh time-out 1
+rtr3(config)#exit
+rtr3#wr mem
+Building configuration...
+[OK]
+rtr3#exit
+```
+
+Re-run the playbook again and note that the routers config is out-of-step and has been changed back:
+
+```bash
+[student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts router_configs.yml
+
+PLAY [SNMP RO/RW STRING CONFIGURATION] ***********************************************************************************
+
+TASK [ENSURE THAT THE DESIRED SNMP STRINGS ARE PRESENT] ******************************************************************
+ok: [rtr1]
+ok: [rtr3]
+ok: [rtr2]
+ok: [rtr4]
+
+PLAY [HARDEN IOS ROUTERS] ************************************************************************************************
+
+TASK [ENSURE THAT ROUTERS ARE SECURE] ************************************************************************************
+ok: [rtr2]
+ok: [rtr1]
+ok: [rtr4]
+changed: [rtr3]
+
+PLAY RECAP ***************************************************************************************************************
+rtr1                       : ok=2    changed=0    unreachable=0    failed=0
+rtr2                       : ok=2    changed=0    unreachable=0    failed=0
+rtr3                       : ok=2    changed=1    unreachable=0    failed=0
+rtr4                       : ok=2    changed=0    unreachable=0    failed=0
+```
+
 # Complete
 
 You have completed lab exercise 2.0
