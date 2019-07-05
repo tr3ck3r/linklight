@@ -85,9 +85,6 @@ rtr2                       : ok=1    changed=0    unreachable=0    failed=0
 rtr3                       : ok=1    changed=0    unreachable=0    failed=0   
 rtr4                       : ok=1    changed=0    unreachable=0    failed=0   
 
-[student1@ansible networking-workshop]$
-
-
 ```
 
 
@@ -116,7 +113,6 @@ ok: [rtr3] => {"ansible_facts": {"ansible_net_all_ipv4_addresses": ["10.100.100.
 <output truncated for readability>
 ```
 
-
 > Note: The output returns key-value pairs that can then be used within the playbook for subsequent tasks. Also note that all variables that start with **ansible_** are automatically available for subsequent tasks within the play.
 
 
@@ -129,24 +125,20 @@ Ansible allows you to limit the playbook execution to a subset of the devices de
 [student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts gather_ios_data.yml  -v --limit rtr1
 ```
 
-
 ```
 [student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts gather_ios_data.yml  -v --limit rtr1,rtr3
 
 ```
 
-
-
-
-
 #### Step 7
 
 Running a playbook in verbose mode is a good option to validate the output from a task. To work with the variables within a playbook you can use the `debug` module.
 
-Write 2 tasks that display the routers' OS version and serial number.
+Now we'll modify the playbook and add 2 tasks that display the routers' OS version and serial number.
 
-``` yaml
-{%raw%}
+Your playbook should look like this:
+
+```bash
 ---
 - name: GATHER INFORMATION FROM ROUTERS
   hosts: cisco
@@ -163,8 +155,7 @@ Write 2 tasks that display the routers' OS version and serial number.
 
     - name: DISPLAY SERIAL NUMBER
       debug:
-        msg: "The serial number is:{{ ansible_net_serialnum }}"
-{%endraw%}        
+        msg: "The serial number is:{{ ansible_net_serialnum }}"      
 ```
 
 
