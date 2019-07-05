@@ -310,7 +310,7 @@ rtr4                       : ok=2    changed=1    unreachable=0    failed=0
 
 ```
 
-#### Step 11
+#### Step 12
 
 Run the playbook again and you'll see that nothing had to be changed.
 
@@ -326,6 +326,7 @@ Building configuration...
 [OK]
 rtr3#exit
 ```
+
 
 Re-run the playbook again and note that the routers config is out-of-step and has been changed back:
 
