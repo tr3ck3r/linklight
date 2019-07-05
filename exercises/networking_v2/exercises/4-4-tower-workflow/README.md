@@ -91,7 +91,7 @@ Select the **CHECK USER** job template.  For the **Run** parameter select **On S
 
 ## Step 7
 
-Hover over the **CONFIGURE USER** node and click the blue **chain** symbol.  Now click on the existing **CHECK USER**.  A **ADD LINK** window will appear.  For the **RUN** parameter choose **On Failure**.
+Hover over the **CONFIGURE USER** node and click the blue **chain** symbol.  Now click on the existing **CHECK USER**.  A **ADD LINK** window will appear.  For the **RUN** parameter choose **On Success**.
 
 ![restore node](images/configure-check-2.png)
 
