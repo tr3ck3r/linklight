@@ -20,7 +20,7 @@ This exercise will differ from the previous exercise by automating the creation 
 Make sure you are on the control node cli. Make sure you are in the right directory.
 
 ```
-[student1@ansible ~]$ cd networking-workshop/
+[student1@ansible ~]$ cd ~/networking-workshop/
 [student1@ansible networking-workshop]$
 ```
 
