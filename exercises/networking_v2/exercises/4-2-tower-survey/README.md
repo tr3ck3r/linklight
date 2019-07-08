@@ -35,7 +35,7 @@ Scroll down and click the green `save` button.
 
 ## Step 2:
 
-To understand the next step we need to take a step back.  When we loaded this [workshop project](https://github.com/network-automation/tower_workshop) into Tower we have access to a variety of playbooks including this `ios_banner.yml` playbook.  This specific Playbook makes use of the [net_banner](https://docs.ansible.com/ansible/latest/modules/net_banner_module.html) agnostic network module which looks like the following:
+To understand the next step we need to take a step back.  When we loaded this [workshop project](https://github.com/network-automation/tower_workshop) into Tower we have access to a variety of playbooks including this `ios_banner.yml` playbook.  This specific Playbook makes use of the ios_banner network module which looks like the following:
 
 ``` yaml
 {%raw%}
