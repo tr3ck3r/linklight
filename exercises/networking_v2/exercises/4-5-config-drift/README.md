@@ -45,7 +45,7 @@ Now let's launch the job template. We shouldn't see any changes being made durin
 
 ## Step 3
 
-Let's log onto on of our routers and make a change outside of the control of our automation. 
+Let's log onto one of our routers and make a change outside of the control of our automation. 
 
 ```bash
 ssh rtr1
@@ -54,6 +54,8 @@ rtr1(config)#ip ssh time-out 120
 ```
 
 Now execute our **ROUTER CONFIG** job again. This time we should see some changes being made and a ServiceNow incident should be raised. The incident number is reported as part of the job output as well.
+
+![job_link](images/snow_output.png)
 
 ## Step 4
 
