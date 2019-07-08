@@ -14,6 +14,14 @@ In this exercise we will use Ansible to check the configuration of our routers. 
 
 ## Step 1:
 
+To use the ServiceNow module we need to install the pysnow python module. On your Ansible Control/Tower node install the module.
+
+```bash
+sudo pip install pysnow 
+```
+
+## Step 2:
+
 First we Open the web UI and click on the `Templates` link on the left menu.
 
 ![templates link](images/templates.png)
@@ -39,11 +47,11 @@ snow_instance: <instructor to provide>
 Scroll down and click the green `save` button.
 
 
-## Step 2
+## Step 3
 
 Now let's launch the job template. We shouldn't see any changes being made during the job run and as a result we don't need to raise an incident in ServiceNow.
 
-## Step 3
+## Step 4
 
 Let's log onto one of our routers and make a change outside of the control of our automation. 
 
@@ -57,7 +65,7 @@ Now execute our **ROUTER CONFIG** job again. This time we should see some change
 
 ![job_link](images/snow_output.png)
 
-## Step 4
+## Step 5
 
 Log into ServiceNow - https://<< instance name >>.service-now.com. Use the same credentials you passed into your job template as variables.
 
