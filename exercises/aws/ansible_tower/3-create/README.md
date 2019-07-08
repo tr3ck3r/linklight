@@ -106,7 +106,7 @@ Add details to match this screenshot:
 
 ![Job Template Survey](aws-tower-jt-survey.png)
 
-Now Click SAVE.
+Now click ADD and then SAVE.
 
 Untick PROMPT ON LAUNCH next to the EXTRA VARIABLES SECTION and click SAVE.
 
