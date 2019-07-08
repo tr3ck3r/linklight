@@ -138,7 +138,8 @@ Now we'll modify the playbook and add 2 tasks that display the routers' OS versi
 
 Your playbook should look like this:
 
-```bash
+``` yaml
+{%raw%}
 ---
 - name: GATHER INFORMATION FROM ROUTERS
   hosts: cisco
@@ -155,7 +156,8 @@ Your playbook should look like this:
 
     - name: DISPLAY SERIAL NUMBER
       debug:
-        msg: "The serial number is:{{ ansible_net_serialnum }}"      
+        msg: "The serial number is: {{ ansible_net_serialnum }}"      
+{%endraw%}
 ```
 
 
