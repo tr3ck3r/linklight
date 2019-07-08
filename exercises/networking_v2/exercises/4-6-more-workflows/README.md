@@ -36,7 +36,7 @@ You should have a number of new job templates including a workflow called **NETW
 
 Ansible Tower has been pulling our playbooks from source control - github in our case. We can also store our router configs and associated variables in source control as well so we get all of the same benefits - history, ability to create feature branches and peer reviews etc.
 
-We have a basic example of a router interface variable being stored in github. Take a look at the history of this file - https://github.com/pharriso/tower_workshop/commits/master/host_vars/rtr1.yml
+We have a basic example of a router interface variable being stored in github. Take a look at the history of this file - **https://github.com/pharriso/tower_workshop/commits/master/host_vars/rtr1.yml**
 
 ![job_link](images/git_history.png)
 
