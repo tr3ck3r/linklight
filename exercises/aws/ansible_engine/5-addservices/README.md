@@ -131,19 +131,6 @@ inventory_hostname and ansible_os_family are facts that Ansible discovers (using
 
 web_message is a local variable that we'll change in a minute.
 
-The handlers/main.yml is our service handler for restarting httpd. This will fire when Ansible detects a change has occurred and the service needs restarting:
-
-```bash
-$ cat handlers/main.yml
----
-
-- name: restart httpd
-  service:
-    name: httpd
-    state: restarted
-
-```
-
 Now go ahead and add this further content to the existing  playbook:
 
 ```bash
@@ -172,8 +159,6 @@ Now add this at the bottom:
       template:
         dest: /var/www/html/index.html
         src: index.html.j2
-      notify:
-        - restart httpd
 ```
 
 We've added a nifty local firewalld check as well here just for good measure :)
