@@ -68,7 +68,7 @@ To the right, you can view standard output; the same way you could if you were r
 ![Job Template Output](aws-tower-sg-job-output.png)
 
 
-[Optional]
+### Step 4:
 
 Remember that we coded this playbook so it could do a deletion as well?
 
@@ -81,6 +81,8 @@ Run it again, and add teardown: true under the '---' line in the prompt box:
 Click Next, then Launch.
 
 The security group will now be deleted!
+
+### Step 5:
 
 NOTE: please ensure you have a security group created before you leave this exercise as it's needed for the rest of the exercises.
 
