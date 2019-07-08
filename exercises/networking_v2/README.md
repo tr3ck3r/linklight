@@ -26,7 +26,7 @@ This content is a multi-purpose toolkit for effectively demonstrating Ansible's 
 - [Exercise 4.3 - Create a Tower User Template ](./exercises/4-3-tower-user-template)
 - [Exercise 4.4 - Tower Workflows ](./exercises/4-4-tower-workflow)
 - [Exercise 4.5 - Configuration Drift ](./exercises/4-5-config-drift)
-- [Exercise 4.5 - Network Testing with Workflows ](./exercises/4-6-more-workflows)
+- [Exercise 4.6 - Network Testing with Workflows ](./exercises/4-6-more-workflows)
 
 
 ## Network Diagram
