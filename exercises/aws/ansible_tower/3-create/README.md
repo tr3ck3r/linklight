@@ -82,7 +82,38 @@ Click Next, then Launch.
 
 The security group will now be deleted!
 
-### Step 5:
+
+### Step 5: Adding a Survey
+
+We have a nicely coded playbook which allows us to create or delete a Security Group.
+
+But having to add variables in at runtime isn't particularly neat and is prone to user error.
+
+Luckily, Tower has a feature called Surveys, which allows us to do this in a much better way.
+
+Delete the extra variable line you just added:
+
+```bash
+---
+teardown: true
+```
+
+Click SAVE.
+
+Now click on ADD SURVEY.
+
+Add details to match this screenshot:
+
+![Job Template Survey](aws-tower-jt-survey.png)
+
+Now click ADD and then SAVE.
+
+Untick PROMPT ON LAUNCH next to the EXTRA VARIABLES SECTION and click SAVE.
+
+Launch the Job Template and test things out!
+
+
+### Step 6:
 
 NOTE: please ensure you have a security group created before you leave this exercise as it's needed for the rest of the exercises.
 
