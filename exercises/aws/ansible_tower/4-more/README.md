@@ -193,8 +193,6 @@ Change the contents to this:
   template:
     dest: /var/www/html/index.html
     src: index.html.j2
-  notify:
-    - restart httpd
 ```
 
 We need a web_message variable set here:
