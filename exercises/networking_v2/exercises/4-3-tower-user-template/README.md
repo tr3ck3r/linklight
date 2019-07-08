@@ -125,6 +125,7 @@ then look for the user
 ```
 rtr1#show run | i username ansible
 username ansible secret 5 $1$qroK$DkZ4Z71o/ZSbifb8yRiza.
+rtr1#exit
 ```
 
 # Solution
