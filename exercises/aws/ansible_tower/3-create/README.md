@@ -104,7 +104,7 @@ Now click on ADD SURVEY.
 
 Add details to match this screenshot:
 
-![Job Template Survey](aws-tower-survey.png)
+![Job Template Survey](aws-tower-jt-survey.png)
 
 Now Click SAVE.
 
