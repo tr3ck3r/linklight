@@ -21,9 +21,9 @@ Click on the START button and then in the dashed box.
 
 Choose Create Security Group and SELECT.
 
-Click on the GREEN PLUS button and choose Create Web Servers and SELECT.
+Hover over the "Create Security Group" box, click on the GREEN PLUS button and choose Create Web Servers and SELECT.
 
-Click on the GREEN PLUS button and choose Create Load Balancer and SELECT.
+Hover over the "Create Web Servers" box, click on the GREEN PLUS button and choose Create Load Balancer and SELECT.
 
 Click on SAVE.
 
