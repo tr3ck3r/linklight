@@ -84,6 +84,7 @@ Before we can successfully run this playbook, we'll need to use the correct priv
 Run the following commands so your SSH client recognises the required private key:
 
 ```bash
+eval `ssh-agent`
 ssh-add ~/.ssh/aws-workshop.pem
 ssh-add -l
 2048 SHA256:V1bJqxGu1HVqmg/SUGRm20wb3rAdKZ/+zPfiyhtF3+M /home/student2/.ssh/aws-workshop.pem (RSA)
