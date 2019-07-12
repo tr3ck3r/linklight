@@ -44,6 +44,7 @@ virtualenv --system-site-packages ~/molecule
 . ~/molecule/bin/activate
 pip install --upgrade setuptools pip
 pip install molecule
+pip install molecule[docker]
 ```
 
 ```bash
