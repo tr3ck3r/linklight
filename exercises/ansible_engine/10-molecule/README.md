@@ -36,13 +36,14 @@ sudo systemctl status docker
 
 ### Step 2 - Molecule
 
-We use pip to install molecule, but it needs a couple of extras to install/run properly:
+We use pip inside a virtualenv to install molecule:
 
 ```bash
-sudo pip install molecule docker backports.functools_lru_cache
-sudo yum -y install python-configparser
-sudo pip uninstall -y backports.functools_lru_cache
-sudo pip install backports.functools_lru_cache
+sudo yum -y install gcc python-pip python-devel openssl-devel libselinux-python libffi-devel git python-virtualenv yamllint
+virtualenv --system-site-packages ~/molecule
+. ~/molecule/bin/activate
+pip install --upgrade setuptools pip
+pip install molecule
 ```
 
 ```bash
