@@ -122,4 +122,44 @@ like this.  Take note of the spacing and alignment.
 ```
 ---
 
+
+## Section 5: Running your Playbook
+
+Ok, now for the exciting bit!
+
+```bash
+ansible-playbook install_apache.yml
+```
+
+You should see output resembling this:
+
+```bash
+[student1@ansible apache_basic]$ ansible-playbook install_apache.yml
+
+PLAY [Install the apache web service] ************************************************************************
+
+TASK [Gathering Facts] ***************************************************************************************
+ok: [node1]
+ok: [node2]
+ok: [node3]
+
+TASK [install apache] ****************************************************************************************
+changed: [node1]
+changed: [node3]
+changed: [node2]
+
+TASK [start httpd] *******************************************************************************************
+changed: [node1]
+changed: [node2]
+changed: [node3]
+
+PLAY RECAP ***************************************************************************************************
+node1                      : ok=3    changed=2    unreachable=0    failed=0
+node2                      : ok=3    changed=2    unreachable=0    failed=0
+node3                      : ok=3    changed=2    unreachable=0    failed=0
+
+```
+
+Try running the playbook again. Notice anything different? (Ask the instructor about idempotency)
+
 [Click Here to return to the Ansible Linklight - Ansible Engine Workshop](../README.md)
