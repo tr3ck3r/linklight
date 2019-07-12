@@ -204,6 +204,7 @@ let's run it and see how it works.
 Run the playbook.
 
 ```bash
+cd ~/apache-basic-playbook
 ansible-playbook -i ~/lightbulb/lessons/lab_inventory/student##-instances.txt site.yml
 ```
 
