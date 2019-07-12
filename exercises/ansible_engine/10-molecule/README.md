@@ -373,7 +373,7 @@ molecule lint
 
 testinfra is included as the default verifier step of molecule. Testinfra uses pytest and makes it easy to test the system after the role is run to ensure our created role has the results that we expected.
 
-We'll not be doing much with it here, but will perform a simple "is package httpd isntalled" test for validation
+We'll not be doing much with it here, but will perform a simple "is package httpd installed" test for validation
 
 Change the test_default.py file to reflect the following. Note: spacing must be consistent (this is Python after all). Don't mix tabs and spaces else molecule will throw errors later on!
 
@@ -494,7 +494,7 @@ vi ~/apache_basic2/roles/apache_install/tasks/install_apache.yml
 Let's first test the playbook to prove we've written something useful and workable:
 
 ```bash
-ansible-playbook -i /home/student1/lightbulb/lessons/lab_inventory/student1-instances.txt ~/apache_basic2/site.yml
+ansible-playbook ~/apache_basic2/site.yml
 
 PLAY [Main Playbook (site.yml)] ***********************************************************************************************************************
 
@@ -524,7 +524,7 @@ Now let's do a full on test using molecule:
 
 ```bash
 
-cd /home/student1/apache_basic2/roles/apache_install
+cd ~/apache_basic2/roles/apache_install
 molecule test
 --> Validating schema /home/student1/apache_basic2/roles/apache_install/molecule/default/molecule.yml.
 Validation completed successfully.
