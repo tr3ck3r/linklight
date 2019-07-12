@@ -91,7 +91,7 @@ Commands:
   verify       Run automated tests against instances.
   
 $ molecule --version
-molecule, version 2.19.0
+molecule, version 2.20.1
 ```
 
 ## Section 2: Creating a New Role Framework
