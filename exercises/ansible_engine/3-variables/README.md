@@ -250,7 +250,8 @@ sudo yum -y install ansible-lint
 Then run it against your playbook:
 
 ```bash
-ansible-lint install_apache.yml
+cd ~/apache-basic-playbook
+ansible-lint site.yml
 ```
 
 If the output is silent then you're good to go!
