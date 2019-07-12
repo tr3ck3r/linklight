@@ -43,7 +43,7 @@ sudo yum -y install gcc python-pip python-devel openssl-devel libselinux-python 
 virtualenv --system-site-packages ~/molecule
 . ~/molecule/bin/activate
 pip install --upgrade setuptools pip
-pip install molecule
+pip install --force molecule
 pip install molecule[docker]
 ```
 
