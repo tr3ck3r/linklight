@@ -1,0 +1,21 @@
+---
+- hosts: web
+
+  vars:
+    my_var: testing
+
+  tasks:
+  - name: Install apache
+    yum:
+      name: httpd
+      state: present
+
+  - name: Start service
+    service:
+      name: httpd
+      state: started
+      enabled: true
+
+  - name: Print value of my_var
+    debug:
+      var: "{{my_var}}"
