@@ -239,7 +239,7 @@ looks the way you intended.  If not, now is the time for us to fix it up. The fi
 
 Cut and paste, YAML and indentation can be a nightmare right? How do I know I've got it right?
 
-Enter ansible-lint! This is a tool for checking best practises but can also pick up syntax errors.
+Enter [ansible-lint](https://github.com/ansible/ansible-lint)! This is a tool for checking best practises but can also pick up syntax errors.
 
 It may not be installed on your workstation, so:
 
