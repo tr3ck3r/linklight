@@ -165,17 +165,23 @@ This directory contains a basic Testinfra test, which you can expand on if you w
 
 ### Step 1 - First Tests
 
-Straight out the box, we should be able to do things.
+Straight out the box, we should be able to do things:
 
-#### Destroy test infra
 ```bash
 cd apache_install
 molecule destroy
+molecule create
 ```
 
-#### Create test infra
+If anything fails, then pinning molecule back a few versions along with any dependencies *might* work!
+
 ```bash
-molecule create
+pip install molecule==2.19 ansible==2.7.11 --force
+```
+
+Try this to test:
+```bash
+molecule verify
 ```
 
 Hopefully that works, so you now have a test framework to work with.
