@@ -63,13 +63,7 @@ playbook: bad_play.yml
 
 ## Step 3 - Check best practices
 
-Our playbook has intentionally been written in a way that goes against a number of best practices. Let's check it. We need to install ansible-lint first.
-
-```bash
-sudo pip install ansible-lint
-```
-
-Now let's check our playbook to see if ansible-lint detects any issues.
+Our playbook has intentionally been written in a way that goes against a number of best practices. Let's check it. We've already installed ansible-lint, and can use that.
 
 ```bash
 ansible-lint bad_play.yml
