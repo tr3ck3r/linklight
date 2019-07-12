@@ -89,6 +89,12 @@ Add an motd file in `roles/common/rhel/files/motd`.
 
 *** CONFIGURED WITH AWESOME ANSIBLE!!! ***
 
+                 _ _     _
+  __ _ _ __  ___(_) |__ | | ___
+ / _` | '_ \/ __| | '_ \| |/ _ \
+| (_| | | | \__ \ | |_) | |  __/
+ \__,_|_| |_|___/_|_.__/|_|\___|
+
 ```
 
 ### Step 5:
