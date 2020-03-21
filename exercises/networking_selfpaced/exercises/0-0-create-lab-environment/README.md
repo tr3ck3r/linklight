@@ -30,7 +30,7 @@ Add a NAT cloud and connect it into the HUB.
 Connect the routers together as per the diagram.  RTR1 and RTR2 are to be connected on G0/0 to one another, RTR1 should connect to RTR3 on G0/1, and RTR2 should connect to RTR4 on G0/1.
 ## Step 6
 
-Use the configuration provided for the Cisco devices:
+Use the following minimal configuration provided for the Cisco devices (there might be room for improwe:
 
 ### RTR1
 ```
@@ -75,11 +75,6 @@ router bgp 100
  redistribute ospf 1
  neighbor 10.200.200.2 remote-as 100
 !
-ip forward-protocol nd
-!
-!
-no ip http server
-no ip http secure-server
 ip route 0.0.0.0 0.0.0.0 192.168.122.1
 ip ssh version 2
 !
@@ -115,5 +110,5 @@ You have completed lab exercise 0.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjAyNjAxMDhdfQ==
+eyJoaXN0b3J5IjpbLTEyMjEzMzczOF19
 -->
