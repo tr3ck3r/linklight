@@ -30,13 +30,14 @@ Add a NAT cloud and connect it into the HUB.
 Connect the routers together as per the diagram.  RTR1 and RTR2 are to be connected on G0/0 to one another, RTR1 should connect to RTR3 on G0/1, and RTR2 should connect to RTR4 on G0/1.
 ## Step 6
 
-Use the following minimal configuration provided for the Cisco devices (there might be room for improvement but this will get your devices connected to do exercises):
+Use the following minimal configuration provided for the Cisco devices (there might be room for improvement but this will get your devices connected to do exercises).  We will be hardening the devices using Ansible later; this just brings the devices up so that Ansible can reach them.
 
 ### RTR1
 ```
 service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
+no aaa new-model
 !
 hostname rtr1
 !
@@ -118,29 +119,8 @@ ethernet lmi ce
 !
 !
 !
-no process cpu autoprofile hog
-mmi polling-interval 60
-no mmi auto-configure
-no mmi pvc
-mmi snmp-timeout 180
-!
-!
-!
-!
-!
-no ip icmp rate-limit unreachable
-!
-!
-!
-!
-!
-!
 no ip domain lookup
 ip domain name domain-name
-ip cef
-no ipv6 cef
-!
-multilink bundle-name authenticated
 !
 !
 !
@@ -153,18 +133,6 @@ no cdp log mismatch duplex
 no cdp run
 !
 ip tcp synwait-time 5
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
 !
 interface Loopback0
  ip address 172.16.0.2 255.255.255.255
@@ -211,47 +179,8 @@ router bgp 100
  redistribute ospf 1
  neighbor 10.200.200.1 remote-as 100
 !
-ip forward-protocol nd
-!
-!
-no ip http server
-no ip http secure-server
-ip route 0.0.0.0 0.0.0.0 192.168.50.1
 ip route 0.0.0.0 0.0.0.0 192.168.122.1
 ip ssh version 2
-!
-!
-!
-!
-control-plane
-!
-banner exec ^C
-**************************************************************************
-* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
-* education. IOSv is provided as-is and is not supported by Cisco's      *
-* Technical Advisory Center. Any use or disclosure, in whole or in part, *
-* of the IOSv Software or Documentation to any third party for any       *
-* purposes is expressly prohibited except as otherwise authorized by     *
-* Cisco in writing.                                                      *
-**************************************************************************^C
-banner incoming ^C
-**************************************************************************
-* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
-* education. IOSv is provided as-is and is not supported by Cisco's      *
-* Technical Advisory Center. Any use or disclosure, in whole or in part, *
-* of the IOSv Software or Documentation to any third party for any       *
-* purposes is expressly prohibited except as otherwise authorized by     *
-* Cisco in writing.                                                      *
-**************************************************************************^C
-banner login ^C
-**************************************************************************
-* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
-* education. IOSv is provided as-is and is not supported by Cisco's      *
-* Technical Advisory Center. Any use or disclosure, in whole or in part, *
-* of the IOSv Software or Documentation to any third party for any       *
-* purposes is expressly prohibited except as otherwise authorized by     *
-* Cisco in writing.                                                      *
-**************************************************************************^C
 !
 line con 0
  exec-timeout 0 0
@@ -285,5 +214,5 @@ You have completed lab exercise 0.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzNTg0NTk3MF19
+eyJoaXN0b3J5IjpbLTE5MTUyODkwMThdfQ==
 -->
