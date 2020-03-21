@@ -23,9 +23,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 3.1 - Building dynamic documentation using the command parser](./exercises/3-1-parser/)
 - [Exercise 3.2 - Using structured JSON output](./exercises/3-2-json/)
 - [Exercise 3.3 - Interface Descriptions to text file](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/register_2_text.yml)
-- [Exercise 3.4 ](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/gather_vty.yml)
-- [https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/audit_configs/audit.yml](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/audit_configs/audit.yml)
-
+- [Exercise 3.4 - Evaluate VTY](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/gather_vty.yml)
 ### Section 04 - Using Ansible to generate configs
 - [Exercise 4.1 - RTR4 YAML](https://github.com/ipspace/ansible-exercises/tree/master/Jinja2/refactor-data-model)
 - [Exercise 4.2 - Evaluate VTY](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class6)
@@ -38,6 +36,8 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 5.4 - Update logging](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_logging.yml)
 - [Exercise 5.5 - Update SNMP](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_snmp.yml)
 - [Exercise 5.6 -  Adding and removing user](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/remove_user.yml)
+- - [Exercise 5.99 - Audit Configs for all of the above](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/audit_configs/audit.yml)
+
 ### Section 09 - Using Ansible with JunOS
 -[https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class10](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class10)
 [https://go.nrelabs.io/labs/?lessonId=41&lessonStage=1](https://go.nrelabs.io/labs/?lessonId=41&lessonStage=1)
@@ -71,7 +71,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzOTA2NTk3NCwtMTcyMDQ2NTcyNiw2ND
+eyJoaXN0b3J5IjpbLTE3ODMwOTYzOSwtMTcyMDQ2NTcyNiw2ND
 MyMDQ3ODgsLTE4MjU3MzIwODgsLTIxMzc0MDY1MDgsMTI2OTU1
 OTUyNiwtOTc2ODk2NTcyLC0xNTI5MDU1NDI3LC0xNjEzNDgyMz
 E3XX0=
