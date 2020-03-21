@@ -23,6 +23,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 3.1 - Building dynamic documentation using the command parser](./exercises/3-1-parser/)
 - [Exercise 3.2 - Using structured JSON output](./exercises/3-2-json/)
 
+### Section 03 - Using Ansible to parse information for reporting
 ## Ansible Tower Exercises
 
 - [Exercise X.0 - Configure Ansible Tower](./exercises/4-0-tower-setup)
@@ -47,6 +48,6 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTExNDA3NTcsLTk3Njg5NjU3MiwtMT
-UyOTA1NTQyNywtMTYxMzQ4MjMxN119
+eyJoaXN0b3J5IjpbLTkwMjk5MDI1MCwtOTc2ODk2NTcyLC0xNT
+I5MDU1NDI3LC0xNjEzNDgyMzE3XX0=
 -->
