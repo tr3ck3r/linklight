@@ -65,13 +65,15 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
  - [https://github.com/jamalshahverdiev/ansible-playbooks-in-practice/tree/master/cisco-playbooks/cisco-daily-using-playbook](https://github.com/jamalshahverdiev/ansible-playbooks-in-practice/tree/master/cisco-playbooks/cisco-daily-using-playbook)
  - [https://networkproguide.com/example-ansible-playbook-for-updating-cisco-ios-switches/](https://networkproguide.com/example-ansible-playbook-for-updating-cisco-ios-switches/)
  - [https://github.com/colin-mccarthy/Ansible-Playbooks-for-Cisco-IOS](https://github.com/colin-mccarthy/Ansible-Playbooks-for-Cisco-IOS)
-
+## Additional Courses 
+- [https://pynet.twb-tech.com/class-ansible.html](https://pynet.twb-tech.com/class-ansible.html)
+- [https://www.networktocode.com/training/network-programming-automation/](https://www.networktocode.com/training/network-programming-automation/)
 ---
 ![Red Hat Ansible Automation](../../images/networkautomation.png)
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODMwOTYzOSwtMTcyMDQ2NTcyNiw2ND
+eyJoaXN0b3J5IjpbMjA2MTg5NDA1NiwtMTcyMDQ2NTcyNiw2ND
 MyMDQ3ODgsLTE4MjU3MzIwODgsLTIxMzc0MDY1MDgsMTI2OTU1
 OTUyNiwtOTc2ODk2NTcyLC0xNTI5MDU1NDI3LC0xNjEzNDgyMz
 E3XX0=
