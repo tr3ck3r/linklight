@@ -31,18 +31,9 @@ This content is a multi-purpose toolkit for effectively demonstrating Ansible's 
   * [Lab Provisioner](provisioner)  
     AWS playbook for building up a testing environment (in the form of Virtual Machines) for someone to try the exercises provided above.
 
-
-
-
-# Slack
-Do you like Slack?  So do we! [click to join our ansiblenetwork slack](https://join.slack.com/t/ansiblenetwork/shared_invite/enQtMzEyMTcxMTE5NjM3LWIyMmQ4YzNhYTA4MjA2OTRhZDQzMTZkNWZlN2E3NzhhMWQ5ZTdmNmViNjk2M2JkYzJjODhjMjVjMGUxZjc2MWE)
-
-# Mailing List
-Join our [mailing list](https://www.redhat.com/mailman/listinfo/linklight)
-
 ---
 ![Red Hat Ansible Automation](images/rh-ansible-automation.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjY4MDc5NywtMjUyNzYyNjUsLTkyOD
-Q4NzkxNV19
+eyJoaXN0b3J5IjpbLTIxMjI1OTIwODQsLTE4NjY4MDc5NywtMj
+UyNzYyNjUsLTkyODQ4NzkxNV19
 -->
