@@ -42,6 +42,7 @@ no service password-encryption
 no aaa new-model
 no ip domain lookup
 ip domain name domain-name
+ip scp server enable
 username cisco privilege 15 password 0 cisco
 !
 interface Loopback0
@@ -240,5 +241,5 @@ You have completed lab exercise 0.0
 nklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwMzgwODc4Ml19
+eyJoaXN0b3J5IjpbNjEwNjg3MDc5XX0=
 -->
