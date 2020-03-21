@@ -27,9 +27,11 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 4.1 - RTR4 YAML](https://github.com/ipspace/ansible-exercises/tree/master/Jinja2/refactor-data-model)
 - [Exercise 4.2 ](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class6)
 - [https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class5](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class5)
+- [http://ansible.redhatgov.io/standard/network/exercise1.4.html](http://ansible.redhatgov.io/standard/network/exercise1.4.html)
 ### Section 09 - Using Ansible with JunOS
 -[https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class10](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class10)
 [https://go.nrelabs.io/labs/?lessonId=41&lessonStage=1](https://go.nrelabs.io/labs/?lessonId=41&lessonStage=1)
+[https://www.ansible.com/blog/agnostic-network-automation-examples-with-ansible-and-juniper-nre-labs](https://www.ansible.com/blog/agnostic-network-automation-examples-with-ansible-and-juniper-nre-labs)
 
 ## Ansible Tower Exercises
 
@@ -55,7 +57,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyOTI0NjQ2NSwtMjEzNzQwNjUwOCwxMj
-Y5NTU5NTI2LC05NzY4OTY1NzIsLTE1MjkwNTU0MjcsLTE2MTM0
-ODIzMTddfQ==
+eyJoaXN0b3J5IjpbLTE4MjU3MzIwODgsLTIxMzc0MDY1MDgsMT
+I2OTU1OTUyNiwtOTc2ODk2NTcyLC0xNTI5MDU1NDI3LC0xNjEz
+NDgyMzE3XX0=
 -->
