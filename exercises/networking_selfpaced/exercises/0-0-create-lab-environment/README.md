@@ -27,13 +27,173 @@ Create a hub which will serve for the Out Of Band (OOB) connection between all d
 Add a NAT cloud and connect it into the HUB.
 
 ## Step 5
-Connect the routers together as per the diagram.  RTR1 and RTR2 are to be connecte
+Connect the routers together as per the diagram.  RTR1 and RTR2 are to be connected on G0/0 to one another, RTR1 should connect to RTR3 on G0/1, and RTR2 should connect to RTR4 on G0/1.
 ## Step 6
 
 Use the configuration provided for the Cisco devices:
 
 ### RTR1
 ```
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname rtr1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+ethernet lmi ce
+!
+!
+!
+no process cpu autoprofile hog
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+ip domain name domain-name
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+username cisco privilege 15 password 0 cisco
+!
+redundancy
+!
+no cdp log mismatch duplex
+no cdp run
+!
+ip tcp synwait-time 5
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 172.16.0.1 255.255.255.255
+!
+interface GigabitEthernet0/0
+ ip address 10.200.200.1 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+ no cdp enable
+!
+interface GigabitEthernet0/1
+ ip address 10.100.100.1 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+ no cdp enable
+!
+interface GigabitEthernet0/2
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+ no cdp enable
+!
+interface GigabitEthernet0/3
+ ip address 192.168.122.101 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ redistribute bgp 100 subnets
+ network 10.100.100.0 0.0.0.255 area 0
+ network 172.16.0.1 0.0.0.0 area 0
+!
+router bgp 100
+ bgp log-neighbor-changes
+ bgp redistribute-internal
+ network 10.200.200.0 mask 255.255.255.0
+ network 172.16.0.1 mask 255.255.255.255
+ redistribute ospf 1
+ neighbor 10.200.200.2 remote-as 100
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip route 0.0.0.0 0.0.0.0 192.168.122.1
+ip ssh version 2
+!
+banner exec ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner incoming ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner login ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+no scheduler allocate
+!
+end
 
 ```
 
@@ -45,5 +205,5 @@ You have completed lab exercise 0.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTkzNDYyNF19
+eyJoaXN0b3J5IjpbMTA4NTI0MjVdfQ==
 -->
