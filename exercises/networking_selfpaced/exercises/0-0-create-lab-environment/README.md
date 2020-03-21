@@ -10,45 +10,13 @@ You may chose to install it locally or on a remote server such as a VM Ware ESXi
 
 ## Step 2
 
-Run the `ansible` command with the `--version` command to look at what is configured:
+Configure one routers and get the idle time optimized.  Simplest would be to use vIOS from Cisco if you have access to this.  You will need to support four router interfaces that are Gigabit Ethernet. 
 
-
-```
-[student1@ansible networking-workshop]$ ansible --version
-ansible 2.7.0
-  config file = /home/student1/.ansible.cfg
-  configured module search path = [u'/home/student1/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
-  ansible python module location = /usr/lib/python2.7/site-packages/ansible
-  executable location = /usr/bin/ansible
-  python version = 2.7.5 (default, Jun 11 2019, 12:19:05) [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
-```
-
-> Note: The ansible version you see might differ from the above output
-
-
-This command gives you information about the version of Ansible, location of the executable, version of Python, search path for the modules and location of the `ansible configuration file`.
+Once the first router is working correctly, duplicate it three times.
 
 ## Step 3
 
-Use the `cat` command to view the contents of the `ansible.cfg` file.
-
-```
-[student1@ansible networking-workshop]$ cat ~/.ansible.cfg
-[defaults]
-stdout_callback = yaml
-connection = smart
-timeout = 60
-deprecation_warnings = False
-host_key_checking = False
-retry_files_enabled = False
-inventory = /home/student1/networking-workshop/lab_inventory/hosts
-[persistent_connection]
-connect_timeout = 60
-```
-
-Note the following parameters within the `ansible.cfg` file:
-
- - `inventory`: shows the location of the ansible inventory being used
+Create a hub which will serve for the Out OF 
 
 ## Step 4
 
@@ -124,5 +92,5 @@ You have completed lab exercise 0.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2MzMyODUwOF19
+eyJoaXN0b3J5IjpbLTY3MTU3MjQzXX0=
 -->
