@@ -127,7 +127,6 @@ Now update the task to add one more SNMP RO community string:
           - snmp-server community ansible-public RO
           - snmp-server community ansible-private RW
           - snmp-server community ansible-test RO
-          - ip scp server enable
 ```
 
 
@@ -199,5 +198,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2NTk4NTQ4MywtMTEzNzUwMTQzMV19
+eyJoaXN0b3J5IjpbMTM1Mjc2MjQyMywtMTEzNzUwMTQzMV19
 -->
