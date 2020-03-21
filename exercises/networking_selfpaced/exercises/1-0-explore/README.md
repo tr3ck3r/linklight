@@ -7,7 +7,12 @@ Let's familiarize ourselves with the environment and config.
 Navigate to the `networking-workshop` directory.  If this directory does not exist, create it.
 
 ```
-[root@ansible ~]$ cd networking-workshop/
+root@Ansible:~# cd networking-workshop/
+bash: cd: networking-workshop/: No such file or directory
+root@Ansible:~# mkdir networking-workshop/
+root@Ansible:~# cd networking-workshop/
+root@Ansible:~/networking-workshop#
+
 ```
 
 ## Step 2
@@ -16,13 +21,15 @@ Run the `ansible` command with the `--version` command to look at what is config
 
 
 ```
-[student1@ansible networking-workshop]$ ansible --version
-ansible 2.7.0
-  config file = /home/student1/.ansible.cfg
-  configured module search path = [u'/home/student1/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
-  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+root@Ansible:~/networking-workshop# ansible --version
+ansible 2.9.6
+  config file = /root/.ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/dist-packages/ansible
   executable location = /usr/bin/ansible
-  python version = 2.7.5 (default, Jun 11 2019, 12:19:05) [GCC 4.8.5 20150623 (Red Hat 4.8.5-36)]
+  python version = 2.7.17 (default, Nov  7 2019, 10:07:09) [GCC 7.4.0]
+root@Ansible:~/networking-workshop#
+
 ```
 
 > Note: The ansible version you see might differ from the above output
@@ -126,5 +133,5 @@ You have completed lab exercise 1.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDEyODczOTUsLTI4MDA2NTUyMV19
+eyJoaXN0b3J5IjpbLTM1MjkyNjM1NywtMjgwMDY1NTIxXX0=
 -->
