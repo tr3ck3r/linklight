@@ -4,11 +4,11 @@ Let's familiarize ourselves with the environment and config.
 
 ## Step 1
 
-Navigate to the `networking-workshop` directory.
+Navigate to the `networking-workshop` directory.  if this directory does not exist, create it.
 
 
 ```
-[student1@ansible ~]$ cd networking-workshop/
+[root@ansible ~]$ cd networking-workshop/
 ```
 
 ## Step 2
@@ -127,5 +127,5 @@ You have completed lab exercise 1.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ1MTYxNzg3XX0=
+eyJoaXN0b3J5IjpbLTI4MDA2NTUyMV19
 -->
