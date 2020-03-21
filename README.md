@@ -2,7 +2,8 @@
 
 ![linklight](images/linklight.png)
 
-The Ansible Networking Linklight project is intended for effectively demonstrating Ansible's capabilities through instructor-led workshops or self-paced exercises.  
+
+This content is a multi-purpose toolkit for effectively demonstrating Ansible's capabilities on Cisco network equipment or providing informal workshop training in various forms -- instructor-led, hands-on or self-paced.  The exercises have been modified from the original to work in GNS3 and for author preference.
 
 ## Table of Contents
 
@@ -11,14 +12,11 @@ The Ansible Networking Linklight project is intended for effectively demonstrati
   * [Presentation Decks](decks)  
      - [Ansible Essentials Deck](https://network-automation.github.io/linklight/decks/ansible-essentials.html)
      - [Intro to Ansible Tower Deck](https://network-automation.github.io/linklight/decks/tower_intro.pdf)
-     - [Ansible Networking Deck *Deprecated](https://network-automation.github.io/linklight/decks/ansible-networking.html#)
      - [Ansible Networking-v2 Deck](https://network-automation.github.io/linklight/decks/ansible_network.pdf)
      - [Ansible F5 Deck](https://network-automation.github.io/linklight/decks/ansible_f5.pdf)
 
   * Network Automation Exercises
-    These exercises are focused on networking platforms like Arista, Cisco, Juniper and F5.
-
-     - [Ansible Networking Workshop Exercises *Deprecated](exercises/networking/README.md)
+    These exercises are focused on networking platforms like Arista, Cisco, Juniper and F5.  
      - [Ansible Networking-v2 Workshop Exercises](exercises/networking_v2/README.md)
      - [Ansible F5 Workshop Exercises](exercises/ansible_f5/README.md)
 
@@ -34,6 +32,7 @@ The Ansible Networking Linklight project is intended for effectively demonstrati
 ### SELF-PACED EXERCISES:
 
   * [Vagrant Demo](vagrant-demo) - Self-paced networking exercises that can be run on your personal laptop
+  * [Ansible Networking-v2 Workshop Exercises](exercises/networking_v2/README.md)
 
 # Slack
 Do you like Slack?  So do we! [click to join our ansiblenetwork slack](https://join.slack.com/t/ansiblenetwork/shared_invite/enQtMzEyMTcxMTE5NjM3LWIyMmQ4YzNhYTA4MjA2OTRhZDQzMTZkNWZlN2E3NzhhMWQ5ZTdmNmViNjk2M2JkYzJjODhjMjVjMGUxZjc2MWE)
@@ -43,3 +42,6 @@ Join our [mailing list](https://www.redhat.com/mailman/listinfo/linklight)
 
 ---
 ![Red Hat Ansible Automation](images/rh-ansible-automation.png)
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTEwMDU2OTEzMzRdfQ==
+-->
