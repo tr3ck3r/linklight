@@ -36,9 +36,15 @@ This command gives you information about the version of Ansible, location of the
 
 ## Step 3
 
-Use the `cat` command to view the contents of the `ansible.cfg` file.  Your configuration file may differ or you may need to create it and apply this configuration depending on where you got the Ansible VM from.
+Use the `echo` command to create and `cat` to view the contents of the `ansible.cfg` file.  Your configuration file may differ or you may need to create it and apply this configuration depending on where you got the Ansible VM from.
 
 ```
+cat <<EOF > ~ansible.cfg
+#!/bin/bash
+echo \$PWD
+echo $PWD
+EOF
+
 [student1@ansible networking-workshop]$ cat ~/.ansible.cfg
 [defaults]
 stdout_callback = yaml
@@ -130,5 +136,6 @@ You have completed lab exercise 1.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzcwMTQzODEwLC0yODAwNjU1MjFdfQ==
+eyJoaXN0b3J5IjpbLTQ2NDczOTg2LDM3MDE0MzgxMCwtMjgwMD
+Y1NTIxXX0=
 -->
