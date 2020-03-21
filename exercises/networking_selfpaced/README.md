@@ -32,7 +32,7 @@ This content is a multi-purpose toolkit for effectively demonstrating Ansible's 
 ## Network Diagram
 ### GNS3 Diagram
 ![Red Hat Network Diagram for GNS3](../../images/NetworkDiagram-GNS3.png)
-### Original 
+### Original Linklight Diagram
 ![Red Hat Ansible Automation](../../images/network_diagram.png)
 
 ## Additional information
@@ -46,5 +46,6 @@ This content is a multi-purpose toolkit for effectively demonstrating Ansible's 
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1NTY0NDU1MiwtMTYxMzQ4MjMxN119
+eyJoaXN0b3J5IjpbLTE1MjkwNTU0MjcsLTE2MTM0ODIzMTddfQ
+==
 -->
