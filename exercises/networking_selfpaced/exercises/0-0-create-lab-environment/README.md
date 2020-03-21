@@ -209,6 +209,42 @@ end
 ```
 ### RTR4
 ```
+hostname rtr4
+!
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+no aaa new-model
+no ip domain lookup
+ip domain name domain-name
+username cisco privilege 15 password 0 cisco
+!
+interface Loopback0
+ ip address 172.16.0.4 255.255.255.255
+!
+interface GigabitEthernet0/1
+ ip address 10.101.101.4 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet0/3
+ ip address 192.168.122.104 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 10.101.101.0 0.0.0.255 area 0
+ network 172.16.0.4 0.0.0.0 area 0
+!
+ip route 0.0.0.0 0.0.0.0 192.168.122.1
+ip ssh version 2
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login local
+ transport input ssh
+!
 crypto key generate rsa modulus 1024
 !
 end
@@ -222,5 +258,5 @@ You have completed lab exercise 0.0
 nklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTk4NTAzMV19
+eyJoaXN0b3J5IjpbLTk1NjE3ODM3Ml19
 -->
