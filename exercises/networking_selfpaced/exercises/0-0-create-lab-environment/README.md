@@ -1,15 +1,12 @@
-# Exercise .0 - Exploring the lab environment
+# Exercise 0.0 - Creating the lab environment
 
-Let's familiarize ourselves with the environment and config.
+To get started, you are going to need four Cisco routers and an Ansible supporting Linux environment.  While this can be done a variety of ways, we are going to cover doing this with GNS3.
 
 ## Step 1
 
-Navigate to the `networking-workshop` directory.  if this directory does not exist, create it.
+Install GNS3.  
 
-
-```
-[root@ansible ~]$ cd networking-workshop/
-```
+You may chose to install it locally or on a remote server such as a VM Ware ESXi server.  Since we are only running five VMs; the requirements are light enough to work on many workstations.
 
 ## Step 2
 
@@ -127,5 +124,5 @@ You have completed lab exercise 0.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0MzA3Mjk5N119
+eyJoaXN0b3J5IjpbLTg2MzMyODUwOF19
 -->
