@@ -52,13 +52,14 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
  - [Module Maintenance & Support](http://docs.ansible.com/ansible/latest/modules_support.html)
  - [Network Automation GitHub Repo](https://github.com/network-automation)
  - [https://github.com/ipspace/NetOpsWorkshop](https://github.com/ipspace/NetOpsWorkshop)
+ - [https://github.com/jamalshahverdiev/ansible-playbooks-in-practice/tree/master/cisco-playbooks/cisco-daily-using-playbook](https://github.com/jamalshahverdiev/ansible-playbooks-in-practice/tree/master/cisco-playbooks/cisco-daily-using-playbook)
 
 ---
 ![Red Hat Ansible Automation](../../images/networkautomation.png)
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQzMjA0Nzg4LC0xODI1NzMyMDg4LC0yMT
-M3NDA2NTA4LDEyNjk1NTk1MjYsLTk3Njg5NjU3MiwtMTUyOTA1
-NTQyNywtMTYxMzQ4MjMxN119
+eyJoaXN0b3J5IjpbNzE5NDI2NjU4LDY0MzIwNDc4OCwtMTgyNT
+czMjA4OCwtMjEzNzQwNjUwOCwxMjY5NTU5NTI2LC05NzY4OTY1
+NzIsLTE1MjkwNTU0MjcsLTE2MTM0ODIzMTddfQ==
 -->
