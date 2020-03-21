@@ -34,16 +34,14 @@ Use the following minimal configuration provided for the Cisco devices (there mi
 
 ### RTR1
 ```
+hostname rtr1
+!
 service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
 no aaa new-model
-!
-hostname rtr1
-!
 no ip domain lookup
 ip domain name domain-name
-!
 username cisco privilege 15 password 0 cisco
 !
 interface Loopback0
@@ -94,25 +92,14 @@ end
 
 ### RTR2
 ```
+hostname rtr2
+!
 service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
-!
-hostname rtr2
-!
-boot-start-marker
-boot-end-marker
-!
-!
-!
 no aaa new-model
-ethernet lmi ce
-!
-!
-!
 no ip domain lookup
 ip domain name domain-name
-!
 username cisco privilege 15 password 0 cisco
 !
 interface Loopback0
@@ -162,19 +149,14 @@ end
 
 ### RTR3
 ```
-
+hostname rtr3
+!
 service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
-!
-hostname rtr3
-!
-!
 no aaa new-model
-!
 no ip domain lookup
 ip domain name domain-name
-!
 username cisco privilege 15 password 0 cisco
 !
 interface Loopback0
@@ -258,5 +240,5 @@ You have completed lab exercise 0.0
 nklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1NjE3ODM3Ml19
+eyJoaXN0b3J5IjpbMjAwMzgwODc4Ml19
 -->
