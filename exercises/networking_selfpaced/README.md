@@ -23,7 +23,8 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 3.1 - Building dynamic documentation using the command parser](./exercises/3-1-parser/)
 - [Exercise 3.2 - Using structured JSON output](./exercises/3-2-json/)
 - [Exercise 3.3 - Interface Descriptions to text file](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/register_2_text.yml)
-- [Exercise 3.4](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/gather_vty.yml)
+- [Exercise 3.4 ](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/gather_vty.yml)
+- [https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/audit_configs/audit.yml](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/audit_configs/audit.yml)
 
 ### Section 04 - Using Ansible to generate configs
 - [Exercise 4.1 - RTR4 YAML](https://github.com/ipspace/ansible-exercises/tree/master/Jinja2/refactor-data-model)
@@ -70,8 +71,8 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwOTk0MzEwLC0xNzIwNDY1NzI2LDY0Mz
-IwNDc4OCwtMTgyNTczMjA4OCwtMjEzNzQwNjUwOCwxMjY5NTU5
-NTI2LC05NzY4OTY1NzIsLTE1MjkwNTU0MjcsLTE2MTM0ODIzMT
-ddfQ==
+eyJoaXN0b3J5IjpbMjAzOTA2NTk3NCwtMTcyMDQ2NTcyNiw2ND
+MyMDQ3ODgsLTE4MjU3MzIwODgsLTIxMzc0MDY1MDgsMTI2OTU1
+OTUyNiwtOTc2ODk2NTcyLC0xNTI5MDU1NDI3LC0xNjEzNDgyMz
+E3XX0=
 -->
