@@ -40,88 +40,23 @@ no service password-encryption
 !
 hostname rtr1
 !
-boot-start-marker
-boot-end-marker
-!
-!
-!
-no aaa new-model
-ethernet lmi ce
-!
-!
-!
-no process cpu autoprofile hog
-mmi polling-interval 60
-no mmi auto-configure
-no mmi pvc
-mmi snmp-timeout 180
-!
-!
-!
-!
-!
-no ip icmp rate-limit unreachable
-!
-!
-!
-!
-!
-!
 no ip domain lookup
 ip domain name domain-name
-ip cef
-no ipv6 cef
-!
-multilink bundle-name authenticated
-!
-!
-!
 !
 username cisco privilege 15 password 0 cisco
 !
-redundancy
-!
-no cdp log mismatch duplex
-no cdp run
-!
 ip tcp synwait-time 5
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
 !
 interface Loopback0
  ip address 172.16.0.1 255.255.255.255
 !
 interface GigabitEthernet0/0
  ip address 10.200.200.1 255.255.255.0
- duplex auto
- speed auto
- media-type rj45
- no cdp enable
+ no shutdown
 !
 interface GigabitEthernet0/1
  ip address 10.100.100.1 255.255.255.0
- duplex auto
- speed auto
- media-type rj45
- no cdp enable
-!
-interface GigabitEthernet0/2
- no ip address
- shutdown
- duplex auto
- speed auto
- media-type rj45
- no cdp enable
+ no shutdown
 !
 interface GigabitEthernet0/3
  ip address 192.168.122.101 255.255.255.0
@@ -205,5 +140,5 @@ You have completed lab exercise 0.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4NTI0MjVdfQ==
+eyJoaXN0b3J5IjpbMTUwMzEzNTkxMF19
 -->
