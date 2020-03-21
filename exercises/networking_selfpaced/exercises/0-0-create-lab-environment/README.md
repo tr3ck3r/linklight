@@ -14,9 +14,13 @@ Configure one routers and get the idle time optimized.  Simplest would be to use
 
 Once the first router is working correctly, duplicate it three times.
 
+## Step 4
+Configure your Ansible environment.  You may chose to use an existing appliance or create your own from scratch.  It must have Ansible installed.  
+
+For this document
 ## Step 3
 
-Create a hub which will serve for the Out OF 
+Create a hub which will serve for the Out Of Band (OOB) connection between all devices.  Many of the labs can be done with only the OOB part of the network working; however, the goal is to configure a BGP connection between two data centers which are running OSPF internally.  Connect all devices
 
 ## Step 4
 
@@ -92,5 +96,5 @@ You have completed lab exercise 0.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3MTU3MjQzXX0=
+eyJoaXN0b3J5IjpbLTM2OTY3NDQ0M119
 -->
