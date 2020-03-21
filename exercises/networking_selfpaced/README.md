@@ -1,6 +1,11 @@
 # Ansible Linklight - Networking
 
-This content is a multi-purpose toolkit for effectively demonstrating Ansible's capabilities on network equipment (Arista, Cisco, Cumulus, Juniper etc) or providing informal workshop training in various forms -- instructor-led, hands-on or self-paced.
+This content provides the ability to learn Ansible's capabilities on Cisco network routers at a self-paced speed using the free lab environment of GNS3.
+
+## Network Diagram
+### GNS3 Diagram
+![Red Hat Network Diagram for GNS3](../../images/NetworkDiagram-GNS3.png)
+
 
 ## Ansible Network Automation Exercises
 
@@ -28,11 +33,7 @@ This content is a multi-purpose toolkit for effectively demonstrating Ansible's 
 - [Exercise 4.5 - Configuration Drift ](./exercises/4-5-config-drift)
 - [Exercise 4.6 - Network Testing with Workflows ](./exercises/4-6-more-workflows)
 
-
-## Network Diagram
-### GNS3 Diagram
-![Red Hat Network Diagram for GNS3](../../images/NetworkDiagram-GNS3.png)
-### Original Linklight Diagram
+## Original Linklight Diagram
 ![Red Hat Ansible Automation](../../images/network_diagram.png)
 
 ## Additional information
@@ -46,6 +47,6 @@ This content is a multi-purpose toolkit for effectively demonstrating Ansible's 
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjkwNTU0MjcsLTE2MTM0ODIzMTddfQ
-==
+eyJoaXN0b3J5IjpbMTAxMzA0OTY1MCwtMTUyOTA1NTQyNywtMT
+YxMzQ4MjMxN119
 -->
