@@ -6,7 +6,6 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 ### GNS3 Diagram
 ![Red Hat Network Diagram for GNS3](../../images/NetworkDiagram-GNS3.png)
 
-
 ## Ansible Network Automation Exercises
 
 ### Section 01 - Using Ansible to gather data from network devices
@@ -47,6 +46,6 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxMzA0OTY1MCwtMTUyOTA1NTQyNywtMT
+eyJoaXN0b3J5IjpbLTk3Njg5NjU3MiwtMTUyOTA1NTQyNywtMT
 YxMzQ4MjMxN119
 -->
