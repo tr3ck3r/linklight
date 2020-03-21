@@ -356,12 +356,8 @@ rtr3                       : ok=2    changed=1    unreachable=0    failed=0
 rtr4                       : ok=2    changed=0    unreachable=0    failed=0
 ```
 
-### Step 13
-Let's go ahead and disable http and https, this would be your CLI syntax on the routers:
-```
-no ip http server
-no ip http secure-server
-```
+
+
 
 # Complete
 
@@ -370,5 +366,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxMjgxNzI3OF19
+eyJoaXN0b3J5IjpbLTEwNTI1OTA5NzRdfQ==
 -->
