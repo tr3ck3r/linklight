@@ -232,14 +232,6 @@ Remember that a playbook contains a list of plays. Add a new play called `HARDEN
           - snmp-server community ansible-private RW
           - snmp-server community ansible-test RO
 
-
-- name: HARDEN IOS ROUTERS
-  hosts: cisco
-  gather_facts: no
-  connection: network_cli
-
-
-
 ```
 
 #### Step 10
@@ -366,5 +358,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzc1MDE0MzFdfQ==
+eyJoaXN0b3J5IjpbLTc4NjcwNTAxOSwtMTEzNzUwMTQzMV19
 -->
