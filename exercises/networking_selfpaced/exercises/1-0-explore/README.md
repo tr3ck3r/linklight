@@ -29,17 +29,14 @@ ansible 2.9.6
   executable location = /usr/bin/ansible
   python version = 2.7.17 (default, Nov  7 2019, 10:07:09) [GCC 7.4.0]
 root@Ansible:~/networking-workshop#
-
 ```
-
 > Note: The ansible version you see might differ from the above output
-
 
 This command gives you information about the version of Ansible, location of the executable, version of Python, search path for the modules and location of the `ansible configuration file`.
 
 ## Step 3
 
-Use the `cat` command to view the contents of the `ansible.cfg` file.
+Use the `cat` command to view the contents of the `ansible.cfg` file.  Your configuration file may differ or you may need to create it and apply this configuration depending on where you got the Ansible VM from.
 
 ```
 [student1@ansible networking-workshop]$ cat ~/.ansible.cfg
@@ -133,5 +130,5 @@ You have completed lab exercise 1.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1MjkyNjM1NywtMjgwMDY1NTIxXX0=
+eyJoaXN0b3J5IjpbMzcwMTQzODEwLC0yODAwNjU1MjFdfQ==
 -->
