@@ -32,7 +32,7 @@ This content is a multi-purpose toolkit for effectively demonstrating Ansible's 
 ### SELF-PACED EXERCISES:
 
   * [Vagrant Demo](vagrant-demo) - Self-paced networking exercises that can be run on your personal laptop
-  * [Ansible Networking-v2 Workshop Exercises](exercises/networking_selfpaced/README.md)
+  * [Ansible Networking-v2 Selfpaced Exercises](exercises/networking_selfpaced/README.md)
 
 # Slack
 Do you like Slack?  So do we! [click to join our ansiblenetwork slack](https://join.slack.com/t/ansiblenetwork/shared_invite/enQtMzEyMTcxMTE5NjM3LWIyMmQ4YzNhYTA4MjA2OTRhZDQzMTZkNWZlN2E3NzhhMWQ5ZTdmNmViNjk2M2JkYzJjODhjMjVjMGUxZjc2MWE)
@@ -43,5 +43,5 @@ Join our [mailing list](https://www.redhat.com/mailman/listinfo/linklight)
 ---
 ![Red Hat Ansible Automation](images/rh-ansible-automation.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyODQ4NzkxNV19
+eyJoaXN0b3J5IjpbOTE1Nzk3OTMzLC05Mjg0ODc5MTVdfQ==
 -->
