@@ -1,6 +1,6 @@
 # Exercise 2.0 - Updating the router configurations using Ansible
 
-Using Ansible you can update the configuration of routers either by pushing a configuration file to the device or you can push configuration lines directly to the device.
+Using Ansible you can update the configuration of routers either by pushing a configuration file to the device or you can push configuration lines directly to the device.  Herein you will see how to update SNMP.
 
 #### Step 1
 
@@ -370,5 +370,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5Mzg4MDE5OV19
+eyJoaXN0b3J5IjpbLTcxMjgxNzI3OF19
 -->
