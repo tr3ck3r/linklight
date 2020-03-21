@@ -91,10 +91,10 @@ ansible_network_os=ios
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 
 [cisco]
-rtr1 ansible_host=54.86.240.200 private_ip=172.16.53.225
-rtr2 ansible_host=35.172.211.215 private_ip=172.17.2.181
-rtr3 ansible_host=18.232.174.85 private_ip=172.16.237.202
-rtr4 ansible_host=174.129.69.1 private_ip=172.17.120.151
+rtr1 ansible_host=192.168.122.101
+rtr2 ansible_host=192.168.122.102
+rtr3 ansible_host=192.168.122.103
+rtr4 ansible_host=192.168.122.104
 
 [dc1]
 rtr1
@@ -103,11 +103,6 @@ rtr3
 [dc2]
 rtr2
 rtr4
-
-
-
-[cisco:vars]
-
 
 EOF
 ```
@@ -143,6 +138,6 @@ You have completed lab exercise 1.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDY3NDUwNTUxLDM3MDE0MzgxMCwtMjgwMD
+eyJoaXN0b3J5IjpbNDkzMTkxOTIzLDM3MDE0MzgxMCwtMjgwMD
 Y1NTIxXX0=
 -->
