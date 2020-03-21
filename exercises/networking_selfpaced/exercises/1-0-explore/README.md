@@ -79,22 +79,22 @@ In this lab you will work with a file based inventory written in the **ini** for
 root@Ansible:~/networking-workshop# cat <<EOF > ~/networking-workshop/lab_inventory/hosts
 
 [all:vars]
-ansible_ssh_private_key_file=/home/student1/.ssh/aws-private.pem
+
 [routers:children]
 cisco
+
+[cisco:vars]
+ansible_network_os=ios
+ansible_connection=network_cli
+ansible_user=cisco
+ansible_network_os=ios
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 
 [cisco]
 rtr1 ansible_host=54.86.240.200 private_ip=172.16.53.225
 rtr2 ansible_host=35.172.211.215 private_ip=172.17.2.181
 rtr3 ansible_host=18.232.174.85 private_ip=172.16.237.202
 rtr4 ansible_host=174.129.69.1 private_ip=172.17.120.151
-
-
-[cisco:vars]
-ansible_user=ec2-user
-ansible_network_os=ios
-ansible_connection=network_cli
-
 
 [dc1]
 rtr1
@@ -104,22 +104,9 @@ rtr3
 rtr2
 rtr4
 
-[hosts]
-host1 ansible_host=34.234.88.188 ansible_user=ec2-user private_ip=172.17.62.146
 
-[control]
-ansible ansible_host=34.229.83.26 ansible_user=student1 private_ip=172.16.103.177
-
-[cisco]
-rtr1 ansible_host=192.168.122.101
-rtr2 ansible_host=192.168.122.102
-rtr3 ansible_host=192.168.122.103
-rtr4 ansible_host=192.168.122.104
 
 [cisco:vars]
-ansible_user=cisco
-ansible_network_os=ios
-ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 
 
 EOF
@@ -156,6 +143,6 @@ You have completed lab exercise 1.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTIxMDYwNiwzNzAxNDM4MTAsLTI4MD
-A2NTUyMV19
+eyJoaXN0b3J5IjpbNDY3NDUwNTUxLDM3MDE0MzgxMCwtMjgwMD
+Y1NTIxXX0=
 -->
