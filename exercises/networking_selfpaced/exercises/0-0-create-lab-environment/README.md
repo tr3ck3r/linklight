@@ -122,49 +122,22 @@ ethernet lmi ce
 no ip domain lookup
 ip domain name domain-name
 !
-!
-!
-!
 username cisco privilege 15 password 0 cisco
-!
-redundancy
-!
-no cdp log mismatch duplex
-no cdp run
-!
-ip tcp synwait-time 5
 !
 interface Loopback0
  ip address 172.16.0.2 255.255.255.255
 !
 interface GigabitEthernet0/0
  ip address 10.200.200.2 255.255.255.0
- duplex auto
- speed auto
- media-type rj45
- no cdp enable
+ no shutdown
 !
 interface GigabitEthernet0/1
  ip address 10.101.101.1 255.255.255.0
- duplex auto
- speed auto
- media-type rj45
- no cdp enable
-!
-interface GigabitEthernet0/2
- no ip address
- shutdown
- duplex auto
- speed auto
- media-type rj45
- no cdp enable
+ no shutdown
 !
 interface GigabitEthernet0/3
  ip address 192.168.122.102 255.255.255.0
- duplex auto
- speed auto
- media-type rj45
- no cdp enable
+ no shutdown
 !
 router ospf 1
  redistribute bgp 100 subnets
@@ -186,18 +159,9 @@ line con 0
  exec-timeout 0 0
  privilege level 15
  logging synchronous
-line aux 0
- exec-timeout 0 0
- privilege level 15
- logging synchronous
 line vty 0 4
  login local
  transport input ssh
-line vty 5 15
- login local
- transport input ssh
-!
-no scheduler allocate
 !
 ! Generate SSH key
 crypto key generate rsa modulus 1024
@@ -214,5 +178,5 @@ You have completed lab exercise 0.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTUyODkwMThdfQ==
+eyJoaXN0b3J5IjpbMTEzMjk4NTY1N119
 -->
