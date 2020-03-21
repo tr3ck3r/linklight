@@ -19,7 +19,6 @@ root@Ansible:~/networking-workshop#
 
 Run the `ansible` command with the `--version` command to look at what is configured:
 
-
 ```
 root@Ansible:~/networking-workshop# ansible --version
 ansible 2.9.6
@@ -49,6 +48,9 @@ host_key_checking = False
 retry_files_enabled = False
 inventory = ~/networking-workshop/lab_inventory/hosts
 EOF
+```
+Use the `cat` to view the contents of the `ansible.cfg` file.  
+```
 root@Ansible:~/networking-workshop# cat ~/.ansible.cfg
 [defaults]
 stdout_callback = yaml
@@ -60,6 +62,7 @@ retry_files_enabled = False
 inventory = /home/student1/networking-workshop/lab_inventory/hosts
 [persistent_connection]
 connect_timeout = 60
+root@Ansible:~/networking-workshop#
 ```
 
 Note the following parameters within the `ansible.cfg` file:
@@ -75,7 +78,7 @@ In this lab you will work with a file based inventory written in the **ini** for
 
 ```
 
-[student1@ansible ~]$ cat ~/networking-workshop/lab_inventory/hosts
+root@Ansible:~/networking-workshop# cat ~/networking-workshop/lab_inventory/hosts
 [all:vars]
 ansible_ssh_private_key_file=/home/student1/.ssh/aws-private.pem
 [routers:children]
@@ -140,6 +143,6 @@ You have completed lab exercise 1.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDQ3MzQ3MDksMzcwMTQzODEwLC0yOD
-AwNjU1MjFdfQ==
+eyJoaXN0b3J5IjpbNzM3NTk5OTE2LDM3MDE0MzgxMCwtMjgwMD
+Y1NTIxXX0=
 -->
