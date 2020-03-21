@@ -169,110 +169,31 @@ no service password-encryption
 !
 hostname rtr3
 !
-boot-start-marker
-boot-end-marker
-!
-!
 !
 no aaa new-model
-ethernet lmi ce
-!
-!
-!
-no process cpu autoprofile hog
-mmi polling-interval 60
-no mmi auto-configure
-no mmi pvc
-mmi snmp-timeout 180
-!
-!
-!
-!
-!
-no ip icmp rate-limit unreachable
-!
-!
-!
-!
-!
 !
 no ip domain lookup
 ip domain name domain-name
-ip cef
-no ipv6 cef
-!
-multilink bundle-name authenticated
-!
-!
-!
 !
 username cisco privilege 15 password 0 cisco
-!
-redundancy
-!
-no cdp log mismatch duplex
-no cdp run
-!
-ip tcp synwait-time 5
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
 !
 interface Loopback0
  ip address 172.16.0.3 255.255.255.255
 !
-interface GigabitEthernet0/0
- no ip address
- shutdown
- duplex auto
- speed auto
- media-type rj45
- no cdp enable
-!
 interface GigabitEthernet0/1
  ip address 10.100.100.3 255.255.255.0
- duplex auto
- speed auto
- media-type rj45
- no cdp enable
-!
-interface GigabitEthernet0/2
- no ip address
- shutdown
- duplex auto
- speed auto
- media-type rj45
- no cdp enable
+ no shutdown
 !
 interface GigabitEthernet0/3
  ip address 192.168.122.103 255.255.255.0
- duplex auto
- speed auto
- media-type rj45
- no cdp enable
+ no shutdown
 !
 router ospf 1
  network 10.100.100.0 0.0.0.255 area 0
  network 172.16.0.3 0.0.0.0 area 0
 !
-ip forward-protocol nd
-!
-!
-no ip http server
-no ip http secure-server
 ip route 0.0.0.0 0.0.0.0 192.168.122.1
 ip ssh version 2
-!
-
 !
 line con 0
  exec-timeout 0 0
@@ -286,7 +207,12 @@ crypto key generate rsa modulus 1024
 !
 end
 ```
-
+### RTR4
+```
+crypto key generate rsa modulus 1024
+!
+end
+```
 # Complete
 
 You have completed lab exercise 0.0
@@ -296,5 +222,5 @@ You have completed lab exercise 0.0
 nklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwNjU2MDczOF19
+eyJoaXN0b3J5IjpbLTEyOTk4NTAzMV19
 -->
