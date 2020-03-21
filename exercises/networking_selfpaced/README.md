@@ -51,13 +51,14 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
  - [List of Networking Ansible Modules](http://docs.ansible.com/ansible/latest/list_of_network_modules.html)
  - [Module Maintenance & Support](http://docs.ansible.com/ansible/latest/modules_support.html)
  - [Network Automation GitHub Repo](https://github.com/network-automation)
+ - [https://github.com/ipspace/NetOpsWorkshop](https://github.com/ipspace/NetOpsWorkshop)
 
 ---
 ![Red Hat Ansible Automation](../../images/networkautomation.png)
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjU3MzIwODgsLTIxMzc0MDY1MDgsMT
-I2OTU1OTUyNiwtOTc2ODk2NTcyLC0xNTI5MDU1NDI3LC0xNjEz
-NDgyMzE3XX0=
+eyJoaXN0b3J5IjpbNjQzMjA0Nzg4LC0xODI1NzMyMDg4LC0yMT
+M3NDA2NTA4LDEyNjk1NTk1MjYsLTk3Njg5NjU3MiwtMTUyOTA1
+NTQyNywtMTYxMzQ4MjMxN119
 -->
