@@ -76,29 +76,8 @@ The scope of a `play` within a `playbook` is limited to the groups of hosts decl
 In this lab you will work with a file based inventory written in the **ini** format. Use the `cat` command to view the contents of your inventory:
 
 ```
-root@Ansible:~/networking-workshop# cat <<EOF > ~/.ansible.cfg
-[defaults]
-stdout_callback = yaml
-connection = smart
-timeout = 60
-deprecation_warnings = False
-host_key_checking = False
-retry_files_enabled = False
-inventory = ~/networking-workshop/lab_inventory/hosts
+root@Ansible:~/networking-workshop# cat <<EOF > ~/networking-workshop/lab_inventory/hosts
 
-
-[cisco]
-rtr1 ansible_host=192.168.122.101
-rtr2 ansible_host=192.168.122.102
-rtr3 ansible_host=192.168.122.103
-rtr4 ansible_host=192.168.122.104
-
-[cisco:vars]
-ansible_user=cisco
-ansible_network_os=ios
-ansible_ssh_common_args='-o StrictHostKeyChecking=no'
-
-root@Ansible:~/networking-workshop# cat ~/networking-workshop/lab_inventory/hosts
 [all:vars]
 ansible_ssh_private_key_file=/home/student1/.ssh/aws-private.pem
 [routers:children]
@@ -130,6 +109,19 @@ host1 ansible_host=34.234.88.188 ansible_user=ec2-user private_ip=172.17.62.146
 
 [control]
 ansible ansible_host=34.229.83.26 ansible_user=student1 private_ip=172.16.103.177
+
+[cisco]
+rtr1 ansible_host=192.168.122.101
+rtr2 ansible_host=192.168.122.102
+rtr3 ansible_host=192.168.122.103
+rtr4 ansible_host=192.168.122.104
+
+[cisco:vars]
+ansible_user=cisco
+ansible_network_os=ios
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+
 EOF
 ```
 
@@ -164,6 +156,6 @@ You have completed lab exercise 1.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA2MDA4NDU4LDM3MDE0MzgxMCwtMjgwMD
-Y1NTIxXX0=
+eyJoaXN0b3J5IjpbLTEyNTIxMDYwNiwzNzAxNDM4MTAsLTI4MD
+A2NTUyMV19
 -->
