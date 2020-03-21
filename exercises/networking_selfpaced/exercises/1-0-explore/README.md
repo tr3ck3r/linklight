@@ -39,13 +39,17 @@ This command gives you information about the version of Ansible, location of the
 Use the `echo` command to create and `cat` to view the contents of the `ansible.cfg` file.  Your configuration file may differ or you may need to create it and apply this configuration depending on where you got the Ansible VM from.
 
 ```
-cat <<EOF > ~ansible.cfg
-#!/bin/bash
-echo \$PWD
-echo $PWD
+root@Ansible:~/networking-workshop# cat <<EOF > ~/.ansible.cfg
+[defaults]
+stdout_callback = yaml
+connection = smart
+timeout = 60
+deprecation_warnings = False
+host_key_checking = False
+retry_files_enabled = False
+inventory = ~/networking-workshop/lab_inventory/hosts
 EOF
-
-[student1@ansible networking-workshop]$ cat ~/.ansible.cfg
+root@Ansible:~/networking-workshop# cat ~/.ansible.cfg
 [defaults]
 stdout_callback = yaml
 connection = smart
@@ -136,6 +140,6 @@ You have completed lab exercise 1.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2NDczOTg2LDM3MDE0MzgxMCwtMjgwMD
-Y1NTIxXX0=
+eyJoaXN0b3J5IjpbLTIwNDQ3MzQ3MDksMzcwMTQzODEwLC0yOD
+AwNjU1MjFdfQ==
 -->
