@@ -21,16 +21,17 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 ### Section 03 - Using Ansible to parse information for reporting
 - [Exercise 3.0 - An introduction to templating with Jinja2](./exercises/3-0-templates)
 - [Exercise 3.1 - Building dynamic documentation using the command parser](./exercises/3-1-parser/)
+- [Exercise 3.2 - Building dynamic documentation using the command parser](./exercises/3-1-parser/)
 
 ## Ansible Tower Exercises
 
-- [Exercise 4.0 - Configure Ansible Tower](./exercises/4-0-tower-setup)
-- [Exercise 4.1 - Create a Tower Job Template ](./exercises/4-1-tower-job-template)
-- [Exercise 4.2 - Create a Tower Survey ](./exercises/4-2-tower-survey)
-- [Exercise 4.3 - Create a Tower User Template ](./exercises/4-3-tower-user-template)
-- [Exercise 4.4 - Tower Workflows ](./exercises/4-4-tower-workflow)
-- [Exercise 4.5 - Configuration Drift ](./exercises/4-5-config-drift)
-- [Exercise 4.6 - Network Testing with Workflows ](./exercises/4-6-more-workflows)
+- [Exercise X.0 - Configure Ansible Tower](./exercises/4-0-tower-setup)
+- [Exercise X.1 - Create a Tower Job Template ](./exercises/4-1-tower-job-template)
+- [Exercise X.2 - Create a Tower Survey ](./exercises/4-2-tower-survey)
+- [Exercise X.3 - Create a Tower User Template ](./exercises/4-3-tower-user-template)
+- [Exercise X.4 - Tower Workflows ](./exercises/4-4-tower-workflow)
+- [Exercise X.5 - Configuration Drift ](./exercises/4-5-config-drift)
+- [Exercise X.6 - Network Testing with Workflows ](./exercises/4-6-more-workflows)
 
 ## Original Linklight Diagram
 ![Red Hat Ansible Automation](../../images/network_diagram.png)
@@ -46,6 +47,6 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3Njg5NjU3MiwtMTUyOTA1NTQyNywtMT
-YxMzQ4MjMxN119
+eyJoaXN0b3J5IjpbMTM5NjM1Mjk4OSwtOTc2ODk2NTcyLC0xNT
+I5MDU1NDI3LC0xNjEzNDgyMzE3XX0=
 -->
