@@ -27,8 +27,15 @@ Create a hub which will serve for the Out Of Band (OOB) connection between all d
 Add a NAT cloud and connect it into the HUB.
 
 ## Step 5
+Connect the routers together as per the diagram.  RTR1 and RTR2 are to be connecte
+## Step 6
 
-Con
+Use the configuration provided for the Cisco devices:
+
+### RTR1
+```
+
+```
 
 # Complete
 
@@ -38,5 +45,5 @@ You have completed lab exercise 0.0
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4OTYwOTY5Nl19
+eyJoaXN0b3J5IjpbLTE2MTkzNDYyNF19
 -->
