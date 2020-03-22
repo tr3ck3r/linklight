@@ -17,6 +17,7 @@ cat << EOF > nameserver-update.yml
     name_servers:
       - ip name-server 8.8.8.8
       - ip name-server 8.8.4.4
+      - ip domain-lookup
 
   tasks:
   - name: GET CURRENT DNS SETTINGS
@@ -30,9 +31,10 @@ cat << EOF > nameserver-update.yml
   - name: SET NAMESERVER COMMANDS
     with_items: "{{ name_servers }}"
     ios_config:
+
       lines:
-      match: exact
           - {{ item }}
+          - 
     register: set_nameserver
     
 
@@ -103,5 +105,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0MjAwNzI0MSw0NTM5OTMyMF19
+eyJoaXN0b3J5IjpbMTMwMTUyODc3OSw0NTM5OTMyMF19
 -->
