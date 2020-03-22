@@ -1,7 +1,50 @@
 # Exercise 2.2 - Using Ansible to restore the backed up configuration
 
 >WARNING, there are some examples below which do not work.  There is a need to tweak things which has not been figured out yet.  Section 1 works, Section 2 does not.
-## Section 1 - U
+## Section 1 - Using copy from flash to running
+```yaml
+---
+- name: RESTORE GOLDEN CONFIGURATIONS
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: BACKUP THE CONFIG
+      ios_config:
+        backup: yes
+      register: config_output
+
+    - name: RENAME BACKUP
+      copy:
+        src: "{{config_output.backup_path}}"
+        dest: "./backup/{{inventory_hostname}}.config"
+
+    - name: REMOVE NON CONFIG LINES
+      lineinfile:
+        path: "./backup/{{inventory_hostname}}.config"
+        line: "Building configuration..."
+        state: absent
+
+    - name: REMOVE NON CONFIG LINES - REGEXP
+      lineinfile:
+        path: "./backup/{{inventory_hostname}}.config"
+        regexp: 'Current configuration.*'
+        state: absent
+
+    - name: DISABLE FILE PROMPTING
+      tags: GI
+      ios_config:
+        config:
+        lines:
+          "file prompt quiet"
+
+    - name: SAVE running-config TO gi.cfg
+      tags: GI
+      ios_command:
+        commands:
+          - "copy run flash:/gi.cfg"
+```
 
 ## Section 2 - Using SCP
 In the previous lab you learned how to backup the configuration of the 4 cisco routers. In this lab you will learn how to restore the configuration. The backups had been saved into a local directory called `backup`.
@@ -321,6 +364,6 @@ You have completed lab exercise 2.2
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDY4MzY3MDQsLTE2MjUwNTA3NSwtMT
+eyJoaXN0b3J5IjpbLTEyNTkzNzE4MTUsLTE2MjUwNTA3NSwtMT
 k5MzkxNzAzMV19
 -->
