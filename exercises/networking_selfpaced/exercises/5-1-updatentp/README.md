@@ -24,7 +24,7 @@ Create a new file called `ntp.yml` (use either `vim` or `nano` on the jumphost t
   - name: get the current ntp server configs
     ios_command:
       commands:
-        - "show running-config full | include ntp server"
+        - "show running-config full | include ntp server "
     register: get_config
 
   - debug: var=get_config.stdout_lines
@@ -222,5 +222,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2MTE5NTcxLC0xMTE3OTUyOTAyXX0=
+eyJoaXN0b3J5IjpbLTkwMzk2NTA0NywtMTExNzk1MjkwMl19
 -->
