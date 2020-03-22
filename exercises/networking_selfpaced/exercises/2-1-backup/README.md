@@ -363,7 +363,7 @@ One more feature of this playbook we want is to have it make a "Golden Image" co
         regexp: 'Current configuration.*'
         state: absent         
         
-    - name: SAVE running-con
+    - name: SAVE running-config TO GI.CFG
       lineinfile:
         path: "./backup/{{inventory_hostname}}.config"
         regexp: 'Current configuration.*'
@@ -379,39 +379,6 @@ Now run the playbook.
 ``` shell
 [student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts backup.yml
 
-PLAY [BACKUP ROUTER CONFIGURATIONS] *********************************************************************************************************************************************************
-
-TASK [BACKUP THE CONFIG] ********************************************************************************************************************************************************************
-ok: [rtr2]
-ok: [rtr4]
-ok: [rtr1]
-ok: [rtr3]
-
-TASK [RENAME BACKUP] ************************************************************************************************************************************************************************
-changed: [rtr2]
-changed: [rtr4]
-changed: [rtr3]
-changed: [rtr1]
-
-TASK [REMOVE NON CONFIG LINES] **************************************************************************************************************************************************************
-changed: [rtr4]
-changed: [rtr1]
-changed: [rtr2]
-changed: [rtr3]
-
-TASK [REMOVE NON CONFIG LINES - REGEXP] *****************************************************************************************************************************************************
-changed: [rtr1]
-changed: [rtr3]
-changed: [rtr2]
-changed: [rtr4]
-
-PLAY RECAP **********************************************************************************************************************************************************************************
-rtr1                       : ok=4    changed=3    unreachable=0    failed=0   
-rtr2                       : ok=4    changed=3    unreachable=0    failed=0   
-rtr3                       : ok=4    changed=3    unreachable=0    failed=0   
-rtr4                       : ok=4    changed=3    unreachable=0    failed=0   
-
-[student1@ansible networking-workshop]$
 
 ```
 
@@ -422,5 +389,5 @@ You have completed lab exercise 2.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM0OTY0OTcxNCwtMTgwMDgzMDY4NF19
+eyJoaXN0b3J5IjpbNzM3NTUzMTU3LC0xODAwODMwNjg0XX0=
 -->
