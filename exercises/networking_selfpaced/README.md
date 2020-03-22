@@ -40,7 +40,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 5-7 - Setting a VTY ACL](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
 - [Exercise 5.8 - Disable http servers](./exercises/5-8-disablehttp)
 - [Exercise 5.9 - Enable Configuration Archive](./exercises/5-9-archive)
-- [Exercise 5.99 - Remove hardening configs](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/audit_configs/audit.yml)
+- [Create DHCP pools on Cisco IOS devices](https://github.com/ipspace/ansible-examples/tree/master/DHCP-Pools)
 ### Section 06 - Auditing
 - [Exercise 6.1 - Audit Configs](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/audit_configs/audit.yml)
 [Exercise 6.2 - Audit Configs Using Tests Folder](https://github.com/ipspace/ansible-examples/tree/master/Sample-Compliance-Check)
@@ -87,9 +87,10 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIxMjAxNTQyLC0xMTQ3MzY2OTQsLTIxMD
-c4OTY0MTcsLTk1MjU4Mjc2NiwtMjI3Mzg5NjQ4LDE3NDc3ODM0
-NjEsMjA2MTg5NDA1NiwtMTcyMDQ2NTcyNiw2NDMyMDQ3ODgsLT
-E4MjU3MzIwODgsLTIxMzc0MDY1MDgsMTI2OTU1OTUyNiwtOTc2
-ODk2NTcyLC0xNTI5MDU1NDI3LC0xNjEzNDgyMzE3XX0=
+eyJoaXN0b3J5IjpbMTk5MzYyNjk1LDgyMTIwMTU0MiwtMTE0Nz
+M2Njk0LC0yMTA3ODk2NDE3LC05NTI1ODI3NjYsLTIyNzM4OTY0
+OCwxNzQ3NzgzNDYxLDIwNjE4OTQwNTYsLTE3MjA0NjU3MjYsNj
+QzMjA0Nzg4LC0xODI1NzMyMDg4LC0yMTM3NDA2NTA4LDEyNjk1
+NTk1MjYsLTk3Njg5NjU3MiwtMTUyOTA1NTQyNywtMTYxMzQ4Mj
+MxN119
 -->
