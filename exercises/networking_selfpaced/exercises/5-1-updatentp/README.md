@@ -78,7 +78,7 @@ Create a new file called `checkntp.yml` (use either `vim` or `nano` on the jumph
 
 ```
 
-#### Step #
+#### Step 4
 
 Feel free to log in and check the ntp configuration :
 
@@ -98,6 +98,6 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDM4MTI1MDcsLTEyMTgyNTYyMTQsLT
-EwMjQxMzI4ODgsLTExMTc5NTI5MDJdfQ==
+eyJoaXN0b3J5IjpbMjg4MzY3NjcwLC0xMTQzODEyNTA3LC0xMj
+E4MjU2MjE0LC0xMDI0MTMyODg4LC0xMTE3OTUyOTAyXX0=
 -->
