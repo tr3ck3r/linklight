@@ -247,18 +247,9 @@ SSH password:
 PLAY [GENERATE OS REPORT FROM ROUTERS] *****************************************
 
 TASK [ENSURE REPORTS FOLDER] ***************************************************
-[DEPRECATION WARNING]: Distribution Ubuntu 18.04 on host rtr1 should use
-/usr/bin/python3, but is using /usr/bin/python for backward compatibility with
-prior Ansible releases. A future Ansible release will default to using the
-discovered platform python for this host. See https://docs.ansible.com/ansible/
-2.9/reference_appendices/interpreter_discovery.html for more information. This
-feature will be removed in version 2.12. Deprecation warnings can be disabled
-by setting deprecation_warnings=False in ansible.cfg.
 ok: [rtr1]
 
 TASK [GATHER ROUTER FACTS] *****************************************************
-[WARNING]: default value for `gather_subset` will be changed to `min` from
-`!config` v2.11 onwards
 ok: [rtr3]
 ok: [rtr1]
 ok: [rtr4]
@@ -291,32 +282,11 @@ A new file called `network_os_report.md` will now be available in the playbook r
 
 
 ``` shell
-[student1@ansible networking-workshop]$ cat network_os_report.md
-
-
-RTR1
----
-9YJXS2VD3Q7 : 16.08.01a
-
-
-
-RTR2
----
-9QHUCH0VZI9 : 16.08.01a
-
-
-
-RTR3
----
-9ZGJ5B1DL14 : 16.08.01a
-
-
-
-RTR4
----
-9TCM27U9TQG : 16.08.01a
-
-[student1@ansible networking-workshop]$
+root@Ansible:~/networking-workshop# cat network_os_report.md | grep .
+RTR1,9B3YXCPFACLEKQ8M4F39E,15.6(2)T
+RTR2,9FGCYLQG6IP8D5WFB9UJJ,15.6(2)T
+RTR3,9Y6NE1W2DF4V3XXP3E251,15.6(2)T
+RTR4,9U3LNABK7MEWWMDHK6NY4,15.6(2)T
 
 ```
 
@@ -333,6 +303,6 @@ You have completed lab exercise 3.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxNjUyODUxNywtMTc3NDgxODgzLC0yMD
-QwNDYwNDMsLTQzMzA5MTMwNF19
+eyJoaXN0b3J5IjpbNjI2NTgyNzA1LC0xNzc0ODE4ODMsLTIwND
+A0NjA0MywtNDMzMDkxMzA0XX0=
 -->
