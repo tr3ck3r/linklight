@@ -52,14 +52,14 @@ EOF
 Run the playbook:
 
 ``` shell
-[student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts updatentp.yml
+[student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts -k nameserver-update.yml
 ```
 
 
 #### Step 3
 > NTP is a slow protocol, and the formation of NTP associations can take a long time. So, don't expect anything to happen fast. Synchronization may take many minutes to complete.
 
-Create a new file called `ntp-check.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
+Create a new file called `nameserver-check.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
 
 
 ``` yaml
@@ -70,13 +70,13 @@ cat << EOF > ntp-check.yml
 
   tasks:
   
-  - name: CHECK NTP SYNC
+  - name: CHECK DNS LOOKUP
     ios_command:
       commands:
         - "show ntp status | inc Clock is"
-    register: ntp_status
+    register: nameserver_status
 
-  - debug: var=ntp_status.stdout_lines
+  - debug: var=nameserver_status.stdout_lines
 EOF
 ```
 
@@ -100,5 +100,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzY5NzM1MTI5XX0=
+eyJoaXN0b3J5IjpbLTE3MDY2MTc1ODZdfQ==
 -->
