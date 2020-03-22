@@ -45,45 +45,22 @@ Add a task to ensure that the SNMP strings `ansible-public` and `ansible-private
        ios_command:
          commands:
            - "show running-config full | include ntp server"
+           register: get_config
+           debug: var=get_config.stdout_lines
+      - name: set ntp server commands
+        with_items: "{{ ntp_servers }}"
+          ios_config:
+            lines:  
+              - "{{ item }}"
+          register: set_ntp
 
-register: get_config
-
-- debug: var=get_config.stdout_lines
-
-- name: set ntp server commands
-
-with_items: "{{ ntp_servers }}"
-
-ios_config:
-
-lines:
-
-- "{{ item }}"
-
-register: set_ntp
-
-- name: remove ntp server commands
-
-when: "(get_config.stdout_lines[0] != '') and (item not in ntp_servers)"
-
-with_items: "{{ get_config.stdout_lines[0] }}"
-
-register: remove_ntp
-
-ios_config:
-
-lines:
-
-- "no {{ item }}"
-
-- name: servicenow_network_tickets
-
-when: set_ntp.changed or remove_ntp.changed
-
-import_role:
-
-name: servicenow_network_tickets
-
+      - name: remove ntp server commands
+        when: "(get_config.stdout_lines[0] != '') and (item not in ntp_servers)"
+          with_items: "{{ get_config.stdout_lines[0] }}"
+        register: remove_ntp
+          ios_config:
+            lines:
+              - "no {{ item }}"
 ```
 
 #### Step 3
@@ -243,5 +220,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODI5NzAyMF19
+eyJoaXN0b3J5IjpbMjA2ODE3NDgyMV19
 -->
