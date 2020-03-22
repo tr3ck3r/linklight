@@ -15,8 +15,6 @@ In this lab you will learn how to use the `template` module to pass collected da
 
 #### Step 1
 
-Make the reports folder using `mkdir reports`
-
 Create a new playbook called `router_report.yml` and add the following play definition to it:
 
 
@@ -191,14 +189,14 @@ cat << EOF > router_report.yml
   gather_facts: no
 
   tasks:
-    - name: GATHER ROUTER FACTS
-      ios_facts:
-
     - name: ENSURE REPORTS FOLDER
       run_once: true
       file:
         name: reports
         state: directory
+        
+    - name: GATHER ROUTER FACTS
+      ios_facts:
 
     - name: RENDER FACTS AS A REPORT
       template:
@@ -309,5 +307,6 @@ You have completed lab exercise 3.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDA0NjA0MywtNDMzMDkxMzA0XX0=
+eyJoaXN0b3J5IjpbLTE3NzQ4MTg4MywtMjA0MDQ2MDQzLC00Mz
+MwOTEzMDRdfQ==
 -->
