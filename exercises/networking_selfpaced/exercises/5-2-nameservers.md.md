@@ -23,7 +23,7 @@ cat << EOF > nameserver-update.yml
   - name: GET CURRENT DNS SETTINGS
     ios_command:
       commands:
-        - "show running-config full | include ip domain-lookup|ip name-server )"
+        - "show running-config full | include ip domain-lookup"
         - "show running-config full | include ip name-server"
     register: get_config
 
@@ -105,6 +105,6 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3NTA4NjY1NiwtNjkxNDQyMjgzLDE5OT
+eyJoaXN0b3J5IjpbMTA0MTkzMDM0MywtNjkxNDQyMjgzLDE5OT
 M1MTU5NjksNDUzOTkzMjBdfQ==
 -->
