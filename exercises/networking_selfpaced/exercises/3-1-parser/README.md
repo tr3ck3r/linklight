@@ -330,6 +330,12 @@ Our next step is to use the template module to generate a report from the above 
     - ansible-network.network-engine
 
   tasks:
+    - name: ENSURE REPORTS FOLDER
+      run_once: true
+      file:
+        name: intf_reports
+        state: directory
+        
     - name: CAPTURE SHOW INTERFACES
       ios_command:
         commands:
@@ -481,5 +487,5 @@ You have completed lab exercise 3.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4NDA4MzUyMV19
+eyJoaXN0b3J5IjpbMTY2MjMyNTczOSwxNzg0MDgzNTIxXX0=
 -->
