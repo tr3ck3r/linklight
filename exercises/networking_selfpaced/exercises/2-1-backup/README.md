@@ -364,10 +364,9 @@ One more feature of this playbook we want is to have it make a "Golden Image" co
         state: absent         
         
     - name: SAVE running-config TO GI.CFG
-      lineinfile:
-        path: "./backup/{{inventory_hostname}}.config"
-        regexp: 'Current configuration.*'
-        state: absent                                  
+      ios_command:
+        commands:
+          - "copy run flash:/GI.cfg"
 ```
 
 
@@ -389,5 +388,5 @@ You have completed lab exercise 2.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzM3NTUzMTU3LC0xODAwODMwNjg0XX0=
+eyJoaXN0b3J5IjpbNTc0OTEwNTQ0LC0xODAwODMwNjg0XX0=
 -->
