@@ -161,14 +161,12 @@ reports/
 The contents of one of them for example:
 
 ``` shell
-[student1@ansible networking-workshop]$ cat reports/rtr4.md
+root@Ansible:~/networking-workshop# cat reports/rtr4.md
 
 
-RTR4
----
-9TCM27U9TQG : 16.08.01a
 
-[student1@ansible networking-workshop]$
+RTR4,9U3LNABK7MEWWMDHK6NY4,15.6(2)T
+
 ```
 
 
@@ -243,16 +241,45 @@ changed: [rtr1]
 changed: [rtr4]
 changed: [rtr3]
 
-TASK [CONSOLIDATE THE IOS DATA] *****************************************************************************
+root@Ansible:~/networking-workshop# ansible-playbook -i ~/networking-workshop/lab_inventory/hosts -k router_report.yml
+SSH password:
+
+PLAY [GENERATE OS REPORT FROM ROUTERS] *****************************************
+
+TASK [ENSURE REPORTS FOLDER] ***************************************************
+[DEPRECATION WARNING]: Distribution Ubuntu 18.04 on host rtr1 should use
+/usr/bin/python3, but is using /usr/bin/python for backward compatibility with
+prior Ansible releases. A future Ansible release will default to using the
+discovered platform python for this host. See https://docs.ansible.com/ansible/
+2.9/reference_appendices/interpreter_discovery.html for more information. This
+feature will be removed in version 2.12. Deprecation warnings can be disabled
+by setting deprecation_warnings=False in ansible.cfg.
+ok: [rtr1]
+
+TASK [GATHER ROUTER FACTS] *****************************************************
+[WARNING]: default value for `gather_subset` will be changed to `min` from
+`!config` v2.11 onwards
+ok: [rtr3]
+ok: [rtr1]
+ok: [rtr4]
+ok: [rtr2]
+
+TASK [RENDER FACTS AS A REPORT] ************************************************
+changed: [rtr2]
+changed: [rtr1]
+changed: [rtr4]
+changed: [rtr3]
+
+TASK [CONSOLIDATE THE IOS DATA] ************************************************
 changed: [rtr1 -> localhost]
 
-PLAY RECAP **************************************************************************************************
-rtr1                       : ok=4    changed=3    unreachable=0    failed=0   
-rtr2                       : ok=2    changed=1    unreachable=0    failed=0   
-rtr3                       : ok=2    changed=1    unreachable=0    failed=0   
-rtr4                       : ok=2    changed=1    unreachable=0    failed=0   
+PLAY RECAP *********************************************************************
+rtr1                       : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+rtr2                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+rtr3                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+rtr4                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
-[student1@ansible networking-workshop]$
+root@Ansible:~/networking-workshop#
 
 ```
 
@@ -306,6 +333,6 @@ You have completed lab exercise 3.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwMzE0ODM0NCwtMTc3NDgxODgzLC0yMD
+eyJoaXN0b3J5IjpbMTUxNjUyODUxNywtMTc3NDgxODgzLC0yMD
 QwNDYwNDMsLTQzMzA5MTMwNF19
 -->
