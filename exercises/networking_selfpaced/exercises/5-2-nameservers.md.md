@@ -5,30 +5,21 @@ Using Ansible you can update the configuration of routers either by pushing a co
 
 #### Step 1
 
-Create a new file called `dns-update.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
+Create a new file called `nameserver-update.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
 
 
 ``` 
-cat << EOF > dns-update.yml
+cat << EOF > nameserver-update.yml
 ---
 - hosts: cisco
   gather_facts: no
 
   vars:
-  
     name_servers:
       - ip name-server 8.8.8.8
       - ip name-server 8.8.4.4
-      - ntp server 192.168.122.101
-      - ntp server 192.168.122.102
-      - ntp server 192.168.122.103
-      - ntp server 192.168.122.104
-      - ntp server 23.129.64.227
-      - ntp server 103.105.51.156
-
 
   tasks:
-  
   - name: GET CURRENT DNS SETTINGS
     ios_command:
       commands:
@@ -45,8 +36,8 @@ cat << EOF > dns-update.yml
           - "ip domain-lookup"
     register: set_nameserver
 
-  - name: remove ntp server commands
-    when: "(get_config.stdout_lines[0] != '') and (item not in ntp_servers)"
+  - name: REMOVE EXTRA NAME SERVERS COMMANDS
+    when: "(get_config.stdout_lines[0] != '') and (item not in name_servers)"
     with_items: "{{ get_config.stdout_lines[0] }}"
     register: remove_nameserver
     ios_config:
@@ -109,5 +100,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2ODcwMjMzMl19
+eyJoaXN0b3J5IjpbMzY5NzM1MTI5XX0=
 -->
