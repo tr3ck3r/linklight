@@ -330,11 +330,10 @@ no service nagle
 
 #### Step 12
 
-One more feature of this playbook we want is to have it make a "Golden Image" configuration file as the starting point for a roll back to the starting status.  We need to add one more task to remove the second line "Current configuration ...etc". Since this line has a variable entity (the number of bytes), we cannot use the `line` parameter of the `lineinfile` module. Instead, we'll use the `regexp` parameter to match on regular expressions and remove the line in the file:
+One more feature of this playbook we want is to have it make a "Golden Image" configuration file as the starting point for a roll back to the starting status (simple configuration before hardening).  We need to add another task to archive the configuration locally on the router using the storage location of flash:/GI.cfg. 
 
 
 ``` yaml
-{%raw%}
 ---
 - name: BACKUP ROUTER CONFIGURATIONS
   hosts: cisco
@@ -362,8 +361,13 @@ One more feature of this playbook we want is to have it make a "Golden Image" co
       lineinfile:
         path: "./backup/{{inventory_hostname}}.config"
         regexp: 'Current configuration.*'
-        state: absent
-{%endraw%}                          
+        state: absent         
+        
+    - name: SAVE running-con
+      lineinfile:
+        path: "./backup/{{inventory_hostname}}.config"
+        regexp: 'Current configuration.*'
+        state: absent                                  
 ```
 
 
@@ -418,5 +422,5 @@ You have completed lab exercise 2.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwMTI0OTgsLTE4MDA4MzA2ODRdfQ==
+eyJoaXN0b3J5IjpbLTM0OTY0OTcxNCwtMTgwMDgzMDY4NF19
 -->
