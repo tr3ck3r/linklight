@@ -15,7 +15,7 @@ cat << EOF > nameserver-update.yml
 
   vars:
     name_servers:
-      - ip domain-lookup
+      - ip domain-lookup source-interface gigabitEthernet 0/3
       - ip name-server 8.8.8.8
       - ip name-server 8.8.4.4
   tasks:
@@ -103,6 +103,6 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzUwODgzOTcsLTY5MTQ0MjI4MywxOT
-kzNTE1OTY5LDQ1Mzk5MzIwXX0=
+eyJoaXN0b3J5IjpbLTMzNzM3NTU2OCwtMTYzNTA4ODM5NywtNj
+kxNDQyMjgzLDE5OTM1MTU5NjksNDUzOTkzMjBdfQ==
 -->
