@@ -15,6 +15,8 @@ In this lab you will learn how to use the `template` module to pass collected da
 
 #### Step 1
 
+Make the reports folder using `mkdir reports`
+
 Create a new playbook called `router_report.yml` and add the following play definition to it:
 
 
@@ -92,8 +94,6 @@ The next step is to create a Jinja2 template. Ansible will look for the template
 
 Using `vi`, `nano` or another text editor, go ahead and create the file called `os_report.j2` under the `templates` directory. Add the following into the template file:
 
-
-{%raw%}
 ``` python
 
 
@@ -104,7 +104,7 @@ Using `vi`, `nano` or another text editor, go ahead and create the file called `
 
 
 ```
-{%endraw%}  
+
 This file simply contains some of the variables we have been using in our playbooks until now.
 
 > Note: Python inbuilt methods for datatypes are available natively in Jinja2 making it very easy to manipulate the formatting etc.
@@ -309,5 +309,5 @@ You have completed lab exercise 3.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyNDc0ODY3NCwtNDMzMDkxMzA0XX0=
+eyJoaXN0b3J5IjpbLTIwNDA0NjA0MywtNDMzMDkxMzA0XX0=
 -->
