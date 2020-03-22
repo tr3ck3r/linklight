@@ -37,8 +37,8 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 5.4 - Update logging](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_logging.yml)
 - [Exercise 5.5 - Update SNMP](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_snmp.yml)
 - [Exercise 5.6 -  Adding and removing user](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/remove_user.yml)
-- [Exercise 5-7 - Setting a VTY ACL](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
-- [Exercise 5.8 - Disable http servers](./exercises/5-8-disablehttp)
+- [Exercise 5.7 - Setting a VTY ACL](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
+- [Exercise 5.8 - Disable http servers](./exercises/5-8-disablehttp.md)
 - [Exercise 5.9 - Enable Configuration Archive](./exercises/5-9-archive)
 - [Exercise 5.10 - Create DHCP pools on Cisco IOS devices](https://github.com/ipspace/ansible-examples/tree/master/DHCP-Pools)
 ### Section 06 - Auditing
@@ -87,11 +87,11 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxMzg4Mzc4MiwtMTQ5MTg2NTMwMiwxMT
-cwOTUyOTk3LDE5OTM2MjY5NSw4MjEyMDE1NDIsLTExNDczNjY5
-NCwtMjEwNzg5NjQxNywtOTUyNTgyNzY2LC0yMjczODk2NDgsMT
-c0Nzc4MzQ2MSwyMDYxODk0MDU2LC0xNzIwNDY1NzI2LDY0MzIw
-NDc4OCwtMTgyNTczMjA4OCwtMjEzNzQwNjUwOCwxMjY5NTU5NT
-I2LC05NzY4OTY1NzIsLTE1MjkwNTU0MjcsLTE2MTM0ODIzMTdd
-fQ==
+eyJoaXN0b3J5IjpbLTE5NjI3ODc5NjQsLTE0OTE4NjUzMDIsMT
+E3MDk1Mjk5NywxOTkzNjI2OTUsODIxMjAxNTQyLC0xMTQ3MzY2
+OTQsLTIxMDc4OTY0MTcsLTk1MjU4Mjc2NiwtMjI3Mzg5NjQ4LD
+E3NDc3ODM0NjEsMjA2MTg5NDA1NiwtMTcyMDQ2NTcyNiw2NDMy
+MDQ3ODgsLTE4MjU3MzIwODgsLTIxMzc0MDY1MDgsMTI2OTU1OT
+UyNiwtOTc2ODk2NTcyLC0xNTI5MDU1NDI3LC0xNjEzNDgyMzE3
+XX0=
 -->
