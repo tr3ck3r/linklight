@@ -170,8 +170,12 @@ Let's understand this task in a little more depth. The `command_parser` is refer
 
 The file is located at https://github.com/pharriso/uk_ansible_workshop/blob/master/exercises/networking_v2/parsers/show_interfaces.yaml
 
+This should work to grab the file:
+```
+curl https://raw.githubusercontent.com/pharriso/uk_ansible_workshop/master/exercises/networking_v2/parsers/show_interfaces.yaml > parsers/show_interfaces.yaml
+```
 
-Let's us populate that file:
+Or you can try this:
 ```
 cat <<EOF > parsers/show_interfaces.yaml
 ---
@@ -562,6 +566,6 @@ You have completed lab exercise 3.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0Njc3NjQzNiwtNjU2MTA1NzQ0LDE3OD
-QwODM1MjFdfQ==
+eyJoaXN0b3J5IjpbNTc0MDQzODkzLC01NDY3NzY0MzYsLTY1Nj
+EwNTc0NCwxNzg0MDgzNTIxXX0=
 -->
