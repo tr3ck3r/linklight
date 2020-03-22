@@ -67,31 +67,31 @@ Run the playbook:
 
 
 #### Step 3
+> NTP is a slow protocol, and the formation of NTP associations can take a long time. So, don't expect anything to happen fast. You can keep an eye on it using the  _debug ntp <option>_ set of commands.  Syncronization may take many mini
+
 
 Create a new file called `ntp-check.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
 
 
 ``` yaml
-cat << 
+cat << EOF > ntp-check.yml 
 ---
 - hosts: cisco
   gather_facts: no
 
   tasks:
   
-  - name: get the current ntp server configs
+  - name: CHECK NTP SYNC
     ios_command:
       commands:
         - "show ntp status | inc Clock is"
     register: ntp_status
 
   - debug: var=ntp_status.stdout_lines
-
+EOF
 ```
 
 #### Step 4
-
-> NTP is a slow protocol, and the formation of NTP associations can take a long time. So, don't expect anything to happen fast. You can keep an eye on it using the  _debug ntp <option>_ set of commands.
 
 Feel free to log in and check the ntp configuration :
 
@@ -111,7 +111,7 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDIwMjI4NzcsMTM1OTkyMDMwNiwyNDkyMj
-A1MTIsMTU3NTQxNTkxNyw4NTU1OTk0NzcsODU1NTk5NDc3LDE5
-NTM1MzU4OTZdfQ==
+eyJoaXN0b3J5IjpbMTM3MzEwNjE1OSwxMzU5OTIwMzA2LDI0OT
+IyMDUxMiwxNTc1NDE1OTE3LDg1NTU5OTQ3Nyw4NTU1OTk0Nzcs
+MTk1MzUzNTg5Nl19
 -->
