@@ -29,15 +29,37 @@ EOF
 ### Step 2 - Execute playbook
 
 ```
-root@Ansible:~/networking-workshop# ansible-playbook -i ~/networking-workshop/lab_inventory/hosts -k restore.yml -v 
+root@Ansible:~/networking-workshop# ansible-playbook -i ~/networking-workshop/lab_inventory/hosts -k restore.yml -v | grep -v Deprecation
+Using /root/networking-workshop/ansible.cfg as config file
 SSH password:
 
 PLAY [RESTORE GOLDEN CONFIGURATIONS] *******************************************
 
 TASK [DISABLE FILE PROMPTING] **************************************************
-ok: [rtr4]
-ok: [rtr2]
-ok: [rtr3]
+[DEPRECATION WARNING]: Distribution Ubuntu 18.04 on host rtr4 should use
+/usr/bin/python3, but is using /usr/bin/python for backward compatibility with
+prior Ansible releases. A future Ansible release will default to using the
+discovered platform python for this host. See https://docs.ansible.com/ansible/
+2.9/reference_appendices/interpreter_discovery.html for more information. This
+feature will be removed in version 2.12. Deprecation warnings can be disabled
+by setting deprecation_warnings=False in ansible.cfg.
+ok: [rtr4] => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python"}, "changed": false}
+[DEPRECATION WARNING]: Distribution Ubuntu 18.04 on host rtr3 should use
+/usr/bin/python3, but is using /usr/bin/python for backward compatibility with
+prior Ansible releases. A future Ansible release will default to using the
+discovered platform python for this host. See https://docs.ansible.com/ansible/
+2.9/reference_appendices/interpreter_discovery.html for more information. This
+feature will be removed in version 2.12. Deprecation warnings can be disabled
+by setting deprecation_warnings=False in ansible.cfg.
+ok: [rtr3] => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python"}, "changed": false}
+[DEPRECATION WARNING]: Distribution Ubuntu 18.04 on host rtr2 should use
+/usr/bin/python3, but is using /usr/bin/python for backward compatibility with
+prior Ansible releases. A future Ansible release will default to using the
+discovered platform python for this host. See https://docs.ansible.com/ansible/
+2.9/reference_appendices/interpreter_discovery.html for more information. This
+feature will be removed in version 2.12. Deprecation warnings can be disabled
+by setting deprecation_warnings=False in ansible.cfg.
+ok: [rtr2] => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python"}, "changed": false}
 [DEPRECATION WARNING]: Distribution Ubuntu 18.04 on host rtr1 should use
 /usr/bin/python3, but is using /usr/bin/python for backward compatibility with
 prior Ansible releases. A future Ansible release will default to using the
@@ -45,13 +67,13 @@ discovered platform python for this host. See https://docs.ansible.com/ansible/
 2.9/reference_appendices/interpreter_discovery.html for more information. This
 feature will be removed in version 2.12. Deprecation warnings can be disabled
 by setting deprecation_warnings=False in ansible.cfg.
-ok: [rtr1]
+ok: [rtr1] => {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python"}, "changed": false}
 
 TASK [SAVE golden.cfg TO running-config] ***************************************
-ok: [rtr3]
-ok: [rtr4]
-ok: [rtr1]
-ok: [rtr2]
+ok: [rtr1] => {"changed": false, "stdout": ["%Hog profiling already off\n3881 bytes copied in 0.342 secs (11348 bytes/sec)"], "stdout_lines": [["%Hog profiling already off", "3881 bytes copied in 0.342 secs (11348 bytes/sec)"]]}
+ok: [rtr2] => {"changed": false, "stdout": ["%Hog profiling already off\n3890 bytes copied in 0.336 secs (11577 bytes/sec)"], "stdout_lines": [["%Hog profiling already off", "3890 bytes copied in 0.336 secs (11577 bytes/sec)"]]}
+ok: [rtr3] => {"changed": false, "stdout": ["%Hog profiling already off\n3636 bytes copied in 0.318 secs (11434 bytes/sec)"], "stdout_lines": [["%Hog profiling already off", "3636 bytes copied in 0.318 secs (11434 bytes/sec)"]]}
+ok: [rtr4] => {"changed": false, "stdout": ["%Hog profiling already off\n3636 bytes copied in 0.306 secs (11882 bytes/sec)"], "stdout_lines": [["%Hog profiling already off", "3636 bytes copied in 0.306 secs (11882 bytes/sec)"]]}
 
 PLAY RECAP *********************************************************************
 rtr1                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
@@ -60,9 +82,12 @@ rtr3                       : ok=2    changed=0    unreachable=0    failed=0    s
 rtr4                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
 root@Ansible:~/networking-workshop#
+
 ```
 
 ## Section 2 - Using SCP
+> Warning: The below has not been made to work successfully yet.  You have been warned.
+
 In the previous lab you learned how to backup the configuration of the 4 cisco routers. In this lab you will learn how to restore the configuration. The backups had been saved into a local directory called `backup`.
 
 
@@ -380,6 +405,6 @@ You have completed lab exercise 2.2
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1MDk2NTM2MCwtMTI1OTM3MTgxNSwtMT
-YyNTA1MDc1LC0xOTkzOTE3MDMxXX0=
+eyJoaXN0b3J5IjpbLTIwNTE2MjM3NDcsLTEyNTkzNzE4MTUsLT
+E2MjUwNTA3NSwtMTk5MzkxNzAzMV19
 -->
