@@ -46,6 +46,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 6.1 - Conditions Conditions](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
 - [Exercise 6.2 - More Conditions](https://www.linuxtechi.com/use-when-conditions-in-ansible-playbook/)
 - Using WHEN to selectively apply 
+- [Excercise 6.4 - Loops](https://github.com/ipspace/NetOpsWorkshop/tree/master/Ansible/Loops)
 
 ### Section 09 - Using Ansible with JunOS
 -[https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class10](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class10)
@@ -84,9 +85,9 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDczNjY5NCwtMjEwNzg5NjQxNywtOT
-UyNTgyNzY2LC0yMjczODk2NDgsMTc0Nzc4MzQ2MSwyMDYxODk0
-MDU2LC0xNzIwNDY1NzI2LDY0MzIwNDc4OCwtMTgyNTczMjA4OC
-wtMjEzNzQwNjUwOCwxMjY5NTU5NTI2LC05NzY4OTY1NzIsLTE1
-MjkwNTU0MjcsLTE2MTM0ODIzMTddfQ==
+eyJoaXN0b3J5IjpbLTE1NDAwNjE3NzQsLTExNDczNjY5NCwtMj
+EwNzg5NjQxNywtOTUyNTgyNzY2LC0yMjczODk2NDgsMTc0Nzc4
+MzQ2MSwyMDYxODk0MDU2LC0xNzIwNDY1NzI2LDY0MzIwNDc4OC
+wtMTgyNTczMjA4OCwtMjEzNzQwNjUwOCwxMjY5NTU5NTI2LC05
+NzY4OTY1NzIsLTE1MjkwNTU0MjcsLTE2MTM0ODIzMTddfQ==
 -->
