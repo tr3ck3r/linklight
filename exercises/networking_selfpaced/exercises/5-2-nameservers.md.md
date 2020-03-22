@@ -63,7 +63,7 @@ Create a new file called `nameserver-check.yml` (use either `vim` or `nano` on t
 
 
 ``` yaml
-cat << EOF > ntp-check.yml 
+cat << EOF > nameserver-check.yml 
 ---
 - hosts: cisco
   gather_facts: no
@@ -73,7 +73,7 @@ cat << EOF > ntp-check.yml
   - name: CHECK DNS LOOKUP
     ios_command:
       commands:
-        - "show ntp status | inc Clock is"
+        - "ping pool.ntp.org repeat 1"
     register: nameserver_status
 
   - debug: var=nameserver_status.stdout_lines
@@ -100,5 +100,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MDY2MTc1ODZdfQ==
+eyJoaXN0b3J5IjpbMTM3OTM0MTM5NV19
 -->
