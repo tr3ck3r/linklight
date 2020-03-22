@@ -15,10 +15,9 @@ cat << EOF > nameserver-update.yml
 
   vars:
     name_servers:
+      - ip domain-lookup
       - ip name-server 8.8.8.8
       - ip name-server 8.8.4.4
-      - ip domain-lookup
-
   tasks:
   - name: GET CURRENT DNS SETTINGS
     ios_command:
@@ -104,6 +103,6 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjA1Mjc5MzEsLTY5MTQ0MjI4MywxOT
+eyJoaXN0b3J5IjpbLTE2MzUwODgzOTcsLTY5MTQ0MjI4MywxOT
 kzNTE1OTY5LDQ1Mzk5MzIwXX0=
 -->
