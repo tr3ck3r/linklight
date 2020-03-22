@@ -190,32 +190,6 @@ rtr4                       : ok=1    changed=1    unreachable=0    failed=0
 [student1@ansible networking-workshop]$
 ```
 
-###
-- name: CHANGE CONFIGURATION
-
-hosts: routers
-
-gather_facts: false
-
-tasks:
-
-- name: LOAD NTP CONFIGURATION
-
-cli_config:
-
-config: "{{ntp_commands}}"
-
-notify:
-
-- SAVE CONFIGURATION
-
-handlers:
-
-- name: SAVE CONFIGURATION
-
-cli_command:
-
-command: "{{save}}"
 
 # Complete
 
@@ -224,5 +198,6 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczNDg5MDE0MCwtMTEzNzUwMTQzMV19
+eyJoaXN0b3J5IjpbMTM1Mjc2MjQyMywtNzM0ODkwMTQwLC0xMT
+M3NTAxNDMxXX0=
 -->
