@@ -4,7 +4,7 @@ Using Ansible you can update the configuration of routers either by pushing a co
 
 #### Step 1
 
-Create a new file called `update-ntp.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
+Create a new file called `ntp-update.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
 
 
 ``` 
@@ -66,7 +66,7 @@ Run the playbook:
 
 #### Step 3
 
-Create a new file called `checkntp.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
+Create a new file called `ntp-check.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
 
 
 ``` yaml
@@ -106,6 +106,6 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3NTQxNTkxNyw4NTU1OTk0NzcsODU1NT
-k5NDc3LDE5NTM1MzU4OTZdfQ==
+eyJoaXN0b3J5IjpbMjQ5MjIwNTEyLDE1NzU0MTU5MTcsODU1NT
+k5NDc3LDg1NTU5OTQ3NywxOTUzNTM1ODk2XX0=
 -->
