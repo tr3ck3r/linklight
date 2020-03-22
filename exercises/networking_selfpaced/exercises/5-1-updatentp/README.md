@@ -4,7 +4,7 @@ Using Ansible you can update the configuration of routers either by pushing a co
 
 #### Step 1
 
-Create a new file called `ntp.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
+Create a new file called `updatentp.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
 
 
 ``` yaml
@@ -52,14 +52,63 @@ Create a new file called `ntp.yml` (use either `vim` or `nano` on the jumphost t
 Run the playbook:
 
 ``` shell
-[student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts ntp.yml
+[student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts updatentp.yml
 ```
+
+
+#### Step 3
+
+Create a new file called `checkntp.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
+
+
+``` yaml
+---
+- hosts: cisco
+  gather_facts: no
+
+
+  vars:
+  
+    ntp_servers:
+      - ntp server 216.239.35.0
+      - ntp server 216.239.35.4
+
+  tasks:
+  
+  - name: get the current ntp server configs
+    ios_command:
+      commands:
+        - "show running-config full | include ntp server "
+    register: get_config
+
+  - debug: var=get_config.stdout_lines
+
+  - name: set ntp server commands
+    with_items: "{{ ntp_servers }}"
+    ios_config:
+      lines:
+          - "{{ item }}"
+    register: set_ntp
+
+  - name: remove ntp server commands
+    when: "(get_config.stdout_lines[0] != '') and (item not in ntp_servers)"
+    with_items: "{{ get_config.stdout_lines[0] }}"
+    register: remove_ntp
+    ios_config:
+      lines:
+        - "no {{ item }}"
+
+
+```
+
+#### Step #
 
 Feel free to log in and check the ntp configuration :
 
 ```bash
 ssh rtr1
 rtr1#show ntp assoc
+rtr1#show ntp status
 rtr1#show run | section ntp
 rtr1# exit
 ```
@@ -72,6 +121,6 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTgyNTYyMTQsLTEwMjQxMzI4ODgsLT
-ExMTc5NTI5MDJdfQ==
+eyJoaXN0b3J5IjpbLTE5OTc5NDMzMjEsLTEyMTgyNTYyMTQsLT
+EwMjQxMzI4ODgsLTExMTc5NTI5MDJdfQ==
 -->
