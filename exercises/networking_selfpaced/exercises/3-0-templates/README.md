@@ -97,7 +97,7 @@ cat << EOF > templates/os_report.j2
 
 
 
-{{ inventory_hostname.upper() }},{{ ansible_net_serialnum }},{{ ansible_net_version }}
+{{ inventory_hostname.upper() }},{{ ansible_net_serialnum }},{{ ansible_net_version }},{{ansible_net_all_ipv4_addresses}}
 
 EOF
 ```
@@ -303,6 +303,6 @@ You have completed lab exercise 3.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjI2NTgyNzA1LC0xNzc0ODE4ODMsLTIwND
-A0NjA0MywtNDMzMDkxMzA0XX0=
+eyJoaXN0b3J5IjpbODk4Mjc4NTMyLDYyNjU4MjcwNSwtMTc3ND
+gxODgzLC0yMDQwNDYwNDMsLTQzMzA5MTMwNF19
 -->
