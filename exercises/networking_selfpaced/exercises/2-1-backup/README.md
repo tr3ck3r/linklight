@@ -376,7 +376,7 @@ cat <<EOF > ~/networking-workshop/backup.yml
       ios_command:
         commands:
           - "copy run flash:/golden.cfg"
-          - "dir flash: | inc golden.cfg"
+          - "show flash: | inc golden.cfg"
 EOF
 ```
 
@@ -422,6 +422,6 @@ You have completed lab exercise 2.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczNTgyOTQ4MCw1NzQ5MTA1NDQsLTE4MD
-A4MzA2ODRdfQ==
+eyJoaXN0b3J5IjpbLTE5ODAxNTcxMTAsNTc0OTEwNTQ0LC0xOD
+AwODMwNjg0XX0=
 -->
