@@ -162,7 +162,75 @@ Add this to your playbook:
 {%endraw%}
 ```
 
-Let's understand this task in a little more depth. The `command_parser` is referencing a file called `show_interfaces.yaml` within the `parsers` directory. For this lab, the parser has been pre-populated for you. The parsers are written to handle the output from standard show commands on various network platforms.
+Let's understand this task in a little more depth. The `command_parser` is referencing a file called `show_interfaces.yaml` within the `parsers` directory. 
+
+Let's us populate that file:
+```
+cat parsers/show_interfaces.yaml
+---
+- name: parser meta data
+  parser_metadata:
+    version: 1.0
+    command: show interface
+    network_os: ios
+
+- name: match sections
+  pattern_match:
+    regex: "^(\\S+) is up,"
+    match_all: yes
+    match_greedy: yes
+  register: section
+
+- name: match interface values
+  pattern_group:
+    - name: match name
+      pattern_match:
+        regex: "^(\\S+)"
+        content: "{{ item }}"
+      register: name
+
+    - name: match hardware
+      pattern_match:
+        regex: "Hardware is (\\S+).*"
+        content: "{{ item }}"
+      register: type
+
+    - name: match mtu
+      pattern_match:
+        regex: "MTU (\\d+)"
+        content: "{{ item }}"
+      register: mtu
+
+    - name: match description
+      pattern_match:
+        regex: "Description: (.*)"
+        content: "{{ item }}"
+      register: description
+  loop: "{{ section }}"
+  register: interfaces
+
+- name: generate json data structure
+  json_template:
+    template:
+      - key: "{{ item.name.matches.0 }}"
+        object:
+        - key: config
+          object:
+            - key: name
+              value: "{{ item.name.matches.0 }}"
+            - key: type
+              value: "{{ item.type.matches.0 }}"
+            - key: mtu
+              value: "{{ item.mtu.matches.0 }}"
+            - key: description
+              value: "{{ item.description.matches.0 }}"
+  loop: "{{ interfaces }}"
+  export: yes
+  register: interface_facts
+EOF
+```
+
+The parsers are written to handle the output from standard show commands on various network platforms.
 
 
 > More parsers are being made available in the public domain so you will only have to build them if a specific use case has not been handled.
@@ -487,5 +555,5 @@ You have completed lab exercise 3.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2MjMyNTczOSwxNzg0MDgzNTIxXX0=
+eyJoaXN0b3J5IjpbLTY2OTcxNDYwLDE3ODQwODM1MjFdfQ==
 -->
