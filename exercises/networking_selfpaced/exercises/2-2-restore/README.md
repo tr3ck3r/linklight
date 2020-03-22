@@ -100,6 +100,7 @@ Proceed with reload? [confirm]y
 
 ## Section 2 - Another idea
 
+> Warning: The below has not been made to work successfully yet.  You have been warned.
 
 [https://raw.githubusercontent.com/ipspace/NetOpsWorkshop/master/Ansible/Logging/deploy.yml](https://raw.githubusercontent.com/ipspace/NetOpsWorkshop/master/Ansible/Logging/deploy.yml)
 
@@ -423,8 +424,8 @@ You have completed lab exercise 2.2
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDA0NTcxNzgsMTk4MTYxMjA1NiwxMj
-Y3MzkzNjczLC0xNDI4NjA5NTkxLC0xMzU0OTYwNTE2LC0yMDUx
-NjIzNzQ3LC0xMjU5MzcxODE1LC0xNjI1MDUwNzUsLTE5OTM5MT
-cwMzFdfQ==
+eyJoaXN0b3J5IjpbMTU1NDIzMDgwMSwxOTgxNjEyMDU2LDEyNj
+czOTM2NzMsLTE0Mjg2MDk1OTEsLTEzNTQ5NjA1MTYsLTIwNTE2
+MjM3NDcsLTEyNTkzNzE4MTUsLTE2MjUwNTA3NSwtMTk5MzkxNz
+AzMV19
 -->
