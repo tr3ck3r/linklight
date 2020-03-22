@@ -96,10 +96,15 @@ rtr1#reload
 
 System configuration has been modified. Save? [yes/no]: no
 Proceed with reload? [confirm]y
-
 ```
-## Section 2 - Using SCP
-> Warning: The below has not been made to work successfully yet.  You have been warned.
+
+## Section 2 - Another idea
+
+
+[https://raw.githubusercontent.com/ipspace/NetOpsWorkshop/master/Ansible/Logging/deploy.yml](https://raw.githubusercontent.com/ipspace/NetOpsWorkshop/master/Ansible/Logging/deploy.yml)
+
+## Section 3 - Using SCP
+
 
 In the previous lab you learned how to backup the configuration of the 4 cisco routers. In this lab you will learn how to restore the configuration. The backups had been saved into a local directory called `backup`.
 
@@ -392,7 +397,7 @@ rtr1#
 
 The output above shows that the Loopback 101 interface is no longer present, you have successfully backed up and restored configurations on your Cisco routers!
 
-### Step 10 Alternative code
+### Section 4 -  Alternative code
 ``` yaml
 ---
 - name: RESTORE CONFIGURATION
@@ -418,7 +423,8 @@ You have completed lab exercise 2.2
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4MTYxMjA1NiwxMjY3MzkzNjczLC0xND
-I4NjA5NTkxLC0xMzU0OTYwNTE2LC0yMDUxNjIzNzQ3LC0xMjU5
-MzcxODE1LC0xNjI1MDUwNzUsLTE5OTM5MTcwMzFdfQ==
+eyJoaXN0b3J5IjpbLTE5MDA0NTcxNzgsMTk4MTYxMjA1NiwxMj
+Y3MzkzNjczLC0xNDI4NjA5NTkxLC0xMzU0OTYwNTE2LC0yMDUx
+NjIzNzQ3LC0xMjU5MzcxODE1LC0xNjI1MDUwNzUsLTE5OTM5MT
+cwMzFdfQ==
 -->
