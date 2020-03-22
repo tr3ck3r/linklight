@@ -334,7 +334,7 @@ One more feature of this playbook we want is to have it make a "Golden" configur
 
 
 ``` 
-cat <<EOF > ~/
+cat <<EOF > ~/networking-workshop/backup.yml
 ---
 - name: BACKUP ROUTER CONFIGURATIONS
   hosts: cisco
@@ -376,7 +376,7 @@ cat <<EOF > ~/
       ios_command:
         commands:
           - "copy run flash:/golden.cfg"
-
+EOF
 ```
 
 
@@ -386,7 +386,7 @@ Now run the playbook using the golden tag.
 
 
 ``` shell
-root@Ansible:~/networking-workshop# ansible-playbook -i ~/networking-workshop/lab_inventory/hosts -k backup.yml --tags=golden
+ansible-playbook -i ~/networking-workshop/lab_inventory/hosts -k backup.yml --tags=golden
 SSH password:
 
 PLAY [BACKUP ROUTER CONFIGURATIONS] ********************************************
@@ -421,6 +421,6 @@ You have completed lab exercise 2.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExMDQ1NzQyOCw1NzQ5MTA1NDQsLTE4MD
-A4MzA2ODRdfQ==
+eyJoaXN0b3J5IjpbNzE5ODA2MzIzLDU3NDkxMDU0NCwtMTgwMD
+gzMDY4NF19
 -->
