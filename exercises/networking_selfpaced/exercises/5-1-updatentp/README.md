@@ -36,12 +36,6 @@ Create a new file called `ntp.yml` (use either `vim` or `nano` on the jumphost t
           - "{{ item }}"
     register: set_ntp
 
-  - name: get ntp status
-    ios_command:
-      commands:
-        - "show ntp asso"
-    register: get_ntp_asso
-
   - name: remove ntp server commands
     when: "(get_config.stdout_lines[0] != '') and (item not in ntp_servers)"
     with_items: "{{ get_config.stdout_lines[0] }}"
@@ -70,32 +64,15 @@ Add a task to ensure that the SNMP strings `ansible-public` and `ansible-private
 Run the playbook:
 
 ``` shell
-[student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts router_configs.yml
-
-PLAY [UPDATE THE SNMP RO/RW STRINGS] ********************************************************************
-
-TASK [ENSURE THAT THE DESIRED SNMP STRINGS ARE PRESENT] *************************************************
-changed: [rtr4]
-changed: [rtr1]
-changed: [rtr3]
-changed: [rtr2]
-
-PLAY RECAP **********************************************************************************************
-rtr1                       : ok=1    changed=1    unreachable=0    failed=0   
-rtr2                       : ok=1    changed=1    unreachable=0    failed=0   
-rtr3                       : ok=1    changed=1    unreachable=0    failed=0   
-rtr4                       : ok=1    changed=1    unreachable=0    failed=0   
-
-[student1@ansible networking-workshop]$
-
+[student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts ntp.yml
 ```
 
-Feel free to log in and check the configuration update:
+Feel free to log in and check the ntp configuration :
 
 ```bash
 ssh rtr1
-rtr1#show snmp community
-rtr1#show run | section snmp
+rtr1#show ntp assoc
+rtr1#show run | section ntp
 rtr1# exit
 ```
 
@@ -222,6 +199,6 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjQxMzI4ODgsLTExMTc5NTI5MDJdfQ
-==
+eyJoaXN0b3J5IjpbMTg3OTI3NjgxNCwtMTAyNDEzMjg4OCwtMT
+ExNzk1MjkwMl19
 -->
