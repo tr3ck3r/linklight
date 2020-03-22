@@ -36,6 +36,7 @@ cat << EOF > update-ntp.yml
       lines:
           - "{{ item }}"
           - "ntp update-calendar"
+          - "clock timezone UTC 0"
     register: set_ntp
 
   - name: remove ntp server commands
@@ -100,6 +101,6 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODU1NTk5NDc3LDg1NTU5OTQ3NywxOTUzNT
-M1ODk2XX0=
+eyJoaXN0b3J5IjpbLTcwNTc2NDkyMyw4NTU1OTk0NzcsODU1NT
+k5NDc3LDE5NTM1MzU4OTZdfQ==
 -->
