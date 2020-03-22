@@ -1,7 +1,9 @@
 # Exercise 2.2 - Using Ansible to restore the backed up configuration
 
->WARNING, the following examples do not work in the configuration; there is a need to tweak things which has not been figured out yet.
+>WARNING, there are some examples below which do not work.  There is a need to tweak things which has not been figured out yet.  Section 1 works, Section 2 does not.
+## Section 1 - U
 
+## Section 2 - Using SCP
 In the previous lab you learned how to backup the configuration of the 4 cisco routers. In this lab you will learn how to restore the configuration. The backups had been saved into a local directory called `backup`.
 
 
@@ -319,6 +321,6 @@ You have completed lab exercise 2.2
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc5MjM2MTcwLC0xNjI1MDUwNzUsLTE5OT
-M5MTcwMzFdfQ==
+eyJoaXN0b3J5IjpbLTE1MDY4MzY3MDQsLTE2MjUwNTA3NSwtMT
+k5MzkxNzAzMV19
 -->
