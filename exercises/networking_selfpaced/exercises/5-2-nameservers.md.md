@@ -79,7 +79,7 @@ cat << EOF > nameserver-check.yml
   - debug: var=nameserver_status.stdout_lines
 EOF
 ```
-
+ansible-playbook -i lab_inventory/hosts -k nameserver-check.yml --limit rtr1
 #### Step 4
 
 Feel free to log in and check the ntp configuration :
@@ -100,5 +100,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3OTM0MTM5NV19
+eyJoaXN0b3J5IjpbMTY5NjU5NzMzMF19
 -->
