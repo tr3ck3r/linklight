@@ -22,7 +22,8 @@ cat << EOF > restore.yml
       tags: golden
       ios_command:
         commands:
-          - "copy flash:/golden.cfg run"
+          - "copy flash:/golden.cfg start"
+          - "reload"
 
 EOF
 ```
@@ -405,6 +406,6 @@ You have completed lab exercise 2.2
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTE2MjM3NDcsLTEyNTkzNzE4MTUsLT
-E2MjUwNTA3NSwtMTk5MzkxNzAzMV19
+eyJoaXN0b3J5IjpbLTEzNTQ5NjA1MTYsLTIwNTE2MjM3NDcsLT
+EyNTkzNzE4MTUsLTE2MjUwNTA3NSwtMTk5MzkxNzAzMV19
 -->
