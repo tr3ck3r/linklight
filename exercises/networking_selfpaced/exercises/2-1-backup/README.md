@@ -372,11 +372,62 @@ One more feature of this playbook we want is to have it make a "Golden Image" co
 
 #### Step 10
 
-Now run the playbook.
+Now run the playbook using the GI tag.
 
 
 ``` shell
-[student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts backup.yml
+root@Ansible:~/networking-workshop# ansible-playbook -i ~/networking-workshop/lab_inventory/hosts -k backup.yml --tags=GI
+SSH password:
+
+PLAY [BACKUP ROUTER CONFIGURATIONS] ********************************************
+
+TASK [DISABLE FILE PROMPTING] **************************************************
+[DEPRECATION WARNING]: Distribution Ubuntu 18.04 on host rtr1 should use
+/usr/bin/python3, but is using /usr/bin/python for backward compatibility with
+prior Ansible releases. A future Ansible release will default to using the
+discovered platform python for this host. See https://docs.ansible.com/ansible/
+2.9/reference_appendices/interpreter_discovery.html for more information. This
+feature will be removed in version 2.12. Deprecation warnings can be disabled
+by setting deprecation_warnings=False in ansible.cfg.
+ok: [rtr1]
+[DEPRECATION WARNING]: Distribution Ubuntu 18.04 on host rtr4 should use
+/usr/bin/python3, but is using /usr/bin/python for backward compatibility with
+prior Ansible releases. A future Ansible release will default to using the
+discovered platform python for this host. See https://docs.ansible.com/ansible/
+2.9/reference_appendices/interpreter_discovery.html for more information. This
+feature will be removed in version 2.12. Deprecation warnings can be disabled
+by setting deprecation_warnings=False in ansible.cfg.
+changed: [rtr4]
+[DEPRECATION WARNING]: Distribution Ubuntu 18.04 on host rtr3 should use
+/usr/bin/python3, but is using /usr/bin/python for backward compatibility with
+prior Ansible releases. A future Ansible release will default to using the
+discovered platform python for this host. See https://docs.ansible.com/ansible/
+2.9/reference_appendices/interpreter_discovery.html for more information. This
+feature will be removed in version 2.12. Deprecation warnings can be disabled
+by setting deprecation_warnings=False in ansible.cfg.
+changed: [rtr3]
+[DEPRECATION WARNING]: Distribution Ubuntu 18.04 on host rtr2 should use
+/usr/bin/python3, but is using /usr/bin/python for backward compatibility with
+prior Ansible releases. A future Ansible release will default to using the
+discovered platform python for this host. See https://docs.ansible.com/ansible/
+2.9/reference_appendices/interpreter_discovery.html for more information. This
+feature will be removed in version 2.12. Deprecation warnings can be disabled
+by setting deprecation_warnings=False in ansible.cfg.
+changed: [rtr2]
+
+TASK [SAVE running-config TO gi.cfg] *******************************************
+ok: [rtr1]
+ok: [rtr4]
+ok: [rtr3]
+ok: [rtr2]
+
+PLAY RECAP *********************************************************************
+rtr1                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+rtr2                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+rtr3                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+rtr4                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+root@Ansible:~/networking-workshop# 
 
 
 ```
@@ -388,5 +439,6 @@ You have completed lab exercise 2.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc0OTEwNTQ0LC0xODAwODMwNjg0XX0=
+eyJoaXN0b3J5IjpbLTE2MDAzNTkyNjYsNTc0OTEwNTQ0LC0xOD
+AwODMwNjg0XX0=
 -->
