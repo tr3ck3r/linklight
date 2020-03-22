@@ -44,7 +44,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 ### Section 06 - Auditing
 - [Exercise 6.1 - Audit Configs](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/audit_configs/audit.yml)
 - [Exercise 6.2 - Audit Configs Using Tests Folder](https://github.com/ipspace/ansible-examples/tree/master/Sample-Compliance-Check)
-### Section 08 - Advanced
+### Section 08 - Advanced Ansible Functions
 - [Exercise 8.1 - Conditions Conditions](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
 - [Exercise 8.2 - More Conditions](https://www.linuxtechi.com/use-when-conditions-in-ansible-playbook/)
 - Using WHEN to selectively apply 
@@ -87,10 +87,10 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg5ODI3NzM1LDExNzA5NTI5OTcsMTk5Mz
-YyNjk1LDgyMTIwMTU0MiwtMTE0NzM2Njk0LC0yMTA3ODk2NDE3
-LC05NTI1ODI3NjYsLTIyNzM4OTY0OCwxNzQ3NzgzNDYxLDIwNj
-E4OTQwNTYsLTE3MjA0NjU3MjYsNjQzMjA0Nzg4LC0xODI1NzMy
-MDg4LC0yMTM3NDA2NTA4LDEyNjk1NTk1MjYsLTk3Njg5NjU3Mi
-wtMTUyOTA1NTQyNywtMTYxMzQ4MjMxN119
+eyJoaXN0b3J5IjpbLTE0OTE4NjUzMDIsMTE3MDk1Mjk5NywxOT
+kzNjI2OTUsODIxMjAxNTQyLC0xMTQ3MzY2OTQsLTIxMDc4OTY0
+MTcsLTk1MjU4Mjc2NiwtMjI3Mzg5NjQ4LDE3NDc3ODM0NjEsMj
+A2MTg5NDA1NiwtMTcyMDQ2NTcyNiw2NDMyMDQ3ODgsLTE4MjU3
+MzIwODgsLTIxMzc0MDY1MDgsMTI2OTU1OTUyNiwtOTc2ODk2NT
+cyLC0xNTI5MDU1NDI3LC0xNjEzNDgyMzE3XX0=
 -->
