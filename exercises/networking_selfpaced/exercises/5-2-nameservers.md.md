@@ -32,7 +32,7 @@ cat << EOF > nameserver-update.yml
     ios_config:
       lines:
           - "{{ item }}"
-      match: exact
+      match: line
       replace: line
     register: set_nameserver
     
@@ -103,6 +103,7 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4MzkzNTUzOCwtMTYzNTA4ODM5NywtNj
-kxNDQyMjgzLDE5OTM1MTU5NjksNDUzOTkzMjBdfQ==
+eyJoaXN0b3J5IjpbLTIwNTI2NzAxNjEsMTU4MzkzNTUzOCwtMT
+YzNTA4ODM5NywtNjkxNDQyMjgzLDE5OTM1MTU5NjksNDUzOTkz
+MjBdfQ==
 -->
