@@ -23,6 +23,8 @@ cat << EOF > update-ntp.yml
       - ntp server 192.168.122.102
       - ntp server 192.168.122.103
       - ntp server 192.168.122.104
+      - ntp server 23.129.64.227
+      - ntp server 103.105.51.156
 
 
   tasks:
@@ -106,6 +108,7 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjQ5MjIwNTEyLDE1NzU0MTU5MTcsODU1NT
-k5NDc3LDg1NTU5OTQ3NywxOTUzNTM1ODk2XX0=
+eyJoaXN0b3J5IjpbMTM1OTkyMDMwNiwyNDkyMjA1MTIsMTU3NT
+QxNTkxNyw4NTU1OTk0NzcsODU1NTk5NDc3LDE5NTM1MzU4OTZd
+fQ==
 -->
