@@ -97,7 +97,7 @@ cat << EOF > templates/os_report.j2
 
 
 
-{{ inventory_hostname.upper() }},{{ ansible_net_serialnum }},{{ ansible_net_version }},{{ ansible_net_model }},{{ ansible_net_image }},{{ ansible_net_memtotal_mb }}
+{{ inventory_hostname.upper() }},{{ ansible_net_serialnum }},{{ ansible_net_version }},{{ ansible_net_model }},{{ ansible_net_image }}
 
 EOF
 ```
@@ -282,11 +282,12 @@ A new file called `network_os_report.md` will now be available in the playbook r
 
 
 ``` shell
-root@Ansible:~/networking-workshop# cat network_os_report.md | grep .           RTR1,9B3YXCPFACLEKQ8M4F39E,15.6(2)T,IOSv,flash0:/vios-adventerprisek9-m,314934. 75
-RTR2,9FGCYLQG6IP8D5WFB9UJJ,15.6(2)T,IOSv,flash0:/vios-adventerprisek9-m,314934. 75
-RTR3,9Y6NE1W2DF4V3XXP3E251,15.6(2)T,IOSv,flash0:/vios-adventerprisek9-m,314934. 75
-RTR4,9U3LNABK7MEWWMDHK6NY4,15.6(2)T,IOSv,flash0:/vios-adventerprisek9-m,314934. 75
+root@Ansible:~/networking-workshop# cat network_os_report.md | grep .           RTR1,9B3YXCPFACLEKQ8M4F39E,15.6(2)T,IOSv,flash0:/vios-adventerprisek9-m
+RTR2,9FGCYLQG6IP8D5WFB9UJJ,15.6(2)T,IOSv,flash0:/vios-adventerprisek9-m
+RTR3,9Y6NE1W2DF4V3XXP3E251,15.6(2)T,IOSv,flash0:/vios-adventerprisek9-m
+RTR4,9U3LNABK7MEWWMDHK6NY4,15.6(2)T,IOSv,flash0:/vios-adventerprisek9-m
 root@Ansible:~/networking-workshop#
+
 ```
 
 > Note: Markdown files can be rendered visually as HTML
@@ -302,7 +303,7 @@ You have completed lab exercise 3.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4OTIzNDg2NSw4OTgyNzg1MzIsNjI2NT
-gyNzA1LC0xNzc0ODE4ODMsLTIwNDA0NjA0MywtNDMzMDkxMzA0
-XX0=
+eyJoaXN0b3J5IjpbLTIwNzc3NTI2NTUsLTI4OTIzNDg2NSw4OT
+gyNzg1MzIsNjI2NTgyNzA1LC0xNzc0ODE4ODMsLTIwNDA0NjA0
+MywtNDMzMDkxMzA0XX0=
 -->
