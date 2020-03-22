@@ -16,7 +16,7 @@ cat << EOF > dns-update.yml
 
   vars:
   
-    ntp_servers:
+    name_servers:
       - ip name-server 8.8.8.8
       - ip name-server 8.8.4.4
       - ntp server 192.168.122.101
@@ -29,27 +29,26 @@ cat << EOF > dns-update.yml
 
   tasks:
   
-  - name: get the current ntp server configs
+  - name: GET CURRENT DNS SETTINGS
     ios_command:
       commands:
-        - "show running-config full | include ntp server "
+        - "show running-config full | include ip name-server "
     register: get_config
 
   - debug: var=get_config.stdout_lines
 
-  - name: set ntp server commands
-    with_items: "{{ ntp_servers }}"
+  - name: SET NAMESERVER COMMANDS
+    with_items: "{{ name_servers }}"
     ios_config:
       lines:
           - "{{ item }}"
-          - "ntp update-calendar"
-          - "clock timezone UTC 0"
-    register: set_ntp
+          - "ip domain-lookup"
+    register: set_nameserver
 
   - name: remove ntp server commands
     when: "(get_config.stdout_lines[0] != '') and (item not in ntp_servers)"
     with_items: "{{ get_config.stdout_lines[0] }}"
-    register: remove_ntp
+    register: remove_nameserver
     ios_config:
       lines:
         - "no {{ item }}"
@@ -110,5 +109,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyMDk4MjA4N119
+eyJoaXN0b3J5IjpbLTg2ODcwMjMzMl19
 -->
