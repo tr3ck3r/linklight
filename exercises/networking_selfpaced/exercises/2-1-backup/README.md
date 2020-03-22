@@ -333,7 +333,8 @@ no service nagle
 One more feature of this playbook we want is to have it make a "Golden" configuration file as the starting point for a roll back to the starting status (simple configuration before hardening).  We need to add another task to archive the configuration locally on the router using the storage location of flash:/golden.cfg. 
 
 
-``` yaml
+``` 
+cat <<EOF > ~/
 ---
 - name: BACKUP ROUTER CONFIGURATIONS
   hosts: cisco
@@ -364,7 +365,7 @@ One more feature of this playbook we want is to have it make a "Golden" configur
         state: absent
 
     - name: DISABLE FILE PROMPTING
-      tags: GI
+      tags: golden
       ios_config:
         config:
         lines:
@@ -420,6 +421,6 @@ You have completed lab exercise 2.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ5MzU1Mjc5LDU3NDkxMDU0NCwtMTgwMD
-gzMDY4NF19
+eyJoaXN0b3J5IjpbMjExMDQ1NzQyOCw1NzQ5MTA1NDQsLTE4MD
+A4MzA2ODRdfQ==
 -->
