@@ -36,6 +36,14 @@ Create a new file called `ntp.yml` (use either `vim` or `nano` on the jumphost t
           - "{{ item }}"
     register: set_ntp
 
+  - name: get ntp status
+    ios_command:
+      commands:
+        - "show ntp asso"
+    register: get_config
+
+  - debug: var=get_config.stdout_lines
+
   - name: remove ntp server commands
     when: "(get_config.stdout_lines[0] != '') and (item not in ntp_servers)"
     with_items: "{{ get_config.stdout_lines[0] }}"
@@ -43,6 +51,8 @@ Create a new file called `ntp.yml` (use either `vim` or `nano` on the jumphost t
     ios_config:
       lines:
         - "no {{ item }}"
+
+
 ```
 
 #### Step 2
@@ -214,5 +224,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTc5NTI5MDJdfQ==
+eyJoaXN0b3J5IjpbODIxNjkwMTIzLC0xMTE3OTUyOTAyXX0=
 -->
