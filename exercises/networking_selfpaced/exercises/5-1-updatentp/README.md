@@ -40,7 +40,7 @@ Create a new file called `ntp.yml` (use either `vim` or `nano` on the jumphost t
     ios_command:
       commands:
         - "show ntp asso"
-    register: get_config
+    register: get_ntp_asso
 
   - name: remove ntp server commands
     when: "(get_config.stdout_lines[0] != '') and (item not in ntp_servers)"
@@ -222,5 +222,6 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwMzk2NTA0NywtMTExNzk1MjkwMl19
+eyJoaXN0b3J5IjpbLTEwMjQxMzI4ODgsLTExMTc5NTI5MDJdfQ
+==
 -->
