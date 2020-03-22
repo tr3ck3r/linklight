@@ -72,6 +72,7 @@ Create a new file called `ntp-check.yml` (use either `vim` or `nano` on the jump
 
 
 ``` yaml
+cat << 
 ---
 - hosts: cisco
   gather_facts: no
@@ -81,7 +82,7 @@ Create a new file called `ntp-check.yml` (use either `vim` or `nano` on the jump
   - name: get the current ntp server configs
     ios_command:
       commands:
-        - "show ntp status "
+        - "show ntp status | inc Clock is"
     register: ntp_status
 
   - debug: var=ntp_status.stdout_lines
@@ -110,7 +111,7 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3NTY1NDA2OSwxMzU5OTIwMzA2LDI0OT
-IyMDUxMiwxNTc1NDE1OTE3LDg1NTU5OTQ3Nyw4NTU1OTk0Nzcs
-MTk1MzUzNTg5Nl19
+eyJoaXN0b3J5IjpbNDIwMjI4NzcsMTM1OTkyMDMwNiwyNDkyMj
+A1MTIsMTU3NTQxNTkxNyw4NTU1OTk0NzcsODU1NTk5NDc3LDE5
+NTM1MzU4OTZdfQ==
 -->
