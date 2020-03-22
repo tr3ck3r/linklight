@@ -39,8 +39,8 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 5.6 -  Adding and removing user](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/remove_user.yml)
 - [Exercise 5-7 - Setting a VTY ACL](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
 - [Exercise 5.8 - Disable http servers](./exercises/5-8-disablehttp)
-- - [Exercise 5.9 - Enable Configuration Archive](./exercises/5-9-archive)
-- [Exercise 5.98 - Audit Configs For All Hardening Items](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/audit_configs/audit.yml)
+- [Exercise 5.9 - Enable Configuration Archive](./exercises/5-9-archive)
+- [Exercise 5.98 - Audit Configs](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/audit_configs/audit.yml)
 - [Exercise 5.99 - Remove hardening configs](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/audit_configs/audit.yml)
 ### Section 06 - Advanced
 - [Exercise 6.1 - Conditions Conditions](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
@@ -84,9 +84,9 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMDc4OTY0MTcsLTk1MjU4Mjc2NiwtMj
-I3Mzg5NjQ4LDE3NDc3ODM0NjEsMjA2MTg5NDA1NiwtMTcyMDQ2
-NTcyNiw2NDMyMDQ3ODgsLTE4MjU3MzIwODgsLTIxMzc0MDY1MD
-gsMTI2OTU1OTUyNiwtOTc2ODk2NTcyLC0xNTI5MDU1NDI3LC0x
-NjEzNDgyMzE3XX0=
+eyJoaXN0b3J5IjpbLTExNDczNjY5NCwtMjEwNzg5NjQxNywtOT
+UyNTgyNzY2LC0yMjczODk2NDgsMTc0Nzc4MzQ2MSwyMDYxODk0
+MDU2LC0xNzIwNDY1NzI2LDY0MzIwNDc4OCwtMTgyNTczMjA4OC
+wtMjEzNzQwNjUwOCwxMjY5NTU5NTI2LC05NzY4OTY1NzIsLTE1
+MjkwNTU0MjcsLTE2MTM0ODIzMTddfQ==
 -->
