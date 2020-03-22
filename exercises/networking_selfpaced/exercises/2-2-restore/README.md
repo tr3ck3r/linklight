@@ -1,7 +1,8 @@
 # Exercise 2.2 - Using Ansible to restore the backed up configuration
 
 >WARNING, there are some examples below which do not work.  There is a need to tweak things which has not been figured out yet.  Section 1 works, Section 2 does not.
-## Section 1 - Using copy from flash to running
+## Section 1 - Using copy from flash to start
+### Step 1
 ```
 cat << EOF > restore.yml
 ---
@@ -23,8 +24,6 @@ cat << EOF > restore.yml
       ios_command:
         commands:
           - "copy flash:/golden.cfg start"
-          - "reload"
-
 EOF
 ```
 ### Step 2 - Execute playbook
@@ -85,7 +84,12 @@ rtr4                       : ok=2    changed=0    unreachable=0    failed=0    s
 root@Ansible:~/networking-workshop#
 
 ```
+### Step 3 - reboot routers
 
+Login to each router and reboot them manually.
+```
+rtr1# reload 
+```
 ## Section 2 - Using SCP
 > Warning: The below has not been made to work successfully yet.  You have been warned.
 
@@ -406,7 +410,7 @@ You have completed lab exercise 2.2
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2NzM5MzY3MywtMTQyODYwOTU5MSwtMT
-M1NDk2MDUxNiwtMjA1MTYyMzc0NywtMTI1OTM3MTgxNSwtMTYy
-NTA1MDc1LC0xOTkzOTE3MDMxXX0=
+eyJoaXN0b3J5IjpbLTExOTE0OTc4OTAsMTI2NzM5MzY3MywtMT
+QyODYwOTU5MSwtMTM1NDk2MDUxNiwtMjA1MTYyMzc0NywtMTI1
+OTM3MTgxNSwtMTYyNTA1MDc1LC0xOTkzOTE3MDMxXX0=
 -->
