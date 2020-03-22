@@ -2,7 +2,8 @@
 
 >WARNING, there are some examples below which do not work.  There is a need to tweak things which has not been figured out yet.  Section 1 works, Section 2 does not.
 ## Section 1 - Using copy from flash to running
-```yaml
+```
+cat << EOF > restore.yml
 ---
 - name: RESTORE GOLDEN CONFIGURATIONS
   hosts: cisco
@@ -10,40 +11,20 @@
   gather_facts: no
 
   tasks:
-    - name: BACKUP THE CONFIG
-      ios_config:
-        backup: yes
-      register: config_output
-
-    - name: RENAME BACKUP
-      copy:
-        src: "{{config_output.backup_path}}"
-        dest: "./backup/{{inventory_hostname}}.config"
-
-    - name: REMOVE NON CONFIG LINES
-      lineinfile:
-        path: "./backup/{{inventory_hostname}}.config"
-        line: "Building configuration..."
-        state: absent
-
-    - name: REMOVE NON CONFIG LINES - REGEXP
-      lineinfile:
-        path: "./backup/{{inventory_hostname}}.config"
-        regexp: 'Current configuration.*'
-        state: absent
-
     - name: DISABLE FILE PROMPTING
-      tags: GI
+      tags: golden
       ios_config:
         config:
         lines:
           "file prompt quiet"
 
-    - name: SAVE running-config TO gi.cfg
-      tags: GI
+    - name: SAVE golden.cfg TO running-config 
+      tags: golden
       ios_command:
         commands:
-          - "copy run flash:/gi.cfg"
+          - "copy flash:/golden.cfg run"
+
+EOF
 ```
 
 ## Section 2 - Using SCP
@@ -364,6 +345,6 @@ You have completed lab exercise 2.2
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTkzNzE4MTUsLTE2MjUwNTA3NSwtMT
-k5MzkxNzAzMV19
+eyJoaXN0b3J5IjpbMTU4NDE5NTgxNCwtMTI1OTM3MTgxNSwtMT
+YyNTA1MDc1LC0xOTkzOTE3MDMxXX0=
 -->
