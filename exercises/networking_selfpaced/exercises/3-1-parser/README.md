@@ -166,7 +166,7 @@ Let's understand this task in a little more depth. The `command_parser` is refer
 
 Let's us populate that file:
 ```
-cat parsers/show_interfaces.yaml
+cat <<EOF > parsers/show_interfaces.yaml
 ---
 - name: parser meta data
   parser_metadata:
@@ -387,7 +387,7 @@ Our next step is to use the template module to generate a report from the above 
 
 
 ``` yaml
-{%raw%}
+cat << EOF > interface_report.yml
 ---
 - name: GENERATE INTERFACE REPORT
   hosts: cisco
@@ -431,7 +431,7 @@ Our next step is to use the template module to generate a report from the above 
       delegate_to: localhost
       run_once: yes
 
-{%endraw%}
+EOF
 ```
 
 > Note: For this lab the  Jinja2 template has been pre-populated for you. Feel free to look at the file **interface_facts.j2** in the **templates** directory.
@@ -555,5 +555,5 @@ You have completed lab exercise 3.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2OTcxNDYwLDE3ODQwODM1MjFdfQ==
+eyJoaXN0b3J5IjpbLTkwMzA5MjU4NSwxNzg0MDgzNTIxXX0=
 -->
