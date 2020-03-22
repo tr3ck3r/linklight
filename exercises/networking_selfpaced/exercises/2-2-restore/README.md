@@ -1,5 +1,6 @@
 # Exercise 2.2 - Using Ansible to restore the backed up configuration
 
+>WARNING, the following examples do not work in the configuration; there is a need to tweak things which has not been figured out yet.
 
 In the previous lab you learned how to backup the configuration of the 4 cisco routers. In this lab you will learn how to restore the configuration. The backups had been saved into a local directory called `backup`.
 
@@ -294,6 +295,11 @@ rtr1#
 
 The output above shows that the Loopback 101 interface is no longer present, you have successfully backed up and restored configurations on your Cisco routers!
 
+### Step 10 Alternative code
+```
+
+```
+
 # Complete
 
 You have completed lab exercise 2.2
@@ -301,5 +307,5 @@ You have completed lab exercise 2.2
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTM5MTcwMzFdfQ==
+eyJoaXN0b3J5IjpbLTE2MjUwNTA3NSwtMTk5MzkxNzAzMV19
 -->
