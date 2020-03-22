@@ -374,18 +374,18 @@ One more feature of this playbook we want is to have it make a "Golden Image" co
       tags: GI
       ios_command:
         commands:
-          - "copy run flash:/gi.cfg"
+          - "copy run flash:/golden.cfg"
 
 ```
 
 
 #### Step 10
 
-Now run the playbook using the GI tag.
+Now run the playbook using the golden tag.
 
 
 ``` shell
-root@Ansible:~/networking-workshop# ansible-playbook -i ~/networking-workshop/lab_inventory/hosts -k backup.yml --tags=GI
+root@Ansible:~/networking-workshop# ansible-playbook -i ~/networking-workshop/lab_inventory/hosts -k backup.yml --tags=gol
 SSH password:
 
 PLAY [BACKUP ROUTER CONFIGURATIONS] ********************************************
@@ -396,7 +396,7 @@ changed: [rtr4]
 changed: [rtr3]
 changed: [rtr2]
 
-TASK [SAVE running-config TO gi.cfg] *******************************************
+TASK [SAVE running-config TO golden.cfg] *******************************************
 ok: [rtr1]
 ok: [rtr4]
 ok: [rtr3]
@@ -420,6 +420,6 @@ You have completed lab exercise 2.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDIwNTA1NjUsNTc0OTEwNTQ0LC0xOD
+eyJoaXN0b3J5IjpbLTE3ODMxNzg4NTIsNTc0OTEwNTQ0LC0xOD
 AwODMwNjg0XX0=
 -->
