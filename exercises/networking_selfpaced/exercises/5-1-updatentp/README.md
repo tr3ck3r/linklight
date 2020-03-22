@@ -26,14 +26,14 @@ Add a task to ensure that the SNMP strings `ansible-public` and `ansible-private
 ``` yaml
 
 ---
-- name: SNMP RO/RW STRING CONFIGURATION
+- name: FIX NTP
   hosts: cisco
   gather_facts: no
   connection: network_cli
 
   tasks:
 
-    - name: ENSURE THAT THE DESIRED SNMP STRINGS ARE PRESENT
+    - name: ENSURE NTP IS CONFIGURED
       ios_config:
         commands:
           ntp_servers:
@@ -220,5 +220,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2ODE3NDgyMV19
+eyJoaXN0b3J5IjpbLTU5MDE2MTgzMV19
 -->
