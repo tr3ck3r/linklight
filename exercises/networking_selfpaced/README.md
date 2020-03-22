@@ -6,7 +6,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 ### GNS3 Diagram
 ![Red Hat Network Diagram for GNS3](../../images/NetworkDiagram-GNS3.png)
 
-## Ansible Network Automation Exercises
+## Ansible Network Automation Exercises - Cisco 
 
 ### Section 01 - Using Ansible to gather data from network devices
 - [Exercise 1.0 - Exploring the lab environment](./exercises/1-0-explore)
@@ -28,7 +28,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 ### Section 04 - Using Ansible to generate configs
 - [Exercise 4.1 - RTR4 YAML](https://github.com/ipspace/ansible-exercises/tree/master/Jinja2/refactor-data-model)
 - [Exercise 4.2 - Evaluate VTY](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class6)
-- [https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class5](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class5)
+- [Exercise 4.3 - Python and Ansible](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class5)
 - [http://ansible.redhatgov.io/standard/network/exercise1.4.html](http://ansible.redhatgov.io/standard/network/exercise1.4.html)
 ### Section 05 - Updating Cisco IOS for Common Items
 - [Exercise 5.1 - Update NTP](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class6)
@@ -50,7 +50,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - Using WHEN to selectively apply 
 - [Excercise 8.4 - Loops](https://github.com/ipspace/NetOpsWorkshop/tree/master/Ansible/Loops)
 
-### Section 09 - Using Ansible with JunOS
+## Using Ansible with JunOS
 - [https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class10](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class10)
 - [https://go.nrelabs.io/labs/?lessonId=41&lessonStage=1](https://go.nrelabs.io/labs/?lessonId=41&lessonStage=1)
 - [https://www.ansible.com/blog/agnostic-network-automation-examples-with-ansible-and-juniper-nre-labs](https://www.ansible.com/blog/agnostic-network-automation-examples-with-ansible-and-juniper-nre-labs)
@@ -87,10 +87,10 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3MDk1Mjk5NywxOTkzNjI2OTUsODIxMj
-AxNTQyLC0xMTQ3MzY2OTQsLTIxMDc4OTY0MTcsLTk1MjU4Mjc2
-NiwtMjI3Mzg5NjQ4LDE3NDc3ODM0NjEsMjA2MTg5NDA1NiwtMT
-cyMDQ2NTcyNiw2NDMyMDQ3ODgsLTE4MjU3MzIwODgsLTIxMzc0
-MDY1MDgsMTI2OTU1OTUyNiwtOTc2ODk2NTcyLC0xNTI5MDU1ND
-I3LC0xNjEzNDgyMzE3XX0=
+eyJoaXN0b3J5IjpbLTEwODkyNjQ1NzcsMTE3MDk1Mjk5NywxOT
+kzNjI2OTUsODIxMjAxNTQyLC0xMTQ3MzY2OTQsLTIxMDc4OTY0
+MTcsLTk1MjU4Mjc2NiwtMjI3Mzg5NjQ4LDE3NDc3ODM0NjEsMj
+A2MTg5NDA1NiwtMTcyMDQ2NTcyNiw2NDMyMDQ3ODgsLTE4MjU3
+MzIwODgsLTIxMzc0MDY1MDgsMTI2OTU1OTUyNiwtOTc2ODk2NT
+cyLC0xNTI5MDU1NDI3LC0xNjEzNDgyMzE3XX0=
 -->
