@@ -182,8 +182,8 @@ While it is nice to have the data, it would be even better to consolidate all th
 
 
 
-``` yaml
-{%raw%}
+``` 
+cat << EOF > router_report.yml
 ---
 - name: GENERATE OS REPORT FROM ROUTERS
   hosts: cisco
@@ -211,7 +211,7 @@ While it is nice to have the data, it would be even better to consolidate all th
         dest: network_os_report.md
       delegate_to: localhost
       run_once: yes
-{%endraw%}
+EOF
 ```
 
 
@@ -309,5 +309,5 @@ You have completed lab exercise 3.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzMzA5MTMwNF19
+eyJoaXN0b3J5IjpbLTkyNDc0ODY3NCwtNDMzMDkxMzA0XX0=
 -->
