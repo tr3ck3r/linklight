@@ -9,7 +9,7 @@ Create a new file called `ntp.yml` (use either `vim` or `nano` on the jumphost t
 
 ``` yaml
 ---
-- hosts: ios
+- hosts: cisco
   gather_facts: no
 
 
@@ -41,8 +41,6 @@ Create a new file called `ntp.yml` (use either `vim` or `nano` on the jumphost t
       commands:
         - "show ntp asso"
     register: get_config
-
-  - debug: var=get_config.stdout_lines
 
   - name: remove ntp server commands
     when: "(get_config.stdout_lines[0] != '') and (item not in ntp_servers)"
@@ -224,5 +222,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIxNjkwMTIzLC0xMTE3OTUyOTAyXX0=
+eyJoaXN0b3J5IjpbLTQ2MTE5NTcxLC0xMTE3OTUyOTAyXX0=
 -->
