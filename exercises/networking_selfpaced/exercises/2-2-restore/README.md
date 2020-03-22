@@ -26,6 +26,41 @@ cat << EOF > restore.yml
 
 EOF
 ```
+### Step 2 - Execute playbook
+
+```
+root@Ansible:~/networking-workshop# ansible-playbook -i ~/networking-workshop/lab_inventory/hosts -k restore.yml -v 
+SSH password:
+
+PLAY [RESTORE GOLDEN CONFIGURATIONS] *******************************************
+
+TASK [DISABLE FILE PROMPTING] **************************************************
+ok: [rtr4]
+ok: [rtr2]
+ok: [rtr3]
+[DEPRECATION WARNING]: Distribution Ubuntu 18.04 on host rtr1 should use
+/usr/bin/python3, but is using /usr/bin/python for backward compatibility with
+prior Ansible releases. A future Ansible release will default to using the
+discovered platform python for this host. See https://docs.ansible.com/ansible/
+2.9/reference_appendices/interpreter_discovery.html for more information. This
+feature will be removed in version 2.12. Deprecation warnings can be disabled
+by setting deprecation_warnings=False in ansible.cfg.
+ok: [rtr1]
+
+TASK [SAVE golden.cfg TO running-config] ***************************************
+ok: [rtr3]
+ok: [rtr4]
+ok: [rtr1]
+ok: [rtr2]
+
+PLAY RECAP *********************************************************************
+rtr1                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+rtr2                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+rtr3                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+rtr4                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+root@Ansible:~/networking-workshop#
+```
 
 ## Section 2 - Using SCP
 In the previous lab you learned how to backup the configuration of the 4 cisco routers. In this lab you will learn how to restore the configuration. The backups had been saved into a local directory called `backup`.
@@ -345,6 +380,6 @@ You have completed lab exercise 2.2
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4NDE5NTgxNCwtMTI1OTM3MTgxNSwtMT
+eyJoaXN0b3J5IjpbMTk1MDk2NTM2MCwtMTI1OTM3MTgxNSwtMT
 YyNTA1MDc1LC0xOTkzOTE3MDMxXX0=
 -->
