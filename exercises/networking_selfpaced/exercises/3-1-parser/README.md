@@ -456,7 +456,7 @@ Run the playbook:
 
 
 ``` shell
-[student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts interface_report.yml
+root@Ansible:~/networking-workshop# ansible-playbook -i ~/networking-workshop/lab_inventory/hosts -k interface_report.yml --limit rtr1
 
 PLAY [GENERATE INTERFACE REPORT] ************************************************************************************************************************************************************
 
@@ -566,6 +566,6 @@ You have completed lab exercise 3.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc0MDQzODkzLC01NDY3NzY0MzYsLTY1Nj
-EwNTc0NCwxNzg0MDgzNTIxXX0=
+eyJoaXN0b3J5IjpbMTQ4NzcwNzA1MywtNTQ2Nzc2NDM2LC02NT
+YxMDU3NDQsMTc4NDA4MzUyMV19
 -->
