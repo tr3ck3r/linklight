@@ -84,11 +84,19 @@ rtr4                       : ok=2    changed=0    unreachable=0    failed=0    s
 root@Ansible:~/networking-workshop#
 
 ```
-### Step 3 - reboot routers
+### Step 3 - Reboot Routers
+
+> Ideally we would write a playbook to do this; but, there is an issue with using IOSv and having no config-register.  Playbooks using a reload complain about interface telnet being used to reboot and fail.  Once this is figured out, this section will be updated.
 
 Login to each router and reboot them manually.
 ```
-rtr1# reload 
+rtr1#reload
+*Mar 22 14:30:17.545: %SYS-5-CONFIG_I: Configured from console by console
+rtr1#reload
+
+System configuration has been modified. Save? [yes/no]: no
+Proceed with reload? [confirm]y
+
 ```
 ## Section 2 - Using SCP
 > Warning: The below has not been made to work successfully yet.  You have been warned.
@@ -410,7 +418,7 @@ You have completed lab exercise 2.2
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTE0OTc4OTAsMTI2NzM5MzY3MywtMT
-QyODYwOTU5MSwtMTM1NDk2MDUxNiwtMjA1MTYyMzc0NywtMTI1
-OTM3MTgxNSwtMTYyNTA1MDc1LC0xOTkzOTE3MDMxXX0=
+eyJoaXN0b3J5IjpbMTk4MTYxMjA1NiwxMjY3MzkzNjczLC0xND
+I4NjA5NTkxLC0xMzU0OTYwNTE2LC0yMDUxNjIzNzQ3LC0xMjU5
+MzcxODE1LC0xNjI1MDUwNzUsLTE5OTM5MTcwMzFdfQ==
 -->
