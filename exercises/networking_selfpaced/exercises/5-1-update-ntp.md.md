@@ -35,6 +35,7 @@ cat << EOF > update-ntp.yml
     ios_config:
       lines:
           - "{{ item }}"
+          - "ntp update-calendar"
     register: set_ntp
 
   - name: remove ntp server commands
@@ -99,5 +100,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1MzUzNTg5Nl19
+eyJoaXN0b3J5IjpbODU1NTk5NDc3LDE5NTM1MzU4OTZdfQ==
 -->
