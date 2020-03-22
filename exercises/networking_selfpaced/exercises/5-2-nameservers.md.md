@@ -32,8 +32,7 @@ cat << EOF > nameserver-update.yml
     ios_config:
       lines:
       match: exact
-          - "{{ item }}"
-          - "ip domain-lookup"
+          - {{ item }}
     register: set_nameserver
     
 
@@ -104,5 +103,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIyNzkxMTQwOCw0NTM5OTMyMF19
+eyJoaXN0b3J5IjpbMTc0MjAwNzI0MSw0NTM5OTMyMF19
 -->
