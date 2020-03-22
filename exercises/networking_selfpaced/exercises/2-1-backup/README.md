@@ -327,6 +327,90 @@ no service nagle
 
 > Note: The **head** unix command will display the first N lines specified as an argument.
 
+
+#### Step 12
+
+One more feature of this playbook we want is to have it make a "Golden Image" configuration file as the starting point for a roll back to the starting status.  We need to add one more task to remove the second line "Current configuration ...etc". Since this line has a variable entity (the number of bytes), we cannot use the `line` parameter of the `lineinfile` module. Instead, we'll use the `regexp` parameter to match on regular expressions and remove the line in the file:
+
+
+``` yaml
+{%raw%}
+---
+- name: BACKUP ROUTER CONFIGURATIONS
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: BACKUP THE CONFIG
+      ios_config:
+        backup: yes
+      register: config_output
+
+    - name: RENAME BACKUP
+      copy:
+        src: "{{config_output.backup_path}}"
+        dest: "./backup/{{inventory_hostname}}.config"
+
+    - name: REMOVE NON CONFIG LINES
+      lineinfile:
+        path: "./backup/{{inventory_hostname}}.config"
+        line: "Building configuration..."
+        state: absent
+
+    - name: REMOVE NON CONFIG LINES - REGEXP
+      lineinfile:
+        path: "./backup/{{inventory_hostname}}.config"
+        regexp: 'Current configuration.*'
+        state: absent
+{%endraw%}                          
+```
+
+
+#### Step 10
+
+Now run the playbook.
+
+
+``` shell
+[student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts backup.yml
+
+PLAY [BACKUP ROUTER CONFIGURATIONS] *********************************************************************************************************************************************************
+
+TASK [BACKUP THE CONFIG] ********************************************************************************************************************************************************************
+ok: [rtr2]
+ok: [rtr4]
+ok: [rtr1]
+ok: [rtr3]
+
+TASK [RENAME BACKUP] ************************************************************************************************************************************************************************
+changed: [rtr2]
+changed: [rtr4]
+changed: [rtr3]
+changed: [rtr1]
+
+TASK [REMOVE NON CONFIG LINES] **************************************************************************************************************************************************************
+changed: [rtr4]
+changed: [rtr1]
+changed: [rtr2]
+changed: [rtr3]
+
+TASK [REMOVE NON CONFIG LINES - REGEXP] *****************************************************************************************************************************************************
+changed: [rtr1]
+changed: [rtr3]
+changed: [rtr2]
+changed: [rtr4]
+
+PLAY RECAP **********************************************************************************************************************************************************************************
+rtr1                       : ok=4    changed=3    unreachable=0    failed=0   
+rtr2                       : ok=4    changed=3    unreachable=0    failed=0   
+rtr3                       : ok=4    changed=3    unreachable=0    failed=0   
+rtr4                       : ok=4    changed=3    unreachable=0    failed=0   
+
+[student1@ansible networking-workshop]$
+
+```
+
 # Complete
 
 You have completed lab exercise 2.1
@@ -334,5 +418,5 @@ You have completed lab exercise 2.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDA4MzA2ODRdfQ==
+eyJoaXN0b3J5IjpbLTMwMTI0OTgsLTE4MDA4MzA2ODRdfQ==
 -->
