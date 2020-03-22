@@ -4,10 +4,11 @@ Using Ansible you can update the configuration of routers either by pushing a co
 
 #### Step 1
 
-Create a new file called `updatentp.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
+Create a new file called `update-ntp.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
 
 
-``` yaml
+``` 
+cat << EOF > update-ntp.yml
 ---
 - hosts: cisco
   gather_facts: no
@@ -44,7 +45,7 @@ Create a new file called `updatentp.yml` (use either `vim` or `nano` on the jump
       lines:
         - "no {{ item }}"
 
-
+EOF
 ```
 
 #### Step 2
@@ -98,5 +99,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg4MzY3NjcwXX0=
+eyJoaXN0b3J5IjpbMTk1MzUzNTg5Nl19
 -->
