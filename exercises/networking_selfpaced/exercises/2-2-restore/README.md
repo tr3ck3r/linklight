@@ -17,7 +17,6 @@ cat << EOF > restore.yml
         config:
         lines:
           - file prompt quiet
-          - config-register 0x2102
 
     - name: SAVE golden.cfg TO running-config 
       tags: golden
@@ -407,7 +406,7 @@ You have completed lab exercise 2.2
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Mjg2MDk1OTEsLTEzNTQ5NjA1MTYsLT
-IwNTE2MjM3NDcsLTEyNTkzNzE4MTUsLTE2MjUwNTA3NSwtMTk5
-MzkxNzAzMV19
+eyJoaXN0b3J5IjpbMTI2NzM5MzY3MywtMTQyODYwOTU5MSwtMT
+M1NDk2MDUxNiwtMjA1MTYyMzc0NywtMTI1OTM3MTgxNSwtMTYy
+NTA1MDc1LC0xOTkzOTE3MDMxXX0=
 -->
