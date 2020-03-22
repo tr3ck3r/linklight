@@ -16,8 +16,8 @@ cat << EOF > restore.yml
       ios_config:
         config:
         lines:
-          - "file prompt quiet"
-          - "config-register 0x2102"
+          - file prompt quiet
+          - config-register 0x2102
 
     - name: SAVE golden.cfg TO running-config 
       tags: golden
@@ -407,7 +407,7 @@ You have completed lab exercise 2.2
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3NjMyODc4OSwtMTM1NDk2MDUxNiwtMj
-A1MTYyMzc0NywtMTI1OTM3MTgxNSwtMTYyNTA1MDc1LC0xOTkz
-OTE3MDMxXX0=
+eyJoaXN0b3J5IjpbLTE0Mjg2MDk1OTEsLTEzNTQ5NjA1MTYsLT
+IwNTE2MjM3NDcsLTEyNTkzNzE4MTUsLTE2MjUwNTA3NSwtMTk5
+MzkxNzAzMV19
 -->
