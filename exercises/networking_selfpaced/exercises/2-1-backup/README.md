@@ -330,7 +330,7 @@ no service nagle
 
 #### Step 12
 
-One more feature of this playbook we want is to have it make a "Golden Image" configuration file as the starting point for a roll back to the starting status (simple configuration before hardening).  We need to add another task to archive the configuration locally on the router using the storage location of flash:/GI.cfg. 
+One more feature of this playbook we want is to have it make a "Golden" configuration file as the starting point for a roll back to the starting status (simple configuration before hardening).  We need to add another task to archive the configuration locally on the router using the storage location of flash:/golden.cfg. 
 
 
 ``` yaml
@@ -370,8 +370,8 @@ One more feature of this playbook we want is to have it make a "Golden Image" co
         lines:
           "file prompt quiet"
 
-    - name: SAVE running-config TO gi.cfg
-      tags: GI
+    - name: SAVE running-config TO golden.cfg
+      tags: golden
       ios_command:
         commands:
           - "copy run flash:/golden.cfg"
@@ -385,7 +385,7 @@ Now run the playbook using the golden tag.
 
 
 ``` shell
-root@Ansible:~/networking-workshop# ansible-playbook -i ~/networking-workshop/lab_inventory/hosts -k backup.yml --tags=gol
+root@Ansible:~/networking-workshop# ansible-playbook -i ~/networking-workshop/lab_inventory/hosts -k backup.yml --tags=golden
 SSH password:
 
 PLAY [BACKUP ROUTER CONFIGURATIONS] ********************************************
@@ -420,6 +420,6 @@ You have completed lab exercise 2.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODMxNzg4NTIsNTc0OTEwNTQ0LC0xOD
-AwODMwNjg0XX0=
+eyJoaXN0b3J5IjpbMzQ5MzU1Mjc5LDU3NDkxMDU0NCwtMTgwMD
+gzMDY4NF19
 -->
