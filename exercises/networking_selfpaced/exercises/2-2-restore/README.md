@@ -81,7 +81,6 @@ Create a file called `restore_config.yml` using your favorite text editor and ad
 Write the task to copy over the previously backed up configuration file to the routers.
 
 ``` yaml
-{%raw%}
 ---
 - name: RESTORE CONFIGURATION
   hosts: cisco
@@ -96,7 +95,6 @@ Write the task to copy over the previously backed up configuration file to the r
       vars:
         ansible_command_timeout: 120
 
-{%endraw%}
 ```
 
 > Note the use of the **inventory_hostname** variable. For each device in the inventory file under the cisco group, this task will secure copy (scp) over the file that corresponds to the device name onto the bootflash: of the CSR devices.
@@ -296,7 +294,21 @@ rtr1#
 The output above shows that the Loopback 101 interface is no longer present, you have successfully backed up and restored configurations on your Cisco routers!
 
 ### Step 10 Alternative code
-```
+``` yaml
+---
+- name: RESTORE CONFIGURATION
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: COPY RUNNING CONFIG TO ROUTER
+      command: scp ./backup/{{inventory_hostname}}.config {{inventory_hostname}}:/{{inventory_hostname}}.config
+
+    - name: CONFIG REPLACE
+      ios_command:
+        commands:
+          - config replace flash:{{inventory_hostname}}.config force
 
 ```
 
@@ -307,5 +319,6 @@ You have completed lab exercise 2.2
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjUwNTA3NSwtMTk5MzkxNzAzMV19
+eyJoaXN0b3J5IjpbNjc5MjM2MTcwLC0xNjI1MDUwNzUsLTE5OT
+M5MTcwMzFdfQ==
 -->
