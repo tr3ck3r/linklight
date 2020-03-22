@@ -90,17 +90,16 @@ Let's break this task down a bit. The `template` module has a `src` parameter th
 
 The next step is to create a Jinja2 template. Ansible will look for the template file in the current working directory and within a directory called `templates` automatically. Convention/best-practice is to create the template file within the templates directory.
 
-Using `vi`, `nano` or another text editor, go ahead and create the file called `os_report.j2` under the `templates` directory. Add the following into the template file:
+Using `vi`, `nano` or another text editor, go ahead and create the file called `os_report.j2` under the `templates` directory. For this, we will use a Comma Seperated Values (CSV) format.  Add the following into the template file:
 
-``` python
-
-
-{{ inventory_hostname.upper() }}
----
-{{ ansible_net_serialnum }} : {{ ansible_net_version }}
+``` 
+cat << EOF > templates/os_report.j2
 
 
 
+{{ inventory_hostname.upper() }},{{ ansible_net_serialnum }},{{ ansible_net_version }}
+
+EOF
 ```
 
 This file simply contains some of the variables we have been using in our playbooks until now.
@@ -307,6 +306,6 @@ You have completed lab exercise 3.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NzQ4MTg4MywtMjA0MDQ2MDQzLC00Mz
-MwOTEzMDRdfQ==
+eyJoaXN0b3J5IjpbLTUwMzE0ODM0NCwtMTc3NDgxODgzLC0yMD
+QwNDYwNDMsLTQzMzA5MTMwNF19
 -->
