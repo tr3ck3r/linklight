@@ -31,9 +31,11 @@ cat << EOF > nameserver-update.yml
     with_items: "{{ name_servers }}"
     ios_config:
       lines:
+        match: exact
           - "{{ item }}"
           - "ip domain-lookup"
     register: set_nameserver
+    
 
   - name: REMOVE EXTRA NAME SERVERS COMMANDS
     when: "(get_config.stdout_lines[0] != '') and (item not in name_servers)"
@@ -102,5 +104,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDUzOTkzMjBdfQ==
+eyJoaXN0b3J5IjpbLTE1MDEyNDk0ODgsNDUzOTkzMjBdfQ==
 -->
