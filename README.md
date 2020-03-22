@@ -5,12 +5,17 @@
 
 This content is a multi-purpose toolkit for effectively demonstrating Ansible's capabilities on Cisco network equipment or providing informal workshop training in various forms -- instructor-led, hands-on or self-paced.  The exercises have been modified from the original to work in GNS3 and for author preference.
 
-## Table of Contents
+# Table of Contents
 
+## CURRENT 
 ### SELF-PACED EXERCISES:
 
+  * [Ansible Networking-v2 Selfpaced Exercises](exercises/networking_selfpaced/README.md) - These exercises are intended to help you walk through the use of Ansible to manage Cisco devices by using a GNS3 environment.  This is the main focus of editing at this time.
+
+## LEGACY INFORMATION
+> This area is no being updated and may contain out of date information.  It is being left in to allow for future expansion.
+
   * [Vagrant Demo](vagrant-demo) - Self-paced networking exercises that can be run on your personal laptop.
-  * [Ansible Networking-v2 Selfpaced Exercises](exercises/networking_selfpaced/README.md) - These exercises are intended to help you walk through the use of Ansible to manage Cisco devices by using a GNS3 environment.
 
 ### INSTRUCTOR LED WORKSHOP:
 
@@ -34,6 +39,6 @@ This content is a multi-purpose toolkit for effectively demonstrating Ansible's 
 ---
 ![Red Hat Ansible Automation](images/rh-ansible-automation.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjI1OTIwODQsLTE4NjY4MDc5NywtMj
-UyNzYyNjUsLTkyODQ4NzkxNV19
+eyJoaXN0b3J5IjpbLTEyOTcwNDEwMjAsLTIxMjI1OTIwODQsLT
+E4NjY4MDc5NywtMjUyNzYyNjUsLTkyODQ4NzkxNV19
 -->
