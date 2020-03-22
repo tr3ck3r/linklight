@@ -4,16 +4,45 @@ Using Ansible you can update the configuration of routers either by pushing a co
 
 #### Step 1
 
-Create a new file called `router_configs.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
+Create a new file called `ntp.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
 
 
 ``` yaml
 ---
-- name: SNMP RO/RW STRING CONFIGURATION
-  hosts: cisco
+- hosts: ios
   gather_facts: no
-  connection: network_cli
 
+
+  vars:
+  
+    ntp_servers:
+      - ntp server 216.239.35.0
+      - ntp server 216.239.35.4
+
+  tasks:
+  
+  - name: get the current ntp server configs
+    ios_command:
+      commands:
+        - "show running-config full | include ntp server"
+    register: get_config
+
+  - debug: var=get_config.stdout_lines
+
+  - name: set ntp server commands
+    with_items: "{{ ntp_servers }}"
+    ios_config:
+      lines:
+          - "{{ item }}"
+    register: set_ntp
+
+  - name: remove ntp server commands
+    when: "(get_config.stdout_lines[0] != '') and (item not in ntp_servers)"
+    with_items: "{{ get_config.stdout_lines[0] }}"
+    register: remove_ntp
+    ios_config:
+      lines:
+        - "no {{ item }}"
 ```
 
 #### Step 2
@@ -25,42 +54,7 @@ Add a task to ensure that the SNMP strings `ansible-public` and `ansible-private
 
 ``` yaml
 
----
-- name: FIX NTP
-  hosts: cisco
-  gather_facts: no
-  connection: network_cli
 
-  tasks:
-
-    - name: ENSURE NTP IS CONFIGURED
-      ios_config:
-        commands:
-          ntp_servers:
-            - ntp server 216.239.35.0
-            - ntp server 216.239.35.4
-   tasks:
-
-     - name: get the current ntp server configs
-       ios_command:
-         commands:
-           - "show running-config full | include ntp server"
-           register: get_config
-           debug: var=get_config.stdout_lines
-      - name: set ntp server commands
-        with_items: "{{ ntp_servers }}"
-          ios_config:
-            lines:  
-              - "{{ item }}"
-          register: set_ntp
-
-      - name: remove ntp server commands
-        when: "(get_config.stdout_lines[0] != '') and (item not in ntp_servers)"
-          with_items: "{{ get_config.stdout_lines[0] }}"
-        register: remove_ntp
-          ios_config:
-            lines:
-              - "no {{ item }}"
 ```
 
 #### Step 3
@@ -220,5 +214,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5MDE2MTgzMV19
+eyJoaXN0b3J5IjpbLTExMTc5NTI5MDJdfQ==
 -->
