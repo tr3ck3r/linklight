@@ -168,6 +168,9 @@ Add this to your playbook:
 
 Let's understand this task in a little more depth. The `command_parser` is referencing a file called `show_interfaces.yaml` within the `parsers` directory. 
 
+The file is located at https://github.com/pharriso/uk_ansible_workshop/blob/master/exercises/networking_v2/parsers/show_interfaces.yaml
+
+
 Let's us populate that file:
 ```
 cat <<EOF > parsers/show_interfaces.yaml
@@ -559,5 +562,6 @@ You have completed lab exercise 3.1
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1NjEwNTc0NCwxNzg0MDgzNTIxXX0=
+eyJoaXN0b3J5IjpbLTU0Njc3NjQzNiwtNjU2MTA1NzQ0LDE3OD
+QwODM1MjFdfQ==
 -->
