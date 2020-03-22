@@ -7,7 +7,6 @@ Using Ansible you can update the configuration of routers either by pushing a co
 
 Create a new file called `nameserver-update.yml` (use either `vim` or `nano` on the jumphost to do this or use a local editor on your laptop and copy the contents to the jumphost later). Add the following play definition to it:
 
-
 ``` 
 cat << EOF > nameserver-update.yml
 ---
@@ -52,7 +51,7 @@ EOF
 Run the playbook:
 
 ``` shell
-[student1@ansible networking-workshop]$ ansible-playbook -i lab_inventory/hosts -k nameserver-update.yml
+root@Ansible:~/networking-workshop# ansible-playbook -i lab_inventory/hosts -k nameserver-update.yml
 ```
 
 
@@ -79,7 +78,10 @@ cat << EOF > nameserver-check.yml
   - debug: var=nameserver_status.stdout_lines
 EOF
 ```
+
+```
 ansible-playbook -i lab_inventory/hosts -k nameserver-check.yml --limit rtr1
+```
 #### Step 4
 
 Feel free to log in and check the ntp configuration :
@@ -100,5 +102,5 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5NjU5NzMzMF19
+eyJoaXN0b3J5IjpbNDUzOTkzMjBdfQ==
 -->
