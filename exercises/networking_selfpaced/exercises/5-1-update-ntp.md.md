@@ -90,6 +90,8 @@ Create a new file called `ntp-check.yml` (use either `vim` or `nano` on the jump
 
 #### Step 4
 
+> NTP is a slow protocol, and the formation of NTP associations can take a long time. So, don't expect anything to happen fast. You can keep an eye on it using the  _debug ntp <option>_ set of commands.
+
 Feel free to log in and check the ntp configuration :
 
 ```bash
@@ -108,7 +110,7 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1OTkyMDMwNiwyNDkyMjA1MTIsMTU3NT
-QxNTkxNyw4NTU1OTk0NzcsODU1NTk5NDc3LDE5NTM1MzU4OTZd
-fQ==
+eyJoaXN0b3J5IjpbMTQ3NTY1NDA2OSwxMzU5OTIwMzA2LDI0OT
+IyMDUxMiwxNTc1NDE1OTE3LDg1NTU5OTQ3Nyw4NTU1OTk0Nzcs
+MTk1MzUzNTg5Nl19
 -->
