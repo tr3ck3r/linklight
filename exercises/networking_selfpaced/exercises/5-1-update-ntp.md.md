@@ -17,8 +17,8 @@ cat << EOF > update-ntp.yml
   vars:
   
     ntp_servers:
-      - ntp server 216.239.35.0
-      - ntp server 216.239.35.4
+      - ntp server 216.239.35.0 burst
+      - ntp server 216.239.35.4 burst
 
   tasks:
   
@@ -100,5 +100,6 @@ You have completed lab exercise 2.0
 ---
 [Click Here to return to the Ansible Linklight - Networking Workshop](../../README.md)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODU1NTk5NDc3LDE5NTM1MzU4OTZdfQ==
+eyJoaXN0b3J5IjpbLTIwODkwMjA5MSw4NTU1OTk0NzcsMTk1Mz
+UzNTg5Nl19
 -->
