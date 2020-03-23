@@ -40,8 +40,9 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 5-6 -  Adding user 'secure'](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/remove_user.yml)
 - [Exercise 5-7 - Setting a VTY ACL](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
 - [Exercise 5.8 - Disable http servers](./exercises/5-8-disablehttp.md)
-- [Exercise 5.9 - Enable Configuration Archive](./exercises/5-9-archive)
-- [Exercise 5.10 - Create DHCP pools on Cisco IOS devices](https://github.com/ipspace/ansible-examples/tree/master/DHCP-Pools)
+- [Exercise 5.9 - Disable Proxy Arp](./exercises/5-9-proxyarp.md)
+- [Exercise 5.98 - Enable Configuration Archive](./exercises/5-9-archive)
+- [Exercise 5.99 - Create DHCP pools on Cisco IOS devices](https://github.com/ipspace/ansible-examples/tree/master/DHCP-Pools)
 ### Section 06 - Auditing
 - [Exercise 6.1 - Audit Configs](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/audit_configs/audit.yml)
 - [Exercise 6.2 - Audit Configs Using Tests Folder](https://github.com/ipspace/ansible-examples/tree/master/Sample-Compliance-Check)
@@ -88,11 +89,11 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODYxOTExNzQsLTEyNzI3MjQzMjEsLT
-E0OTE4NjUzMDIsMTE3MDk1Mjk5NywxOTkzNjI2OTUsODIxMjAx
-NTQyLC0xMTQ3MzY2OTQsLTIxMDc4OTY0MTcsLTk1MjU4Mjc2Ni
-wtMjI3Mzg5NjQ4LDE3NDc3ODM0NjEsMjA2MTg5NDA1NiwtMTcy
-MDQ2NTcyNiw2NDMyMDQ3ODgsLTE4MjU3MzIwODgsLTIxMzc0MD
-Y1MDgsMTI2OTU1OTUyNiwtOTc2ODk2NTcyLC0xNTI5MDU1NDI3
-LC0xNjEzNDgyMzE3XX0=
+eyJoaXN0b3J5IjpbLTc2MTcyNDI1MCwtMTI4NjE5MTE3NCwtMT
+I3MjcyNDMyMSwtMTQ5MTg2NTMwMiwxMTcwOTUyOTk3LDE5OTM2
+MjY5NSw4MjEyMDE1NDIsLTExNDczNjY5NCwtMjEwNzg5NjQxNy
+wtOTUyNTgyNzY2LC0yMjczODk2NDgsMTc0Nzc4MzQ2MSwyMDYx
+ODk0MDU2LC0xNzIwNDY1NzI2LDY0MzIwNDc4OCwtMTgyNTczMj
+A4OCwtMjEzNzQwNjUwOCwxMjY5NTU5NTI2LC05NzY4OTY1NzIs
+LTE1MjkwNTU0MjddfQ==
 -->
