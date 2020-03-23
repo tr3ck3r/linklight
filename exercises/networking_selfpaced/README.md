@@ -35,9 +35,9 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 5-2a - Update name-servers](./exercises/5-5-nameservers.md)
 - [Exercise 5-2b - Update name-servers](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_dns.yml)
 - [Exercise 5-3 - Update banner](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/config_banner.yml)
-- [Exercise 5-4 - Update logging](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_logging.yml)
-- [Exercise 5-5 - Update SNMP](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_snmp.yml)
-- [Exercise 5-6 -  Adding and removing user](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/remove_user.yml)
+- [Exercise 5-4 - Update logging to 192.168.122.1](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_logging.yml)
+- [Exercise 5-5 - Update SNMP traps to 192.168.122.1](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_snmp.yml)
+- [Exercise 5-6 -  Adding user 'secure'](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/remove_user.yml)
 - [Exercise 5-7 - Setting a VTY ACL](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
 - [Exercise 5.8 - Disable http servers](./exercises/5-8-disablehttp.md)
 - [Exercise 5.9 - Enable Configuration Archive](./exercises/5-9-archive)
@@ -88,11 +88,11 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzI3MjQzMjEsLTE0OTE4NjUzMDIsMT
-E3MDk1Mjk5NywxOTkzNjI2OTUsODIxMjAxNTQyLC0xMTQ3MzY2
-OTQsLTIxMDc4OTY0MTcsLTk1MjU4Mjc2NiwtMjI3Mzg5NjQ4LD
-E3NDc3ODM0NjEsMjA2MTg5NDA1NiwtMTcyMDQ2NTcyNiw2NDMy
-MDQ3ODgsLTE4MjU3MzIwODgsLTIxMzc0MDY1MDgsMTI2OTU1OT
-UyNiwtOTc2ODk2NTcyLC0xNTI5MDU1NDI3LC0xNjEzNDgyMzE3
-XX0=
+eyJoaXN0b3J5IjpbLTEyODYxOTExNzQsLTEyNzI3MjQzMjEsLT
+E0OTE4NjUzMDIsMTE3MDk1Mjk5NywxOTkzNjI2OTUsODIxMjAx
+NTQyLC0xMTQ3MzY2OTQsLTIxMDc4OTY0MTcsLTk1MjU4Mjc2Ni
+wtMjI3Mzg5NjQ4LDE3NDc3ODM0NjEsMjA2MTg5NDA1NiwtMTcy
+MDQ2NTcyNiw2NDMyMDQ3ODgsLTE4MjU3MzIwODgsLTIxMzc0MD
+Y1MDgsMTI2OTU1OTUyNiwtOTc2ODk2NTcyLC0xNTI5MDU1NDI3
+LC0xNjEzNDgyMzE3XX0=
 -->
