@@ -45,7 +45,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 5.11 - Inbound TCP Connection Keep Alives](./exercises/5-9-proxyarp.md)
 - [Exercise 5.12 - vty timeout](./exercises/5-9-proxyarp.md)
 - [Exercise 5.13 - securing lines](./exercises/5-13-lines.md)
-- [Exercise 5.14 - disable IP source routing](./exercises/5-9-proxyarp.md)
+- [Exercise 5.14 - securing interfaces](./exercises/5-9-securinginterfaces.md)
 - [Exercise 5.15 - disable telnet and only allow ssh into vty 0](./exercises/5-9-proxyarp.md)
 - [Exercise 5.15 - disable ICMP redirects](./exercises/5-9-proxyarp.md)
 - [Exercise 5.16 - Disable dns](./exercises/5-8-disabledns.md)
@@ -99,11 +99,11 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3NTA2MTEzNiwxOTQ0NjUzNzQ5LDE5OD
-czNTM4NzEsLTEyODYxOTExNzQsLTEyNzI3MjQzMjEsLTE0OTE4
-NjUzMDIsMTE3MDk1Mjk5NywxOTkzNjI2OTUsODIxMjAxNTQyLC
-0xMTQ3MzY2OTQsLTIxMDc4OTY0MTcsLTk1MjU4Mjc2NiwtMjI3
-Mzg5NjQ4LDE3NDc3ODM0NjEsMjA2MTg5NDA1NiwtMTcyMDQ2NT
-cyNiw2NDMyMDQ3ODgsLTE4MjU3MzIwODgsLTIxMzc0MDY1MDgs
-MTI2OTU1OTUyNl19
+eyJoaXN0b3J5IjpbNDM0MzI1NTgzLDE5NDQ2NTM3NDksMTk4Nz
+M1Mzg3MSwtMTI4NjE5MTE3NCwtMTI3MjcyNDMyMSwtMTQ5MTg2
+NTMwMiwxMTcwOTUyOTk3LDE5OTM2MjY5NSw4MjEyMDE1NDIsLT
+ExNDczNjY5NCwtMjEwNzg5NjQxNywtOTUyNTgyNzY2LC0yMjcz
+ODk2NDgsMTc0Nzc4MzQ2MSwyMDYxODk0MDU2LC0xNzIwNDY1Nz
+I2LDY0MzIwNDc4OCwtMTgyNTczMjA4OCwtMjEzNzQwNjUwOCwx
+MjY5NTU5NTI2XX0=
 -->
