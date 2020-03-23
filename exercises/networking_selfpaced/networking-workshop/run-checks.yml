@@ -1,5 +1,5 @@
 ---
-- name:  Check whether SNMP community is configured on devices. Report missing communities
+- name:  "Check every test in folder ./tests"
   hosts: all
   tasks:
   - include_tasks: "{{item}}"
