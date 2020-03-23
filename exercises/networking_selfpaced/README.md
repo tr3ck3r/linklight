@@ -35,7 +35,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 5-2a - Update name-servers](./exercises/5-5-nameservers.md)
 - [Exercise 5-2b - Update name-servers](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_dns.yml)
 - [Exercise 5-3 - Update banner](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/config_banner.yml)
-- [Exercise 5-4 - Update logging to 192.168.122.2](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_logging.yml)
+- [Exercise 5-4 - Update logging to 192.168.122.2](./exercises/5-4-logging.md)
 - [Exercise 5-5 - Update SNMP traps to 192.168.122.1](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_snmp.yml)
 - [Exercise 5-6 -  Adding user 'secure'](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/remove_user.yml)
 - [Exercise 5-7 - Setting a VTY ACL](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
@@ -96,11 +96,11 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4NzIyMzg1NywxOTg3MzUzODcxLC0xMj
-g2MTkxMTc0LC0xMjcyNzI0MzIxLC0xNDkxODY1MzAyLDExNzA5
-NTI5OTcsMTk5MzYyNjk1LDgyMTIwMTU0MiwtMTE0NzM2Njk0LC
-0yMTA3ODk2NDE3LC05NTI1ODI3NjYsLTIyNzM4OTY0OCwxNzQ3
-NzgzNDYxLDIwNjE4OTQwNTYsLTE3MjA0NjU3MjYsNjQzMjA0Nz
-g4LC0xODI1NzMyMDg4LC0yMTM3NDA2NTA4LDEyNjk1NTk1MjYs
-LTk3Njg5NjU3Ml19
+eyJoaXN0b3J5IjpbMjA4MTUxMTAyLDE5ODczNTM4NzEsLTEyOD
+YxOTExNzQsLTEyNzI3MjQzMjEsLTE0OTE4NjUzMDIsMTE3MDk1
+Mjk5NywxOTkzNjI2OTUsODIxMjAxNTQyLC0xMTQ3MzY2OTQsLT
+IxMDc4OTY0MTcsLTk1MjU4Mjc2NiwtMjI3Mzg5NjQ4LDE3NDc3
+ODM0NjEsMjA2MTg5NDA1NiwtMTcyMDQ2NTcyNiw2NDMyMDQ3OD
+gsLTE4MjU3MzIwODgsLTIxMzc0MDY1MDgsMTI2OTU1OTUyNiwt
+OTc2ODk2NTcyXX0=
 -->
