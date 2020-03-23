@@ -26,12 +26,12 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 3.4 - Evaluate VTY](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/gather_vty.yml)
 - [Exercise 3.5 - Show Routing Table](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
 ### Section 04 - Using Ansible to generate configs
-- [Exercise 4.1 - RTR4 YAML](https://github.com/ipspace/ansible-exercises/tree/master/Jinja2/refactor-data-model)
-- [Exercise 4.2 - Evaluate VTY](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class6)
-- [Exercise 4.3 - Python and Ansible](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class5)
-- [Exercise 4.5 - Generating A Full Router Config](http://ansible.redhatgov.io/standard/network/exercise1.4.html)
+- [Exercise 04-01 - RTR4 YAML](https://github.com/ipspace/ansible-exercises/tree/master/Jinja2/refactor-data-model)
+- [Exercise 04-02 - Evaluate VTY](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class6)
+- [Exercise 04-03 - Python and Ansible](https://github.com/ahsec/Network_Automation-Python_Ansible/tree/master/class5)
+- [Exercise 04-05 - Generating A Full Router Config](http://ansible.redhatgov.io/standard/network/exercise1.4.html)
 ### Section 05 - Updating Cisco IOS for Common Items
-- [Exercise 5-1 - Update NTP](./exercises/5-5-ntp.md)
+- [Exercise 5-1 - Update NTP](./exercises/05/ntp.md)
 - [Exercise 5-2a - Update name-servers then disable](./exercises/5-5-nameservers.md)
 - [Exercise 5-2b - Update name-servers  then disable](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_dns.yml)
 - [Exercise 5-3 - Update banner](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/config_banner.yml)
@@ -39,19 +39,19 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 5-5 - Update SNMP traps to 192.168.122.2](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_snmp.yml)
 - [Exercise 5-6 -  Adding user 'secure'](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/remove_user.yml)
 - [Exercise 05-07 - Setting a VTY ACL](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
-- [Exercise 5-8 - Disable http servers](./exercises/5-8-disablehttp.md)
-- [Exercise 5.9 - Disable Proxy Arp](./exercises/5-9-proxyarp.md)
-- [Exercise 5.10 - bgp route dampening](./exercises/5-9-proxyarp.md)
-- [Exercise 5.11 - Inbound TCP Connection Keep Alives](./exercises/5-9-proxyarp.md)
-- [Exercise 5.12 - vty timeout](./exercises/5-9-proxyarp.md)
-- [Exercise 5.13 - securing lines](./exercises/5-13-lines.md)
-- [Exercise 5.14 - securing interfaces](./exercises/5-9-securinginterfaces.md)
-- [Exercise 5.15 - disable telnet and only allow ssh into vty 0](./exercises/5-9-proxyarp.md)
-- [Exercise 5.15 - disable ICMP redirects](./exercises/5-9-proxyarp.md)
-- [Exercise 5.16 - Disable dns](./exercises/5-8-disabledns.md)
-- [Exercise 5.17 - configure time](./exercises/5-17-time.md)
-- [Exercise 5.98 - Enable Configuration Archive](./exercises/5-9-archive)
-- [Exercise 5.99 - Create DHCP pools on Cisco IOS devices](https://github.com/ipspace/ansible-examples/tree/master/DHCP-Pools)
+- [Exercise 05-08 - Disable http servers](./exercises/5-8-disablehttp.md)
+- [Exercise 05-09 - Disable Proxy Arp](./exercises/5-9-proxyarp.md)
+- [Exercise 05-10 - bgp route dampening](./exercises/5-9-proxyarp.md)
+- [Exercise 05-11 - Inbound TCP Connection Keep Alives](./exercises/5-9-proxyarp.md)
+- [Exercise 05-12 - vty timeout](./exercises/5-9-proxyarp.md)
+- [Exercise 05-13 - securing lines](./exercises/5-13-lines.md)
+- [Exercise 05-14 - securing interfaces](./exercises/5-9-securinginterfaces.md)
+- [Exercise 05-15 - disable telnet and only allow ssh into vty 0](./exercises/5-9-proxyarp.md)
+- [Exercise 05-15 - disable ICMP redirects](./exercises/5-9-proxyarp.md)
+- [Exercise 05-16 - Disable dns](./exercises/5-8-disabledns.md)
+- [Exercise 05-17 - configure time](./exercises/5-17-time.md)
+- [Exercise 05-98 - Enable Configuration Archive](./exercises/5-9-archive)
+- [Exercise 05-99 - Create DHCP pools on Cisco IOS devices](https://github.com/ipspace/ansible-examples/tree/master/DHCP-Pools)
 ### Section 06 - Auditing
 - [Exercise 6.1 - Audit Configs](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/audit_configs/audit.yml)
 - [Exercise 6.2 - Audit Configs Using Tests Folder](https://github.com/ipspace/ansible-examples/tree/master/Sample-Compliance-Check)
@@ -98,11 +98,11 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzgwNDQ4MjcsMTk0NDY1Mzc0OSwxOT
-g3MzUzODcxLC0xMjg2MTkxMTc0LC0xMjcyNzI0MzIxLC0xNDkx
-ODY1MzAyLDExNzA5NTI5OTcsMTk5MzYyNjk1LDgyMTIwMTU0Mi
-wtMTE0NzM2Njk0LC0yMTA3ODk2NDE3LC05NTI1ODI3NjYsLTIy
-NzM4OTY0OCwxNzQ3NzgzNDYxLDIwNjE4OTQwNTYsLTE3MjA0Nj
-U3MjYsNjQzMjA0Nzg4LC0xODI1NzMyMDg4LC0yMTM3NDA2NTA4
-LDEyNjk1NTk1MjZdfQ==
+eyJoaXN0b3J5IjpbMTAwNDM2ODQ2NSwxOTQ0NjUzNzQ5LDE5OD
+czNTM4NzEsLTEyODYxOTExNzQsLTEyNzI3MjQzMjEsLTE0OTE4
+NjUzMDIsMTE3MDk1Mjk5NywxOTkzNjI2OTUsODIxMjAxNTQyLC
+0xMTQ3MzY2OTQsLTIxMDc4OTY0MTcsLTk1MjU4Mjc2NiwtMjI3
+Mzg5NjQ4LDE3NDc3ODM0NjEsMjA2MTg5NDA1NiwtMTcyMDQ2NT
+cyNiw2NDMyMDQ3ODgsLTE4MjU3MzIwODgsLTIxMzc0MDY1MDgs
+MTI2OTU1OTUyNl19
 -->
