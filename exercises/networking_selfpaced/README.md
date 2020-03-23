@@ -38,7 +38,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 5-4 - Update logging to 192.168.122.2](./exercises/5-4-logging.md)
 - [Exercise 5-5 - Update SNMP traps to 192.168.122.1](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_snmp.yml)
 - [Exercise 5-6 -  Adding user 'secure'](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/remove_user.yml)
-- [Exercise 5-7 - Setting a VTY ACL](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
+- [Exercise 05-07 - Setting a VTY ACL](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
 - [Exercise 5.8 - Disable http servers](./exercises/5-8-disablehttp.md)
 - [Exercise 5.9 - Disable Proxy Arp](./exercises/5-9-proxyarp.md)
 - [Exercise 5.10 - bgp route dampening](./exercises/5-9-proxyarp.md)
@@ -50,6 +50,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 5.15 - disable ICMP redirects](./exercises/5-9-proxyarp.md)
 - [Exercise 5.16 - Disable dns](./exercises/5-8-disabledns.md)
 - [Exercise 5.17 - configure time](./exercises/5-17-time.md)
+- [Exercise 5.18 - securing lines](./exercises/5-18-lines.md)
 - [Exercise 5.98 - Enable Configuration Archive](./exercises/5-9-archive)
 - [Exercise 5.99 - Create DHCP pools on Cisco IOS devices](https://github.com/ipspace/ansible-examples/tree/master/DHCP-Pools)
 ### Section 06 - Auditing
@@ -98,11 +99,11 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0NDY1Mzc0OSwxOTg3MzUzODcxLC0xMj
-g2MTkxMTc0LC0xMjcyNzI0MzIxLC0xNDkxODY1MzAyLDExNzA5
-NTI5OTcsMTk5MzYyNjk1LDgyMTIwMTU0MiwtMTE0NzM2Njk0LC
-0yMTA3ODk2NDE3LC05NTI1ODI3NjYsLTIyNzM4OTY0OCwxNzQ3
-NzgzNDYxLDIwNjE4OTQwNTYsLTE3MjA0NjU3MjYsNjQzMjA0Nz
-g4LC0xODI1NzMyMDg4LC0yMTM3NDA2NTA4LDEyNjk1NTk1MjYs
-LTk3Njg5NjU3Ml19
+eyJoaXN0b3J5IjpbLTEzMzczNTgwMzIsMTk0NDY1Mzc0OSwxOT
+g3MzUzODcxLC0xMjg2MTkxMTc0LC0xMjcyNzI0MzIxLC0xNDkx
+ODY1MzAyLDExNzA5NTI5OTcsMTk5MzYyNjk1LDgyMTIwMTU0Mi
+wtMTE0NzM2Njk0LC0yMTA3ODk2NDE3LC05NTI1ODI3NjYsLTIy
+NzM4OTY0OCwxNzQ3NzgzNDYxLDIwNjE4OTQwNTYsLTE3MjA0Nj
+U3MjYsNjQzMjA0Nzg4LC0xODI1NzMyMDg4LC0yMTM3NDA2NTA4
+LDEyNjk1NTk1MjZdfQ==
 -->
