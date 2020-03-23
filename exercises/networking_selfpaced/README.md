@@ -35,7 +35,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 5-2a - Update name-servers](./exercises/5-5-nameservers.md)
 - [Exercise 5-2b - Update name-servers](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_dns.yml)
 - [Exercise 5-3 - Update banner](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/config_banner.yml)
-- [Exercise 5-4 - Update logging to 192.168.122.1](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_logging.yml)
+- [Exercise 5-4 - Update logging to 192.168.122.2](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_logging.yml)
 - [Exercise 5-5 - Update SNMP traps to 192.168.122.1](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/intent_snmp.yml)
 - [Exercise 5-6 -  Adding user 'secure'](https://github.com/colin-mccarthy/ansible-playbooks-for-cisco-ios/blob/master/remove_user.yml)
 - [Exercise 5-7 - Setting a VTY ACL](https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_ansible/)
@@ -47,6 +47,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 5.13 - disable aux port](./exercises/5-9-proxyarp.md)
 - [Exercise 5.14 - disable IP source routing](./exercises/5-9-proxyarp.md)
 - [Exercise 5.15 - disable telnet and only allow ssh into vty 0](./exercises/5-9-proxyarp.md)
+- [Exercise 5.15 - disable ICMP redirects](./exercises/5-9-proxyarp.md)
 - [Exercise 5.98 - Enable Configuration Archive](./exercises/5-9-archive)
 - [Exercise 5.99 - Create DHCP pools on Cisco IOS devices](https://github.com/ipspace/ansible-examples/tree/master/DHCP-Pools)
 ### Section 06 - Auditing
@@ -95,11 +96,11 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4NzM1Mzg3MSwtMTI4NjE5MTE3NCwtMT
-I3MjcyNDMyMSwtMTQ5MTg2NTMwMiwxMTcwOTUyOTk3LDE5OTM2
-MjY5NSw4MjEyMDE1NDIsLTExNDczNjY5NCwtMjEwNzg5NjQxNy
-wtOTUyNTgyNzY2LC0yMjczODk2NDgsMTc0Nzc4MzQ2MSwyMDYx
-ODk0MDU2LC0xNzIwNDY1NzI2LDY0MzIwNDc4OCwtMTgyNTczMj
-A4OCwtMjEzNzQwNjUwOCwxMjY5NTU5NTI2LC05NzY4OTY1NzIs
-LTE1MjkwNTU0MjddfQ==
+eyJoaXN0b3J5IjpbLTM4NzIyMzg1NywxOTg3MzUzODcxLC0xMj
+g2MTkxMTc0LC0xMjcyNzI0MzIxLC0xNDkxODY1MzAyLDExNzA5
+NTI5OTcsMTk5MzYyNjk1LDgyMTIwMTU0MiwtMTE0NzM2Njk0LC
+0yMTA3ODk2NDE3LC05NTI1ODI3NjYsLTIyNzM4OTY0OCwxNzQ3
+NzgzNDYxLDIwNjE4OTQwNTYsLTE3MjA0NjU3MjYsNjQzMjA0Nz
+g4LC0xODI1NzMyMDg4LC0yMTM3NDA2NTA4LDEyNjk1NTk1MjYs
+LTk3Njg5NjU3Ml19
 -->
