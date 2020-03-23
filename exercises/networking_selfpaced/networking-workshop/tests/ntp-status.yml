@@ -1,0 +1,10 @@
+#
+# Check whether SYSLOG server is configured on devices
+#
+---
+- name: "Check: NTP status"
+  ios_command:
+    commands: "show ntp status | inc Clock is "
+  register: result
+  failed_when: "not('Clock is sync' in result.stdout[0])"
+  ignore_errors: yes

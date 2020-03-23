@@ -1,0 +1,7 @@
+---
+- name: "Check: Verify pad is disabled"
+  ios_command:
+    commands: "show run | inc no service pad"
+  register: result
+  failed_when: "not('no service pad'  in result.stdout[0])"
+  ignore_errors: yes

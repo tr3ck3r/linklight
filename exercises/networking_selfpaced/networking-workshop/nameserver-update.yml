@@ -1,0 +1,35 @@
+---
+- hosts: cisco
+  gather_facts: no
+
+  vars:
+    name_servers:
+      - ip domain lookup source-interface GigabitEthernet0/3
+      - ip name-server 8.8.8.8
+      - ip name-server 8.8.4.4
+  tasks:
+  - name: GET CURRENT DNS SETTINGS
+    ios_command:
+      commands:
+        - "show running-config full | include (ip domain lookup |ip name-server)"
+    register: get_config
+
+  - debug: var=get_config.stdout_lines
+
+  - name: SET NAMESERVER COMMANDS
+    with_items: "{{ name_servers }}"
+    ios_config:
+      lines:
+          - "{{ item }}"
+      match: line
+      replace: line
+    register: set_nameserver
+    
+
+  - name: REMOVE EXTRA NAME SERVERS COMMANDS
+    when: "(get_config.stdout_lines[0] != '') and (item not in name_servers)"
+    with_items: "{{ get_config.stdout_lines[0] }}"
+    register: remove_nameserver
+    ios_config:
+      lines:
+        - "no {{ item }}"

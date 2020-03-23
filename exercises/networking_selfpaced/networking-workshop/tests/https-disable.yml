@@ -1,0 +1,8 @@
+---
+- name: "Check: https server status"
+  tags: http
+  ios_command:
+    commands: "show run | inc ip http secure-server"
+  register: result
+  failed_when: "not('no ip http secure-server' in result.stdout[0])"
+  ignore_errors: yes

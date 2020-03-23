@@ -1,0 +1,21 @@
+---
+- name: GENERATE INTERFACE REPORT
+  hosts: cisco
+  gather_facts: no
+  connection: network_cli
+
+  roles:
+    - ansible-network.network-engine
+
+  tasks:
+    - name: CAPTURE NTP
+      ios_command:
+        commands:
+          - show ntp status | inc Clock is 
+      register: show_ntp_status
+
+    - name: PARSE THE RAW OUTPUT
+      command_parser:
+        file: "parsers/ntp_status.yaml"
+        content: "{{ show_ntp_status.stdout[0] }}"
+

@@ -1,0 +1,7 @@
+---
+- name: "Check: Verify logging buffer"
+  ios_command:
+    commands: "show run | inc logging buffered 15000"
+  register: result
+  failed_when: "not('logging buffered 15000'  in result.stdout[0])"
+  ignore_errors: yes

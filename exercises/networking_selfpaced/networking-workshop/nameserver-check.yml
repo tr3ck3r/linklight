@@ -1,0 +1,13 @@
+---
+- hosts: cisco
+  gather_facts: no
+
+  tasks:
+  
+  - name: CHECK DNS LOOKUP
+    ios_command:
+      commands:
+        - "ping pool.ntp.org repeat 1"
+    register: nameserver_status
+
+  - debug: var=nameserver_status.stdout_lines

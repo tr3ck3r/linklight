@@ -1,0 +1,7 @@
+---
+- name: "Check: Ensure transport input is ssh"
+  ios_command:
+    commands: "sho run | section vty"
+  register: result
+  failed_when: "not('transport input ssh'  in result.stdout[0])"
+  ignore_errors: yes

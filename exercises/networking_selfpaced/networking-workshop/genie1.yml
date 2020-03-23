@@ -1,0 +1,17 @@
+---
+
+- hosts: cisco
+  gather_facts: False
+  tasks:
+  - name: Read in parse_genie role
+    include_role:
+      name: clay584.parse_genie
+
+  - name: Debug Genie Filter
+    ios_command:
+      commands: show version 
+    register: show_version
+
+  - name: Print Structured Data
+    debug:
+      msg: "{{ show_version['stdout'][0] | parse_genie(command='show version', os='ios') }}"

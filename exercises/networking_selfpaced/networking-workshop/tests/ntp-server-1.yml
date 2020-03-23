@@ -1,0 +1,10 @@
+#
+# Check whether SYSLOG server is configured on devices
+#
+---
+- name: "Check: 216.239.35.0 configured as ntp server"
+  ios_command:
+    commands: "show run | inc ntp server 216.239.35.0"
+  register: result
+  failed_when: "not('ntp server 216.239.35.0' in result.stdout[0])"
+  ignore_errors: yes

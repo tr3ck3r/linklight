@@ -1,0 +1,26 @@
+---
+
+- hosts: cisco
+  gather_facts: False
+  tasks:
+  - name: Read in parse_genie role
+    include_role:
+      name: clay584.parse_genie
+
+  - name: Debug Genie Filter
+    ios_command:
+      commands: show ntp status
+    register: show_ntp_status
+
+  - name: Print Structured Data
+    debug:
+      msg: "{{ show_ntp_status['stdout'][0] | parse_genie(command='show ntp status', os='ios') }}"
+    register: parsed_ntp_status
+  
+  - name: Extract only status
+    set_fact:
+      just_ntp_status: "{{ show_ntp_status['stdout'][0] | parse_genie(command='show ntp status', os='ios') }}"
+  - name: Debug pyATS facts - all
+    debug:
+     var: just_ntp_status.clock_state.system_status.status
+

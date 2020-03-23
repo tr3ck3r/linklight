@@ -1,0 +1,25 @@
+---
+- name: parser meta data
+  parser_metadata:
+    version: 1.0
+    command: show ntp status
+    network_os: ios
+
+- name: MATCH PATTERN
+  pattern_match:
+    regex: "^Clock is (synchronized|unsynchronized),.*"
+    match_all: yes
+    match_greedy: yes
+  register: clock_status
+
+- name: generate json data structure
+  json_template:
+    template:
+      - key: "{{ item.name.matches.0 }}"
+        object:
+        - key: config
+          object:
+            - key: clock_status
+              value: "{{ item.name.matches.0 }}"
+  export: yes
+  register: ntp_status

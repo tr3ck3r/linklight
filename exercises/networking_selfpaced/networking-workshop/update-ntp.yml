@@ -1,0 +1,45 @@
+---
+- hosts: cisco
+  gather_facts: no
+
+
+  vars:
+  
+    ntp_servers:
+      - ntp server 216.239.35.0
+      - ntp server 216.239.35.4
+      - ntp server 192.168.122.101
+      - ntp server 192.168.122.102
+      - ntp server 192.168.122.103
+      - ntp server 192.168.122.104
+      - ntp server 23.129.64.227
+      - ntp server 103.105.51.156
+
+
+  tasks:
+  
+  - name: get the current ntp server configs
+    ios_command:
+      commands:
+        - "show running-config full | include ntp server "
+    register: get_config
+
+  - debug: var=get_config.stdout_lines
+
+  - name: set ntp server commands
+    with_items: "{{ ntp_servers }}"
+    ios_config:
+      lines:
+          - "{{ item }}"
+          - "ntp update-calendar"
+          - "clock timezone UTC 0"
+    register: set_ntp
+
+  - name: remove ntp server commands
+    when: "(get_config.stdout_lines[0] != '') and (item not in ntp_servers)"
+    with_items: "{{ get_config.stdout_lines[0] }}"
+    register: remove_ntp
+    ios_config:
+      lines:
+        - "no {{ item }}"
+

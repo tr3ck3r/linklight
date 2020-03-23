@@ -1,0 +1,7 @@
+---
+- name: "Check: Verify CDP is disabled"
+  ios_command:
+    commands: "show run | inc no cdp run"
+  register: result
+  failed_when: "not('no cdp run'  in result.stdout[0])"
+  ignore_errors: yes

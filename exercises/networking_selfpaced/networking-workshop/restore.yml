@@ -1,0 +1,21 @@
+---
+- name: RESTORE GOLDEN CONFIGURATIONS
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: DISABLE FILE PROMPTING
+      tags: golden
+      ios_config:
+        config:
+        lines:
+          - file prompt quiet
+
+    - name: SAVE golden.cfg TO running-config 
+      tags: golden
+      ios_command:
+        commands:
+          - "copy flash:/golden.cfg start"
+          - "reload"
+
