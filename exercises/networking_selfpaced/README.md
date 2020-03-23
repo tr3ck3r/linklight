@@ -44,6 +44,9 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 - [Exercise 5.10 - bgp route dampening](./exercises/5-9-proxyarp.md)
 - [Exercise 5.11 - Inbound TCP Connection Keep Alives](./exercises/5-9-proxyarp.md)
 - [Exercise 5.12 - vty timeout](./exercises/5-9-proxyarp.md)
+- [Exercise 5.13 - disable aux port](./exercises/5-9-proxyarp.md)
+- [Exercise 5.14 - disable IP source routing](./exercises/5-9-proxyarp.md)
+- [Exercise 5.15 - disable telnet and only allow ssh into vty 0](./exercises/5-9-proxyarp.md)
 - [Exercise 5.98 - Enable Configuration Archive](./exercises/5-9-archive)
 - [Exercise 5.99 - Create DHCP pools on Cisco IOS devices](https://github.com/ipspace/ansible-examples/tree/master/DHCP-Pools)
 ### Section 06 - Auditing
@@ -92,7 +95,7 @@ This content provides the ability to learn Ansible's capabilities on Cisco netwo
 
 - [Red Hat® Ansible® Network Automation](https://www.ansible.com/networking): automate networking devices from Arista (EOS), Cisco (IOS, IOS XR, NX-OS), Juniper (JunOS), Open vSwitch, and VyOS and many more! Includes [Ansible Tower](https://www.ansible.com/tower) curated content specifically for network use cases.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3MjI5OTMzMywtMTI4NjE5MTE3NCwtMT
+eyJoaXN0b3J5IjpbMTk4NzM1Mzg3MSwtMTI4NjE5MTE3NCwtMT
 I3MjcyNDMyMSwtMTQ5MTg2NTMwMiwxMTcwOTUyOTk3LDE5OTM2
 MjY5NSw4MjEyMDE1NDIsLTExNDczNjY5NCwtMjEwNzg5NjQxNy
 wtOTUyNTgyNzY2LC0yMjczODk2NDgsMTc0Nzc4MzQ2MSwyMDYx
