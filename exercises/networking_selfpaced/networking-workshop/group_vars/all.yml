@@ -1,7 +1,7 @@
 ---
-snmp_server: 10.0.0.1
+snmp_server: 192.168.122.2
 snmp_community: cisco
-syslog_server: 10.0.0.1
+syslog_server: 192.168.122.2
 ntp_server_1: ntp server 216.239.35.0
 ntp_server_2: ntp server 216.239.35.4
 

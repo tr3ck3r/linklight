@@ -1,3 +1,4 @@
+# Verify that pad is disabled
 ---
 - name: "Check: Verify pad is disabled"
   ios_command:

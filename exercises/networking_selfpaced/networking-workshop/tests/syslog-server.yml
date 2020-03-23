@@ -2,9 +2,9 @@
 # Check whether SYSLOG server is configured on devices
 #
 ---
-- name: "Check: {{syslog_server}} is not configured as syslog server"
+- name: "Check: {{syslog_server}} is configured as syslog server"
   ios_command:
-    commands: "show run | include logging host"
+    commands: "show run | include logging host {{syslog_server}}"
   register: result
-  failed_when: "not('logging host ' in result.stdout[0])"
+  failed_when: "not('logging host '~syslog_server in result.stdout[0])"
   ignore_errors: yes

@@ -1,3 +1,5 @@
+# Check if CDP is disabled
+
 ---
 - name: "Check: Verify CDP is disabled"
   ios_command:
