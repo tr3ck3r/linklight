@@ -1,7 +1,0 @@
----
-- name: "Check: banner motd"
-  ios_command:
-    commands: "sho run | inc (banner motd|lab environment)"
-  register: result
-  failed_when: "not('lab environment' in result.stdout[0])"
-  ignore_errors: yes
