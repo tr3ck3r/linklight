@@ -1,0 +1,7 @@
+---
+- name: "Check: Ensure DNS lookups are disabled"
+  ios_command:
+    commands: "show run | include ip domain lookup"
+  register: result
+  failed_when: "not('no ip domain lookup' in result.stdout[0])"
+  ignore_errors: yes
