@@ -1,0 +1,7 @@
+---
+- name: "Check: Source Routing Disabled"
+  ios_command:
+    commands: "show run | inc no ip source-route"
+  register: result
+  failed_when: "not('no ip source-route' in result.stdout[0])"
+  ignore_errors: yes
