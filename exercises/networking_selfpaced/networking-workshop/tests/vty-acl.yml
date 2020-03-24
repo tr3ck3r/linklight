@@ -1,0 +1,7 @@
+---
+- name: "Check: VTY ACL"
+  ios_command:
+    commands: "show run | sec vty 0"
+  register: result
+  failed_when: "not(' access-class ' in result.stdout[0])"
+  ignore_errors: yes

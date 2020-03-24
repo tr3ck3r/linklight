@@ -1,0 +1,7 @@
+---
+- name: "Check: Verify service tcp-keepalives-in is enabled"
+  ios_command:
+    commands: "show run | inc service tcp-keepalives-in"
+  register: result
+  failed_when: "not('service tcp-keepalives-in'  in result.stdout[0])"
+  ignore_errors: yes

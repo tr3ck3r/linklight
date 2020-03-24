@@ -1,0 +1,7 @@
+---
+- name: "Check: Status of AUX"
+  ios_command:
+    commands: "show run | sec aux 0"
+  register: result
+  failed_when: "not(' no exec' in result.stdout[0])"
+  ignore_errors: yes

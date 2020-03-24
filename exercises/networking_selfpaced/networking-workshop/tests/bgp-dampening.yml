@@ -1,0 +1,7 @@
+---
+- name: "Check: bgp dampening"
+  ios_command:
+    commands: "show run | inc bgp dampening"
+  register: result
+  failed_when: "not('bgp dampening' in result.stdout[0])"
+  ignore_errors: yes

@@ -1,7 +1,0 @@
----
-- name: "Check: Verify ssh2 is running"
-  ios_command:
-    commands: "show run | inc ip ssh version 2"
-  register: result
-  failed_when: "not('ip ssh version 2'  in result.stdout[0])"
-  ignore_errors: yes

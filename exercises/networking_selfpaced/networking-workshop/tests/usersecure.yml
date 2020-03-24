@@ -1,0 +1,7 @@
+---
+- name: "Check: Ensure username secure with good password is used"
+  ios_command:
+    commands: "show run | include username s3cur3 privilege 15 password 0 s3cur3_"
+  register: result
+  failed_when: "not('username s3cur3 privilege 15 password 0 s3cur3_' in result.stdout[0])"
+  ignore_errors: yes
