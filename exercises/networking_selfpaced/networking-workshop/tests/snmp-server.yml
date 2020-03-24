@@ -1,6 +1,3 @@
-#
-# Check whether SNMP community is configured on devices
-#
 ---
 - name: "Check: {{snmp_server}} is not configured as SNMP trap host"
   ios_command:

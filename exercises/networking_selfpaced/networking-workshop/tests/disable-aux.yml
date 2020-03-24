@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 #
 # Check whether SYSLOG server is configured on devices
 #
+=======
+>>>>>>> a447d92c8c226e08937a9c8a8233f3e046de4bac
 ---
 - name: "Check: Status of AUX"
   ios_command:

@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 #
 # Check if user secure exists on device
 #
+=======
+>>>>>>> a447d92c8c226e08937a9c8a8233f3e046de4bac
 ---
 - name: "Check: Ensure username secure with good password is used"
   ios_command:

@@ -1,6 +1,3 @@
-#
-# Check whether SYSLOG server is configured on devices
-#
 ---
 - name: "Check: 216.239.35.0 configured as ntp server"
   ios_command:
