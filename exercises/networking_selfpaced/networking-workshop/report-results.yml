@@ -5,8 +5,8 @@
 # Inputs (specified as extra-vars)
 #
 # - input: file name
-# - format: Jinja2 template name (in reports directory)
-# - output: Outout file name
+# - format: Jinja2 template name (in templates directory)
+# - output: Output file name
 #
 # Defaults:
 # - format = json-simple.j2
